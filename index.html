@@ -69,6 +69,151 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-190426-Django-Study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/26/190426-Django-Study/" class="article-date">
+  <time datetime="2019-04-26T08:49:31.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/190426-Django-Study/">190426_Django_Study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://JINUKK.github.io/2019/04/26/190426-Django-Study/" data-id="cjuxu6dgy0005cwwufe3cseq9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-190425-Django-Study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/26/190425-Django-Study/" class="article-date">
+  <time datetime="2019-04-26T08:49:18.000Z" itemprop="datePublished">2019-04-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/26/190425-Django-Study/">190425_Django_Study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://JINUKK.github.io/2019/04/26/190425-Django-Study/" data-id="cjuxu6dgx0004cwwu0nsgwi1o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-190424-Django-Study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/24/190424-Django-Study/" class="article-date">
+  <time datetime="2019-04-24T08:49:05.000Z" itemprop="datePublished">2019-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/24/190424-Django-Study/">2019.04.24 Django Study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>Crawler(크롤러) : 웹 페이지에 있는 자료를 자동으로 수집하는 프로그램</li>
+</ul>
+<ol>
+<li>주소를 입력하면 해당 서버로 접근한다.</li>
+<li><p>웹 서버 프로그램이 해당 주소에 맞는 내용을 전달한다.<br>-&gt; requests(urllib의 wrapper 클래스)</p>
+</li>
+<li><p>받은 내용을 해석해서 화면을 보여준다.<br>3-1. 받은 내용을 해석해서 내가 원하는 데이터를 찾는다.<br>-&gt; BeautifulSoup + HTML 코드의 해석 + CSS Selector</p>
+</li>
+</ol>
+<ul>
+<li><p>모듈 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pip install requests</span><br><span class="line">$ pip install BeautifulSoup4 <span class="comment"># pip install bs4도 가능</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>셀렉터</p>
+<ul>
+<li><p>HTML Tag<br>1) Container Tag : 맨 앞이 태그 이름  ex) <figure class="highlight plain"><figcaption><span>td</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2) Empty Tag : 이미지 태그 ex) ```&lt;img src=&quot;이미지 주소&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>태그는 속성을 갖는다.</p>
+</li>
+<li>원하는 텍스트를 얻고 싶다면 태크를 찾아야 한다.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>단일 셀렉터<br>ex) <figure class="highlight plain"><figcaption><span>id</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   - tag 이름 : ex) div</span><br><span class="line">   - id : 앞에 &apos;#&apos;을 붙인다. id는 한 페이지 내에서 중복될 수 없다. ex) #super</span><br><span class="line">   - class : 앞에 &apos;.&apos;을 붙인다.(별명이나 그룹이름이라고 생각하면 된다.) ex) .test</span><br><span class="line">     </span><br><span class="line">2. 다중 셀렉터  </span><br><span class="line">   - ~안에 있는 무엇  </span><br><span class="line">   ex) div li.ah_k : 중간 경로 생략 가능</span><br><span class="line">   ex) div &gt; ul &gt; li.ah_k : 중간 경로 생략 불가능 = 더 빠름</span><br><span class="line">   - 띄워쓰기가 되어있는 것은 여러 별명으로 되어있는 것으로 그 중에 하나만 선택해서 사용하면 된다.</span><br><span class="line"></span><br><span class="line">   - ~이고 ~인 것</span><br><span class="line">   ex) span.ah_k.ah_some : span이고 ah_k이고 ah_some인 것</span><br><span class="line"></span><br><span class="line">- naver를 이용하여 실시간 검색어 순위 및 최근 회차 로또 당첨번호 가져오기</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"># 웹 페이지에 접근해서 데이터를 가져온다.</span><br><span class="line"># requests는 ajax로 받아온 데이터를 실시간으로 반영할 수 없다.</span><br><span class="line"># requests로 받아온 데이터는 소스 보기에서 보는 소스까지만 있다.(정적 페이지)</span><br><span class="line"></span><br><span class="line"># selenium : 웹 브라우저를 원격 조작하는 방식의 크롤러</span><br><span class="line"># selenium, scrapy</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line"># 가져온 데이터를 HTML로 해석한다.</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">url = &quot;https://www.naver.com/&quot;</span><br><span class="line"># URL Encoding</span><br><span class="line"># url : 영문</span><br><span class="line"># 영문이 아닌 한글은 인코딩된다.</span><br><span class="line"># 내용을 알고싶으면 URL Decoding을 해야 한다.</span><br><span class="line">url2 = &quot;https://search.naver.com/search.naver?sm=top_hty&amp;fbm=1&amp;ie=utf8&amp;query=%EB%A1%9C%EB%98%90+%EB%8B%B9%EC%B2%A8%EB%B2%88%ED%98%B8&quot;</span><br><span class="line"># HTTP Method : Get, Post, Put, Head, Delete</span><br><span class="line"># Get : 리소스 얻기</span><br><span class="line"># Post : 데이터 전달 - 로그인, 회원가입, 글쓰기 ------------ 수정</span><br><span class="line"># Put : 리소스 전달 - 사진 올리기 ------------- 최조 업로드</span><br><span class="line"># Delete : 리소스 삭제</span><br><span class="line"># Head : Method 확인</span><br><span class="line"># Postman 이라는 익스텐션치 or 애플리케이션 설치</span><br><span class="line"></span><br><span class="line">custom_headers = &#123;</span><br><span class="line">    &apos;referer&apos;:&apos;https://www.naver.com&apos;,</span><br><span class="line">    &apos;user-agent&apos;:&apos;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0&apos;</span><br><span class="line">    # user-agent는 사용자마다 다르므로 확인하자.</span><br><span class="line">&#125;</span><br><span class="line">req = requests.get(url, headers=custom_headers)</span><br><span class="line">print(req.status_code)</span><br><span class="line">print(type(req.status_code))</span><br><span class="line"></span><br><span class="line"># 200이라고 쓰는 것은 명확한 코드가 아니므로 codes의 ok를 사용</span><br><span class="line">if req.status_code == requests.codes.ok:</span><br><span class="line">    print(&quot;접속 성공&quot;)</span><br><span class="line">    # 데이터 해석</span><br><span class="line">    req.text</span><br><span class="line">    print(req.text)</span><br><span class="line"></span><br><span class="line">    # html parser를 이용해서 해석하라는 의미</span><br><span class="line">    html = BeautifulSoup(req.text, &quot;html.parser&quot;)</span><br><span class="line"></span><br><span class="line">    keywords = html.select(&apos;.ah_list .ah_k&apos;)</span><br><span class="line">    items = html.select(&apos;.ah_list .ah_item&apos;)</span><br><span class="line"></span><br><span class="line">    for keyword in keywords:</span><br><span class="line">        print(keyword.text)</span><br><span class="line">    print(keywords)</span><br><span class="line"></span><br><span class="line">    # 실시간 검색어 순위 가져오기</span><br><span class="line">    for item in items:</span><br><span class="line">        keyword = item.select_one(&apos;.ah_k&apos;)</span><br><span class="line">        rank = item.select_one(&apos;.ah_r&apos;)</span><br><span class="line">        link = item.select_one(&apos;.ah_a&apos;)</span><br><span class="line">        # print(rank.attrs[&apos;class&apos;])</span><br><span class="line"></span><br><span class="line">        # print(rank[&apos;class&apos;])</span><br><span class="line">        print(rank.text, keyword.text, link[&apos;href&apos;])</span><br><span class="line"></span><br><span class="line">    # ~ 어떤 요소를 찾고</span><br><span class="line">    # 그 요소 안에 각각의 요소를 다시 찾을 수 있다.</span><br><span class="line"></span><br><span class="line">else:</span><br><span class="line">    print(&quot;접속 실패&quot;)</span><br><span class="line"></span><br><span class="line"># 최근 회차 로또 당첨번호 가져오기</span><br><span class="line">req2 = requests.get(url2)</span><br><span class="line"></span><br><span class="line">if req2.status_code == requests.codes.ok:</span><br><span class="line">    print(&quot;접속 성공&quot;)</span><br><span class="line">    html = BeautifulSoup(req2.text, &quot;html.parser&quot;)</span><br><span class="line"></span><br><span class="line">    numbers = html.select(&apos;.ds div.num_box .num&apos;)</span><br><span class="line"></span><br><span class="line">    for number in numbers[:6]:</span><br><span class="line">        print(number.text, end = &quot;, &quot;)</span><br><span class="line">    print(&quot;보너스 번호: &quot;, numbers[-1].text)</span><br><span class="line">else:</span><br><span class="line">    print(&quot;접속 실패&quot;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>daum을 이용하여 모든 회차 로또 당첨번호를 가져오기</li>
+<li>모든 회차 당첨번호 카운트 세기</li>
+<li>엑셀 파일로 저장하기<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="comment"># file - setting - projectname - interpreter에서 현재 설치된 모듈을 확인할 수 있다.</span></span><br><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> Workbook</span><br><span class="line"></span><br><span class="line"><span class="comment"># Workbook : 파일</span></span><br><span class="line"><span class="comment"># Worksheet : 탭</span></span><br><span class="line"><span class="comment"># 내용을 저장하기 위해 파일 만들기(메모리 상에)</span></span><br><span class="line">wb = Workbook()</span><br><span class="line"></span><br><span class="line">ws1 = wb.active <span class="comment"># 엑셀 처음 시트 가져오기</span></span><br><span class="line">ws2 = wb.create_sheet(title=<span class="string">'lotto_list'</span>)</span><br><span class="line">ws1.title = <span class="string">'lotto_Count'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#dictionary comprehension</span></span><br><span class="line">numbers_count = &#123;x:<span class="number">0</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">46</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">856</span>):</span><br><span class="line">    url = <span class="string">"https://search.daum.net/search?w=tot&amp;rtmaxcoll=LOT&amp;DA=LOT&amp;q="</span>+str(num)+<span class="string">"회차 로또"</span></span><br><span class="line"></span><br><span class="line">    req = requests.get(url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> req.status_code == requests.codes.ok:</span><br><span class="line">        print(<span class="string">"접속 성공"</span>)</span><br><span class="line"></span><br><span class="line">        print(num,<span class="string">'회차'</span>)</span><br><span class="line"></span><br><span class="line">        html = BeautifulSoup(req.text, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">        numbers = html.select(<span class="string">'span.img_lotto'</span>)</span><br><span class="line"></span><br><span class="line">        ws2.cell(row=num, column=<span class="number">1</span>, value=str(num)+<span class="string">'회차'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> index, number <span class="keyword">in</span> enumerate(numbers):</span><br><span class="line"></span><br><span class="line">            <span class="comment"># print(number.text, end=', ')</span></span><br><span class="line">            ws2.cell(row=num, column=index+<span class="number">2</span>, value=int(number.text))</span><br><span class="line"></span><br><span class="line">            numbers_count[int(number.text)] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># print('보너스 번호: ', numbers[-1].text)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"접속 실패"</span>)</span><br><span class="line"></span><br><span class="line">print(numbers_count)</span><br><span class="line"></span><br><span class="line"><span class="comment"># for row in range(1, 46):</span></span><br><span class="line"><span class="comment">#     ws1.cell(row=row, column=1, value=row)</span></span><br><span class="line"><span class="comment">#     ws1.cell(row=row, column=2, value=numbers\_count[row])</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> numbers_count.items():</span><br><span class="line">    ws1.cell(row=k, column=<span class="number">1</span>, value=k)</span><br><span class="line">    ws1.cell(row=k, column=<span class="number">2</span>, value=v)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wb.save(<span class="string">'./lotto_list_text.xlsx'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://JINUKK.github.io/2019/04/24/190424-Django-Study/" data-id="cjuxu6dgv0003cwwu2lxe72dv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-190423-Django-Study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/23/190423-Django-Study/" class="article-date">
@@ -179,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/" data-id="cjuxtpyvw00031qwum2gz1hv9" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/" data-id="cjuxu6dgq0001cwwupbwdzpec" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/22/190422-Django-Study/" data-id="cjuxtpyvm00001qwuqa8kedtl" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/22/190422-Django-Study/" data-id="cjuxu6dgl0000cwwut3owuxq4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -301,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/03/hello-world/" data-id="cjuxtpyvr00011qwucp5f661w" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/03/hello-world/" data-id="cjuxu6dh10007cwwuqbkiyohv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -349,15 +494,23 @@
       <ul>
         
           <li>
+            <a href="/2019/04/26/190426-Django-Study/">190426_Django_Study</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/26/190425-Django-Study/">190425_Django_Study</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/24/190424-Django-Study/">2019.04.24 Django Study</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/23/190423-Django-Study/">2019.04.23 Django Study</a>
           </li>
         
           <li>
             <a href="/2019/04/22/190422-Django-Study/">2019.04.22 Django Study</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/03/hello-world/">Hello World</a>
           </li>
         
       </ul>
