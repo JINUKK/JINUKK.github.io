@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.03.04 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="String python에서 문자열은 변경이 불가능한 객체(immutable)   Basic  python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.  1234567891011121314a = &apos;abcde&apos;print(a)&amp;gt;&amp;gt; abcdea = &quot;abcde&quot;print(a)&amp;gt;&amp;gt; abcde  문자열 안에 ‘와 ‘’를">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.03.04 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/04/190304-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="String python에서 문자열은 변경이 불가능한 객체(immutable)   Basic  python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.  1234567891011121314a = &apos;abcde&apos;print(a)&amp;gt;&amp;gt; abcdea = &quot;abcde&quot;print(a)&amp;gt;&amp;gt; abcde  문자열 안에 ‘와 ‘’를">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-29T15:03:55.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.03.04 Python and CE Study">
+<meta name="twitter:description" content="String python에서 문자열은 변경이 불가능한 객체(immutable)   Basic  python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.  1234567891011121314a = &apos;abcde&apos;print(a)&amp;gt;&amp;gt; abcdea = &quot;abcde&quot;print(a)&amp;gt;&amp;gt; abcde  문자열 안에 ‘와 ‘’를">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190304-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.03.04 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/04/190304-PCE-Study/" class="article-date">
+            <time datetime="2019-03-03T15:01:32.000Z" itemprop="datePublished">2019-03-04</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><ul>
+<li>python에서 문자열은 변경이 불가능한 객체(immutable)</li>
+</ul>
+<ol>
+<li><p>Basic</p>
+<ul>
+<li>python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="string">'abcde'</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&gt;&gt; abcde</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">"abcde"</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&gt;&gt; abcde</span><br></pre></td></tr></table></figure>
+<ul>
+<li>문자열 안에 ‘와 ‘’를 같이 쓰고 싶은 경우, ‘\‘와 같이 쓰면 문자 취급을 할 수 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">b = <span class="string">"I said, 'I can do it!'"</span></span><br><span class="line"></span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line">&gt;&gt; I said, <span class="string">'I can do it!'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = <span class="string">"I said, \'I can do it!\'"</span></span><br><span class="line"></span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line">&gt;&gt; I said, <span class="string">'I can do it!'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>“”” “”” 사이에 있는 모든 코드를 다 문자 취급할 수 있다(multi line).</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">hello world!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">hello world!!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">hello world!!!</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&gt;&gt; hello world!</span><br><span class="line"></span><br><span class="line">   hello world!!</span><br><span class="line"></span><br><span class="line">   hello world!!!</span><br></pre></td></tr></table></figure>
+<ul>
+<li>문자열 연산도 가능하다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="string">'abcd'</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">'efgh'</span></span><br><span class="line"></span><br><span class="line">print(a+b)</span><br><span class="line"></span><br><span class="line">&gt;&gt; abcdefgh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(<span class="string">'*'</span>*<span class="number">30</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; ******************************</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>문자열 인덱싱 및 길이 출력이 가능하다.</p>
+</li>
+<li><p>인덱싱 범위가 벗어난 경우, 에러가 발생한다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">c = <span class="string">"abcde"</span></span><br><span class="line"></span><br><span class="line">c[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'a'</span></span><br><span class="line"></span><br><span class="line">c[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'b'</span></span><br><span class="line"></span><br><span class="line">c[<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; IndexError: string index out of range</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">"abcd"</span></span><br><span class="line"></span><br><span class="line">len(a)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Slicing(슬라이싱)</p>
+<ul>
+<li>[start(포함) : end(미포함)]</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="string">"abcdefghijklmnopqrstuvwxyz"</span></span><br><span class="line"></span><br><span class="line">a[<span class="number">1</span>:<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'bcdefghij'</span></span><br><span class="line"></span><br><span class="line">a[:<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'abcdefghij'</span></span><br><span class="line"></span><br><span class="line">a[<span class="number">6</span>:]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'ghijklmnopqrstuvwxyz'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = <span class="string">"I love python"</span></span><br><span class="line"></span><br><span class="line">a = a[:<span class="number">2</span>] + <span class="string">"like"</span> + a[<span class="number">6</span>:]</span><br><span class="line"></span><br><span class="line">a</span><br><span class="line"></span><br><span class="line">&gt;&gt; I like python</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Format(포맷)</p>
+<ul>
+<li>형식</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">'I like the number %d and color %s'</span> % (<span class="number">2</span>, <span class="string">'black'</span>) </span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'I like the number 2 and color black'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">name1 = <span class="string">'greg'</span></span><br><span class="line"></span><br><span class="line">name2 = <span class="string">'john'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'hi &#123;1&#125; my name is &#123;0&#125;'</span>.format(name1, name2)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'hi john my name is greg'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'hi &#123;&#125; my name is &#123;&#125;'</span>.format(name1, name2)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'hi greg my name is john'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># python3.6 이상에서만 지원되는 형식</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">b = <span class="string">"abcde"</span></span><br><span class="line"></span><br><span class="line"><span class="string">f'value of a <span class="subst">&#123;a&#125;</span> and b is <span class="subst">&#123;b&#125;</span>'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'value of a 10 and b is abcde'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>‘{인덱스:&lt;길이}’.format(값) : 부등호 방향으로 정렬 후, 공백으로 채우기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">'&#123;0:&gt;10&#125;'</span>.format(<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'         7'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'&#123;0:&gt;1&#125;'</span>.format(<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'7'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'&#123;0:&lt;10&#125;'</span>.format(<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'7         '</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'&#123;:&lt;20&#125;'</span>.format(<span class="number">7</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'7                   '</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">f'<span class="subst">&#123;<span class="string">"koo"</span>:&lt;<span class="number">20</span>&#125;</span>'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'koo                 '</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>{인덱스:0의 개수.자릿수f}’.format(숫자): 자릿수 지정 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">math.e</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">2.718281828459045</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'&#123;:.2f&#125;'</span>.format(math.e)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'2.72'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'&#123;:.5f&#125;'</span>.format(math.e)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'2.71828'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">e = math.e</span><br><span class="line"></span><br><span class="line"><span class="string">f'<span class="subst">&#123;e:<span class="number">0.2</span>f&#125;</span>'</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'2.72'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관련 함수들</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 가지고 있는 함수 보기</span></span><br><span class="line"></span><br><span class="line">dir(str)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>isdigit() : 문자열이 숫자인지 아닌지를 True 또는 False로 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="string">'5'</span></span><br><span class="line"></span><br><span class="line">a.isdigit()</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>isalpha() : 문자열이 문자인지 아닌지를 True 또는 False로 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">a = <span class="string">'5'</span></span><br><span class="line"></span><br><span class="line">a.isalpha()</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>count() : 해당 문자 개수 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">b = <span class="string">'abcbbcbbbbabbbcaaabbbbb'</span></span><br><span class="line"></span><br><span class="line">b.count(<span class="string">'b'</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">15</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>strip() : 문자열 기준으로 양쪽 공백 지우기</p>
+</li>
+<li><p>lstrip() : 문자열 기준으로 왼쪽에 있는 공백 지우기</p>
+</li>
+<li><p>rstrip() : 문자열 기준으로 오른쪽에 있는 공백 지우기</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">c = <span class="string">'       abc'</span></span><br><span class="line"></span><br><span class="line">c.lstrip()</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">c = <span class="string">'abc      '</span></span><br><span class="line"></span><br><span class="line">c.rstrip()</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>replace() : 문자열 바꾸기</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">d = <span class="string">'I like python'</span></span><br><span class="line"></span><br><span class="line">d.replace(<span class="string">'python'</span>,<span class="string">'C'</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'I like C'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>split() : 문자열 나누기</p>
+</li>
+<li><p>괄호 안에 아무런 값도 넣지 않으면 공백(스페이스, 탭, 엔터 등) 기준으로 나눔</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">e = <span class="string">"koo_2019"</span></span><br><span class="line"></span><br><span class="line">e.split(<span class="string">'_'</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="string">'koo'</span>, <span class="string">'2019'</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>join() : 문자열 삽입</p>
+</li>
+<li><p>괄호 안에 아무런 값을 넣지 않아도 가능</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line"></span><br><span class="line"><span class="string">''</span>.join(li)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'abcde'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">':'</span>.join(li)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'a:b:c:d:e'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
+<li><p>python에서 list는 변경 가능한 객체(mutable)</p>
+</li>
+<li><p>자료형에 상관없이 만들 수 있다.</p>
+</li>
+</ul>
+<ol>
+<li><p>Basic</p>
+<ul>
+<li>C 언어에서의 정의</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 같은 타입을 가진 변수들의 모임</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>python에서의 정의</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 다양한 변수들의 모임</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 타입이 다른 변수들을 묶을 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 리스트는 대괄호로 선언한다.</span></span><br><span class="line"></span><br><span class="line">li = [<span class="number">1</span>, <span class="number">0.5</span>, <span class="string">'abc'</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>인덱싱이 가능하다.</p>
+</li>
+<li><p>python에서는 음수 인덱싱이 가능하며, 뒤쪽부터 역순으로 접근한다.</p>
+</li>
+<li><p>연산도 가능하다.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line">li[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">30</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li[<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'c'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li*<span class="number">2</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>슬라이싱도 가능하다([start(포함):end(미포함)]).</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line">li[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li[<span class="number">2</span>:<span class="number">4</span>] = [<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 리스트 안에 리스트 넣기</span></span><br><span class="line"></span><br><span class="line">li[<span class="number">3</span>] = [<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, [<span class="number">2</span>], <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li[<span class="number">2</span>:<span class="number">3</span>] = [<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="number">3</span>, [<span class="number">2</span>], <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li[<span class="number">2</span>] = [<span class="number">23</span>]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, [<span class="number">23</span>], [<span class="number">2</span>], <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li[<span class="number">2</span>] = <span class="string">'23'</span></span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="string">'23'</span>, [<span class="number">2</span>], <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li[<span class="number">2</span>] = <span class="number">23</span></span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="number">23</span>, [<span class="number">2</span>], <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 범위 안에 나누어서 넣기</span></span><br><span class="line"></span><br><span class="line">li[<span class="number">1</span>:<span class="number">3</span>] = <span class="string">'30'</span></span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="string">'3'</span>, <span class="string">'0'</span>, [<span class="number">2</span>], <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관련 함수들</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dir(list)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>자료 구조는 크게 3가지로 나눈다.</p>
+<p> 1) insert(삽입)</p>
+<p> 2) search(검색)</p>
+<p> 3) delete(삭제)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># list 예시</span></span><br><span class="line"></span><br><span class="line">li = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="string">'b'</span>,<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+<p>1) insert 계열</p>
+<ul>
+<li>append() : 리스트 끝에 요소 값 추가</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li.append(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>insert() : 원하는 자리를 지정하여 요소 값 추가</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li.insert(<span class="number">2</span>,<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="string">'a'</span>, <span class="number">1</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="number">100</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>extend() : 인자를 리스트로 받아 기존 리스트를 확장</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li.extend([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="string">'a'</span>, <span class="number">1</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="number">100</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>2) search 계열</p>
+<ul>
+<li>인덱싱</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'a'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>index() : 원하는 요소 값의 위치를 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li.index(<span class="string">'b'</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<p>3) delete 계열</p>
+<ul>
+<li><p>remove() : 원하는 요소 값 제거</p>
+<ul>
+<li><p>값이 중복될 경우, 첫번째 값만 제거</p>
+</li>
+<li><p>반복해서 제거 가능</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li.remove(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="number">100</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>pop() : 요소 값 가져오기</p>
+<ul>
+<li><p>인자를 넣지 않으면 요소 끝 자리에 있는 값을 가져옴</p>
+</li>
+<li><p>리스트에서는 삭제</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li.pop()</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">3</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li.pop(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'a'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">10</span>, <span class="number">20</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="number">100</span>, <span class="number">1</span>, <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>정렬 함수</p>
+<ul>
+<li><p>sort() : 오름차순 정렬</p>
+</li>
+<li><p>sort(reverse = True) : 내림차순 정렬</p>
+</li>
+<li><p>sorted(list) : 오름차순 정렬(기존 리스트 차순을 변경하고 싶지 않을 때 사용)</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">li = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">   li.append(random.randint(<span class="number">1</span>,<span class="number">10</span>)) <span class="comment"># 1부터 10 사이 임의의 정수</span></span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li.sort()</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li.sort(reverse = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">9</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line"></span><br><span class="line">   li.append(random.randint(<span class="number">1</span>,<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">5</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li\_sorted = sorted(li)</span><br><span class="line"></span><br><span class="line">li\_sorted </span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">10</span>] <span class="comment"># 변경된 리스트</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">5</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">1</span>] <span class="comment"># 변경되지 않은 기존 리스트</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><ul>
+<li><p>집합을 표현하기 위해서 만들어진 자료구조</p>
+</li>
+<li><p>중복의 데이터를 허용하지 않음(집합 표현)</p>
+</li>
+</ul>
+<ol>
+<li><p>Basic</p>
+<ul>
+<li>list는 중복의 데이터를 허용한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>set은 중복의 데이터를 허용하지 않는다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>문자열을 입력하여 만들 수도 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">string_set = set(<span class="string">'abcde'</span>)</span><br><span class="line"></span><br><span class="line">string_set</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>집합 표현</p>
+<ul>
+<li><p>union() : 합집합</p>
+<ul>
+<li>‘OR’ 연산자도 가능</li>
+</ul>
+</li>
+<li><p>intersection() : 교집합</p>
+<ul>
+<li>‘AND’ 연산자도 가능</li>
+</ul>
+</li>
+<li><p>difference() : 차집합</p>
+<ul>
+<li>‘-‘ 연산으로도 가능</li>
+</ul>
+</li>
+<li><p>symmetric_difference() : 대칭 차집합</p>
+<ul>
+<li><p>교집합을 뺀 나머지</p>
+</li>
+<li><p>‘XOR’ 연산자도 가능</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s1 = set([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line">s2 = set([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 합집합</span></span><br><span class="line"></span><br><span class="line">s.union([<span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1 | s2 <span class="comment"># OR 연산자</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 교집합</span></span><br><span class="line"></span><br><span class="line">s1.intersection(s2)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1 &amp; s2 <span class="comment"># AND 연산자</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 차집합</span></span><br><span class="line"></span><br><span class="line">s1.difference(s2)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1 - s2</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s2 - s1</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 대칭 차집합</span></span><br><span class="line"></span><br><span class="line">s1.symmetric\_difference(s2)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s2.symmetric_difference(s1)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1 ^ s2 <span class="comment"># XOR 연산자</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관련 함수들</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dir(set)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># set 예시</span></span><br><span class="line"></span><br><span class="line">s = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>add() : 요소 값 추가</p>
+<ul>
+<li>중복의 데이터를 추가하면 들어가지 않는다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s.add(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s.add(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>update() : 요소 값 여러 개 추가</p>
+<ul>
+<li>중복의 데이터는 추가되지 않는다.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s.update([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>remove() : 원하는 요소 값 제거</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s.remove(<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>pop() : 임의의 요소 값을 반환한 후, 삭제</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">help(s.pop) <span class="comment"># 임의(arbitrary)의 수 선택</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; Help on built-<span class="keyword">in</span> function pop:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   pop(...) method of builtins.set instance</span><br><span class="line"></span><br><span class="line">   Remove <span class="keyword">and</span> <span class="keyword">return</span> an arbitrary set element.</span><br><span class="line"></span><br><span class="line">   Raises KeyError <span class="keyword">if</span> the set <span class="keyword">is</span> empty.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s.pop()</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s = set([<span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span> ,<span class="number">5</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line"></span><br><span class="line">   print(s.pop(), end = <span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>difference() vs difference_update()</p>
+<ul>
+<li><p>difference()는 기존 리스트가 바뀌지 않음</p>
+</li>
+<li><p>difference_update()는 기존 리스트가 바뀜</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s1 = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line"></span><br><span class="line">s2 = &#123;<span class="number">3</span>, <span class="number">5</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1.difference(s2)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>&#125; </span><br><span class="line"></span><br><span class="line">s1</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125; <span class="comment"># 기존 리스트가 바뀌지 않음</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1.difference_update(s2)</span><br><span class="line"></span><br><span class="line">s1</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>&#125; <span class="comment"># 기존 리스트가 바뀜</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Tuple"><a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple</h2><ul>
+<li><p>python에서 tuple은 변경 불가능한 객체(immutable)</p>
+</li>
+<li><p>인덱싱으로 접근 가능</p>
+</li>
+<li><p>요소 값 변경 불가능</p>
+</li>
+<li><p>list보다 속도가 빠름</p>
+</li>
+</ul>
+<ol>
+<li><p>Basic</p>
+<ul>
+<li>튜플은 소괄호로 선언한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tu = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">tu</span><br><span class="line"></span><br><span class="line">&gt;&gt; (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tu2 = ()</span><br><span class="line"></span><br><span class="line">tu2</span><br><span class="line"></span><br><span class="line">&gt;&gt; ()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>인덱싱으로 접근 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tu[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>요소 값 변경 불가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tu[<span class="number">2</span>] = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; TypeError: <span class="string">'tuple'</span> object does <span class="keyword">not</span> support item assignment</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관련 함수들</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dir(tu)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/04/190304-PCE-Study/" data-id="cjv2htnzt0000wxwuh5l8rqjx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.03.04 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-03-04",
+        "dateCreated": "2019-03-04",
+        "dateModified": "2019-04-30",
+        "url": "http://JINUKK.github.io/2019/03/04/190304-PCE-Study/",
+        "description": "String
+python에서 문자열은 변경이 불가능한 객체(immutable)
+
+
+Basic
+
+python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.
+
+1234567891011121314a = 'abcde'print(a)&gt;&gt; abcdea = "abcde"print(a)&gt;&gt; abcde
+
+문자열 안에 ‘와 ‘’를"
+        "wordCount": 3111
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/26/190426-Django-Study/" class="title">2019.04.26 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-26T08:49:31.000Z" itemprop="datePublished">2019-04-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/25/190425-Django-Study/" class="title">2019.04.25 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-25T08:49:18.000Z" itemprop="datePublished">2019-04-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/24/190424-Django-Study/" class="title">2019.04.24 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-24T08:49:05.000Z" itemprop="datePublished">2019-04-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/23/190423-Django-Study/" class="title">2019.04.23 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-23T08:36:09.000Z" itemprop="datePublished">2019-04-23</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/04/190304-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
