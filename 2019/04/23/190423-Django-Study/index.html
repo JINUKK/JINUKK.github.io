@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://JINUKK.github.io/2019/04/23/190423-Django-Study/index.html">
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="웹페이지의 기본형식 = CRUD + List  C(CREATE) R(READ) U(UPDATE) D(DELETE) 데이터를 얻을 때…단일 객체 = object. -&amp;gt; R,U,D복수 객체 = object_list. -&amp;gt; List단일 객체로 받을지 복수 객체로 받을지 생각해야 한다.    앱 생성 시 목록  admin.py : 모델을 관리하기 위해">
-<meta property="og:locale" content="ko, en">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2019-04-29T07:11:51.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.04.23 Django Study">
@@ -71,13 +71,13 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/">Inici</a>
+                                    <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
                                     
                                 <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/about/index.html">Quant a</a>
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
                         </ul>
@@ -85,7 +85,7 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -106,8 +106,8 @@
         TRANSLATION: {
             POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'categories',
-            TAGS: 'etiquetes',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -247,7 +247,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/" data-id="cjv27le1l0002scwu6j9563oe" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/" data-id="cjv27le1l0002scwu6j9563oe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -362,7 +362,7 @@ admin.py : 모델을 관리하기 위해"
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>seguir:</p>
+        <p>follow:</p>
         <ul class="social-links">
             
                 
@@ -380,7 +380,7 @@ admin.py : 모델을 관리하기 위해"
 <nav id="article-nav">
     
         <a href="/2019/04/24/190424-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">més nou</strong>
+        <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
             2019.04.24 Django Study
@@ -391,7 +391,7 @@ admin.py : 모델을 관리하기 위해"
     
     
         <a href="/2019/04/22/190422-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">antic</strong>
+        <strong class="article-nav-caption">older</strong>
         <p class="article-nav-title">2019.04.22 Django Study</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
@@ -473,7 +473,7 @@ admin.py : 모델을 관리하기 위해"
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">arxius</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">6</span></li></ul>
         </div>
