@@ -69,6 +69,76 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-190429-Django-Study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/29/190429-Django-Study/" class="article-date">
+  <time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/29/190429-Django-Study/">2019.04.29 Django Study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Bookmark-project"><a href="#Bookmark-project" class="headerlink" title="[ Bookmark project ]"></a>[ Bookmark project ]</h2><ol>
+<li>프로젝트 생성</li>
+<li><p>장고 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>장고 프로젝트 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">django-admin startproject config .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DB 초기화</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 계정 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>기본 앱 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py startapp bookmark</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>INSTALLED APPS에 ‘bookmark’ 앱 추가</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bookmark_project/config/setting.py</span></span><br><span class="line"></span><br><span class="line">INSTALLED_APPS = [</span><br><span class="line"> <span class="string">'django.contrib.admin'</span>,</span><br><span class="line"> <span class="string">'django.contrib.auth'</span>,</span><br><span class="line"> <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line"> <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line"> <span class="string">'django.contrib.messages'</span>,</span><br><span class="line"> <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line"> <span class="string">'bookmark'</span>,</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> <span class="comment"># 템플릿 폴더를 검색, DB 변경 사항 추적</span></span><br><span class="line"> <span class="comment"># INSTALLED APPS에 추가된 앱들만 템플릿 폴더를 검색한다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Models.py 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># custom field</span></span><br><span class="line"><span class="comment"># DB의 column = 데이터 타입, 제약조건</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># form.py</span></span><br><span class="line"><span class="comment"># 입력받는 대상이 뭔가 특별할 경우 설계</span></span><br><span class="line"><span class="comment"># DB에 저장되는 항목이 아닐 경우 ex) 회원가입 시, 패스워드 확인</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모델의 형태 - 클래스</span></span><br><span class="line"><span class="comment"># models.Model을 상속받는 이유</span></span><br><span class="line"><span class="comment"># 상속 : 어떤 클래스가 부모 클래스를 상속받는다.</span></span><br><span class="line"><span class="comment"># ---&gt; 부모 클래스가 가지고 잇는 메서드나 속성값을 사용하기 위해서</span></span><br><span class="line"><span class="comment"># models.Model을 상속받은 이유?</span></span><br><span class="line"><span class="comment"># models.Model이 가지고 있는 메서드나 속성값을 사용하기 위해서</span></span><br><span class="line"><span class="comment"># models.Model: ORM 관련 기능들</span></span><br><span class="line"><span class="comment"># ORM 관련 기능 : DB를 추상화해서 코드로 조작할 수 있게 하는 기능</span></span><br><span class="line"><span class="comment"># 데이터를 추가, 수정, 검색, 삭제</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bookmark</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    site_name = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">    url = models.URLField()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 작성자 -&gt; 로그인한 유저 정보를 찾아서 추가</span></span><br><span class="line">    <span class="comment"># 작성자 != 로그인한 유저다</span></span><br><span class="line">    <span class="comment"># -&gt; 모델 저장 직전에 직접 코드로 처리</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 작성일 -&gt; 서버 시간을 읽어서 timestamp 값을 만들어 추가</span></span><br><span class="line">    <span class="comment"># 자동 옵션 auto_now, auto_now_add</span></span><br><span class="line">    created = models.DateTimeField(auto_now_add=<span class="literal">True</span>) <span class="comment"># 업데이트가 될 때마다 갱신해줌</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># DB에 적용 : makemigrations, migrate</span></span><br><span class="line">    <span class="comment"># $ python manage.py makemigrations bookmark</span></span><br><span class="line">    <span class="comment"># $ python manage.py migrate bookmark 0001</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 관리자 페이지 목록에 표시될 내용</span></span><br><span class="line">    <span class="comment"># 확인 메시지에 출력되는 내용을 만들기 위해</span></span><br><span class="line">    <span class="comment"># __str__을 만들지 않으면 object라는 이름으로 뜸</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Site name : "</span>+self.site_name+<span class="string">", URL : "</span>+self.url</span><br><span class="line">        </span><br><span class="line"> <span class="comment"># 메타 클레스는 옵션 클래스 - 내가 상속을 받았는데, 속성값에 변경이 필요하다면</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    <span class="comment"># ordering은 정렬을 의미</span></span><br><span class="line">    <span class="comment"># '필드이름' = 필드값 오름차순</span></span><br><span class="line">    <span class="comment"># '-필드이름' = 필드값 내림차순</span></span><br><span class="line">    ordering = [<span class="string">'site_name'</span>]</span><br><span class="line"> </span><br><span class="line"> <span class="comment"># 모델 클래스가 수정됐다고 해서 항상 migrate해야 하는 것은 아니다.</span></span><br><span class="line"> <span class="comment"># DB에 변경 사항이 반영이 되어야 할 항목들만 migrate를 한다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>admin.py 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># 관리자 페이지에서 관리할 모델을 등록</span></span><br><span class="line"><span class="comment"># 관리자 페이지를 커스터마이징</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 옵션 클래스를 만들어서 추가</span></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Bookmark</span><br><span class="line"></span><br><span class="line">admin.site.register(Bookmark)</span><br><span class="line"></span><br><span class="line"><span class="comment"># admin 계정으로 접속 후, 데이터를 넣어보자.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># context processor 작성</span></span><br><span class="line"><span class="comment"># 모든 페이지(템플릿 파일 전체)에 출력될 내용</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># custom template tag</span></span><br><span class="line"><span class="comment"># -&gt; 템플릿 엔진에서 지원하는 태그 외에, 개발자가 추가로 필요한 기능</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="comment"># 뷰 종류</span></span><br><span class="line"><span class="comment"># 클래스형 뷰, 함수형 뷰는 서로 상호 기능 제약이 거의 없다.</span></span><br><span class="line"><span class="comment"># =&gt; 클래스형 뷰는 함수형 뷰로, 함수형 뷰는 클래스형 뷰로 만들 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 함수형</span></span><br><span class="line"><span class="comment"># CRUDL에 특별한 처리를 추가해야 되는 경우</span></span><br><span class="line"><span class="comment"># 함수형 뷰는 자유도가 클래스형 뷰에 비해서 높다.</span></span><br><span class="line"><span class="comment"># def 뷰이름(request[, 추가 인수]):</span></span><br><span class="line"><span class="comment">#   처리할 내용</span></span><br><span class="line"><span class="comment"># 처리할 코드를 직접 다 개발자가 작성</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 클래스형</span></span><br><span class="line"><span class="comment"># CRUDL에 관련 기능은 자주 사용하기 때문에 장고에서 제네릭</span></span><br><span class="line"><span class="comment"># 클래스형 뷰는 생산성이 함수형 뷰에 비해 높다.</span></span><br><span class="line"><span class="comment"># class 뷰이름(제네릭뷰):</span></span><br><span class="line"><span class="comment">#   처리할 내용</span></span><br><span class="line"><span class="comment"># 제네릭 기능 외에 추가적인 기능을 개발자가 작성</span></span><br><span class="line"><span class="comment"># 메서드 방식 - 커스터마이징에 관련된 메서드를 찾아야 한다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># CRUD_L</span></span><br><span class="line"><span class="keyword">from</span> django.views.generic.list <span class="keyword">import</span> ListView</span><br><span class="line"></span><br><span class="line"><span class="comment"># 클래스형 뷰의 이름은 자유</span></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Bookmark</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.views.generic.edit <span class="keyword">import</span> CreateView, UpdateView, DeleteView</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.views.generic.detail <span class="keyword">import</span> DetailView</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookmarkList</span><span class="params">(ListView)</span>:</span></span><br><span class="line">    model = Bookmark</span><br><span class="line">    <span class="comment"># _list</span></span><br><span class="line">    <span class="comment"># 나중에 반영할 옵션들</span></span><br><span class="line">    <span class="comment"># 템플릿 종류</span></span><br><span class="line">    <span class="comment"># 읽어오는 데이터</span></span><br><span class="line">    <span class="comment"># 페이지네이션을 걸거나</span></span><br><span class="line">    <span class="comment"># 검색 쿼리를 적용하거나</span></span><br><span class="line">    <span class="comment"># 권한 체크</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 뷰를 만들었다면 URL 연결</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># CRUD -&gt; 뷰를 만들고 URL 연결까지</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookmarkCreate</span><span class="params">(CreateView)</span>:</span></span><br><span class="line">    model = Bookmark</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># fields는 사용자가 입력할 모델 필드를 정하는 것</span></span><br><span class="line">    fields = [<span class="string">'site_name'</span>, <span class="string">'url'</span>]</span><br><span class="line">    template_name_suffix = <span class="string">'_create'</span></span><br><span class="line">    <span class="comment"># 템플릿 html 기본 이름을 변경할 수 있음</span></span><br><span class="line">    <span class="comment"># _form에서 _create로 이름 변경</span></span><br><span class="line">    success_url = <span class="string">'/'</span></span><br><span class="line">    <span class="comment"># 추가, 수정, 삭제의 경우 해당 기능을 완료한 후에 이동할 페이지가 필요하다.</span></span><br><span class="line">    <span class="comment"># 1) success_url 이라는 속성값을 지정</span></span><br><span class="line">    <span class="comment"># 2) models에 get_absolute_url 이라는 메소드를 만드는 방법도 있다.</span></span><br><span class="line">       </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookmarkUpdate</span><span class="params">(UpdateView)</span>:</span></span><br><span class="line">    model = Bookmark</span><br><span class="line">    fields = [<span class="string">'site_name'</span>, <span class="string">'url'</span>]</span><br><span class="line">    template_name_suffix = <span class="string">'_update'</span></span><br><span class="line">    <span class="comment"># _form에서 _update로 이름 변경</span></span><br><span class="line">    success_url = <span class="string">'/'</span></span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookmarkDelete</span><span class="params">(DeleteView)</span>:</span></span><br><span class="line">    model = Bookmark</span><br><span class="line">    template_name_suffix = <span class="string">'_delete'</span></span><br><span class="line">    <span class="comment"># _confirm_delete에서 _delete로 이름 변경</span></span><br><span class="line">    success_url = <span class="string">'/'</span></span><br><span class="line">     </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookmarkDetail</span><span class="params">(DetailView)</span>:</span></span><br><span class="line">    model = Bookmark</span><br><span class="line">    <span class="comment"># _detail</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://JINUKK.github.io/2019/04/29/190429-Django-Study/" data-id="cjv257rq60007bfwuz8zm4inp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-190426-Django-Study" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/26/190426-Django-Study/" class="article-date">
@@ -136,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/26/190426-Django-Study/" data-id="cjv2546ua00038hwujn9sb6f3" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/26/190426-Django-Study/" data-id="cjv257rq30005bfwupr0vsdin" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +278,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/25/190425-Django-Study/" data-id="cjv2546uc00048hwu3qov07oh" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/25/190425-Django-Study/" data-id="cjv257rq20004bfwu800qelg4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/24/190424-Django-Study/" data-id="cjv2546ug00068hwuaqea0mh1" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/24/190424-Django-Study/" data-id="cjv257rq00003bfwuj73vmine" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/" data-id="cjv2546ue00058hwu8l6x5jqs" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/" data-id="cjv257rpv0001bfwum7jcnhf8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -494,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/04/22/190422-Django-Study/" data-id="cjv2546tm00008hwugojwjkn7" class="article-share-link">Share</a>
+      <a data-url="http://JINUKK.github.io/2019/04/22/190422-Django-Study/" data-id="cjv257rpp0000bfwu1a8jr1ho" class="article-share-link">Share</a>
       
       
     </footer>
@@ -542,6 +612,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/29/190429-Django-Study/">2019.04.29 Django Study</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/26/190426-Django-Study/">2019.04.26 Django Study</a>
           </li>
         
@@ -555,10 +629,6 @@
         
           <li>
             <a href="/2019/04/23/190423-Django-Study/">2019.04.23 Django Study</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/22/190422-Django-Study/">2019.04.22 Django Study</a>
           </li>
         
       </ul>
