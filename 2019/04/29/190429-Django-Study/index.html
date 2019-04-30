@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="[ Bookmark project ] 프로젝트 생성 장고 설치 1$ pip install django  장고 프로젝트 생성 1django-admin startproject config .  DB 초기화 1$ python manage.py migrate  관리자 계정 생성 1$ python manage.py createsuperuser  기본 앱 생성 1$">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-30T08:39:43.415Z">
+<meta property="og:updated_time" content="2019-04-30T09:29:44.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.04.29 Django Study">
 <meta name="twitter:description" content="[ Bookmark project ] 프로젝트 생성 장고 설치 1$ pip install django  장고 프로젝트 생성 1django-admin startproject config .  DB 초기화 1$ python manage.py migrate  관리자 계정 생성 1$ python manage.py createsuperuser  기본 앱 생성 1$">
@@ -202,7 +202,8 @@
 <li><p>Templete 작성(분기)</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// block문 이용 //--&gt;</span></span><br><span class="line">&#123;% block [블록이름] %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>bookmark_project/layout(폴더 생성)/base.html(‘base’라는 이름은 관례) 생성</p>
+<li>bookmark_project/layout(폴더 생성)/base.html(‘base’라는 이름은 관례) 생성</li>
+<li><p>config/settings.py에 TEMPLATES = [‘DIRS’: [os.path.join(BASE_DIR, ‘layout’)],] 추가</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// base.html //--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;% block title %&#125;&#123;% endblock %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    &#123;% block extra_css %&#125;</span><br><span class="line">    &#123;% endblock %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block extra_script %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>bookmark_project/bookmark/templates/bookmark에 html 생성</p>
@@ -319,7 +320,7 @@ DB 초기화
 
 기본 앱 생성
 1$ "
-        "wordCount": 2327
+        "wordCount": 2333
     }
 </script>
 
