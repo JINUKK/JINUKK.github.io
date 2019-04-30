@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.04.30 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="[ Bookmark project ] Bootstrap 적용 github 업로드 pythonanywhere.com을 이용한 배포   bootstrap 적용하기  base.html에 bootstrap 설치 CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가) 다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.04.30 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/04/30/190430-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="[ Bookmark project ] Bootstrap 적용 github 업로드 pythonanywhere.com을 이용한 배포   bootstrap 적용하기  base.html에 bootstrap 설치 CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가) 다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-04-30T10:49:37.501Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.04.30 Django Study">
+<meta name="twitter:description" content="[ Bookmark project ] Bootstrap 적용 github 업로드 pythonanywhere.com을 이용한 배포   bootstrap 적용하기  base.html에 bootstrap 설치 CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가) 다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190430-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.04.30 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/30/190430-Django-Study/" class="article-date">
+            <time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Bookmark-project"><a href="#Bookmark-project" class="headerlink" title="[ Bookmark project ]"></a>[ Bookmark project ]</h2><ul>
+<li>Bootstrap 적용</li>
+<li>github 업로드</li>
+<li>pythonanywhere.com을 이용한 배포</li>
+</ul>
+<ol>
+<li><p>bootstrap 적용하기</p>
+<ul>
+<li>base.html에 bootstrap 설치<ul>
+<li>CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가)</li>
+<li>다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않아도 됨)</li>
+</ul>
+</li>
+<li>base.html에 레이아웃</li>
+<li><p>각 템플릿 파일에 스타일 적용</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// base.html //--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;% block title %&#125;&#123;% endblock %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">     &#123;% block extra_css %&#125;</span><br><span class="line">     &#123;% endblock %&#125;</span><br><span class="line">     <span class="comment">&lt;!--// CSS 적용 //--&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span> <span class="attr">integrity</span>=<span class="string">"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--// nav bar 적용 //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-expand-lg navbar-light bg-light"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Bookmark<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"navbar-toggler"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span> <span class="attr">data-target</span>=<span class="string">"#navbarText"</span> <span class="attr">aria-controls</span>=<span class="string">"navbarText"</span> <span class="attr">aria-expanded</span>=<span class="string">"false"</span> <span class="attr">aria-label</span>=<span class="string">"Toggle navigation"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"navbar-toggler-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"collapse navbar-collapse"</span> <span class="attr">id</span>=<span class="string">"navbarText"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"navbar-nav mr-auto"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item active"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Home <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>(current)<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Features<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--// create 기능 추가 //--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:create' %&#125;"</span>&gt;</span>Add<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"navbar-text"</span>&gt;</span></span><br><span class="line">     Navbar text with an inline element</span><br><span class="line">     <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment"> bootstrap 적용하기</span></span><br><span class="line"><span class="comment"> 1) base.html에 bootstrap 설치하기</span></span><br><span class="line"><span class="comment"> 1-1) CDN 스크립트로 설치하기 : 리소스 절감효과, 최신버전을 자동 유지, CDN을 사용하면 접속 속도가 증가</span></span><br><span class="line"><span class="comment"> 1-2) 다운로드해서 설치하기 : 커스터마이징 가능, 도메인 넘나들지 않아도 된다.</span></span><br><span class="line"><span class="comment"> 2) base.html에 레이아웃 잡기</span></span><br><span class="line"><span class="comment"> 3) 각 템플릿에 스타일 적용하기</span></span><br><span class="line"><span class="comment"> //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">     &#123;% block content %&#125;</span><br><span class="line">     &#123;% endblock %&#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> &#123;% block extra_script %&#125;</span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"> <span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment"> jQuery Slim 버전은 ajax 기능이 빠져있다.</span></span><br><span class="line"><span class="comment"> min 버전 : 용량을 최소화하 버전 -&gt; 띄어쓰기 생략, 엔터 생략 -&gt; 한줄로 다 되어있어, 수정하기가 힘듬</span></span><br><span class="line"><span class="comment"> beautify : min 버전은 소스코드를 알아보기 힘들기 때문에 beautify해서 다시 보기 좋게 만든다.</span></span><br><span class="line"><span class="comment"> 모든 static 리소스들은 캐시가 걸린다. -&gt; 수정 사항이 바로 반영되지 않는다.</span></span><br><span class="line"><span class="comment"> 1) 웹 서버에서 캐시 타임 조절 : 자주 수정되는 경우 캐시 타임을 확 줄인다. -&gt; 이미 정해진 타임은 조절할 수 없다.</span></span><br><span class="line"><span class="comment"> 2) 스태틱 리소스의 파일명을 변경한다. -&gt; 소스코드 수정이 필요할 수 있다.</span></span><br><span class="line"><span class="comment"> 3) 스태틱 리소스 뒤에 Query String을 붙인다. -&gt; 아예 캐싱이 안되도록 한다.</span></span><br><span class="line"><span class="comment"> //--&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--// JS 적용 //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--// bookmark_list //--&gt;</span></span><br><span class="line"> &#123;% extends 'base.html' %&#125;</span><br><span class="line"> </span><br><span class="line"> &#123;% block title %&#125;</span><br><span class="line"> Bookmark List</span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block content %&#125;</span><br><span class="line"> <span class="comment">&lt;!--// grid system 적용(반응형)  //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 col-xl-8 col-md-4"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:create' %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span>&gt;</span>add Bookmark<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">         &#123;# bookmark 목록 출력하기 #&#125;</span><br><span class="line">         <span class="comment">&lt;!--// table 적용  //--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                     <span class="comment">&lt;!--// table column 항목 //--&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>NB<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>Site Name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>Link<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>Update<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>Delete<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">             <span class="comment">&lt;!--// table 내용 //--&gt;</span></span><br><span class="line">             &#123;% for object in object_list %&#125;</span><br><span class="line">             <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                     <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:detail' object.id %&#125;"</span>&gt;</span>&#123;&#123;object.site_name&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123;object.url&#125;&#125;"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>&#123;&#123;object.url&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                 <span class="comment">&lt;!--// button 적용 //--&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:update' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-light"</span>&gt;</span>수정<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:delete' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span>&gt;</span>삭제<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">             &#123;% endfor %&#125;</span><br><span class="line">             <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--// bookmark_create //--&gt;</span></span><br><span class="line"> &#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block title %&#125;</span><br><span class="line"> Bookmark Create</span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block content %&#125;</span><br><span class="line"> <span class="comment">&lt;!--// grid system 적용(반응형)  //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 col-xl-8"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--// alert 적용 //--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-primary"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">         Please insert bookmark information.</span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">             &#123;% csrf_token %&#125;</span><br><span class="line">             &#123;&#123;form.as_p&#125;&#125;</span><br><span class="line">             <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Create"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--// bookmark_update //--&gt;</span></span><br><span class="line"> &#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block title %&#125;</span><br><span class="line"> Bookmark Update</span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block content %&#125;</span><br><span class="line"> <span class="comment">&lt;!--// grid system 적용(반응형)  //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 col-xl-8"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--// alert 적용 //--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-secondary"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">         Please change bookmark information.</span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">             &#123;% csrf_token %&#125;</span><br><span class="line">             &#123;&#123;form.as_p&#125;&#125;</span><br><span class="line">             <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Update"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--// bookmark_delete //--&gt;</span></span><br><span class="line"> &#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block title %&#125;</span><br><span class="line"> Bookmark Delete</span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block content %&#125;</span><br><span class="line"> <span class="comment">&lt;!--// grid system 적용(반응형)  //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 col-xl-8"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--// alert 적용 //--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-danger"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">         Do you want to delete &#123;&#123;object.url&#125;&#125;?</span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">             &#123;% csrf_token %&#125;</span><br><span class="line">             <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Delete Ok"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!--// bookmark_detail //--&gt;</span></span><br><span class="line"> &#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line"> &#123;% block title %&#125;</span><br><span class="line"> Bookmark Detail</span><br><span class="line"> &#123;% endblock %&#125;</span><br><span class="line">  </span><br><span class="line"> &#123;% block content %&#125;</span><br><span class="line"> <span class="comment">&lt;!--// grid system 적용(반응형)  //--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12 col-xl-8"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!--// cards 적용 //--&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 18rem;"</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>&#123;&#123;object.site_name&#125;&#125;<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">h6</span> <span class="attr">class</span>=<span class="string">"card-subtitle mb-2 text-muted"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123;object.url&#125;&#125;"</span>&gt;</span>&#123;&#123;object.url&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"card-text"</span>&gt;</span>&#123;&#123;object.contents&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                 <span class="comment">&lt;!--// button 적용  //--&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:update' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"card-link btn btn-outline-warning"</span>&gt;</span>수정<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'bookmark:delete' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"card-link btn btn-outline-danger"</span>&gt;</span>삭제<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>models.py에 text를 담기 위해 필드 추가</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bookmark</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    site_name = models.CharField(max_length=<span class="number">50</span>)</span><br><span class="line">    url = models.URLField()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># contents 필드 추가</span></span><br><span class="line">    <span class="comment"># 내용을 아무것도 안 적을 수 있기 때문에 blank=True 적용</span></span><br><span class="line">    contents = models.TextField(blank=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    created = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Site name : "</span>+self.site_name+<span class="string">", URL : "</span>+self.url</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        ordering = [<span class="string">'site_name'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 페이지를 커스터마이징하기 위해 admins.py 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"> <span class="comment"># Register your models here.</span></span><br><span class="line"> <span class="comment"># 관리자 페이지에서 관리할 모델을 등록</span></span><br><span class="line"> <span class="comment"># 관리자 페이지를 커스터마이징</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># 옵션 클래스를 만들어서 추가</span></span><br><span class="line"> <span class="keyword">from</span> .models <span class="keyword">import</span> Bookmark</span><br><span class="line"></span><br><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">BookmarkOptions</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">     list_display = [<span class="string">'id'</span>, <span class="string">'site_name'</span>, <span class="string">'url'</span>]</span><br><span class="line">     <span class="comment"># list_editable = ['site_name', 'url']</span></span><br><span class="line">     <span class="comment"># list_filter = ['url'] # 대부분 DateTime 필드가 있을 경우 많이 사용</span></span><br><span class="line">     search_fields = [<span class="string">'site_name'</span>, <span class="string">'url'</span>] <span class="comment"># ForeignKey 필드 값 같이  다른 테이블을 참조하는 항목은 X</span></span><br><span class="line">     <span class="comment"># raw_id_fields : 선택값 -&gt; 입력값</span></span><br><span class="line">     <span class="comment"># 관리자 페이지에 커스텀 페이지 추가</span></span><br><span class="line">     <span class="comment"># 관리자 페이지에 action 추가</span></span><br><span class="line"></span><br><span class="line"> admin.site.register(Bookmark, BookmarkOptions)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>github 업로드</p>
+<ul>
+<li>github 계정에서 Repository를 생성한다.</li>
+<li>아무것도 추가 생성하지 않는다.(.gitignore, license)</li>
+<li>pycharm 프로젝트로 돌아온다.</li>
+<li><p>의존성 리스트를 생성하지 않았다면 생성하도록 한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.gitignore 파일을 생성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bookmark_project/.gitignore</span></span><br><span class="line"><span class="comment"># .gitignore 파일 내용</span></span><br><span class="line">*.pyc</span><br><span class="line"> *~</span><br><span class="line"> /venv</span><br><span class="line"> __pycache__</span><br><span class="line"> db.sqlite3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>현재 프로젝트를 다음과 같은 순서로 github에 업로드한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"></span><br><span class="line">$ git add -A .</span><br><span class="line"></span><br><span class="line">$ git commit -m <span class="string">"first commit"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># github에 만든 프로젝트의 주소를 가져옴</span></span><br><span class="line">$ git remote add origin https://github.com/JINUKK/Bookmark.git</span><br><span class="line"></span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>pythonanywhere.com을 이용한 배포</p>
+<ul>
+<li>계정 생성 후, bash 진입</li>
+<li><p>다음과 같은 순서로 github에 업로드한 프로젝트를 가져온다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/JINUKK/Bookmark.git</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> Bookmark/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 가상 환경 적용</span></span><br><span class="line">$ virtualenv --python=python3.7 venv</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">source</span> venv/bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 의존성 리스트를 불러옴</span></span><br><span class="line">$ pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line">$ python manage.py migrate</span><br><span class="line"></span><br><span class="line">$ python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>bash 페이지에서 오른쪽 상단에 Web 페이지 열기</p>
+</li>
+<li>Wep app 시작하기(Manual Configuration 및 python3.7 선택)</li>
+<li>Virtualenv 항목에서 경로 지정<ul>
+<li>bash 페이지에서 pwd 명령어를 이용하여 경로 보기</li>
+<li>/home/[pythonanywhere-id]/Bookmark/venv</li>
+</ul>
+</li>
+<li><p>Code 항목에서 WSGI configuration file 수정</p>
+<ul>
+<li>pycharm 프로젝트에서 config/wsgi.py 내용으로 변경</li>
+<li>CSS를 다루기 위해 StaticFilesHandler도 추가<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">path=<span class="string">'/home/pythonanywhere-id/Bookmark'</span></span><br><span class="line"><span class="keyword">if</span> path <span class="keyword">not</span> <span class="keyword">in</span> sys.path:</span><br><span class="line">    sys.path.append(path)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.core.wsgi <span class="keyword">import</span> get_wsgi_application</span><br><span class="line"><span class="keyword">from</span> django.contrib.staticfiles.handlers <span class="keyword">import</span> StaticFilesHandler</span><br><span class="line"></span><br><span class="line">os.environ.setdefault(<span class="string">'DJANGO_SETTINGS_MODULE'</span>, <span class="string">'config.settings'</span>)</span><br><span class="line"></span><br><span class="line">application = StaticFilesHandler(get_wsgi_application())</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>pycharm 프로젝트로 돌아와서 settings.py를 다음과 같이 수정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DEBUG = <span class="literal">False</span> <span class="comment"># 디버그를 보여줌. 사용자 입장에서는 안보이게 False로 처리</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">'.pythonanywhere.com'</span>,<span class="string">'localhost'</span>,<span class="string">'127.0.0.1'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git에 add, commit, push를 진행한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A .</span><br><span class="line"></span><br><span class="line">$ git commit -m <span class="string">"second commit"</span></span><br><span class="line"></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pythonanywhere의 bash로 돌아와서 git pull을 진행한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Reload id.pythonanywhere.com을 진행한 후, 사이트에 접속해본다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/04/30/190430-Django-Study/" data-id="cjv3o6kan000c10wumoy093a8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.04.30 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-04-30",
+        "dateCreated": "2019-04-30",
+        "dateModified": "2019-04-30",
+        "url": "http://JINUKK.github.io/2019/04/30/190430-Django-Study/",
+        "description": "[ Bookmark project ]
+Bootstrap 적용
+github 업로드
+pythonanywhere.com을 이용한 배포
+
+
+bootstrap 적용하기
+
+base.html에 bootstrap 설치
+CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가)
+다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않"
+        "wordCount": 3462
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/04/29/190429-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.04.29 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/26/190426-Django-Study/" class="title">2019.04.26 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-26T08:49:31.000Z" itemprop="datePublished">2019-04-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/25/190425-Django-Study/" class="title">2019.04.25 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-25T08:49:18.000Z" itemprop="datePublished">2019-04-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/24/190424-Django-Study/" class="title">2019.04.24 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-24T08:49:05.000Z" itemprop="datePublished">2019-04-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/04/30/190430-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
