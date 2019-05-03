@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.03 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="[ Dstargram project ] 저장한 페이지 목록 불러오기  models.py 수정 12345678class Photo(models.Model):# save라는 변수를 사용하면 안되는 이유# 예약어를 필드명을 사용하면 안된다.# save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.# favorite로 수정# makemigrations 및 m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.03 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/03/190503-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="[ Dstargram project ] 저장한 페이지 목록 불러오기  models.py 수정 12345678class Photo(models.Model):# save라는 변수를 사용하면 안되는 이유# 예약어를 필드명을 사용하면 안된다.# save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.# favorite로 수정# makemigrations 및 m">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-03T12:41:31.335Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.03 Django Study">
+<meta name="twitter:description" content="[ Dstargram project ] 저장한 페이지 목록 불러오기  models.py 수정 12345678class Photo(models.Model):# save라는 변수를 사용하면 안되는 이유# 예약어를 필드명을 사용하면 안된다.# save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.# favorite로 수정# makemigrations 및 m">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190503-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.03 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/03/190503-Django-Study/" class="article-date">
+            <time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Dstargram-project"><a href="#Dstargram-project" class="headerlink" title="[ Dstargram project ]"></a>[ Dstargram project ]</h2><ul>
+<li><p>저장한 페이지 목록 불러오기</p>
+<ul>
+<li><p>models.py 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Photo</span><span class="params">(models.Model)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># save라는 변수를 사용하면 안되는 이유</span></span><br><span class="line"><span class="comment"># 예약어를 필드명을 사용하면 안된다.</span></span><br><span class="line"><span class="comment"># save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.</span></span><br><span class="line"><span class="comment"># favorite로 수정</span></span><br><span class="line"><span class="comment"># makemigrations 및 migrate 적용</span></span><br><span class="line">favorite = models.ManyToManyField(User, related_name=<span class="string">'save_post'</span>, blank=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"></span><br><span class="line"><span class="comment"># 뷰를 실행하기 전에 특정한 로직을 추가로 실행하고 싶다면?</span></span><br><span class="line"><span class="comment"># 로그인 여부, csrf 체크를 수행할 것인가?</span></span><br><span class="line"><span class="comment"># 믹스인 : 클래스형 뷰</span></span><br><span class="line"><span class="comment"># 데코레이터 : 함수형 뷰</span></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.mixins <span class="keyword">import</span> LoginRequiredMixin</span><br><span class="line"><span class="comment"># LoginRequiredMixin : 로그인을 해야만 실행할 수 있게 해준다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 로그인되지 않았다면 로그인할 수 있는 페이지로 갈 수 있게 수정</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoList</span><span class="params">(ListView)</span>:</span></span><br><span class="line">model = Photo</span><br><span class="line">template_name = <span class="string">'photo/photo_list.html'</span>  <span class="comment"># 파일 이름 전체를 지정</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dispatch</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> request.user.is_authenticated:</span><br><span class="line">        <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'accounts:signin'</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> super(PhotoList, self).dispatch(request, *args, **kwargs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># models.py의 필드에서 설정한 related_name을 통해 쉽게 해당 리스트를 불러옴</span></span><br><span class="line"><span class="comment"># get_queryset()을 통해 반환</span></span><br><span class="line"><span class="comment"># 좋아요를 한 페이지 목록 불러오기</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoLikeList</span><span class="params">(LoginRequiredMixin, ListView)</span>:</span></span><br><span class="line">    model = Photo</span><br><span class="line">    template_name = <span class="string">'photo/photo_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 로그인한 유저가 좋아요를 클릭한 글을 찾아서 반환</span></span><br><span class="line">        user = self.request.user</span><br><span class="line">        queryset = user.like_post.all()</span><br><span class="line">        <span class="keyword">return</span> queryset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 저장한 페이지 목록 불러오기</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoSaveList</span><span class="params">(LoginRequiredMixin, ListView)</span>:</span></span><br><span class="line">    model = Photo</span><br><span class="line">    template_name = <span class="string">'photo/photo_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        user = self.request.user</span><br><span class="line">        queryset = user.save_post.all()</span><br><span class="line">        <span class="keyword">return</span> queryset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 로그인한 유저가 작성한 페이지 목록 불러오기</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoMyPageList</span><span class="params">(LoginRequiredMixin, ListView)</span>:</span></span><br><span class="line">    Model = Photo</span><br><span class="line">    template_name = <span class="string">'photo/photo_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        user = self.request.user</span><br><span class="line">        queryset = user.photos.all()</span><br><span class="line">        <span class="keyword">return</span> queryset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 좋아요와 저장을 하는 버튼은 리스트 페이지와 디테일 페이지에서 모두 가능하다.</span></span><br><span class="line"><span class="comment"># 좋아요와 저장을 눌러도 해당 페이지에서 계속 머물러야 하기 때문에 경로 부분을 수정한다.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoLike</span><span class="params">(View)</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> request.user.is_authenticated:</span><br><span class="line">        <span class="keyword">return</span> HttpResponseForbidden()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'photo_id'</span> <span class="keyword">in</span> kwargs:</span><br><span class="line">            photo_id = kwargs[<span class="string">'photo_id'</span>]</span><br><span class="line">            photo = Photo.objects.get(pk=photo_id)</span><br><span class="line">            user = request.user</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> user <span class="keyword">not</span> <span class="keyword">in</span> photo.like.all():</span><br><span class="line">                photo.like.add(user)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                photo.like.remove(user)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 수정한 부분</span></span><br><span class="line">        <span class="comment"># 도메인 주소 필요없이 경로만 필요하다.</span></span><br><span class="line">        referer_url = request.META.get(<span class="string">'HTTP_REFERER'</span>)</span><br><span class="line">        path = urlparse(referer_url).path</span><br><span class="line">        <span class="keyword">return</span> HttpResponseRedirect(path)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PhotoSave</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> request.user.is_authenticated:</span><br><span class="line">            <span class="keyword">return</span> HttpResponseForbidden()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'photo_id'</span> <span class="keyword">in</span> kwargs:</span><br><span class="line">                photo_id = kwargs[<span class="string">'photo_id'</span>]</span><br><span class="line">                photo = Photo.objects.get(pk=photo_id)</span><br><span class="line">                user = request.user</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> user <span class="keyword">not</span> <span class="keyword">in</span> photo.favorite.all():</span><br><span class="line">                    photo.favorite.add(user)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    photo.favorite.remove(user)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 수정한 부분</span></span><br><span class="line">            referer_url = request.META.get(<span class="string">'HTTP_REFERER'</span>)</span><br><span class="line">            path = urlparse(referer_url).path</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(path)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 로그인 페이지로 이동할 수 있도록 경로 지정</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse_lazy</span><br><span class="line">LOGIN_URL = reverse_lazy(<span class="string">'accounts:signin'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>photo/urls.py 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"></span><br><span class="line"><span class="comment"># 좋아요와 저장한 페이지 목록을 가져오기 위해 모듈 추가</span></span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> PhotoList, PhotoCreate, PhotoUpdate, PhotoDelete, PhotoDetail, \</span><br><span class="line">    PhotoLike, PhotoLikeList, PhotoSave, PhotoSaveList, PhotoMyPageList</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">'photo'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 경로 추가</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'like/&lt;int:photo_id&gt;/'</span>, PhotoLike.as_view(), name=<span class="string">'like'</span>),</span><br><span class="line">    path(<span class="string">'save/&lt;int:photo_id&gt;/'</span>, PhotoSave.as_view(), name=<span class="string">'save'</span>),</span><br><span class="line">    path(<span class="string">'like/'</span>, PhotoLikeList.as_view(), name=<span class="string">'like_list'</span>),</span><br><span class="line">    path(<span class="string">'save/'</span>, PhotoSaveList.as_view(), name=<span class="string">'save_list'</span>),</span><br><span class="line">    path(<span class="string">'mypage/'</span>, PhotoMyPageList.as_view(), name=<span class="string">'mypage_list'</span>),</span><br><span class="line">    path(<span class="string">''</span>, PhotoList.as_view(), name = <span class="string">'index'</span>),</span><br><span class="line">    path(<span class="string">'create/'</span>, PhotoCreate.as_view(), name = <span class="string">'create'</span>),</span><br><span class="line">    path(<span class="string">'update/&lt;int:pk&gt;'</span>, PhotoUpdate.as_view(), name = <span class="string">'update'</span>),</span><br><span class="line">    path(<span class="string">'delete/&lt;int:pk&gt;'</span>, PhotoDelete.as_view(), name = <span class="string">'delete'</span>),</span><br><span class="line">    path(<span class="string">'detail/&lt;int:pk&gt;'</span>, PhotoDetail.as_view(), name = <span class="string">'detail'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>templates 수정</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// </span></span><br><span class="line"><span class="comment">MyPage, Like, Saved 추가</span></span><br><span class="line"><span class="comment">중요한건 로그인한 상태에서만 보이기 위해 조건문 이용</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line">   &#123;% if user.is_authenticated %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:mypage_list' %&#125;"</span>&gt;</span>MyPage<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:like_list' %&#125;"</span>&gt;</span>Like<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:save_list' %&#125;"</span>&gt;</span>Saved<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'accounts:signin' %&#125;"</span>&gt;</span>Sign-in<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Sign-up<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// 스크립트 부분 주석 처리//--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function() &#123;</span></span><br><span class="line"><span class="undefined">$('.btn-like').click(function(e) &#123;</span></span><br><span class="line"><span class="undefined">    //e.preventDefault();</span></span><br><span class="line"><span class="undefined">    //$(this).toggleClass('active');</span></span><br><span class="line"><span class="undefined">    //$(this).blur();</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">$('.btn-save').click(function(e) &#123;</span></span><br><span class="line"><span class="undefined">    //e.preventDefault();</span></span><br><span class="line"><span class="undefined">    //$(this).toggleClass('active');</span></span><br><span class="line"><span class="undefined">    //$(this).blur();</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment"> photo_list.html</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> 좋아요가 눌린 수를 출력하기 위해 수정 </span></span><br><span class="line"><span class="comment"> //--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:like' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"float-left btn-like &#123;% if user in object.like.all %&#125; active &#123;% endif %&#125;"</span>&gt;</span>Like<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// 좋아요가 눌린 수 출력 //--&gt;</span></span><br><span class="line">&#123;% if object.like.all.count %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"float-left badge badge-danger"</span> <span class="attr">style</span>=<span class="string">"margin-left:0.5em;"</span>&gt;</span></span><br><span class="line">    &#123;&#123;object.like.all.count&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:save' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"float-right btn-save &#123;% if user in object.favorite.all %&#125; active &#123;% endif %&#125;"</span>&gt;</span>Save<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// </span></span><br><span class="line"><span class="comment">photo_detail.html</span></span><br><span class="line"><span class="comment">디테일 페이지도 리스트 페이지와 같으므로 같게 수정</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:like' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"float-left btn-like &#123;% if user in object.like.all %&#125; active &#123;% endif %&#125;"</span>&gt;</span>Like<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// 좋아요가 눌린 수 출력 //--&gt;</span></span><br><span class="line">&#123;% if object.like.all.count %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"float-left badge badge-danger"</span> <span class="attr">style</span>=<span class="string">"margin-left:0.5em;"</span>&gt;</span></span><br><span class="line">    &#123;&#123;object.like.all.count&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'photo:save' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"float-right btn-save &#123;% if user in object.favorite.all %&#125; active &#123;% endif %&#125;"</span>&gt;</span>Save<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>팔로우 기능 추가하기</p>
+<ul>
+<li><p>models.py 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="comment"># 중간 모델 착성</span></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Follow</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="comment"># 2개 필드 = ForeignKey</span></span><br><span class="line">    <span class="comment"># A가 B를 팔ㄹ우 하고 있다.</span></span><br><span class="line">    <span class="comment"># on_delete = 연관된 객체가 삭제된다면 어떻게 할 것인가?</span></span><br><span class="line">    <span class="comment"># related_name은 참조 객체의 입장에서 필드명, 속성값</span></span><br><span class="line">    me = models.ForeignKey(User, on_delete=models.CASCADE, related_name=<span class="string">'following'</span>) <span class="comment"># 내가 팔로잉한 사람들</span></span><br><span class="line">    you = models.ForeignKey(User, on_delete=models.CASCADE, related_name=<span class="string">'follower'</span>) <span class="comment"># 나를 팔로워한 사람들</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__Str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.me.username + <span class="string">" follow "</span> + self.you.username</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>admin.py 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"></span><br><span class="line"><span class="comment"># Register your models here.</span></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span>  Follow</span><br><span class="line"></span><br><span class="line"><span class="comment"># 옵션 추가</span></span><br><span class="line"><span class="comment"># raw_id_fields 적용</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FollowOption</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line"></span><br><span class="line">    list_display = [<span class="string">'id'</span>,<span class="string">'me'</span>,<span class="string">'you'</span>]</span><br><span class="line">    raw_id_fields = [<span class="string">'me'</span>, <span class="string">'you'</span>]</span><br><span class="line"></span><br><span class="line">admin.site.register(Follow, FollowOption)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"></span><br><span class="line"><span class="comment"># 유저 목록이 출력되는 뷰</span></span><br><span class="line"><span class="comment"># + Follow라는 기능 추가</span></span><br><span class="line"><span class="comment"># 중간 테이블을 직접 생성 - 모델</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 유저 모델을 커스터마이징해야 한다. -&gt; 1. 커스터마이징 하는 방법을 배운다.</span></span><br><span class="line"><span class="comment"># 확장하는 방법에 따라서</span></span><br><span class="line"><span class="comment"># 1) 새로운 유저 모델을 만드는 방법 - 기존 유저 데이터를 유지할 수가 없다.</span></span><br><span class="line"><span class="comment"># 2) 기존 모델을 확장하는 방법 - DB 다운 타임 alter table을 하면 table lock이 걸린다.</span></span><br><span class="line"><span class="comment"># -&gt; 두 방법 다 운영하는 중간 입장에서는 위험한 방법이다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 유저 모델(나)</span></span><br><span class="line"><span class="comment"># 나를 팔로우한 사람 필드</span></span><br><span class="line"><span class="comment"># 내가 팔로우한 사람 필드</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 하지만 커스터마이징 할 수 없다면?</span></span><br><span class="line"><span class="comment"># 새로운 모델을 추가하는 방법</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 사진 모델</span></span><br><span class="line"><span class="comment"># 사진을 좋아요한 사람 필드</span></span><br><span class="line"><span class="comment"># 사진을 저장한 사람 필드</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">팔로우 기능 구현</span></span><br><span class="line"><span class="string">1. 유저 목록 혹은 유저 프로필에서 팔로우 버튼</span></span><br><span class="line"><span class="string">1-1. 전체 유저 목록을 출력하는 뷰 - User 모델에 대한 ListView</span></span><br><span class="line"><span class="string">2. 팔로우 정보를 저장하는 뷰</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.views.generic.list <span class="keyword">import</span> ListView</span><br><span class="line"><span class="keyword">from</span> django.views.generic.base <span class="keyword">import</span> View</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseRedirect</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponseForbidden</span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> messages</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> redirect</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.mixins <span class="keyword">import</span> LoginRequiredMixin</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Follow</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserList</span><span class="params">(ListView)</span>:</span></span><br><span class="line">    model = User</span><br><span class="line">    template_name = <span class="string">'accounts/user_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dispatch</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> request.user.is_authenticated:</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(reverse(<span class="string">'accounts:signin'</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> super(UserList, self).dispatch(request, *args, **kwargs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get_queryset()을 통해 반환되는 object는 Follow object이다.</span></span><br><span class="line"><span class="comment"># 그래서 user object의 정보를 가져오지 않아 화면에 출력이 되지 않았다.</span></span><br><span class="line"><span class="comment"># 따라서 리스트에 user object를 받아 넘겼다.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FollowerList</span><span class="params">(LoginRequiredMixin, ListView)</span>:</span></span><br><span class="line">    Model = User</span><br><span class="line">    template_name = <span class="string">'accounts/user_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        user = self.request.user</span><br><span class="line">        queryset = user.follower.all()</span><br><span class="line">        user_list = []</span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> queryset:</span><br><span class="line">            user_list.append(idx.me)</span><br><span class="line">        <span class="keyword">return</span> user_list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 위와 같은 방법</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FollowingList</span><span class="params">(LoginRequiredMixin, ListView)</span>:</span></span><br><span class="line">    Model = User</span><br><span class="line">    template_name = <span class="string">'accounts/user_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        user = self.request.user</span><br><span class="line">        queryset = user.following.all()</span><br><span class="line">        user_list = []</span><br><span class="line">        <span class="keyword">for</span> idx <span class="keyword">in</span> queryset:</span><br><span class="line">            user_list.append(idx.you)</span><br><span class="line">        <span class="keyword">return</span> user_list</span><br><span class="line"></span><br><span class="line"><span class="comment"># user_id를 받아와서 filter를 통해 로그인한 유저가 팔로우한 대상을 찾아냄</span></span><br><span class="line"><span class="comment"># 있다면 언팔로우를, 있다면 팔로우를 함</span></span><br><span class="line"><span class="comment"># 나 자신을 팔로우할 수 없게 조건문 적용</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FollowButton</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, request, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> request.user.is_authenticated:</span><br><span class="line">            <span class="keyword">return</span> HttpResponseForbidden()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="string">'user_id'</span> <span class="keyword">in</span> kwargs:</span><br><span class="line">                user_id = kwargs[<span class="string">'user_id'</span>]</span><br><span class="line">                follow_user = User.objects.get(pk=user_id)</span><br><span class="line">                login_user = request.user</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> login_user == follow_user:</span><br><span class="line">                    follow_filter = Follow.objects.filter(me=login_user, you=follow_user)</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span> follow_filter:</span><br><span class="line">                        follow_filter[<span class="number">0</span>].delete()</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        Follow(me=login_user, you=follow_user).save()</span><br><span class="line"></span><br><span class="line">            referer_url = request.META.get(<span class="string">'HTTP_REFERER'</span>)</span><br><span class="line">            path = urlparse(referer_url).path</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(path)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>accounts/urls.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.views <span class="keyword">import</span> LoginView, LogoutView</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 추가</span></span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> UserList, FollowerList, FollowingList, FollowButton</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">'accounts'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 경로 추가</span></span><br><span class="line"><span class="comment"># 팔로우 버튼은 user_id를 받음</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'user/list/'</span>, UserList.as_view(), name=<span class="string">'user_list'</span>),</span><br><span class="line">    path(<span class="string">'follow/&lt;int:user_id&gt;/'</span>, FollowButton.as_view(), name=<span class="string">'follow_button'</span>),</span><br><span class="line">    path(<span class="string">'follower/list/'</span>, FollowerList.as_view(), name=<span class="string">'follower_list'</span>),</span><br><span class="line">    path(<span class="string">'following/list/'</span>, FollowingList.as_view(), name=<span class="string">'following_list'</span>),</span><br><span class="line">    path(<span class="string">'singin/'</span>, LoginView.as_view(template_name=<span class="string">'accounts/signin.html'</span>), name=<span class="string">'signin'</span>),</span><br><span class="line">    path(<span class="string">'signout/'</span>, LogoutView.as_view(template_name=<span class="string">'accounts/signout.html'</span>), name=<span class="string">'signout'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>templates 작성</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// user_list.html //--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Photo Create</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--// 유저 목록을 테이블로 적용 //--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">"table-light"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>username<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>name<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>follower<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>following<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">scope</span>=<span class="string">"col"</span>&gt;</span>button<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">            &#123;% for object in object_list %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.username&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.firstname&#125;&#125; &#123;&#123;object.lastname&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.follower.all.count&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.following.all.count&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'accounts:follow_button' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-xs btn-sm btn-primary"</span>&gt;</span>Follow<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>커스텀 템플릿 필터 사용하여 버튼 이름 변경하기</p>
+<ul>
+<li>팔로우일 때는 언팔로우 버튼이 표시되도록 한다.</li>
+<li>팔로우가 아닐 때는 팔로우 버튼이 표시되도록 한다.</li>
+<li>해당 앱 폴더에서 templatetags 폴더를 생성한다.</li>
+<li>templatetags 폴더 안에 <strong>init</strong>.py를 생성한다.(파이썬 패키지라는 것을 명시)</li>
+<li><p>소스 파일을 생성해서 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># follow_filter.py</span></span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> template</span><br><span class="line"></span><br><span class="line">register = template.Library()</span><br><span class="line"></span><br><span class="line"><span class="comment"># index라는 매개변수에 object를 받음</span></span><br><span class="line"><span class="comment"># 현재 object의 유저를 팔로워한 유저들을 user__list로 반환</span></span><br><span class="line"><span class="meta">@register.filter</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">follow_filter</span><span class="params">(index)</span>:</span></span><br><span class="line">    user_list = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> index.follower.all():</span><br><span class="line">        user_list.append(idx.me)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> user_list</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>templates 파일을 수정한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">user_list.html</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">작성한 모듈 로드 : follow_filter.py</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line">&#123;% load follow_filter %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// </span></span><br><span class="line"><span class="comment">팔로워한 유저 목록안에 지금 로그인한 유저가 있다면 UnFollow 버튼을,</span></span><br><span class="line"><span class="comment">그렇지 않다면 Follow 버튼으로 보이도록 조건문을 추가한다.</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'accounts:follow_button' object.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-xs btn-sm btn-primary"</span>&gt;</span></span><br><span class="line">&#123;% if user in object|follow_filter %&#125; </span><br><span class="line">Unfollow </span><br><span class="line">&#123;% else %&#125; </span><br><span class="line">Follow </span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/03/190503-Django-Study/" data-id="cjv82i1ji000b3hwuzt1mwe1g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.03 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-03",
+        "dateCreated": "2019-05-03",
+        "dateModified": "2019-05-03",
+        "url": "http://JINUKK.github.io/2019/05/03/190503-Django-Study/",
+        "description": "[ Dstargram project ]
+저장한 페이지 목록 불러오기
+
+models.py 수정
+12345678class Photo(models.Model):# save라는 변수를 사용하면 안되는 이유# 예약어를 필드명을 사용하면 안된다.# save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.# favorite로 수정# makemigrations 및 m"
+        "wordCount": 4070
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/02/190502-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.02 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/03/190503-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
