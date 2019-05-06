@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.03.06 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="프로그래머가 하는일 - 추상화(abstraction) 절차 지향  procedure, procedural oriented  절치 지향보다는 프로시져 지향이라고 하는 것이 맞다.    객체 지향  OOP(Object-Oriented Programming)   인터페이스(interface)와 구현(implementation)  interface  functio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.03.06 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/06/190306-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="프로그래머가 하는일 - 추상화(abstraction) 절차 지향  procedure, procedural oriented  절치 지향보다는 프로시져 지향이라고 하는 것이 맞다.    객체 지향  OOP(Object-Oriented Programming)   인터페이스(interface)와 구현(implementation)  interface  functio">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T14:49:50.677Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.03.06 Python and CE Study">
+<meta name="twitter:description" content="프로그래머가 하는일 - 추상화(abstraction) 절차 지향  procedure, procedural oriented  절치 지향보다는 프로시져 지향이라고 하는 것이 맞다.    객체 지향  OOP(Object-Oriented Programming)   인터페이스(interface)와 구현(implementation)  interface  functio">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190306-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.03.06 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/06/190306-PCE-Study/" class="article-date">
+            <time datetime="2019-03-06T14:42:19.000Z" itemprop="datePublished">2019-03-06</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="프로그래머가-하는일-추상화-abstraction"><a href="#프로그래머가-하는일-추상화-abstraction" class="headerlink" title="프로그래머가 하는일 - 추상화(abstraction)"></a>프로그래머가 하는일 - 추상화(abstraction)</h2><ul>
+<li><p>절차 지향</p>
+<ul>
+<li><p>procedure, procedural oriented</p>
+</li>
+<li><p>절치 지향보다는 프로시져 지향이라고 하는 것이 맞다.</p>
+</li>
+</ul>
+</li>
+<li><p>객체 지향</p>
+<ul>
+<li>OOP(Object-Oriented Programming)</li>
+</ul>
+</li>
+<li><p>인터페이스(interface)와 구현(implementation)</p>
+<ol>
+<li><p>interface</p>
+<ul>
+<li><p>function signature</p>
+</li>
+<li><p>사용자들에게 제공(사용법만 알면 함수를 사용 가능하도록 함)</p>
+</li>
+</ul>
+</li>
+<li><p>implementation</p>
+<ul>
+<li><p>함수를 직접 만들기(내부 구현)</p>
+</li>
+<li><p>함수 이름은 기능을 명확하게 표현해야 함</p>
+</li>
+<li><p>매개 변수는 어떻게 설계하고 무엇을 인자로 받을 것인지 생각해야 함</p>
+</li>
+<li><p>결과 값으로 어떤 결과를 반환할 것인지 생각해야 함</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">func(integer, integer) -&gt; integer</span></span><br><span class="line"><span class="string">두 값을 인자로 받고</span></span><br><span class="line"><span class="string">결과는 그 두 값을 더한 값</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ctrl + ]를 사용하면 indent됨(범위를 지정하여 사용 가능)</p>
+</li>
+<li><p>함수 안에 “”” “”” 사이에 함수 설명을 넣을 수 있음</p>
+</li>
+<li><p>‘-&gt;’에는 반환되는 자료형을 써주는 것이 좋음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">help(func)</span><br><span class="line">&gt;&gt; Help on function func <span class="keyword">in</span> module __main__:</span><br><span class="line"></span><br><span class="line">   func(a, b)</span><br><span class="line">       func(integer, integer) -&gt; integer</span><br><span class="line">       두 값을 인자로 받고</span><br><span class="line">       결과는 그 두 값을 더한 값</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사용자 입력 받기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">input_data = input(<span class="string">"무엇이든 입력하세요 : "</span>)</span><br><span class="line">&gt;&gt; 무엇이든 입력하세요 : 여기에 입력</span><br><span class="line"></span><br><span class="line">type(input_data)</span><br><span class="line">&gt;&gt; str</span><br><span class="line"></span><br><span class="line">data = int(input(<span class="string">"숫자를 입력하세요 : "</span>))  <span class="comment"># int형변환</span></span><br><span class="line">&gt;&gt; 숫자를 입력하세요 : <span class="number">1</span></span><br><span class="line"></span><br><span class="line">type(data)</span><br><span class="line">&gt;&gt; int</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Coding-Practice"><a href="#Coding-Practice" class="headerlink" title="Coding Practice"></a>Coding Practice</h2><ul>
+<li><p>가위바위보 게임</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_player_choice</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_player_choice() -&gt; string</span></span><br><span class="line"><span class="string">    string : &#123;'바위', '가위', '보'&#125;</span></span><br><span class="line"><span class="string">    결과값이 위 세 값 중에 하나임을 보장한다.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    player = input(<span class="string">"바위, 가위, 보 중에 한 가지를 입력하세요 : "</span>)</span><br><span class="line">    <span class="keyword">while</span> player != <span class="string">'바위'</span> <span class="keyword">and</span> player != <span class="string">'가위'</span> <span class="keyword">and</span> player != <span class="string">'보'</span> :</span><br><span class="line">        player = input(<span class="string">'다시 입력하세요 : '</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># while문에 직접 조건을 넣음 </span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> player</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment"># 0 --&gt; '바위'</span></span><br><span class="line"><span class="comment"># 1 --&gt; '가위'</span></span><br><span class="line"><span class="comment"># 2 --&gt; '보'</span></span><br><span class="line"><span class="comment"># random 내장 함수를 이용하기 위해 import로 random 모듈을 불러옴</span></span><br><span class="line"><span class="comment"># Tuple 이용</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_computer_choice</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_computer_choice() -&gt; string</span></span><br><span class="line"><span class="string">    string = &#123;'바위', '가위', '보'&#125;</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    choice_tu = (<span class="string">'바위'</span>, <span class="string">'가위'</span>, <span class="string">'보'</span>)</span><br><span class="line">    computer = choice_tu[random.randint(<span class="number">0</span>,<span class="number">2</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 정수형 랜덤 숫자를 받음</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> computer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">who_wins</span><span class="params">(player, computer)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    who_wins(player, computer) -&gt; string</span></span><br><span class="line"><span class="string">    string = &#123;'player', 'computer', 'draw'&#125;</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> player == <span class="string">'바위'</span>:</span><br><span class="line">        <span class="keyword">if</span> computer == <span class="string">'바위'</span>:</span><br><span class="line">            winner = <span class="string">'draw'</span></span><br><span class="line">        <span class="keyword">elif</span> computer == <span class="string">'가위'</span>:</span><br><span class="line">            winner = <span class="string">'player'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            winner = <span class="string">'computer'</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">elif</span> player == <span class="string">'가위'</span>:</span><br><span class="line">        <span class="keyword">if</span> computer == <span class="string">'바위'</span>:</span><br><span class="line">            winner = <span class="string">'computer'</span></span><br><span class="line">        <span class="keyword">elif</span> computer == <span class="string">'가위'</span>:</span><br><span class="line">            winner = <span class="string">'draw'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            winner = <span class="string">'player'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> computer == <span class="string">'바위'</span>:</span><br><span class="line">            winner = <span class="string">'player'</span></span><br><span class="line">        <span class="keyword">elif</span> computer == <span class="string">'가위'</span>:</span><br><span class="line">            winner = <span class="string">'computer'</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            winner = <span class="string">'draw'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> winner</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">play_one</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    play_one() -&gt; string</span></span><br><span class="line"><span class="string">    string = &#123;'player', 'computer', 'draw'&#125;</span></span><br><span class="line"><span class="string">    한 판에 대해서</span></span><br><span class="line"><span class="string">    플레이어가 이기면 "플레이어 승" 출력</span></span><br><span class="line"><span class="string">    컴퓨터가 이기면 "컴퓨터 승" 출력</span></span><br><span class="line"><span class="string">    비기면 "무승부" 출력</span></span><br><span class="line"><span class="string">    무승부가 나면 둘 중에 한 명이 이길 때까지 반복</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        player = get_player_choice()</span><br><span class="line">        computer = get_computer_choice()</span><br><span class="line">        winner = who_wins(player, computer)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> winner == <span class="string">'player'</span>:</span><br><span class="line">            print(<span class="string">'플레이어 승!'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'player'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> winner == <span class="string">'computer'</span>:</span><br><span class="line">            print(<span class="string">'컴퓨터 승!'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'computer'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'무승부'</span>)</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># pass는 실행할 것이 아무것도 없다는 의미</span></span><br><span class="line">        <span class="comment"># pass는 아무런 동작을 하지 않고 다음 코드를 실행</span></span><br><span class="line">        <span class="comment"># continue는 다음 순번의 loop를 실행</span></span><br><span class="line">        <span class="comment"># pass와 continue의 차이 알기</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">play</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            user_num_games = int(input(<span class="string">"1: 3판2선승, 2: 5판3선승: "</span>))</span><br><span class="line">            <span class="keyword">if</span> user_num_games != <span class="number">1</span> <span class="keyword">and</span> user_num_games != <span class="number">2</span>:</span><br><span class="line">                print(<span class="string">"1 또는 2의 값만 입력하세요."</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            print(<span class="string">"숫자가 아닌 값을 입력하셨습니다. 다시 입력하세요."</span>)</span><br><span class="line"></span><br><span class="line">            </span><br><span class="line">    <span class="comment">#user_num_games --&gt; 1 or 2</span></span><br><span class="line">    num_games = <span class="number">3</span> <span class="keyword">if</span> user_num_games == <span class="number">1</span> <span class="keyword">else</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#3판 2선승 --&gt; 2승 or 5판 3선승 --&gt; 3승</span></span><br><span class="line">    count = <span class="number">2</span> <span class="keyword">if</span> num_games == <span class="number">3</span> <span class="keyword">else</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    win_list = []</span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 리스트를 만들어서 이긴 대상을 리스트 인덱스로 넣어둔다.</span></span><br><span class="line">    <span class="comment"># 리스트 내장 함수 count를 사용하여 선승을 판단한다.</span></span><br><span class="line">    <span class="comment"># for문 내부에 i라는 변수를 사용하지 않으면 _로 표시해도 무관하다.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(num_games):</span><br><span class="line">        win_list.append(play_one())</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'player : '</span>, win_list.count(<span class="string">'player'</span>),<span class="string">'승'</span>, <span class="string">'computer : '</span>, win_list.count(<span class="string">'computer'</span>),<span class="string">'승'</span>)</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">if</span> win_list.count(<span class="string">'player'</span>) &gt;= count:</span><br><span class="line">            print(<span class="string">"플레이어 우승!"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">elif</span> win_list.count(<span class="string">'computer'</span>) &gt;= count:</span><br><span class="line">            print(<span class="string">"컴퓨터 우승!"</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">play()</span><br><span class="line">&gt;&gt; <span class="number">1</span>: <span class="number">3</span>판<span class="number">2</span>선승, <span class="number">2</span>: <span class="number">5</span>판<span class="number">3</span>선승: <span class="number">1</span></span><br><span class="line">   바위, 가위, 보 중에 한 가지를 입력하세요 : 바위</span><br><span class="line">   무승부</span><br><span class="line">   바위, 가위, 보 중에 한 가지를 입력하세요 : 가위</span><br><span class="line">   컴퓨터 승!</span><br><span class="line">   player :  <span class="number">0</span> 승 computer :  <span class="number">1</span> 승</span><br><span class="line">   바위, 가위, 보 중에 한 가지를 입력하세요 : 보</span><br><span class="line">   컴퓨터 승!</span><br><span class="line">   player :  <span class="number">0</span> 승 computer :  <span class="number">2</span> 승</span><br><span class="line">   컴퓨터 우승!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="pass와-continue"><a href="#pass와-continue" class="headerlink" title="pass와 continue"></a>pass와 continue</h2><ol>
+<li><p>pass</p>
+<ul>
+<li><p>실행할 코드가 없다는 것을 의미</p>
+</li>
+<li><p>다음 코드를 실행</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    print(i, end = <span class="string">' '</span>) <span class="comment"># 3일 때에도 print 함수를 실행함</span></span><br><span class="line">&gt;&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>continue</p>
+<ul>
+<li><p>조건이 참이 되면 다음 순번으로 강제 이동</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    print(i, end = <span class="string">' '</span>) <span class="comment"># 3일 때 loop의 다음 순번으로 이동, print 함수를 실행하지 않음</span></span><br><span class="line">&gt;&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="packing과-unpacking"><a href="#packing과-unpacking" class="headerlink" title="packing과 unpacking"></a>packing과 unpacking</h2><ol>
+<li><p>packing</p>
+<ul>
+<li><p>tuple로 선언하지 않았음</p>
+</li>
+<li><p>type은 tuple로 나옴 = packing이 되었음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">container = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span></span><br><span class="line">type(container)</span><br><span class="line">&gt;&gt; tuple</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>unpacking</p>
+<ul>
+<li><p>위 container 변수를 unpacking 함</p>
+</li>
+<li><p>변수 앞에 *를 붙여주면 묶음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a, b, *c = container</span><br><span class="line">a</span><br><span class="line">&gt;&gt; <span class="number">1</span></span><br><span class="line"></span><br><span class="line">b</span><br><span class="line">&gt;&gt; <span class="number">2</span></span><br><span class="line"></span><br><span class="line">c</span><br><span class="line">&gt;&gt; [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>dictionary에서 items()도 unpacking</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">'a'</span> : <span class="number">1</span>, <span class="string">'b'</span> : <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> dic.items():</span><br><span class="line">    print(k,v, end = <span class="string">' '</span>)</span><br><span class="line">&gt;&gt; a <span class="number">1</span> b <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>packing과 unpacking 활용</p>
+<ul>
+<li><p>함수에서 매개변수 앞에 *를 붙여주면 가변인자로 받을 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_int</span><span class="params">(*args)</span>:</span>  <span class="comment"># 함수에서 가변인자 받는 방법</span></span><br><span class="line">    s = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> arg <span class="keyword">in</span> args:</span><br><span class="line">        s += arg</span><br><span class="line">    <span class="keyword">return</span> s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>아래와 같이 1, 2, 3, 4, 5의 가변인자가 들어오면 tuple로 packing이 됨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum_int(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">&gt;&gt; <span class="number">15</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>아래와 같이 list 형태로 가변인자를 넣게 되면 하나의 데이터로 인식하여 에러 발생</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">sum_int(li)</span><br><span class="line">&gt;&gt; TypeError: unsupported operand type(s) <span class="keyword">for</span> +=: <span class="string">'int'</span> <span class="keyword">and</span> <span class="string">'list'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>따라서 *를 붙여서 다시 unpacking하여 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *를 붙여서 다시 unpacking하여 사용</span></span><br><span class="line">sum_int(*li)</span><br><span class="line">&gt;&gt; <span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>아래와 같은 매개변수의 형태로 모든 인자를 다 받을 수 있다.</p>
+<ul>
+<li><p>args : non keyword arguments</p>
+</li>
+<li><p>kwargs : keyword arguments</p>
+</li>
+</ul>
+</li>
+<li><p>kwargs는 dictionary를 packing할 때 사용한다.(keyword가 존재)</p>
+</li>
+<li><p>함수를 정의할 때, *args, **kwargs는 가변인자를 받겠다는 의미이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sum_int</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line"></span><br><span class="line">sum_int(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, age = <span class="number">100</span>, weight = <span class="number">100</span>)</span><br><span class="line">&gt;&gt; (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line">   &#123;<span class="string">'age'</span>: <span class="number">100</span>, <span class="string">'weight'</span>: <span class="number">100</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>keyword가 없는 인자는 앞에, keyword가 있는 인자는 뒤에 위치해야 한다.</p>
+</li>
+<li><p>keyword 인자 뒤에 keyword가 없는 인자가 존재하면 에러가 발생한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum_int(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, age = <span class="number">100</span>, weight = <span class="number">100</span>, <span class="number">4</span>)</span><br><span class="line">&gt;&gt; SyntaxError: positional argument follows keyword argument</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>함수를 호출하는 입장에서의 *, **는 unpacking을 의미한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum_int(*li, **dic)</span><br><span class="line">&gt;&gt; (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">   &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h2><ul>
+<li><p>‘참인 경우의 값’ if ‘조건’ else ‘거짓인 경우의 값’</p>
+<ul>
+<li><p>if문의 일반 사용 예</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="keyword">if</span> a &gt;= <span class="number">10</span>:</span><br><span class="line">    print(<span class="string">'good!'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'bad!'</span>)</span><br><span class="line">&gt;&gt; good!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>삼항 연산자 적용 예</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># if 조건문 결과는 앞에, else 조건문 결과는 뒤에 위치시킨다.</span></span><br><span class="line"><span class="comment"># if else 간에 ':'를 붙이지 않아도 된다.</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'good!'</span>) <span class="keyword">if</span> a &gt;= <span class="number">10</span> <span class="keyword">else</span> print(<span class="string">'bad!'</span>)</span><br><span class="line">&gt;&gt; good!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="재귀-함수-recursive-function-recursion"><a href="#재귀-함수-recursive-function-recursion" class="headerlink" title="재귀 함수(recursive function, recursion)"></a>재귀 함수(recursive function, recursion)</h2><ul>
+<li><p>자기가 자기 자신을 호출하는 함수</p>
+</li>
+<li><p>기저 조건(base case) = 종료 조건, 탈출 조건</p>
+</li>
+</ul>
+<ol>
+<li><p>Basic</p>
+<ul>
+<li><p>기저 조건을 반드시 정해줘야 한다.(종료, 탈출)</p>
+</li>
+<li><p>재귀하는 과정에서 자기 자신을 만날 때마다 blocking이 걸린다.</p>
+</li>
+<li><p>blocking이 걸린 다음에 함수가 호출되며 stack frame에 쌓인다.</p>
+</li>
+<li><p>함수가 쌓일 수 있는 stack frame 공간이 정해져 있다.</p>
+</li>
+<li><p>정해진 stack frame을 넘어버리면 stack overflow가 발생한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="comment"># 기저 조건(base case)</span></span><br><span class="line">    <span class="comment"># 종료 조건</span></span><br><span class="line">    <span class="comment"># 탈출 조건</span></span><br><span class="line">    <span class="keyword">if</span> num &lt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    print(num, end = <span class="string">' '</span>)</span><br><span class="line">    func(num - <span class="number">1</span>)</span><br><span class="line">   </span><br><span class="line">func(<span class="number">5</span>)</span><br><span class="line">&gt;&gt; <span class="number">5</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Basic function example</p>
+</li>
+</ol>
+<ul>
+<li><p>factorial(계승)</p>
+<ul>
+<li><p>점화식 –&gt; fac(num) = fac(num - 1)*num</p>
+</li>
+<li><p>기저 조건 –&gt; if num == 1 return 1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorial</span><span class="params">(num)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> num == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> factorial(num - <span class="number">1</span>) * num</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    print(factorial(num), end = <span class="string">' '</span>)</span><br><span class="line">&gt;&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">6</span> <span class="number">24</span> <span class="number">120</span> <span class="number">720</span> <span class="number">5040</span> <span class="number">40320</span> <span class="number">362880</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>fibonacci(피보나치)</p>
+<ul>
+<li><p>점화식 : fibo(n) = fibo(n - 2) + fibo(n - 1)</p>
+</li>
+<li><p>기저 조건 : if n == 1 or n == 2 then return 1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibonacci</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> <span class="keyword">or</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fibonacci(n - <span class="number">2</span>) + fibonacci(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    print(fibonacci(n), end = <span class="string">' '</span>)</span><br><span class="line">&gt;&gt; <span class="number">1</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">5</span> <span class="number">8</span> <span class="number">13</span> <span class="number">21</span> <span class="number">34</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/06/190306-PCE-Study/" data-id="cjvchep05000czvwuygkorkdh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.03.06 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-03-06",
+        "dateCreated": "2019-03-06",
+        "dateModified": "2019-05-06",
+        "url": "http://JINUKK.github.io/2019/03/06/190306-PCE-Study/",
+        "description": "프로그래머가 하는일 - 추상화(abstraction)
+절차 지향
+
+procedure, procedural oriented
+
+절치 지향보다는 프로시져 지향이라고 하는 것이 맞다.
+
+
+
+객체 지향
+
+OOP(Object-Oriented Programming)
+
+
+인터페이스(interface)와 구현(implementation)
+
+interface
+
+functio"
+        "wordCount": 2978
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/05/190305-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.03.05 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/06/190306-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
