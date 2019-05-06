@@ -6,23 +6,23 @@
     
 
     
-    <title>2019.03.18 Python and CE Study | Develop Memory</title>
+    <title>2019.03.26 Python and CE Study | Develop Memory</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="Linux Terminal Basic top : cpu 프로세스 상황 보여주기  PID : Process ID   1%cpu(s), us(user), sy(system), id(idle), hi(hardware interrupt), si(software interrupt), st(steal time)  F를 누르면 fields management로 진입">
+    <meta name="description" content="Queue FIFO(First In, First Out)  선입선출  먼저 들어온 것이 먼저 나가는 방식   12345678910111213141516171819202122232425262728293031class Queue:    def __init__(self):        self.container = list()            def empt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019.03.18 Python and CE Study">
-<meta property="og:url" content="http://JINUKK.github.io/2019/03/18/190318-PCE-Study/index.html">
+<meta property="og:title" content="2019.03.26 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/26/190326-PCE-Study/index.html">
 <meta property="og:site_name" content="Develop Memory">
-<meta property="og:description" content="Linux Terminal Basic top : cpu 프로세스 상황 보여주기  PID : Process ID   1%cpu(s), us(user), sy(system), id(idle), hi(hardware interrupt), si(software interrupt), st(steal time)  F를 누르면 fields management로 진입">
+<meta property="og:description" content="Queue FIFO(First In, First Out)  선입선출  먼저 들어온 것이 먼저 나가는 방식   12345678910111213141516171819202122232425262728293031class Queue:    def __init__(self):        self.container = list()            def empt">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-06T15:37:47.472Z">
+<meta property="og:updated_time" content="2019-05-06T16:04:16.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019.03.18 Python and CE Study">
-<meta name="twitter:description" content="Linux Terminal Basic top : cpu 프로세스 상황 보여주기  PID : Process ID   1%cpu(s), us(user), sy(system), id(idle), hi(hardware interrupt), si(software interrupt), st(steal time)  F를 누르면 fields management로 진입">
+<meta name="twitter:title" content="2019.03.26 Python and CE Study">
+<meta name="twitter:description" content="Queue FIFO(First In, First Out)  선입선출  먼저 들어온 것이 먼저 나가는 방식   12345678910111213141516171819202122232425262728293031class Queue:    def __init__(self):        self.container = list()            def empt">
     
 
     
@@ -138,14 +138,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-190318-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-190326-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2019.03.18 Python and CE Study
+        2019.03.26 Python and CE Study
         </h1>
     
 
@@ -155,8 +155,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/03/18/190318-PCE-Study/" class="article-date">
-            <time datetime="2019-03-17T15:36:33.000Z" itemprop="datePublished">2019-03-18</time>
+        <a href="/2019/03/26/190326-PCE-Study/" class="article-date">
+            <time datetime="2019-03-25T16:01:14.000Z" itemprop="datePublished">2019-03-26</time>
         </a>
     </div>
 
@@ -167,63 +167,265 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="Linux-Terminal-Basic"><a href="#Linux-Terminal-Basic" class="headerlink" title="Linux Terminal Basic"></a>Linux Terminal Basic</h2><ul>
-<li><p>top : cpu 프로세스 상황 보여주기</p>
+            <h2 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h2><ul>
+<li><p>FIFO(First In, First Out)</p>
 </li>
-<li><p>PID : Process ID</p>
+<li><p>선입선출</p>
+</li>
+<li><p>먼저 들어온 것이 먼저 나가는 방식</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.container = list()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.container:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">       </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.container.append(data)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.container.pop(<span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.container[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    que = Queue()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>):</span><br><span class="line">        que.enqueue(i)</span><br><span class="line">       </span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> que.empty():</span><br><span class="line">        print(que.dequeue(), end = <span class="string">" "</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%cpu(s), us(user), sy(system), id(idle), hi(hardware interrupt), si(software interrupt), st(steal time)</span><br></pre></td></tr></table></figure>
+<h2 id="Computer-Engineering"><a href="#Computer-Engineering" class="headerlink" title="Computer Engineering"></a>Computer Engineering</h2><ul>
+<li><p>Process</p>
 <ul>
-<li><p>F를 누르면 fields management로 진입</p>
+<li><p>Program : HDD에 있는 Image</p>
 </li>
-<li><p>Q로 나갈 수 있음</p>
+<li><p>Process : “실행중인” RAM에 메모리가 올라왔을 때</p>
 </li>
-<li><p>VIRT : Virtual Image(KB) = Virtual Address Space</p>
+<li><p>같은 프로세스를 켜도 PID(Process ID)가 다르다.</p>
 </li>
-<li><p>RES = Resident Size = RAM에 있는 page의 총 합</p>
+<li><p>윈도우는 PID가 랜덤으로 생성</p>
 </li>
-<li><p>F에서 D를 누르면 Field로 가져옴</p>
+<li><p>리눅스는 PID가 0번부터 순차적으로 생성</p>
 </li>
-<li><p>man : manual</p>
-</li>
-<li><p>executable code = code segment</p>
-</li>
-<li><p>mkdir = make directory</p>
-</li>
-<li><p>“=”을 누르면 top에서 모든 것을 다시 볼 수 있음</p>
+<li><p>프로그램이 실행되면 바로 RAM에 메모리가 생기는 것이 아니라 Run queue로 들어감</p>
 </li>
 </ul>
-<h3 id="Demand-paging"><a href="#Demand-paging" class="headerlink" title="Demand paging"></a>Demand paging</h3><ul>
-<li><p>메모리 관리 메커니즘(MMU 메커니즘)을 사용해서 여러 프로세스가 시스템의 메모리를 효율적으로 공유할 수 있도록 하는 기술</p>
 </li>
-<li><p>페이지들이 실행 과정에서 실제로 필요해질 때 RAM에 올리는 것</p>
-</li>
-</ul>
-<h3 id="Segmentation-with-paging"><a href="#Segmentation-with-paging" class="headerlink" title="Segmentation with paging"></a>Segmentation with paging</h3><ul>
-<li><p>모든 메모리를 Segment로 쪼개고 각 Segment들을 Paging해서 메모리에 올리고 접근하는 방식</p>
-</li>
-<li><p>현재 모든 운영체제가 이런 방식</p>
-</li>
-</ul>
-<h3 id="Shared-memory-공유-메모리"><a href="#Shared-memory-공유-메모리" class="headerlink" title="Shared memory(공유 메모리)"></a>Shared memory(공유 메모리)</h3><ul>
-<li><p>같은 메모리는 공유해서 씀(다른 프로세스 상에서)</p>
-</li>
-<li><p>여러 프로그램이 동시에 접근할 수 있는 메모리</p>
-</li>
-</ul>
-<h2 id="Excel-File을-python으로-바꾸기"><a href="#Excel-File을-python으로-바꾸기" class="headerlink" title="Excel File을 python으로 바꾸기"></a>Excel File을 python으로 바꾸기</h2><ul>
-<li><p>사무 자동화</p>
+<li><p>Process Scheduling</p>
 <ul>
-<li><p>방법 1</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl <span class="keyword">as</span> op</span><br><span class="line"></span><br><span class="line">wb = op.load_workbook(<span class="string">"exam.xlsx"</span>) <span class="comment"># 엑셀 파일을 불러옴</span></span><br><span class="line"></span><br><span class="line">ws = wb.active</span><br><span class="line"></span><br><span class="line">cell_count = list(ws.rows)</span><br><span class="line"></span><br><span class="line">cell_values = list(ws.values)</span><br><span class="line"></span><br><span class="line">li = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(cell_count)):</span><br><span class="line">    dic = &#123;key : value <span class="keyword">for</span> key, value <span class="keyword">in</span> zip(cell_values[<span class="number">0</span>], cell_values[i])&#125;</span><br><span class="line">    li.append(dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># zip는 동일한 갯수의 인덱스를 갖는 시퀀스 자료형을 묶어주는 함수</span></span><br><span class="line"><span class="comment"># li를 출력해서 확인하자.</span></span><br></pre></td></tr></table></figure>
+<li><p>CPU에서 프로세스들이 동시에 실행할 수 있게 순위를 조정</p>
 </li>
-<li><p>방법 2</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">g = ws.rows</span><br><span class="line"></span><br><span class="line">cells = next(g) <span class="comment"># iterator 객체에서 내장 함수 next를 쓰면 다음 데이터를 불러옴</span></span><br><span class="line"></span><br><span class="line">keys = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> cells:</span><br><span class="line">    keys.append(cell.value)</span><br><span class="line">   </span><br><span class="line">student_data = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> g:</span><br><span class="line">    dic = &#123;k : c.value <span class="keyword">for</span> k, c <span class="keyword">in</span> zip(keys, row)&#125;</span><br><span class="line">    student_data.append(dic)</span><br><span class="line"></span><br><span class="line"><span class="comment"># student_data를 출력해서 확인하자.</span></span><br></pre></td></tr></table></figure>
+<li><p>Priority Algorithm</p>
+<ul>
+<li><p>우선순위를 통해 프로세스 실행</p>
+</li>
+<li><p>리눅스에서는 nice 값이 높으면 우선순위가 낮아짐</p>
+</li>
+</ul>
+</li>
+<li><p>Round-Robin Algorithm</p>
+<ul>
+<li><p>모든 프로세스에게 공평하게 시간을 할당해줌</p>
+</li>
+<li><p>시간(Time Slice, Quantum) = 한 프로세스에 할당되는 시간</p>
+</li>
+</ul>
+</li>
+<li><p>scheduler 동작시기</p>
+<ol>
+<li><p>한 프로세스의 time slice가 끝나고 다음 차례일 때</p>
+</li>
+<li><p>Process created or ended</p>
+</li>
+<li><p>Running process blocked</p>
+<ul>
+<li><p>I/O bound 또는 system call로 인해 blocking이 걸렸을 때</p>
+<ul>
+<li><p>I/O bound ex) +, -, *, /, AND(CPU bound)</p>
+</li>
+<li><p>System call ex) sleep()</p>
 </li>
 </ul>
 </li>
 </ul>
+</li>
+</ol>
+<ul>
+<li><p>I/O 작업이 끝났다고 해서 바로 running으로 가는 것이 아니다.</p>
+</li>
+<li><p>waiting으로 가서 scheduler를 기다린다.(time slice를 기다림)</p>
+</li>
+<li><p>리눅스에 top에서 R은 running + waiting = Context Switching</p>
+</li>
+<li><p>메모리 안에 Process Control Block(PCB)를 만든다.</p>
+</li>
+<li><p>PCB 안에 CPU 레지스터에 있는 값을 모두 복사해둔다.</p>
+</li>
+<li><p>CPU에 있는 레지스터 상태 정보를 Context라고 한다.</p>
+</li>
+</ul>
+</li>
+<li><p>Context Switching</p>
+<ul>
+<li><p>CPU에서 PCB의 정보를 내리고 올리는 작업</p>
+</li>
+<li><p>너무 자주 context switch를 하면 멀티해보일 수 있으나, 느려질 수 있음</p>
+</li>
+<li><p>메모리와 CPU가 최소 40 ~ 200 cycle 필요</p>
+</li>
+</ul>
+</li>
+<li><p>Waiting vs Blocked</p>
+<ul>
+<li><p>waiting : scheduler가 부르면 바로 실행 가능</p>
+</li>
+<li><p>blocked : 바로 실행 불가</p>
+</li>
+</ul>
+</li>
+<li><p>pre-emptive scheduling</p>
+<ul>
+<li><p>선점형 스케줄링</p>
+</li>
+<li><p>모든 프로세스에게 CPU 사용 시간을 동일하게 부여</p>
+</li>
+<li><p>모든 OS에서 다 지원</p>
+</li>
+<li><p>Multitasking</p>
+</li>
+<li><p>Job scheduling(Task scheduling)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h2><ul>
+<li><p>process와 thread 모두 실행의 흐름일 뿐이다.(instruction의 나열)</p>
+</li>
+<li><p>process는 무조건 하나 이상의 thread를 가진다.</p>
+</li>
+<li><p>Single Thread</p>
+<ul>
+<li>하나의 프로세스에서 하나의 스레드 실행</li>
+</ul>
+</li>
+<li><p>Concurrency Programming</p>
+<ol>
+<li><p>Multi - Processing</p>
+<ul>
+<li>Inter Process Communication(IPC)를 통해 통신해야 함</li>
+</ul>
+</li>
+<li><p>Multi - Thread</p>
+<ul>
+<li>메모리를 물리적으로 공유</li>
+</ul>
+</li>
+<li><p>I/O bound한 작업을 할 때</p>
+<ul>
+<li>Asynchonous(비동기) I/O</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Multi - Threading의 약점</p>
+<ol>
+<li><p>GIL(Global Interpreter Lock)</p>
+<ul>
+<li>코어가 많아도 하나의 스레드 밖에 쓰지 못함</li>
+</ul>
+</li>
+<li><p>Race Condition(경쟁 상태)</p>
+<ul>
+<li><p>프로세스들이 하나의 데이터를 동시에 요청할 때 원치 않은 결과가 나올 수 있음</p>
+</li>
+<li><p>해결 방법 : Mutual Exclusion(상호 배제)</p>
+<ul>
+<li>한 프로세스가 점유한 자원을 다른 프로세스들이 접근할 수 없도록 함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Thread Pool</p>
+<ul>
+<li>Thread를 여러개 만든 후에 Thread 작업이 끝나면 Thread가 사라지지 않고 작업하지 않을 때는 잠시 쉼</li>
+</ul>
+</li>
+<li><p>다음 키워드들을 찾아보자.</p>
+<ul>
+<li><p>Critical Condition</p>
+</li>
+<li><p>Critical Section</p>
+</li>
+<li><p>Mutex</p>
+</li>
+<li><p>Semaphore</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="OOP-정리"><a href="#OOP-정리" class="headerlink" title="OOP 정리"></a>OOP 정리</h2><ol>
+<li><p>Encapsulation(캡슐화)</p>
+<ul>
+<li><p>얼마만큼 관련이 있는가?</p>
+</li>
+<li><p>“관련있는” = single responsibility = 변수(데이터) + 함수를 하나의 단위로 묶는 것</p>
+</li>
+</ul>
+</li>
+<li><p>Information Hiding(정보은닉)</p>
+<ul>
+<li>어떤 멤버와 메서드를 공개하고 비공개할 것인가?</li>
+</ul>
+</li>
+<li><p>Polymorphism(다형성)</p>
+<ul>
+<li><p>상속(Inheritance)</p>
+</li>
+<li><p>Method overriding</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>Relation of classes</p>
+<ol>
+<li><p>IS-A</p>
+<ul>
+<li>상속으로 구현</li>
+</ul>
+</li>
+<li><p>HAS-A</p>
+<ol>
+<li><p>Composition = Same life cycle, Strongly couple</p>
+</li>
+<li><p>Aggregation = Different life cycle, Weak couple</p>
+</li>
+</ol>
+<ul>
+<li>Code reusability만을 위한 거라면 composition을 사용하는 것이 좋다.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>SOLID</p>
+</li>
+</ul>
+<ol>
+<li><p>Single responsibility principle</p>
+<ul>
+<li>클래스가 바뀌는 이유는 단 하나의 기능 때문이어야 한다.</li>
+</ul>
+</li>
+<li><p>Open-Closed principle</p>
+<ul>
+<li>확장에 대해서는 열려있지만, modification은 닫혀있어야 한다.</li>
+</ul>
+</li>
+<li><p>Liskov substitution principle</p>
+<ul>
+<li><p>인터페이스 명세</p>
+</li>
+<li><p>부모 클래스를 상속받는 자식클래스로 만든 객체에 부모 클래스 객체를 넣어도 잘 수행되어야 한다.</p>
+</li>
+</ul>
+</li>
+<li><p>Interface segregation principle</p>
+<ul>
+<li>꼭 필요한 메서드들만 이용할 수 있게 함</li>
+</ul>
+</li>
+<li><p>Dependency inversion principle</p>
+<ul>
+<li>변화하는 부분 -&gt; 추상화</li>
+</ul>
+</li>
+</ol>
 
         </div>
         <footer class="article-footer">
@@ -231,7 +433,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/03/18/190318-PCE-Study/" data-id="cjvckea0m000iymwufinnde24" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/03/26/190326-PCE-Study/" data-id="cjvckea0t000uymwu5fztluxc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -301,26 +503,22 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "2019.03.18 Python and CE Study",
+        "headline": "2019.03.26 Python and CE Study",
         "image": "http://JINUKK.github.io",
         "keywords": "",
         "genre": "Study Review",
-        "datePublished": "2019-03-18",
-        "dateCreated": "2019-03-18",
+        "datePublished": "2019-03-26",
+        "dateCreated": "2019-03-26",
         "dateModified": "2019-05-07",
-        "url": "http://JINUKK.github.io/2019/03/18/190318-PCE-Study/",
-        "description": "Linux Terminal Basic
-top : cpu 프로세스 상황 보여주기
+        "url": "http://JINUKK.github.io/2019/03/26/190326-PCE-Study/",
+        "description": "Queue
+FIFO(First In, First Out)
 
-PID : Process ID
+선입선출
 
-
-1%cpu(s), us(user), sy(system), id(idle), hi(hardware interrupt), si(software interrupt), st(steal time)
-
-F를 누르면 fields management로 진입
-
-"
-        "wordCount": 357
+먼저 들어온 것이 먼저 나가는 방식
+  12345678910111213141516171819202122232425262728293031class Queue:    def __init__(self):        self.container = list()            def empt"
+        "wordCount": 689
     }
 </script>
 
@@ -360,20 +558,20 @@ F를 누르면 fields management로 진입
         
 <nav id="article-nav">
     
-        <a href="/2019/03/19/190319-PCE-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/03/27/190327-PCE-Study/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            2019.03.19 Python and CE Study
+            2019.03.27 Python and CE Study
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/03/15/190315-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/03/22/190322-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">2019.03.15 Python and CE Study</p>
+        <p class="article-nav-title">2019.03.22 Python and CE Study</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -518,7 +716,7 @@ F를 누르면 fields management로 진입
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://JINUKK.github.io/2019/03/18/190318-PCE-Study/';
+    var disqus_url = 'http://JINUKK.github.io/2019/03/26/190326-PCE-Study/';
     
     (function() {
     var dsq = document.createElement('script');
