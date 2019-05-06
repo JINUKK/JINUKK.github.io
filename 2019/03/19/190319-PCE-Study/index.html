@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.03.19 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="통계 모 분산(population variance)  모집단의 분산 관측값에서 모 평균을 빼고 그것을 제곱한 값을 모두 더하여 전체 데이터 수 n으로 나눔   표본 분산(sample variance)  표본의 분산 관측값에서 표본 평균을 빼고 제곱한 값을 모두 더한 것을 n-1로 나눔    Excel File을 python으로 바꾸기 평균 구하기  분산 구">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.03.19 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/19/190319-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="통계 모 분산(population variance)  모집단의 분산 관측값에서 모 평균을 빼고 그것을 제곱한 값을 모두 더하여 전체 데이터 수 n으로 나눔   표본 분산(sample variance)  표본의 분산 관측값에서 표본 평균을 빼고 제곱한 값을 모두 더한 것을 n-1로 나눔    Excel File을 python으로 바꾸기 평균 구하기  분산 구">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T15:43:09.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.03.19 Python and CE Study">
+<meta name="twitter:description" content="통계 모 분산(population variance)  모집단의 분산 관측값에서 모 평균을 빼고 그것을 제곱한 값을 모두 더하여 전체 데이터 수 n으로 나눔   표본 분산(sample variance)  표본의 분산 관측값에서 표본 평균을 빼고 제곱한 값을 모두 더한 것을 n-1로 나눔    Excel File을 python으로 바꾸기 평균 구하기  분산 구">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190319-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.03.19 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/19/190319-PCE-Study/" class="article-date">
+            <time datetime="2019-03-18T15:39:24.000Z" itemprop="datePublished">2019-03-19</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="통계"><a href="#통계" class="headerlink" title="통계"></a>통계</h2><ul>
+<li><p>모 분산(population variance)</p>
+<ul>
+<li>모집단의 분산 관측값에서 모 평균을 빼고 그것을 제곱한 값을 모두 더하여 전체 데이터 수 n으로 나눔</li>
+</ul>
+</li>
+<li><p>표본 분산(sample variance)</p>
+<ul>
+<li>표본의 분산 관측값에서 표본 평균을 빼고 제곱한 값을 모두 더한 것을 n-1로 나눔</li>
+</ul>
+</li>
+</ul>
+<h2 id="Excel-File을-python으로-바꾸기"><a href="#Excel-File을-python으로-바꾸기" class="headerlink" title="Excel File을 python으로 바꾸기"></a>Excel File을 python으로 바꾸기</h2><ul>
+<li><p>평균 구하기</p>
+</li>
+<li><p>분산 구하기(모 분산)</p>
+</li>
+<li><p>표준 편차 구하기</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> load_workbook</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">wb = load_workbook(<span class="string">"class_1.xlsx"</span>) <span class="comment"># 엑셀 파일을 불러옴</span></span><br><span class="line"></span><br><span class="line">ws = wb.active</span><br><span class="line"></span><br><span class="line">g = ws.rows</span><br><span class="line"></span><br><span class="line">raw_data = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> name_cell, score_cell <span class="keyword">in</span> g:</span><br><span class="line">    raw_data[name_cell.value] = score_cell.value</span><br><span class="line">   </span><br><span class="line">print(raw_data)</span><br><span class="line">&gt;&gt; &#123;<span class="string">'greg'</span>: <span class="number">95</span>, <span class="string">'john'</span>: <span class="number">25</span>, <span class="string">'yang'</span>: <span class="number">50</span>, <span class="string">'timothy'</span>: <span class="number">15</span>, <span class="string">'melisa'</span>: <span class="number">100</span>, <span class="string">'thor'</span>: <span class="number">10</span>, <span class="string">'elen'</span>: <span class="number">25</span>, <span class="string">'mark'</span>: <span class="number">80</span>, <span class="string">'steve'</span>: <span class="number">95</span>, <span class="string">'anna'</span>: <span class="number">20</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>average : 학생 평균</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scores = tuple(raw_data.values())</span><br><span class="line"></span><br><span class="line">avg = reduce(<span class="keyword">lambda</span> a, b : a + b, scores) / len(scores)</span><br><span class="line"></span><br><span class="line">print(avg)</span><br><span class="line">&gt;&gt; <span class="number">51.5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>variance : 학생 점수 분산</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var = reduce(<span class="keyword">lambda</span> res, x : (x - avg)**<span class="number">2</span> + res, scores) / len(scores)</span><br><span class="line"></span><br><span class="line">print(var)</span><br><span class="line">&gt;&gt; <span class="number">1060.525</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>std_dev : 표준 편차</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std_dev = math.sqrt(var)</span><br><span class="line"></span><br><span class="line">print(std_dev)</span><br><span class="line">&gt;&gt; <span class="number">32.56570281753489</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>evaluation : 평가</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"평균:&#123;&#125;, 분산:&#123;&#125;, 표준편차:&#123;&#125;"</span>.format(avg, var, std_dev))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> avg &lt; <span class="number">50</span> <span class="keyword">and</span> std_dev &gt; <span class="number">20</span>:</span><br><span class="line">    print(<span class="string">'성적이 너무 저조하고 학생들의 실력 차이가 너무 크다.'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> avg &gt; <span class="number">50</span> <span class="keyword">and</span> std_dev &gt; <span class="number">20</span>:</span><br><span class="line">    print(<span class="string">'성적은 평균 이상이지만 학생들의 실력 차이가 크다. 주의 요망!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> avg &lt; <span class="number">50</span> <span class="keyword">and</span> std_dev &lt; <span class="number">20</span>:</span><br><span class="line">    print(<span class="string">'학생들의 실력 차이는 크지 않지만 성적이 너무  저조하다. 주의 요망!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> avg &gt; <span class="number">50</span> <span class="keyword">and</span> std_dev &lt; <span class="number">20</span>:</span><br><span class="line">    print(<span class="string">'성적도 평균 이상이고 학생들의 실력 차이도 크지 않다.'</span>)</span><br><span class="line">  </span><br><span class="line">&gt;&gt; 평균:<span class="number">51.5</span>, 분산:<span class="number">1060.525</span>, 표준편차:<span class="number">32.56570281753489</span></span><br><span class="line">   성적은 평균 이상이지만 학생들의 실력 차이가 크다. 주의 요망!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>절차 지향(procedural oriented) 프로그래밍</p>
+<ul>
+<li><p>라이브러리 개발자가 하는일</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> openpyxl <span class="keyword">import</span> load_workbook</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_raw_data</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_raw_data(filename) -&gt; dict</span></span><br><span class="line"><span class="string">    # dict = &#123;'name1' : score1, 'name2' : score2, 'name3' : score3 ...&#125;</span></span><br><span class="line"><span class="string">    결과값으로 딕셔너리를 반환</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">   </span><br><span class="line">    wb = load_workbook(filename)</span><br><span class="line">   </span><br><span class="line">    ws = wb.active</span><br><span class="line">   </span><br><span class="line">    raw_data = &#123;&#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">for</span> name_cell, score_cell <span class="keyword">in</span> ws.rows:</span><br><span class="line">        raw_data[name_cell.value] = score_cell.value</span><br><span class="line">       </span><br><span class="line">    <span class="keyword">return</span> raw_data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>래핑 함수(wrapping function)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기본 기능을 감싸는 새로운 기능을 만드는 방법</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_scores_tuple</span><span class="params">(dict_data)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_scores_tuple(dict) -&gt; tuple</span></span><br><span class="line"><span class="string">    dict = &#123;'name1' : score1, 'name2' : score2, 'name3' : score3 ...&#125;</span></span><br><span class="line"><span class="string">    ret : (score1, score2, score3)</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">   </span><br><span class="line">    scores_data = tuple(dict_data.values())</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> scores_data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>average : 학생 평균</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_average</span><span class="params">(scores_data)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_average(scores_data) -&gt; float&lt;2&gt;</span></span><br><span class="line"><span class="string">    scores_data --&gt; tuple of scores</span></span><br><span class="line"><span class="string">    ret : float : 소수점 이하 두 자리 반환</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    avg = reduce(<span class="keyword">lambda</span> a, b: a + b, scores_data) / len(scores_data)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> round(avg, <span class="number">2</span>) <span class="comment"># round() : 소수점 제한 함수</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>variance : 학생 점수 분산</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_variance</span><span class="params">(scores_data, avg)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_variance(scores_data, avg) -&gt; float&lt;2&gt;</span></span><br><span class="line"><span class="string">    scores_data --&gt; tuple of scores</span></span><br><span class="line"><span class="string">    avg --&gt; 평균</span></span><br><span class="line"><span class="string">    ret : float : 분산 : 소수점 이하 두 자리 반환</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    var = reduce(<span class="keyword">lambda</span> res, x : (x - avg)**<span class="number">2</span> + res, scores_data) / len(scores_data)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> round(var, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>std_dev : 표준 편차</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_std_dev</span><span class="params">(var)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_std_dev(var) -&gt; float&lt;2&gt;</span></span><br><span class="line"><span class="string">    var --&gt; 분산</span></span><br><span class="line"><span class="string">    ret : float : 표준 편차 : 소수점 이하 두 자리 반환</span></span><br><span class="line"><span class="string">    결과값으로 표준 편차 반환(소숫점 두자리까지 표시)</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    std_dev = math.sqrt(var)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> round(std_dev, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>evaluation : 평가</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_evaluation</span><span class="params">(avg, total_avg, std_dev, sd = <span class="number">20</span>)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    get_evaluation(avg, total_avg, var, std_dev, sd = 20) -&gt; None</span></span><br><span class="line"><span class="string">    avg : your class avg</span></span><br><span class="line"><span class="string">    total_avg : 학년 평균</span></span><br><span class="line"><span class="string">    std_dev : 우리 반 평균</span></span><br><span class="line"><span class="string">    sd : 원하는 표준 편차를 입력하세요. 20 정도면 무난합니다.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> avg &lt; total_avg <span class="keyword">and</span> std_dev &gt; sd:</span><br><span class="line">        print(<span class="string">'성적이 너무 저조하고 학생들의 실력 차이가 너무 크다.'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">elif</span> avg &gt; total_avg <span class="keyword">and</span> std_dev &gt; sd:</span><br><span class="line">        print(<span class="string">'성적은 평균 이상이지만 학생들의 실력 차이가 크다. 주의 요망!'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">elif</span> avg &lt; total_avg <span class="keyword">and</span> std_dev &lt; sd:</span><br><span class="line">        print(<span class="string">'학생들의 실력 차이는 크지 않지만 성적이 너무 저조하다. 주의 요망!'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">elif</span> avg &gt; total_avg <span class="keyword">and</span> std_dev &lt; sd:</span><br><span class="line">        print(<span class="string">'성적도 평균 이상이고 학생들의 실력 차이도 크지 않다.'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>if name ==”main”을 사용함으로서 테스트로 코드를 실행할 수 있다.</p>
+</li>
+<li><p>name == “main” 조건이 없다면 위 함수를 실행할 때마다 테스트 코드도 매번 같이 실행하게 된다.</p>
+</li>
+<li><p>name == “main”이 있음으로 해당 함수를 import로 쓰지 않고 직접 사용하게 되면 테스트 코드가 실행하게 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line"></span><br><span class="line">    raw_data = get_raw_data(<span class="string">"class_1.xlsx"</span>)</span><br><span class="line">    print(raw_data)</span><br><span class="line">    </span><br><span class="line">    avg = get_average(get_scores_tuple(raw_data))</span><br><span class="line">    print(avg)</span><br><span class="line">    </span><br><span class="line">    var = get_variance(get_scores_tuple(raw_data), avg)</span><br><span class="line">    print(var)</span><br><span class="line">    </span><br><span class="line">    std_dev = get_std_dev(var)</span><br><span class="line">    print(std_dev)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"평균: &#123;&#125;, 분산:&#123;&#125;, 표준편차:&#123;&#125;"</span>.format(avg, var, std_dev))</span><br><span class="line"> </span><br><span class="line">    get_evaluation(avg, <span class="number">50</span>, std_dev)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="string">'greg'</span>: <span class="number">95</span>, <span class="string">'john'</span>: <span class="number">25</span>, <span class="string">'yang'</span>: <span class="number">50</span>, <span class="string">'timothy'</span>: <span class="number">15</span>, <span class="string">'melisa'</span>: <span class="number">100</span>, <span class="string">'thor'</span>: <span class="number">10</span>, <span class="string">'elen'</span>: <span class="number">25</span>, <span class="string">'mark'</span>: <span class="number">80</span>, <span class="string">'steve'</span>: <span class="number">95</span>, <span class="string">'anna'</span>: <span class="number">20</span>&#125;</span><br><span class="line">   <span class="number">51.5</span></span><br><span class="line">   <span class="number">1060.53</span></span><br><span class="line">   <span class="number">32.57</span></span><br><span class="line">   평균: <span class="number">51.5</span>, 분산:<span class="number">1060.53</span>, 표준편차:<span class="number">32.57</span></span><br><span class="line">   성적은 평균 이상이지만 학생들의 실력 차이가 크다. 주의 요망!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>USER PROGRAMMER</p>
+<ul>
+<li><p>라이브러리를 사용하여 프로그램 설계</p>
+</li>
+<li><p>하드 코딩을 하지 않도록 설계</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> functions <span class="keyword">import</span> (get_raw_data, get_scores_tuple, get_average,</span><br><span class="line">                    get_variance, get_std_dev, get_evaluation)</span><br><span class="line"></span><br><span class="line"><span class="comment"># from의 의미는 functions의 모든 코드를 다 가져다가 붙인다는 말</span></span><br><span class="line"><span class="comment"># import 함수를 추가할 때 너무 길어진다면 tuple처럼 ()를 사용하여 다음 줄 이용</span></span><br><span class="line"><span class="comment"># import 뒤에 *(별표)를 사용하면 해당 모듈이 모든 함수를 import한다는 뜻</span></span><br><span class="line"><span class="comment"># 이렇게 되면 사용하지 않는 함수도 import하기 때문에 속도가 느려질 수 있음</span></span><br><span class="line"><span class="comment"># 사용하는 함수들만 명시를 해주는 것이 좋다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> len(sys.argv) == <span class="number">3</span> <span class="keyword">and</span> <span class="keyword">not</span> len(sys.argv) == <span class="number">4</span>:</span><br><span class="line">    print(<span class="string">"usage : python main.py &lt;exel filename&gt; &lt;total_avg&gt; &lt;sd = 20&gt;"</span>)</span><br><span class="line">    exit(<span class="number">-1</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># exit() : 프로그램을 종료하고 싶을 때 사용.</span></span><br><span class="line"><span class="comment"># 내부 숫자는 프로그램이 정상 또는 비정상적으로 종료되었다는 것을 알림</span></span><br><span class="line"></span><br><span class="line">filename = sys.argv[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">total_avg = float(sys.argv[<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) == <span class="number">4</span>:</span><br><span class="line">    sd = float(sys.argv[<span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">raw_data = get_raw_data(filename)</span><br><span class="line"></span><br><span class="line">socres = get_scores_tuple(raw_data)</span><br><span class="line"></span><br><span class="line">avg = get_Average(scores)</span><br><span class="line"></span><br><span class="line">var = get_variance(socres, avg)</span><br><span class="line"></span><br><span class="line">std_dev = get_std_dev(var)</span><br><span class="line"></span><br><span class="line">print(<span class="string">f'평균 : <span class="subst">&#123;avg&#125;</span>, 분산 : <span class="subst">&#123;var&#125;</span>, 표준편차 : <span class="subst">&#123;std_dev&#125;</span>'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> len(sys.argv) == <span class="number">4</span>:</span><br><span class="line">    get_evaluation(avg, total_avg, std_dev, sd)</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> len(sys.argv) == <span class="number">3</span>:</span><br><span class="line">    get_evaluation(avg, total_avg, std_dev)</span><br><span class="line">   </span><br><span class="line"><span class="comment">## visual studio code에서는 함수의 매개 변수 칸에 ctrl + shift + space를 누르면 함수 설명이 나온다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sys.argv를 사용하여 직접 프로그램을 실행할 때 원하는 값 입력 가능</p>
+</li>
+<li><p>sys.argv[0]은 실행하는 소스의 이름</p>
+</li>
+<li><p>sys.argv[1]부터 지정 가능</p>
+</li>
+<li><p>sys.argv의 반환값은 모두 string 형이기 때문에 만약 숫자를 사용하고 싶다면 int와 float처럼 형변환을 해야 한다.</p>
+</li>
+<li><p>내가 만든 라이브러리를 같은 폴더가 아니어도 불러오고 싶다면…</p>
+<ol>
+<li><p>Python / Python 37-32 / Lib / site-packages 안에 파일을 넣음</p>
+<ul>
+<li>개인적으로 만든 라이브러리를 넣는 것을 비추천</li>
+</ul>
+</li>
+<li><p>라이브러리를 담아두는 폴더를 만든 후에 환경 변수 경로를 지정</p>
+<ul>
+<li><p>visual studio code 터미널 창에 아래와 같이 치면 된다.</p>
+</li>
+<li><p>“$env:PYTHONPATH = 경로”</p>
+</li>
+<li><p>해당 경로는 라이브러리가 있는 폴더를 가리키면 된다.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/19/190319-PCE-Study/" data-id="cjvcjl5br000q9nwu6wo4h5r2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.03.19 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-03-19",
+        "dateCreated": "2019-03-19",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/03/19/190319-PCE-Study/",
+        "description": "통계
+모 분산(population variance)
+
+모집단의 분산 관측값에서 모 평균을 빼고 그것을 제곱한 값을 모두 더하여 전체 데이터 수 n으로 나눔
+
+
+표본 분산(sample variance)
+
+표본의 분산 관측값에서 표본 평균을 빼고 제곱한 값을 모두 더한 것을 n-1로 나눔
+
+
+
+Excel File을 python으로 바꾸기
+평균 구하기
+
+분산 구"
+        "wordCount": 1907
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/03/21/190321-PCE-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.03.21 Python and CE Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/18/190318-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.03.18 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/05/07/190322-PCE-Study/" class="title">190322_PCE_Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-06T15:43:55.000Z" itemprop="datePublished">2019-05-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">23</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/19/190319-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

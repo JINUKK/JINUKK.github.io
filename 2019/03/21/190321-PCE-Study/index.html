@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.03.21 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="객체 지향 프로그래밍(OOP. Object Oriented Programming) Procedual와 Object-Oriented  Procedual  “함수”를 이용해 추상화   Object-Oriented  “객체”를 통해 추상화  현실에 존재하는 것들을 어떻게 모델링할 것인가?      객체  “관련있는” 데이터(정보, 변수)  “관련있는” 변수(상태">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.03.21 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/21/190321-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="객체 지향 프로그래밍(OOP. Object Oriented Programming) Procedual와 Object-Oriented  Procedual  “함수”를 이용해 추상화   Object-Oriented  “객체”를 통해 추상화  현실에 존재하는 것들을 어떻게 모델링할 것인가?      객체  “관련있는” 데이터(정보, 변수)  “관련있는” 변수(상태">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T15:50:59.312Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.03.21 Python and CE Study">
+<meta name="twitter:description" content="객체 지향 프로그래밍(OOP. Object Oriented Programming) Procedual와 Object-Oriented  Procedual  “함수”를 이용해 추상화   Object-Oriented  “객체”를 통해 추상화  현실에 존재하는 것들을 어떻게 모델링할 것인가?      객체  “관련있는” 데이터(정보, 변수)  “관련있는” 변수(상태">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190321-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.03.21 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/21/190321-PCE-Study/" class="article-date">
+            <time datetime="2019-03-20T15:43:48.000Z" itemprop="datePublished">2019-03-21</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="객체-지향-프로그래밍-OOP-Object-Oriented-Programming"><a href="#객체-지향-프로그래밍-OOP-Object-Oriented-Programming" class="headerlink" title="객체 지향 프로그래밍(OOP. Object Oriented Programming)"></a>객체 지향 프로그래밍(OOP. Object Oriented Programming)</h2><ul>
+<li><p>Procedual와 Object-Oriented</p>
+<ul>
+<li><p>Procedual</p>
+<ul>
+<li>“함수”를 이용해 추상화</li>
+</ul>
+</li>
+<li><p>Object-Oriented</p>
+<ul>
+<li><p>“객체”를 통해 추상화</p>
+</li>
+<li><p>현실에 존재하는 것들을 어떻게 모델링할 것인가?</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>객체</p>
+<ul>
+<li><p>“관련있는” 데이터(정보, 변수)</p>
+</li>
+<li><p>“관련있는” 변수(상태 정보)와 함수를 한데 모아놓은 ‘곳’</p>
+</li>
+<li><p>the bunding of data with methods</p>
+</li>
+<li><p>attribute = instance member, instance method</p>
+</li>
+</ul>
+</li>
+<li><p>객체 == 인스턴스</p>
+<ul>
+<li><p>메모리 상으로는 둘은 완벽히 같다.</p>
+</li>
+<li><p>다만 객체는 객체 자체에 집중하고, 인스턴스는 특정 해당 클래스에 집중한다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-캡슐화-Encapsulation"><a href="#1-캡슐화-Encapsulation" class="headerlink" title="1. 캡슐화(Encapsulation)"></a>1. 캡슐화(Encapsulation)</h4><ul>
+<li>“관련있는” 멤버(데이터)와 메소드(행동)를 하나의 단위로 묶는 것</li>
+</ul>
+<h4 id="2-정보은닉-Information-Hiding"><a href="#2-정보은닉-Information-Hiding" class="headerlink" title="2. 정보은닉(Information Hiding)"></a>2. 정보은닉(Information Hiding)</h4><ul>
+<li><p>어떤 멤버를 공개 또는 비공개할 것인가?</p>
+</li>
+<li><p>어떤 메소드를 공개 또는 비공개할 것인가?</p>
+</li>
+<li><p>python에서는 완벽한 정보은닉을 제공하지 않는다.(name-mangling, property)</p>
+</li>
+</ul>
+<h4 id="3-다형성-polymorphism"><a href="#3-다형성-polymorphism" class="headerlink" title="3. 다형성(polymorphism)"></a>3. 다형성(polymorphism)</h4><ul>
+<li>부모 클래스에서 물려받은 가상 함수를 자식 클래스 내에서 오버라이딩되어 사용되는 것</li>
+</ul>
+<h3 id="SOLID"><a href="#SOLID" class="headerlink" title="SOLID"></a>SOLID</h3><ol>
+<li><p>단일책임의 원칙(SRP. Single Responsibility Principle)</p>
+</li>
+<li><p>개방폐쇄의 원칙(OCP, Open Close Principle)</p>
+</li>
+<li><p>리스코브 치환의 원칙(LSP. The Liskov Substitution Principle)</p>
+</li>
+<li><p>인터페이스 분리의 원칙(ISP. Interface Segregation Principle)</p>
+</li>
+<li><p>의존성역전의 법칙(DIP. Dependency Inversion Principle)</p>
+</li>
+</ol>
+<h3 id="GOF-Gang-of-Four-Design-Pattern"><a href="#GOF-Gang-of-Four-Design-Pattern" class="headerlink" title="GOF(Gang of Four) Design Pattern"></a>GOF(Gang of Four) Design Pattern</h3><ol>
+<li><p>Creational Pattern</p>
+<ul>
+<li><p>객체를 생성하는데 관련된 패턴들</p>
+</li>
+<li><p>객체가 생성되는 과정의 유연성을 높이고 코드의 유지를 쉽게 함</p>
+</li>
+<li><p>Class - Factory Method</p>
+</li>
+<li><p>Object - Abstract Factory, Builder, Prototype, Singleton</p>
+</li>
+</ul>
+</li>
+<li><p>Structural Pattern</p>
+<ul>
+<li><p>프로그램 구조에 관련된 패턴들</p>
+</li>
+<li><p>프로그램 내에 자료구조나 인터페이스 구조 등 프로그램의 구조를 설계하는 데 활용할 수 있는 패턴들</p>
+</li>
+<li><p>Class - Adapter</p>
+</li>
+<li><p>Object - Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy</p>
+</li>
+</ul>
+</li>
+<li><p>Behavioral Pattern</p>
+<ul>
+<li><p>반복적으로 사용되는 객체들의 상호작용을 패턴화 해놓은 것들</p>
+</li>
+<li><p>Class - Interpreter, Template Method</p>
+</li>
+<li><p>Object - Chain of Responsibility, Command, Iterator, Mediator, Memento, Observer, State, Strategy, Visitor</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>자주 쓰는 패턴 : Singleton, Observer, Abstruct</li>
+</ul>
+<h2 id="closure-and-function-and-class"><a href="#closure-and-function-and-class" class="headerlink" title="closure and function and class"></a>closure and function and class</h2><ul>
+<li><p>closure를 사용한 계좌 만들기 예제</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">account</span><span class="params">(clnt_name, balance)</span>:</span>      </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change_money</span><span class="params">(money)</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> balance</span><br><span class="line">        balance += money</span><br><span class="line">        <span class="keyword">return</span> (clnt_name, balance)</span><br><span class="line">    <span class="keyword">return</span> change_money</span><br><span class="line"></span><br><span class="line"><span class="comment"># 상태 정보 - free variable</span></span><br><span class="line"><span class="comment"># gloval variable - 맨 바깥쪽</span></span><br><span class="line"><span class="comment"># local variable - 함수 내</span></span><br><span class="line"></span><br><span class="line">my_acnt = account(<span class="string">'greg'</span>, <span class="number">5000</span>)</span><br><span class="line">your_acnt = account(<span class="string">'john'</span>, <span class="number">3000</span>)</span><br><span class="line"></span><br><span class="line">type(my_acnt)</span><br><span class="line">&gt;&gt; function</span><br><span class="line"></span><br><span class="line">my_acnt.__name__ == your_acnt.__name__</span><br><span class="line">&gt;&gt; <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">my_acnt.__name__</span><br><span class="line">&gt;&gt; <span class="string">'change_money'</span></span><br><span class="line"></span><br><span class="line">my_acnt(<span class="number">1000</span>) <span class="comment"># 입력 + 상태 정보 = 출력이 나온다.</span></span><br><span class="line">&gt;&gt; (<span class="string">'greg'</span>, <span class="number">6000</span>)</span><br><span class="line"></span><br><span class="line">your_acnt(<span class="number">1000</span>)</span><br><span class="line">&gt;&gt; (<span class="string">'john'</span>, <span class="number">4000</span>)</span><br><span class="line"></span><br><span class="line">cells = my_acnt.__closure__</span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> cells:</span><br><span class="line">    print(cell.cell_contents, end = <span class="string">' '</span>)</span><br><span class="line">&gt;&gt; <span class="number">6000</span> greg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>함수와 딕셔너리를 통한 계좌 만들기 예제</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">account_init</span><span class="params">(clnt_name, balance)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    account_init(clnt_name, balance) --&gt; dictionary</span></span><br><span class="line"><span class="string">    return : dictionary : 이름과 잔고로 반환</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    account_data = &#123;<span class="string">'name'</span> : clnt_name, <span class="string">'balance'</span> : balance&#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> account_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">account_deposit</span><span class="params">(clnt_data, money)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    account_deposit(clnt_data, money) --&gt; boolean</span></span><br><span class="line"><span class="string">    만약에 money &gt; 0이면 입금 성공!</span></span><br><span class="line"><span class="string">    아니면 에러 메시지 출력 후 실패!</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> money &lt; <span class="number">0</span>:</span><br><span class="line">        print(<span class="string">"입금은 0원 초과부터 가능합니다."</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        clnt_data[<span class="string">'balance'</span>] += money</span><br><span class="line">        a = clnt_data[<span class="string">'balance'</span>]</span><br><span class="line">        print(<span class="string">'이름 : &#123;&#125;  입금 : &#123;&#125;  총액 : &#123;&#125;'</span>.format(clnt_data[<span class="string">'name'</span>], money, clnt_data[<span class="string">'balance'</span>]))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">account_withdraw</span><span class="params">(clnt_data, money)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    account_withdraw(clnt_data, money) --&gt; integer</span></span><br><span class="line"><span class="string">    return : 인출된 돈</span></span><br><span class="line"><span class="string">    만약 잔고가 모자라면 None</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> clnt_data[<span class="string">'balance'</span>] &lt; money:</span><br><span class="line">        print(<span class="string">f'잔액이 부족합니다.'</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        clnt_data[<span class="string">'balance'</span>] -= money</span><br><span class="line">        print(<span class="string">'이름 : &#123;&#125;  출금 : &#123;&#125;  총액 : &#123;&#125;'</span>.format(clnt_data[<span class="string">'name'</span>], money, clnt_data[<span class="string">'balance'</span>]))</span><br><span class="line">        <span class="keyword">return</span> money</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">account_transfer</span><span class="params">(clnt_data, other_data, money)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    account_transfer(clnt_data, other_data, money) --&gt; None</span></span><br><span class="line"><span class="string">    clnt_data에서 other_data로 금액 이동</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    clnt_data[<span class="string">'balance'</span>] -= money</span><br><span class="line"></span><br><span class="line">    account_deposit(other_data, money)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">  </span><br><span class="line">    my_acnt = account_init(<span class="string">'greg'</span>, <span class="number">5000</span>)</span><br><span class="line">    your_acnt = account_init(<span class="string">'john'</span>, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">    print(my_acnt)</span><br><span class="line">    print(your_acnt)</span><br><span class="line">    print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">    account_deposit(my_acnt, <span class="number">5000</span>)</span><br><span class="line">    account_deposit(your_acnt, <span class="number">8000</span>)</span><br><span class="line"></span><br><span class="line">    print(my_acnt)</span><br><span class="line">    print(your_acnt)</span><br><span class="line">    print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">    account_transfer(my_acnt, your_acnt, <span class="number">5000</span>)</span><br><span class="line"></span><br><span class="line">    print(my_acnt)</span><br><span class="line">    print(your_acnt)</span><br><span class="line">    print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; &#123;<span class="string">'name'</span>: <span class="string">'greg'</span>, <span class="string">'balance'</span>: <span class="number">5000</span>&#125;</span><br><span class="line">   &#123;<span class="string">'name'</span>: <span class="string">'john'</span>, <span class="string">'balance'</span>: <span class="number">2000</span>&#125;</span><br><span class="line"></span><br><span class="line">   이름 : greg  입금 : <span class="number">5000</span>  총액 : <span class="number">10000</span></span><br><span class="line">   이름 : john  입금 : <span class="number">8000</span>  총액 : <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">   &#123;<span class="string">'name'</span>: <span class="string">'greg'</span>, <span class="string">'balance'</span>: <span class="number">10000</span>&#125;</span><br><span class="line">   &#123;<span class="string">'name'</span>: <span class="string">'john'</span>, <span class="string">'balance'</span>: <span class="number">10000</span>&#125;</span><br><span class="line"></span><br><span class="line">   이름 : john  입금 : <span class="number">5000</span>  총액 : <span class="number">15000</span></span><br><span class="line">   &#123;<span class="string">'name'</span>: <span class="string">'greg'</span>, <span class="string">'balance'</span>: <span class="number">5000</span>&#125;</span><br><span class="line">   &#123;<span class="string">'name'</span>: <span class="string">'john'</span>, <span class="string">'balance'</span>: <span class="number">15000</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OOP를 설계를 통한 계좌 만들기 예제</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 전역 함수 : 어느 클래스에도 속하지 않는다.</span></span><br><span class="line"><span class="comment"># OOP 설계에서는 쓰지 않는 방법이기 때문에 staticmethod 개념 존재</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span>:</span></span><br><span class="line">    <span class="comment"># 클래스 이름의 맨 앞은 대문자로 하도록 하자.</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 클래스 멤버(class member)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 모든 객체가 공유한다.</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 전역 변수(global variable)를 대체</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># ex) 이자율</span></span><br><span class="line">    interest_rate = <span class="number">0.08</span></span><br><span class="line">    num_of_account = <span class="number">0</span></span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 클래스 메소드(class method)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 객체가 하나도 없는 상태에서도 호출이 가능!!</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 전역 함수(global variable)를 대체</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 전역 함수를 대체할 때는 static method를 쓸 수도 있다.</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 대체 생성자(alternative constructor)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># cls는 클래스 자체를 받는다.</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># staticmethod는 메소드처럼 보이지만 함수 : 전역 함수</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> a + b</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @classmethod #데코레이터</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_num_of_account</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Account.get_num_of_account() -&gt; integer</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> cls.num_of_account</span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 대체 생성자</span></span><br><span class="line">    <span class="comment"># 받을 데이터에 맞춰서 설계</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">string_constructor</span><span class="params">(cls, string)</span>:</span></span><br><span class="line">        data = string.split(<span class="string">'_'</span>)</span><br><span class="line">        clnt_name = data[<span class="number">0</span>]</span><br><span class="line">        balance = int(data[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> cls(clnt_name, balance)</span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 생성자(constructor) : 파이썬에서는 오직 하나</span></span><br><span class="line">    <span class="comment"># 객체(object)가 생성될 때 반드시!!! 한번 호출된다.</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, clnt_name, balance)</span>:</span></span><br><span class="line">        <span class="comment"># 인스턴스 멤버(instance member) --&gt; 상태 정보 = 데이터</span></span><br><span class="line">        <span class="comment"># self라는 말은 자기 스스로의 메모리를 가리킨다는 의미</span></span><br><span class="line">        <span class="comment"># self는 객체 메모리를 자체 참조</span></span><br><span class="line">        self.clnt_name = clnt_name</span><br><span class="line">       </span><br><span class="line">        <span class="comment"># 변수 앞에 "__"를 붙이면 정보 은닉으로 접근하지 말라는 표시</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 변환 규칙 중에 "_현재클래스이름__멤버변수"를 하면 접근 가능</span></span><br><span class="line">        self.__balance = balance</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 클래스 멤버에 접근하는 방법</span></span><br><span class="line">        Account.num_of_account += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 인스턴스 메소드(instance method)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deposit</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        deposit(money) --&gt; boolean</span></span><br><span class="line"><span class="string">        만약에 money &gt; 0이면 입금 성공!</span></span><br><span class="line"><span class="string">        아니면 에러 메시지 출력 후 실패!</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> money &lt; <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"입금은 0원 초과부터 가능합니다."</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.__balance += money</span><br><span class="line">            print(<span class="string">f'<span class="subst">&#123;money&#125;</span>원을 입금하셨고, 현재 남아있는 금액은 <span class="subst">&#123;self.__balance&#125;</span>원입니다.'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">       </span><br><span class="line">    <span class="comment"># 인스턴스 메소드</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">withdraw</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        withdraw(money) --&gt; integer</span></span><br><span class="line"><span class="string">        return : 인출된 돈</span></span><br><span class="line"><span class="string">        만약 잔고가 모자라면 None</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> self.__balance &lt; money:</span><br><span class="line">            print(<span class="string">f'현재 금액은 <span class="subst">&#123;self.__balance&#125;</span>원으로, 출금하실 금액 <span class="subst">&#123;money&#125;</span>원보다 부족하여 출금하실 수 없습니다.'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.__balance -= money</span><br><span class="line">            print(<span class="string">f'<span class="subst">&#123;money&#125;</span>원을 출금하였고, 현재 남아있는 금액은 <span class="subst">&#123;self.__balance&#125;</span>원입니다.'</span>)</span><br><span class="line">            <span class="keyword">return</span> money</span><br><span class="line">       </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">transfer</span><span class="params">(self, other, money)</span>:</span></span><br><span class="line">        <span class="comment"># 내 객체가 가진돈</span></span><br><span class="line">        self.__balance -= money</span><br><span class="line">        <span class="comment"># message passing</span></span><br><span class="line">        <span class="comment"># 다른 객체의 상태 정보(인스턴스 멤버)를 변경할 대는 반드시 상대 객체가</span></span><br><span class="line">        <span class="comment"># 가진 메소드를 이용</span></span><br><span class="line">        <span class="comment"># 절대 상대의 객체에 직접 접근하면 안된다.</span></span><br><span class="line">        other.deposit(money)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;self.clnt_name&#125;</span> : <span class="subst">&#123;self.__balance&#125;</span>'</span></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 객체가 생성되지 않아도 호출이 가능</span></span><br><span class="line"></span><br><span class="line">    print(Account.interest_rate)</span><br><span class="line">    print(Account.get_num_of_account())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 객체를 생성</span></span><br><span class="line">    my_acnt = Account(<span class="string">'greg'</span>, <span class="number">5000</span>)</span><br><span class="line">    your_acnt = Account(<span class="string">'john'</span>, <span class="number">2000</span>)</span><br><span class="line"></span><br><span class="line">    print(my_acnt.interest_rate)</span><br><span class="line"></span><br><span class="line">    print(my_acnt.get_num_of_account())</span><br><span class="line"></span><br><span class="line">    print(Account.func(<span class="number">5</span>, <span class="number">4</span>))</span><br><span class="line"></span><br><span class="line">    print(type(Account.func))</span><br><span class="line"></span><br><span class="line">    print(type(Account.get_num_of_account))</span><br><span class="line"></span><br><span class="line">    print(type(my_acnt.deposit))        </span><br><span class="line"></span><br><span class="line">    <span class="comment"># 대체 생성자를 이용한 객체의 생성</span></span><br><span class="line"></span><br><span class="line">    s = <span class="string">'james_6000'</span></span><br><span class="line">    his_acnt = Account.string_constructor(s)</span><br><span class="line"></span><br><span class="line">    print(his_acnt)</span><br><span class="line">  </span><br><span class="line">    <span class="comment"># instance method 호출하는 방법</span></span><br><span class="line">    <span class="comment"># 외부에서는 self는 자동으로 들어가기 때문에 매개 변수에 쓸 필요가 없다.</span></span><br><span class="line"></span><br><span class="line">    my_acnt.deposit(<span class="number">7000</span>)</span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 메소드 vs 함수(일반)</span></span><br><span class="line">    <span class="comment"># 메소드 = 입력 + 인스턴스 멤버(상태 정보, 데이터)에 의해 결과값이 결정!</span></span><br><span class="line">    <span class="comment">#        = 인스턴스 멤버(상태 정보)를 바꾸는 역할!</span></span><br><span class="line">    <span class="comment"># 함수 = 입력에 의해서 출력이 결정</span></span><br><span class="line"></span><br><span class="line">    res1 = my_acnt.withdraw(<span class="number">3000</span>)</span><br><span class="line">    res2 = your_acnt.withdraw(<span class="number">3000</span>)</span><br><span class="line">   </span><br><span class="line">    print(my_acnt)</span><br><span class="line">    print(your_acnt)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 객체 간에 상호 작용 --&gt; 객체가 가지고 있는 멤버 값(데이터, 상태정보)</span></span><br><span class="line">    <span class="comment"># INTERACTRION by 메소드에 의해!!</span></span><br><span class="line">    <span class="comment"># my_acnt.transfer(your_acnt, 1000)</span></span><br><span class="line">    my_acnt.transfer(your_acnt, <span class="number">1000</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 절대 짜서는 안되는 코드</span></span><br><span class="line">    <span class="comment"># 이렇게 멤버 변수에 직접 접근하는 방법은 좋지 않다.</span></span><br><span class="line">    <span class="comment"># my_acnt.balance -= 1000</span></span><br><span class="line">    <span class="comment"># your_acnt.balance += 1000</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">0.08</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0.08</span></span><br><span class="line">   <span class="number">2</span></span><br><span class="line">   <span class="number">9</span></span><br><span class="line">   &lt;<span class="class"><span class="keyword">class</span> '<span class="title">function</span>'&gt;</span></span><br><span class="line"><span class="class">   &lt;<span class="title">class</span> '<span class="title">method</span>'&gt;</span></span><br><span class="line"><span class="class">   &lt;<span class="title">class</span> '<span class="title">method</span>'&gt;</span></span><br><span class="line"><span class="class">   <span class="title">james</span> :</span> <span class="number">6000</span></span><br><span class="line">   <span class="number">7000</span>원을 입금하셨고, 현재 남아있는 금액은 <span class="number">12000</span>원입니다.</span><br><span class="line">   <span class="number">3000</span>원을 출금하였고, 현재 남아있는 금액은 <span class="number">9000</span>원입니다.</span><br><span class="line">   현재 금액은 <span class="number">2000</span>원으로, 출금하실 금액 <span class="number">3000</span>원보다 부족하여 출금하실 수 없습니다.</span><br><span class="line">   greg : <span class="number">9000</span></span><br><span class="line">   john : <span class="number">2000</span></span><br><span class="line">   <span class="number">1000</span>원을 입금하셨고, 현재 남아있는 금액은 <span class="number">3000</span>원입니다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/21/190321-PCE-Study/" data-id="cjvcjl5bt000u9nwu7wqj4927" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.03.21 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-03-21",
+        "dateCreated": "2019-03-21",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/03/21/190321-PCE-Study/",
+        "description": "객체 지향 프로그래밍(OOP. Object Oriented Programming)
+Procedual와 Object-Oriented
+
+Procedual
+
+“함수”를 이용해 추상화
+
+
+Object-Oriented
+
+“객체”를 통해 추상화
+
+현실에 존재하는 것들을 어떻게 모델링할 것인가?
+
+
+
+
+
+객체
+
+“관련있는” 데이터(정보, 변수)
+
+“관련있는” 변수(상태"
+        "wordCount": 3002
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/19/190319-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.03.19 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/05/07/190322-PCE-Study/" class="title">190322_PCE_Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-06T15:43:55.000Z" itemprop="datePublished">2019-05-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">23</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/21/190321-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
