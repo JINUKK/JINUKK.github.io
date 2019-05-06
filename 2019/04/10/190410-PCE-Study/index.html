@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.04.10 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.04.10 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/04/10/190410-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T16:56:06.955Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.04.10 Python and CE Study">
+<meta name="twitter:description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190410-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.04.10 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/10/190410-PCE-Study/" class="article-date">
+            <time datetime="2019-04-09T16:40:09.000Z" itemprop="datePublished">2019-04-10</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="git-특강"><a href="#git-특강" class="headerlink" title="git 특강"></a>git 특강</h2><ul>
+<li><p>clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.</p>
+</li>
+<li><p>branch</p>
+<ul>
+<li><p>분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델</p>
+</li>
+<li><p>가로는 시간, 세로는 공간을 의미</p>
+</li>
+<li><p>github에서 Insights/Network를 통해 현황 보기 가능</p>
+</li>
+<li><p>origin의 master는 하나</p>
+</li>
+<li><p>현재 위치 확인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>모든 branch 보기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>공간 추가</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch [공간 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다른 공간 이동</p>
+<ul>
+<li><p>이동한 공간에서 push를 한다면 당연히 remote는 현재 공간을 모름</p>
+</li>
+<li><p>처음에는 -u 명령어를 사용해야 한다.</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout [공간 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다른 공간에서 수정한 파일은 master에서는 아직 수정되어 있지 않은 상태</p>
+</li>
+<li><p>master로 가져오기(업데이트)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge [공간 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>merge를 한 경우, push를 통해 remote에 올려줘야 함</p>
+</li>
+<li><p>기존에 있던 복제한 공간은 제거해줘야 한다.(master만 남겨둠)</p>
+</li>
+<li><p>공간 제거</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -D [공간 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>개발할 때에는 master와 develop 두 개를 두고 써야 한다.</p>
+</li>
+<li><p>master는 프로그램을 사용하는 사용자에게 배포하는 최신 업로드 프로그램 공간으로 관리</p>
+</li>
+<li><p>develop는 프로그램을 개발하는 공간으로 관리</p>
+</li>
+</ul>
+</li>
+<li><p>git flow</p>
+<ul>
+<li><p>git flow를 설치한 후, 사용</p>
+</li>
+<li><p>내가 사용하고자 하는 프로젝트에서 flow 사용을 알림</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git flow는 자동적으로 master와 develop의 공간을 나눠줌</p>
+</li>
+<li><p>branch 생성 후, 그 공간으로 자동 이동</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow feature start [생성 파일 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>develop에 자동 merge</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow feature finish [생성 파일 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>release 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow release start [파일 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>release 종료</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow release finish [파일 이름]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="python에서-mariaDB-Database-활용하기"><a href="#python에서-mariaDB-Database-활용하기" class="headerlink" title="python에서 mariaDB Database 활용하기"></a>python에서 mariaDB Database 활용하기</h2><ul>
+<li><p>mysql 관련 모듈 설치</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install mysql-connector</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python 소스 작성</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mysql.connector <span class="keyword">import</span> MySQLConnection</span><br><span class="line"></span><br><span class="line"><span class="comment"># mariaDB의 user 계정 사용하여 연결</span></span><br><span class="line">conn = MySQLConnection(host=<span class="string">'localhost'</span>, database=<span class="string">'mydb'</span>, user=<span class="string">'jinwook'</span>, password=<span class="string">'0000'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Cursor 생성</span></span><br><span class="line"></span><br><span class="line">cursor = conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># mariaDB에서 사용한 SQL문 실행</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 가독성을 위해 """ """의 멀티 라인문 사용 </span></span><br><span class="line"></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">SELECT * FROM students</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">"""</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 한번 호출에 하나의 Row data만 가져옴</span></span><br><span class="line">cursor.fetchone()</span><br><span class="line"></span><br><span class="line"><span class="comment"># fetchmany(n)는 n개 만큼의 Row data를 한꺼번에 가져올 때 사용</span></span><br><span class="line">cursor.fetchmany(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모든 data를 한꺼번에 가져올 때 사용</span></span><br><span class="line">cursor.fetchall()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 연결 종료</span></span><br><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사용자 정보를 저장한 파일 사용</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 원하는 경로에 파일을 만든 뒤, conf.ini 파일을 만들어 사용자 정보 저장해둔 후 사용</span></span><br><span class="line"><span class="comment"># mkdir today</span></span><br><span class="line"><span class="comment"># cd today</span></span><br><span class="line"><span class="comment"># touch conf.ini</span></span><br><span class="line"><span class="comment"># vi conf.ini</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># conf.ini 내용</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">[mysql]</span></span><br><span class="line"><span class="string">host = localhost</span></span><br><span class="line"><span class="string">database = mydb</span></span><br><span class="line"><span class="string">user = jinwook</span></span><br><span class="line"><span class="string">password = 0000</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 같은 경로에서 다음과 같은 소스 파일 생성</span></span><br><span class="line"><span class="comment"># ConfigParser module을 사용하여 외부의 설정 정보를 가져오기</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mysql.connector <span class="keyword">import</span> MySQLConnection</span><br><span class="line"><span class="keyword">from</span> configparser <span class="keyword">import</span> ConfigParser</span><br><span class="line"></span><br><span class="line">parser = ConfigParser()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 설정 파일 읽기</span></span><br><span class="line"><span class="comment"># 읽었다면 출력에 ['conf.ini']로 출력</span></span><br><span class="line">parser.read(<span class="string">'conf.ini'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 섹션 존재 확인 - 'mysql'이라는 문자열이 설정 파일 안에 존재하는지</span></span><br><span class="line"><span class="comment"># boolean으로 반환</span></span><br><span class="line">parser.has_section(<span class="string">'mysql'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 외부 설정 정보를 딕셔너리에 담기 위해 빈 딕셔너리 선언</span></span><br><span class="line">conf = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 섹션이 존재한다면 items(key, value)을 가져옴</span></span><br><span class="line"><span class="keyword">if</span> parser.has_section(<span class="string">'mysql'</span>):</span><br><span class="line">    items = parser.items(<span class="string">'mysql'</span>)</span><br><span class="line">    <span class="keyword">for</span> key, value <span class="keyword">in</span> items:</span><br><span class="line">        conf[key] = value</span><br><span class="line">       </span><br><span class="line"><span class="comment"># conf = &#123;'host': 'localhost', 'database': 'mydb', 'user': 'jinwook', 'password': '0000'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># unpacking하여 넣어줌으로써 value 값들이 들어감</span></span><br><span class="line"><span class="comment"># *를 쓰면 key 값이, **를 쓰면 value 값이 들어감</span></span><br><span class="line">conn = MySQLConnection(**conf) <span class="comment"># UNPACKING 사용</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># cursor 생성</span></span><br><span class="line">cursor = conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># MariaDB 접속 후 TRANSACTION 상태 보기</span></span><br><span class="line"><span class="comment"># SHOW CREATE TABLE 및 SHOW TABLE로 상태 확인</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ct라는 테이블 생성</span></span><br><span class="line"><span class="comment"># column은 id, name, score, birthday로 구성</span></span><br><span class="line"><span class="comment"># CREATE 명령어는 DDL이기 때문에 사용하면 자동 commit으로 외부 세션에서 변경 확인 가능</span></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string">CREATE TABLE ct (</span></span><br><span class="line"><span class="string">id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,</span></span><br><span class="line"><span class="string">name VARCHAR(20) DEFAULT 'john doe',</span></span><br><span class="line"><span class="string">score SMALLINT NULL,</span></span><br><span class="line"><span class="string">birthday DATE NOT NULL);</span></span><br><span class="line"><span class="string">"""</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># INSERT 명령어는 DML이기 때문에 commit을 하지 않으면</span></span><br><span class="line"><span class="comment"># 외부 세션에서는 변경한 데이터 확인 불가능</span></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string">INSERT INTO ct</span></span><br><span class="line"><span class="string">(name, score, birthday)</span></span><br><span class="line"><span class="string">VALUES</span></span><br><span class="line"><span class="string">('Greg', 99, '2002-2-2');</span></span><br><span class="line"><span class="string">"""</span>)</span><br><span class="line"></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string">SELECT * FROM ct;</span></span><br><span class="line"><span class="string">"""</span>)</span><br><span class="line"></span><br><span class="line">cursor.fetchone()</span><br><span class="line"></span><br><span class="line">conn.commit()    <span class="comment"># DML 명령어에 대한 TRANSACTION 상태 종료(변경한 데이터 저장)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># UDDATE는 DML 명령어</span></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string">UPDATE ct</span></span><br><span class="line"><span class="string">SET Score = 120</span></span><br><span class="line"><span class="string">WHERE name LIKE 'Greg';</span></span><br><span class="line"><span class="string">"""</span>)</span><br><span class="line"></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string">SELECT * FROM ct;"""</span>)</span><br><span class="line">cursor.fetchall()</span><br><span class="line"></span><br><span class="line">conn.rollback()  <span class="comment"># DML 명령어에 대한 TRANSACTION 상태 종료(변경 취소)</span></span><br><span class="line"></span><br><span class="line">cursor.execute(<span class="string">"SELECT * FROM ct;"</span>)</span><br><span class="line">cursor.fetchone()</span><br><span class="line"></span><br><span class="line"><span class="comment"># IF EXISTS 문을 사용하여 해당 데이터베이스에 테이블이 존재하지 않을 경우</span></span><br><span class="line"><span class="comment"># 발생하는 에러 방지</span></span><br><span class="line">cursor.execute(<span class="string">"""</span></span><br><span class="line"><span class="string">DROP TABLE IF EXISTS ct;"""</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 연결 종료</span></span><br><span class="line">cursor.close()</span><br><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="정규식-Regular-Expression"><a href="#정규식-Regular-Expression" class="headerlink" title="정규식(Regular Expression)"></a>정규식(Regular Expression)</h2><ul>
+<li><p>정규 표현식</p>
+</li>
+<li><p>복잡한 문자열을 처리할 때 사용하는 기법</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 일반 문자열 메서드 사용 예시</span></span><br><span class="line">str = <span class="string">"I am your father!"</span></span><br><span class="line">str.startswith(<span class="string">'I'</span>)         <span class="comment"># 특정 문자열로 시작하는지 확인하는 메서드</span></span><br><span class="line">&gt;&gt; <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>문자열 안에 a,b,c 중 한개의 문자와 매치되는지 확인</p>
+</li>
+<li><p>match 문은 문자열의 처음부터 매치되는지 확인</p>
+</li>
+<li><p>매치가 된다면 match 객체를 반환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re <span class="comment"># 정규식 모듈</span></span><br><span class="line"></span><br><span class="line">re.match(<span class="string">r'[abc]'</span>, <span class="string">'abcde'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">1</span>), match=<span class="string">'a'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>match 문은 문자열의 처음부터 매치되는지 확인하기 때문에 ‘345ab’는 매치되지 않음</p>
+</li>
+<li><p>매치되지 않을 경우, None 반환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(re.match(<span class="string">r'[abc]'</span>, <span class="string">'345ab'</span>))</span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[a-z] : a ~ z 까지 중에 하나</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.match(<span class="string">r'[a-z]'</span>, <span class="string">'opinion'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">1</span>), match=<span class="string">'o'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[0-9] : 0 ~ 9 까지 중에 하나</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.match(<span class="string">r'[0-9]'</span>, <span class="string">'345ab'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">1</span>), match=<span class="string">'3'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>search 문은 문자열 전체를 검색하여 매치되는지 확인</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'[abc]'</span>, <span class="string">'345ab'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">3</span>, <span class="number">4</span>), match=<span class="string">'a'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘+’는 최소 한 번 이상 반복될 때 매치가 된다고 판단한다.(1 ~ 무한대)</p>
+</li>
+<li><p>0번 반복될 경우 매치되지 않는다고 판단한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'[abc]+'</span>, <span class="string">'abc123'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>즉, 일치되는 결과가 하나도 없을 경우 매치되지 않는다고 판단</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(re.search(<span class="string">r'[abc]+'</span>, <span class="string">'123'</span>))</span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘*’는 최소 0번 이상 반복될 때 매치가 된다고 판단한다.(0 ~ 무한대)</p>
+</li>
+<li><p>즉, 일치되는 결과가 없더라도 매치된다고 판단</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'[abc]*'</span>, <span class="string">'123'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">0</span>), match=<span class="string">''</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘?’는 해당 문자가 있어도 되고 없어도 된다는 의미</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'[abc]?'</span>, <span class="string">'123'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">0</span>), match=<span class="string">''</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>{n}은 반드시 n개의 개수를 가지고 있는지 판단</p>
+</li>
+<li><p>일치하지 않을 경우 매치되지 않는다고 판단</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(re.search(<span class="string">r'a&#123;4&#125;'</span>, <span class="string">'aabb'</span>))</span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>매치된 경우</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a&#123;4&#125;'</span>, <span class="string">'aaaaaaaab'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">4</span>), match=<span class="string">'aaaa'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>{m,n}은 m ~ n개 반복되는지 판단</p>
+</li>
+<li><p>선언할 때 {3, 10}처럼 ‘3,’ 다음에 공백을 두면 매치가 되지 않으므로 주의</p>
+</li>
+<li><p>공백을 두지 말자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a&#123;3,10&#125;'</span>, <span class="string">'aaaaaabbbbb'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">6</span>), match=<span class="string">'aaaaaa'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>abc가 있는지 전체 문자열에서 판단</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'abc'</span>, <span class="string">'defabcxyz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">3</span>, <span class="number">6</span>), match=<span class="string">'abc'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘^’는 문자열의 처음이 abc인지 판단</p>
+</li>
+<li><p>처음이 항상 abc라면 매치되고 그렇지 않으면 매치되지 않음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(re.search(<span class="string">r'^abc'</span>, <span class="string">'defabcxyz'</span>))</span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘^’가 만약 문자 클래스인 [] 안에 들어간다면 처음을 의미하는 것이 아님</p>
+</li>
+<li><p>반대(not)의 의미를 가짐</p>
+</li>
+<li><p>[^abc]인 경우, a, b, c가 아닌 문자만 매치</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'[^abc]'</span>, <span class="string">'abbbababacczabbaba'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">11</span>, <span class="number">12</span>), match=<span class="string">'z'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘$’는 문자열의 마지막이 xyz인지 판단</p>
+</li>
+<li><p>마지막이 항상 xyz라면 매치되고 그렇지 않으면 매치되지 않음</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(re.search(<span class="string">r'xyz$'</span>, <span class="string">'xyzabc'</span>))</span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>매치된 경우</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'xyz$'</span>, <span class="string">'abcxyz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">3</span>, <span class="number">6</span>), match=<span class="string">'xyz'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자주 사용하는 정규 표현식은 별도의 표현법으로 표현 가능</p>
+</li>
+<li><p>대문자는 소문자의 반대인 경우를 의미</p>
+<ul>
+<li><p>\d = [0-9]</p>
+</li>
+<li><p>\D = [^0-9]</p>
+</li>
+<li><p>\s = whitespace 문자 - <a href="맨 앞 공백도 의미"> \t\n\r\f\v</a></p>
+</li>
+<li><p>\S = whitespace가 아닌 문자 = [^ \t\n\r\f\v]</p>
+</li>
+<li><p>\w = [a-zA-Z0-9_]</p>
+</li>
+<li><p>\W = [^a-zA-Z0-9_]</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>- 0부터 9까지 하나라도 반복될 경우 매치
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'\d+'</span>, <span class="string">'abc 123 bbb'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">7</span>), match=<span class="string">'123'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- match 객체의 메서드를 이용
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = re.search(<span class="string">r'\d+'</span>, <span class="string">'abc 123 bbb'</span>)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">7</span>), match=<span class="string">'123'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- group() : 매치된 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'123'</span></span><br></pre></td></tr></table></figure>
+
+- start() : 매치된 문자열의 시작 위치 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.start()</span><br><span class="line">&gt;&gt; <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+- end() : 매치된 문자열의 끝 위치 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.end()</span><br><span class="line">&gt;&gt; <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+- span() : 매치된 문자열의 (시작, 끝)에 해당되는 튜플 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.span()</span><br><span class="line">&gt;&gt; (<span class="number">4</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+
+- 전화번호 매치
+
+- 다양하게 표현된 문자열의 전화번호를 매치
+
+- 첫번째 번호 자리를 매치시킬 수 있는 \d{3} = [0-9]{3} = 0 ~ 9 중에 반드시 3자리 매치
+
+- 번호 사이에 올 수 있는 문자들의 반복(*)까지 추가 = [-./ ]\*
+
+- 가운데 번호 자리는 3 ~ 4자리이므로 \d{3,4}
+
+- 마지막 번호 자리를 매치시킬 수 있는 \d{4}
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cell_li = [<span class="string">'010-1111-2222'</span>, <span class="string">'01022223333'</span>, <span class="string">'010.333.4444'</span>, <span class="string">'010 4444 5555'</span>]</span><br><span class="line">pattern = <span class="string">r'\d&#123;3&#125;[-./ ]*\d&#123;3,4&#125;[-./ ]*\d&#123;4&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> cell_li:</span><br><span class="line">    m = re.search(pattern, cell)</span><br><span class="line">    <span class="keyword">if</span> m:</span><br><span class="line">        print(m.group())</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">010</span><span class="number">-1111</span><span class="number">-2222</span></span><br><span class="line">   <span class="number">01022223333</span></span><br><span class="line">   <span class="number">010.333</span><span class="number">.4444</span></span><br><span class="line">   <span class="number">010</span> <span class="number">4444</span> <span class="number">5555</span></span><br></pre></td></tr></table></figure>
+
+- Dot(.)는 모든 문자를 표현할 수 있기 때문에 모든 문자와 매칭됨
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a.z'</span>, <span class="string">'abz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abz'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- Dot 두개는 문자 두개를 의미
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a..z'</span>, <span class="string">'ahyz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">4</span>), match=<span class="string">'ahyz'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- 백슬래시() 문자를 찾을 때...
+
+- &apos;\\&apos; 문자가 문자열 그 자체임을 알려주기 위해 백슬래시 2개를 사용하여 처리해야 한다.
+
+- 하지만 파이썬 문자열 리터럴 규칙에 의해 &apos;\\\\&apos;로 명시하여도 다시 &apos;\\&apos;로 변경하여 전달한다.
+
+- 따라서 백슬래시 4개(&apos;\\\\\\\\&apos;)를 사용해야 한다.
+
+- 파이썬에서 사용할 때만 적용되는 문제
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">'\\\\'</span>, <span class="string">'dir1\dir2'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">5</span>), match=<span class="string">'\\'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- 너무 복잡하기 때문에 파이썬 정규식에는 Raw string이라는 것이 존재
+
+- r을 붙여줌
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'\\'</span>, <span class="string">'dir1\dir2'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">5</span>), match=<span class="string">'\\'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- 그룹핑(Grouping)
+
+- 매치된 문자열 중에서 반복되는 문자열을 찾거나, 특정 부분의 문자열을 출력하기 위해 사용
+
+- 해당 부분에 &apos;()&apos;로 묶어주면 된다.
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'(\d&#123;3&#125;)[-./ ]*(\d&#123;3,4&#125;)[-./ ]*(\d&#123;4&#125;)'</span></span><br><span class="line">string = <span class="string">'010-1111-2222'</span></span><br><span class="line">m = re.search(pattern, string)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">13</span>), match=<span class="string">'010-1111-2222'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- 매치된 전체 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'010-1111-2222'</span></span><br></pre></td></tr></table></figure>
+
+- 첫번째 그룹에 해당되는 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'010'</span></span><br></pre></td></tr></table></figure>
+
+- 두번째 그룹에 해당되는 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'1111'</span></span><br></pre></td></tr></table></figure>
+
+- 세번째 그룹에 해당되는 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">3</span>)</span><br><span class="line">&gt;&gt; <span class="string">'2222'</span></span><br></pre></td></tr></table></figure>
+
+- 그룹 범위가 벗어난 경우 에러
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">4</span>)</span><br><span class="line">&gt;&gt; IndexError: no such group</span><br></pre></td></tr></table></figure>
+
+- 그룹핑의 범위는 문자열이 시작된 처음을 1번 그룹으로 한다.
+
+- &apos;(a(b)c)&apos;인 경우, abc 앞에 있는 &apos;()&apos;가 처음이고 그 다음이 b에 있는 &apos;()&apos;가 된다.
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'(a(b)c)'</span></span><br><span class="line">string = <span class="string">'abcde'</span></span><br><span class="line">m = re.search(pattern, string)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br><span class="line"></span><br><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
+
+- 첫번째 그룹 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
+
+- 두번째 그룹 문자열 리턴
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'b'</span></span><br></pre></td></tr></table></figure>
+
+- 그룹 범위가 벗어난 경우 에러
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">3</span>)</span><br><span class="line">&gt;&gt; IndexError: no such group</span><br></pre></td></tr></table></figure>
+
+- compile 옵션
+
+- compile 문을 활용하는 경우, 패턴 객체를 만들고 여러번 재사용이 가능
+
+- 반복적인 매칭 작업이 필요한 경우에는 패던을 미리 컴파일해서 시간 단축
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = re.compile(pattern)</span><br><span class="line">p.match(string)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br></pre></td></tr></table></figure>
+
+- &apos;a = 100&apos;이라는 문자열을 group으로 나눴을 때 각각 a, =, 100 출력하기
+
+- 변수 처음은 문자가 올 수 있지만, 숫자는 올 수 없다.(ex) 1a는 안됨)
+
+- [a-zA-Z_]로 처음 오는 문자가 숫자가 될 수 없도록 함
+
+- \w*으로 다음 오는 문자가 무엇이든 반복이 얼마가 되든 상관없게 선언
+
+- 사이에 공백으로 인해 \s*
+
+- 할당하는 숫자는 반드시 하나는 와야 하므로 &apos;+&apos;를 사용하여 [0-9]+ 선언
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'([a-zA-Z_]\w*)\s*=\s*([0-9]+)'</span></span><br><span class="line">p = re.compile(pattern)</span><br><span class="line">m = p.search(<span class="string">'a_1 = 100'</span>)</span><br><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'a_1 = 100'</span></span><br><span class="line"></span><br><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'a_1'</span></span><br><span class="line"></span><br><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'100'</span></span><br></pre></td></tr></table></figure>
+</code></pre>
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/04/10/190410-PCE-Study/" data-id="cjvclx0kb001ghqwuui3mqy64" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.04.10 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-04-10",
+        "dateCreated": "2019-04-10",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/04/10/190410-PCE-Study/",
+        "description": "git 특강
+clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.
+
+branch
+
+분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델
+
+가로는 시간, 세로는 공간을 의미
+
+github에서 Insights/Network를 통해 현황 보기 가능
+
+origin의 master는 하나
+
+현재 위치 확인
+1$ git branch
+
+모"
+        "wordCount": 2344
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/04/09/190409-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.04.09 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">35</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/04/10/190410-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
