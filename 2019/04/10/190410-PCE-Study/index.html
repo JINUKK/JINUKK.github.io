@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-06T16:56:06.955Z">
+<meta property="og:updated_time" content="2019-05-06T17:00:15.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.04.10 Python and CE Study">
 <meta name="twitter:description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
@@ -352,141 +352,119 @@
 </li>
 </ul>
 </li>
+<li><p>0부터 9까지 하나라도 반복될 경우 매치</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'\d+'</span>, <span class="string">'abc 123 bbb'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">7</span>), match=<span class="string">'123'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>match 객체의 메서드를 이용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = re.search(<span class="string">r'\d+'</span>, <span class="string">'abc 123 bbb'</span>)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">7</span>), match=<span class="string">'123'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>group() : 매치된 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'123'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>start() : 매치된 문자열의 시작 위치 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.start()</span><br><span class="line">&gt;&gt; <span class="number">4</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>end() : 매치된 문자열의 끝 위치 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.end()</span><br><span class="line">&gt;&gt; <span class="number">7</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>span() : 매치된 문자열의 (시작, 끝)에 해당되는 튜플 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.span()</span><br><span class="line">&gt;&gt; (<span class="number">4</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>전화번호 매치</p>
+</li>
+<li><p>다양하게 표현된 문자열의 전화번호를 매치</p>
+</li>
+<li><p>첫번째 번호 자리를 매치시킬 수 있는 \d{3} = [0-9]{3} = 0 ~ 9 중에 반드시 3자리 매치</p>
+</li>
+<li><p>번호 사이에 올 수 있는 문자들의 반복(<em>)까지 추가 = [-./ ]\</em></p>
+</li>
+<li><p>가운데 번호 자리는 3 ~ 4자리이므로 \d{3,4}</p>
+</li>
+<li><p>마지막 번호 자리를 매치시킬 수 있는 \d{4}</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cell_li = [<span class="string">'010-1111-2222'</span>, <span class="string">'01022223333'</span>, <span class="string">'010.333.4444'</span>, <span class="string">'010 4444 5555'</span>]</span><br><span class="line">pattern = <span class="string">r'\d&#123;3&#125;[-./ ]*\d&#123;3,4&#125;[-./ ]*\d&#123;4&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> cell_li:</span><br><span class="line">    m = re.search(pattern, cell)</span><br><span class="line">    <span class="keyword">if</span> m:</span><br><span class="line">        print(m.group())</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">010</span><span class="number">-1111</span><span class="number">-2222</span></span><br><span class="line">   <span class="number">01022223333</span></span><br><span class="line">   <span class="number">010.333</span><span class="number">.4444</span></span><br><span class="line">   <span class="number">010</span> <span class="number">4444</span> <span class="number">5555</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dot(.)는 모든 문자를 표현할 수 있기 때문에 모든 문자와 매칭됨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a.z'</span>, <span class="string">'abz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abz'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dot 두개는 문자 두개를 의미</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a..z'</span>, <span class="string">'ahyz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">4</span>), match=<span class="string">'ahyz'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>백슬래시() 문자를 찾을 때…</p>
+</li>
+<li><p>‘\‘ 문자가 문자열 그 자체임을 알려주기 위해 백슬래시 2개를 사용하여 처리해야 한다.</p>
+</li>
+<li><p>하지만 파이썬 문자열 리터럴 규칙에 의해 ‘\\‘로 명시하여도 다시 ‘\‘로 변경하여 전달한다.</p>
+</li>
+<li><p>따라서 백슬래시 4개(‘\\\\‘)를 사용해야 한다.</p>
+</li>
+<li><p>파이썬에서 사용할 때만 적용되는 문제</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">'\\\\'</span>, <span class="string">'dir1\dir2'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">5</span>), match=<span class="string">'\\'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>너무 복잡하기 때문에 파이썬 정규식에는 Raw string이라는 것이 존재</p>
+</li>
+<li><p>r을 붙여줌</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'\\'</span>, <span class="string">'dir1\dir2'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">5</span>), match=<span class="string">'\\'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그룹핑(Grouping)</p>
+</li>
+<li><p>매치된 문자열 중에서 반복되는 문자열을 찾거나, 특정 부분의 문자열을 출력하기 위해 사용</p>
+</li>
+<li><p>해당 부분에 ‘()’로 묶어주면 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'(\d&#123;3&#125;)[-./ ]*(\d&#123;3,4&#125;)[-./ ]*(\d&#123;4&#125;)'</span></span><br><span class="line">string = <span class="string">'010-1111-2222'</span></span><br><span class="line">m = re.search(pattern, string)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">13</span>), match=<span class="string">'010-1111-2222'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>매치된 전체 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'010-1111-2222'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>첫번째 그룹에 해당되는 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'010'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>두번째 그룹에 해당되는 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'1111'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>세번째 그룹에 해당되는 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">3</span>)</span><br><span class="line">&gt;&gt; <span class="string">'2222'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그룹 범위가 벗어난 경우 에러</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">4</span>)</span><br><span class="line">&gt;&gt; IndexError: no such group</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그룹핑의 범위는 문자열이 시작된 처음을 1번 그룹으로 한다.</p>
+</li>
+<li><p>‘(a(b)c)’인 경우, abc 앞에 있는 ‘()’가 처음이고 그 다음이 b에 있는 ‘()’가 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'(a(b)c)'</span></span><br><span class="line">string = <span class="string">'abcde'</span></span><br><span class="line">m = re.search(pattern, string)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br><span class="line"></span><br><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>첫번째 그룹 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>두번째 그룹 문자열 리턴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'b'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>그룹 범위가 벗어난 경우 에러</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">3</span>)</span><br><span class="line">&gt;&gt; IndexError: no such group</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>compile 옵션</p>
+</li>
+<li><p>compile 문을 활용하는 경우, 패턴 객체를 만들고 여러번 재사용이 가능</p>
+</li>
+<li><p>반복적인 매칭 작업이 필요한 경우에는 패던을 미리 컴파일해서 시간 단축</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = re.compile(pattern)</span><br><span class="line">p.match(string)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>‘a = 100’이라는 문자열을 group으로 나눴을 때 각각 a, =, 100 출력하기</p>
+</li>
+<li><p>변수 처음은 문자가 올 수 있지만, 숫자는 올 수 없다.(ex) 1a는 안됨)</p>
+</li>
+<li><p>[a-zA-Z_]로 처음 오는 문자가 숫자가 될 수 없도록 함</p>
+</li>
+<li><p>\w*으로 다음 오는 문자가 무엇이든 반복이 얼마가 되든 상관없게 선언</p>
+</li>
+<li><p>사이에 공백으로 인해 \s*</p>
+</li>
+<li><p>할당하는 숫자는 반드시 하나는 와야 하므로 ‘+’를 사용하여 [0-9]+ 선언</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'([a-zA-Z_]\w*)\s*=\s*([0-9]+)'</span></span><br><span class="line">p = re.compile(pattern)</span><br><span class="line">m = p.search(<span class="string">'a_1 = 100'</span>)</span><br><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'a_1 = 100'</span></span><br><span class="line"></span><br><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'a_1'</span></span><br><span class="line"></span><br><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'100'</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>- 0부터 9까지 하나라도 반복될 경우 매치
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'\d+'</span>, <span class="string">'abc 123 bbb'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">7</span>), match=<span class="string">'123'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- match 객체의 메서드를 이용
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = re.search(<span class="string">r'\d+'</span>, <span class="string">'abc 123 bbb'</span>)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">7</span>), match=<span class="string">'123'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- group() : 매치된 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'123'</span></span><br></pre></td></tr></table></figure>
-
-- start() : 매치된 문자열의 시작 위치 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.start()</span><br><span class="line">&gt;&gt; <span class="number">4</span></span><br></pre></td></tr></table></figure>
-
-- end() : 매치된 문자열의 끝 위치 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.end()</span><br><span class="line">&gt;&gt; <span class="number">7</span></span><br></pre></td></tr></table></figure>
-
-- span() : 매치된 문자열의 (시작, 끝)에 해당되는 튜플 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.span()</span><br><span class="line">&gt;&gt; (<span class="number">4</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
-
-- 전화번호 매치
-
-- 다양하게 표현된 문자열의 전화번호를 매치
-
-- 첫번째 번호 자리를 매치시킬 수 있는 \d{3} = [0-9]{3} = 0 ~ 9 중에 반드시 3자리 매치
-
-- 번호 사이에 올 수 있는 문자들의 반복(*)까지 추가 = [-./ ]\*
-
-- 가운데 번호 자리는 3 ~ 4자리이므로 \d{3,4}
-
-- 마지막 번호 자리를 매치시킬 수 있는 \d{4}
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cell_li = [<span class="string">'010-1111-2222'</span>, <span class="string">'01022223333'</span>, <span class="string">'010.333.4444'</span>, <span class="string">'010 4444 5555'</span>]</span><br><span class="line">pattern = <span class="string">r'\d&#123;3&#125;[-./ ]*\d&#123;3,4&#125;[-./ ]*\d&#123;4&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> cell_li:</span><br><span class="line">    m = re.search(pattern, cell)</span><br><span class="line">    <span class="keyword">if</span> m:</span><br><span class="line">        print(m.group())</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">010</span><span class="number">-1111</span><span class="number">-2222</span></span><br><span class="line">   <span class="number">01022223333</span></span><br><span class="line">   <span class="number">010.333</span><span class="number">.4444</span></span><br><span class="line">   <span class="number">010</span> <span class="number">4444</span> <span class="number">5555</span></span><br></pre></td></tr></table></figure>
-
-- Dot(.)는 모든 문자를 표현할 수 있기 때문에 모든 문자와 매칭됨
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a.z'</span>, <span class="string">'abz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abz'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- Dot 두개는 문자 두개를 의미
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'a..z'</span>, <span class="string">'ahyz'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">4</span>), match=<span class="string">'ahyz'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- 백슬래시() 문자를 찾을 때...
-
-- &apos;\\&apos; 문자가 문자열 그 자체임을 알려주기 위해 백슬래시 2개를 사용하여 처리해야 한다.
-
-- 하지만 파이썬 문자열 리터럴 규칙에 의해 &apos;\\\\&apos;로 명시하여도 다시 &apos;\\&apos;로 변경하여 전달한다.
-
-- 따라서 백슬래시 4개(&apos;\\\\\\\\&apos;)를 사용해야 한다.
-
-- 파이썬에서 사용할 때만 적용되는 문제
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">'\\\\'</span>, <span class="string">'dir1\dir2'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">5</span>), match=<span class="string">'\\'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- 너무 복잡하기 때문에 파이썬 정규식에는 Raw string이라는 것이 존재
-
-- r을 붙여줌
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.search(<span class="string">r'\\'</span>, <span class="string">'dir1\dir2'</span>)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">4</span>, <span class="number">5</span>), match=<span class="string">'\\'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- 그룹핑(Grouping)
-
-- 매치된 문자열 중에서 반복되는 문자열을 찾거나, 특정 부분의 문자열을 출력하기 위해 사용
-
-- 해당 부분에 &apos;()&apos;로 묶어주면 된다.
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'(\d&#123;3&#125;)[-./ ]*(\d&#123;3,4&#125;)[-./ ]*(\d&#123;4&#125;)'</span></span><br><span class="line">string = <span class="string">'010-1111-2222'</span></span><br><span class="line">m = re.search(pattern, string)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">13</span>), match=<span class="string">'010-1111-2222'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- 매치된 전체 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'010-1111-2222'</span></span><br></pre></td></tr></table></figure>
-
-- 첫번째 그룹에 해당되는 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'010'</span></span><br></pre></td></tr></table></figure>
-
-- 두번째 그룹에 해당되는 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'1111'</span></span><br></pre></td></tr></table></figure>
-
-- 세번째 그룹에 해당되는 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">3</span>)</span><br><span class="line">&gt;&gt; <span class="string">'2222'</span></span><br></pre></td></tr></table></figure>
-
-- 그룹 범위가 벗어난 경우 에러
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">4</span>)</span><br><span class="line">&gt;&gt; IndexError: no such group</span><br></pre></td></tr></table></figure>
-
-- 그룹핑의 범위는 문자열이 시작된 처음을 1번 그룹으로 한다.
-
-- &apos;(a(b)c)&apos;인 경우, abc 앞에 있는 &apos;()&apos;가 처음이고 그 다음이 b에 있는 &apos;()&apos;가 된다.
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'(a(b)c)'</span></span><br><span class="line">string = <span class="string">'abcde'</span></span><br><span class="line">m = re.search(pattern, string)</span><br><span class="line">m</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br><span class="line"></span><br><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
-
-- 첫번째 그룹 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'abc'</span></span><br></pre></td></tr></table></figure>
-
-- 두번째 그룹 문자열 리턴
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'b'</span></span><br></pre></td></tr></table></figure>
-
-- 그룹 범위가 벗어난 경우 에러
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m.group(<span class="number">3</span>)</span><br><span class="line">&gt;&gt; IndexError: no such group</span><br></pre></td></tr></table></figure>
-
-- compile 옵션
-
-- compile 문을 활용하는 경우, 패턴 객체를 만들고 여러번 재사용이 가능
-
-- 반복적인 매칭 작업이 필요한 경우에는 패던을 미리 컴파일해서 시간 단축
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = re.compile(pattern)</span><br><span class="line">p.match(string)</span><br><span class="line">&gt;&gt; &lt;re.Match object; span=(<span class="number">0</span>, <span class="number">3</span>), match=<span class="string">'abc'</span>&gt;</span><br></pre></td></tr></table></figure>
-
-- &apos;a = 100&apos;이라는 문자열을 group으로 나눴을 때 각각 a, =, 100 출력하기
-
-- 변수 처음은 문자가 올 수 있지만, 숫자는 올 수 없다.(ex) 1a는 안됨)
-
-- [a-zA-Z_]로 처음 오는 문자가 숫자가 될 수 없도록 함
-
-- \w*으로 다음 오는 문자가 무엇이든 반복이 얼마가 되든 상관없게 선언
-
-- 사이에 공백으로 인해 \s*
-
-- 할당하는 숫자는 반드시 하나는 와야 하므로 &apos;+&apos;를 사용하여 [0-9]+ 선언
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pattern = <span class="string">r'([a-zA-Z_]\w*)\s*=\s*([0-9]+)'</span></span><br><span class="line">p = re.compile(pattern)</span><br><span class="line">m = p.search(<span class="string">'a_1 = 100'</span>)</span><br><span class="line">m.group()</span><br><span class="line">&gt;&gt; <span class="string">'a_1 = 100'</span></span><br><span class="line"></span><br><span class="line">m.group(<span class="number">1</span>)</span><br><span class="line">&gt;&gt; <span class="string">'a_1'</span></span><br><span class="line"></span><br><span class="line">m.group(<span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="string">'100'</span></span><br></pre></td></tr></table></figure>
-</code></pre>
         </div>
         <footer class="article-footer">
             
@@ -588,7 +566,7 @@ origin의 master는 하나
 1$ git branch
 
 모"
-        "wordCount": 2344
+        "wordCount": 2301
     }
 </script>
 
