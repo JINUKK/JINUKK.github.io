@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.04.02 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="linux에 대해 Basic  “-“가 붙으면 옵션 ex) -l, -r, -m, -s, -i…  “..”은 상위 폴더 ex) cd ..  “~”는 user의 최상단 폴더로 진입. user 폴더의 절대 경로  “.”은 현재 폴더, “..”은 상위 폴더  최상단 폴더로 진입 가능한 명령어 : cd, cd ~, cd ../..  폴더 만들기 1$ mkdir [폴">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.04.02 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/04/02/190402-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="linux에 대해 Basic  “-“가 붙으면 옵션 ex) -l, -r, -m, -s, -i…  “..”은 상위 폴더 ex) cd ..  “~”는 user의 최상단 폴더로 진입. user 폴더의 절대 경로  “.”은 현재 폴더, “..”은 상위 폴더  최상단 폴더로 진입 가능한 명령어 : cd, cd ~, cd ../..  폴더 만들기 1$ mkdir [폴">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T16:24:47.109Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.04.02 Python and CE Study">
+<meta name="twitter:description" content="linux에 대해 Basic  “-“가 붙으면 옵션 ex) -l, -r, -m, -s, -i…  “..”은 상위 폴더 ex) cd ..  “~”는 user의 최상단 폴더로 진입. user 폴더의 절대 경로  “.”은 현재 폴더, “..”은 상위 폴더  최상단 폴더로 진입 가능한 명령어 : cd, cd ~, cd ../..  폴더 만들기 1$ mkdir [폴">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190402-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.04.02 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/02/190402-PCE-Study/" class="article-date">
+            <time datetime="2019-04-01T16:15:25.000Z" itemprop="datePublished">2019-04-02</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="linux에-대해"><a href="#linux에-대해" class="headerlink" title="linux에 대해"></a>linux에 대해</h2><ol>
+<li><p>Basic</p>
+<ul>
+<li><p>“-“가 붙으면 옵션 ex) -l, -r, -m, -s, -i…</p>
+</li>
+<li><p>“..”은 상위 폴더 ex) cd ..</p>
+</li>
+<li><p>“~”는 user의 최상단 폴더로 진입. user 폴더의 절대 경로</p>
+</li>
+<li><p>“.”은 현재 폴더, “..”은 상위 폴더</p>
+</li>
+<li><p>최상단 폴더로 진입 가능한 명령어 : cd, cd ~, cd ../..</p>
+</li>
+<li><p>폴더 만들기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir [폴더 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일 만들기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ touch [파일 이름.확장자]</span><br><span class="line"><span class="comment"># touch 명령어를 통해 같은 파일을 만들면 최종 수정 날짜 변경 가능</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>대상 이동</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ mv [이동할 대상] [이동할 폴더]</span><br><span class="line"><span class="comment"># 이름을 바꿀 때도 mv 명령어를 쓴다. ex) mv [현재 폴더] [이름을 바꾼 현재 폴더]</span></span><br><span class="line"><span class="comment"># 폴더를 이동할 때 "폴더 이름*"을 사용하면 한꺼번에 이동 가능</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>디렉토리 폴더를 지울 때</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 폴더 안에 저장되어 있는 것이 있다면</span></span><br><span class="line">$ rm -r [폴더 이름]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 저장된 것이 없이 빈 폴더라면</span></span><br><span class="line">rmdir [폴더 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>디렉토리 폴더 내 목록 보기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 자세히 보기</span></span><br><span class="line">$ ls -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 숨겨진 파일 보기</span></span><br><span class="line">$ ls -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>자세히 보기</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex) -rwxrwxrwx 1 user group 4096 4월 2 00:00 test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>맨 앞은 파일의 종류에 대한 속성을 나타낸다. ‘-‘이라면 파일, ‘d’라면 디렉토리 폴더이다.</p>
+</li>
+<li><p>그 다음으로 세자리씩 끊어서 읽는다. ex) rwx rwx rwx</p>
+<ul>
+<li><p>첫번째 세자리는 파일의 User에 대한 권한이다.</p>
+</li>
+<li><p>두번째 세자리는 파일의 Group에 대한 권한이다.</p>
+</li>
+<li><p>세번째 세자리는 관련이 없는 자들(Other)에 대한 권한이다.</p>
+</li>
+<li><p>r은 읽기(read), w는 쓰기(write), x는 실행(execute)이다.</p>
+</li>
+<li><p>rwx는 세 개 모두 된다는 뜻이다.</p>
+</li>
+<li><p>r-x는 읽고 실행은 가능하지만 수정은 불가능하다는 뜻이다.</p>
+</li>
+<li><p>rwx = 7 즉, 8진수로 나타낼 수 있다.</p>
+<ul>
+<li>r = 4, w = 2, x = 1로 계산하면 된다.</li>
+</ul>
+</li>
+<li><p>777이면 rwxrwxrwx라는 뜻이다.(퍼미션)</p>
+</li>
+</ul>
+</li>
+<li><p>chmod 명령어를 통해 권한을 줄 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ chmod 755 [파일 이름]</span><br><span class="line">$ chmod u+r [파일 이름] <span class="comment"># u+r =&gt; user에게 r 권한을 줄 수 있음</span></span><br><span class="line">$ chmod g+x [파일 이름] <span class="comment"># g+x =&gt; group에게 x 권한을 줄 수 있음</span></span><br><span class="line">$ chmod o=rwx [파일 이름] <span class="comment"># o=rwx =&gt; other에게 rwx 권한을 줄 수 있음</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>rwxrwxrwx 다음으로 1은 해당 파일에 link되어 있는 파일의 개수</p>
+</li>
+<li><p>다음은 user은 해당 파일의 사용자(User)</p>
+</li>
+<li><p>다음은 group은 해당 파일의 그룹(Group)</p>
+</li>
+<li><p>4096은 파일의 크기(byte)</p>
+</li>
+<li><p>날짜는 해당 파일이 최종 수정된 날짜 및 시간</p>
+</li>
+<li><p>다음 의미를 알아보자.</p>
+<ul>
+<li>SetUID, SetGID, sticky bit</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>하드 링크(hard link)와 심볼릭 링크(symbolic link)</p>
+<ol>
+<li><p>하드 링크(hard link)</p>
+<ul>
+<li><p>원본 파일과 동일한 inode를 가진다.</p>
+</li>
+<li><p>원본 파일이 삭제되더라도 원본 파일의 inode를 갖고 있는 링크 파일은 여전히 사용 가능</p>
+</li>
+<li><p>같은 inode를 가리키는 서로 다른 이름이라고 생각하면 된다.</p>
+</li>
+<li><p>file system이 같을 때만 만들 수 있다.(같은 디스크 내)</p>
+</li>
+<li><p>inode의 값은 ls -i를 사용하면 된다.</p>
+</li>
+</ul>
+</li>
+<li><p>심볼릭 링크(symbolic link)</p>
+<ul>
+<li><p>원본 파일의 이름을 가리키는 링크</p>
+</li>
+<li><p>원본 파일이 사라지게 되면 역할 수행 불가능</p>
+</li>
+<li><p>file system이 달라도 만들 수 있다.</p>
+</li>
+<li><p>원본 파일이 삭제되더라도 원본 파일과 같은 이름으로 다시 생성하면 다시 사용 가능</p>
+</li>
+<li><p>ls -F로 링크 파일 파악가능</p>
+</li>
+<li><p>‘@’가 붙어있으면 심볼릭 링크, ‘/‘가 붙어있으면 폴더, ‘*’가 붙어있으면 실행파일</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>tar : Tape ARchiver의 앞 글자를 조합</p>
+<ul>
+<li><p>여러 개의 파일을 하나의 파일로 묶거나 풀 때 사용하는 명령어</p>
+</li>
+<li><p>Archiver는 통상적으로 여러 개의 파일을 하나의 파일로 합치는 프로그램을 의미</p>
+</li>
+<li><p>저장 장치에 파일을 저장하거나 네트워크를 통해 파일을 전송할 때</p>
+<ul>
+<li><p>파일이 여러 개 있으면 관리가 복잡</p>
+</li>
+<li><p>여러 파일을 하나로 합쳐서 처리하기 위한 목적으로 만들어짐</p>
+</li>
+</ul>
+</li>
+<li><p>c : 아카이브 생성(파일을 묶을 때 사용)</p>
+</li>
+<li><p>v : 처리되는 과정(파일 정보)을 자세하게 나열</p>
+</li>
+<li><p>f : 대상 아카이브 지정</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar cvf test.tar test.txt test2.txt test3.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>t : 아카이브에 포함된 내용 확인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar tvf test.tar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>x : 아카이브에서 파일 추출(파일을 풀 때 사용)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar xvf test.tar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>u : 아카이브의 마지막에 파일들 추가(update)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar uvf test.tar test4.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>z : gzip 압축 적용 옵션</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ tar cvzf test.tar test.txt test2.txt test3.txt</span><br><span class="line"></span><br><span class="line">$ gzip test.tar <span class="comment"># test.tar 압축 = test.tar.gz</span></span><br><span class="line"></span><br><span class="line">$ zcat test.tar.gz <span class="comment"># 압축된 파일을 binary code로 풀어서 모두 보여줌</span></span><br><span class="line"></span><br><span class="line">$ gunzip test.tar.gz <span class="comment"># test.tar.gz를 압축 해제 = test.tar</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>BIOS(Basic Input/Output System)</p>
+<ul>
+<li><p>운영 체제 중 가장 기본적인 컴퓨터의 입출력을 처리하는 소프트웨어</p>
+</li>
+<li><p>사용자가 컴퓨터를 켜면 시작되는 프로그램</p>
+</li>
+<li><p>주변 장치와 컴퓨터 운영 체제 사이의 데이터의 흐름을 관리</p>
+</li>
+<li><p>Check hardwares</p>
+</li>
+<li><p>MBR(Master Boot Record)이 부트로더를 알고 있음</p>
+</li>
+</ul>
+</li>
+<li><p>User</p>
+<ul>
+<li><p>user</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/passwd</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo useradd -s /bin/bash -m -d /home/username username</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user passward 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd username</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user 삭제</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo userdel -r username</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>group 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupadd groupname</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>group passward 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gpasswd groupname</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>group 삭제</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupdel groupname</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>chown 명령어</p>
+</li>
+<li><p>파일 및 디렉토리의 소유권을 바꾸는 명령어</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># root 계정으로 만든 파일을 user1이라는 계정이 소유하게 변경</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># test.txt 파일이 root(user) root(group) 계정 권한이 있다면</span></span><br><span class="line"></span><br><span class="line">$ chown user1:user1 test.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># user1(user) user1(group)으로 계정 권한이 변경된다.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Vim 명령어</p>
+<ul>
+<li><p>진입</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim [파일 이름.확장자]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vim은 시작하자마자 Normal 모드</p>
+</li>
+<li><p>insert를 시작할 때는 i</p>
+</li>
+<li><p>a를 누르면 내가 원하는 자리에서 시작 가능</p>
+</li>
+<li><p>shift + a를 이용하여 커서의 처음자리에서 끝자리로도 이동가능</p>
+</li>
+<li><p>복사 : shift + y</p>
+</li>
+<li><p>붙여넣기 : p(한 단계 위에서 붙여진다.)</p>
+</li>
+<li><p>esc를 통해 Normal 모드</p>
+</li>
+<li><p>Normal 모드에서 ‘shift + :’를 누르면 명령어 입력 가능</p>
+</li>
+<li><p>‘shift + :’에서 w는 저장, q는 나가기, wq는 저장 후 나가기</p>
+</li>
+<li><p>‘shift + :’에서 숫자를 입력하면 해당 숫자 라인으로 이동</p>
+</li>
+<li><p>H, J, K, L로 방향키 가능</p>
+</li>
+<li><p>v는 비주얼 모드</p>
+</li>
+<li><p>비정상적인 종료로 swp 파일이 생겼을 경우, 지우면 된다.</p>
+</li>
+</ul>
+</li>
+<li><p>기타 명령어</p>
+<ul>
+<li><p>시스템 레벨 확인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ run level</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>종료</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo shutdown -h now</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>리눅스 설치 비트 확인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ arch</span><br><span class="line"></span><br><span class="line">$ getconf LONG_BIT</span><br><span class="line"></span><br><span class="line">$ uname -m</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$HOSTTYPE</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python 실행 비트 확인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python</span><br><span class="line"></span><br><span class="line">&gt;&gt; import platform</span><br><span class="line"></span><br><span class="line">&gt;&gt; platform.architecture()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>리눅스에서 hard disk, USB mount 하는법 찾아보기</p>
+<ul>
+<li>fdisk, mke2fs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/04/02/190402-PCE-Study/" data-id="cjvcl3f3y000y4rwunx3jmmzu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.04.02 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-04-02",
+        "dateCreated": "2019-04-02",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/04/02/190402-PCE-Study/",
+        "description": "linux에 대해
+Basic
+
+“-“가 붙으면 옵션 ex) -l, -r, -m, -s, -i…
+
+“..”은 상위 폴더 ex) cd ..
+
+“~”는 user의 최상단 폴더로 진입. user 폴더의 절대 경로
+
+“.”은 현재 폴더, “..”은 상위 폴더
+
+최상단 폴더로 진입 가능한 명령어 : cd, cd ~, cd ../..
+
+폴더 만들기
+1$ mkdir [폴"
+        "wordCount": 942
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/03/190403-PCE-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.03 Python and CE Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/04/01/190401-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.04.01 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">32</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/04/02/190402-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

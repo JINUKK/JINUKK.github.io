@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.04.04 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="IP Routing 출발지(Host)에서 목적지(원하는 사이트의 ip)까지 어떤 홉(hop)들을 거쳐갈 것인지를 선택하는 것  홉(hop)  데이터 통신망에서 각 패킷이 라우터를 건너가는 모습   가능성 있는 모든 경로들에 대한 정보 수집 후, 라우팅 테이블(Routing Table)에   기록함 - 최적 경로, 시간, 거리, 비용 등 다양한 조건에 의한">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.04.04 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/04/04/190404-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="IP Routing 출발지(Host)에서 목적지(원하는 사이트의 ip)까지 어떤 홉(hop)들을 거쳐갈 것인지를 선택하는 것  홉(hop)  데이터 통신망에서 각 패킷이 라우터를 건너가는 모습   가능성 있는 모든 경로들에 대한 정보 수집 후, 라우팅 테이블(Routing Table)에   기록함 - 최적 경로, 시간, 거리, 비용 등 다양한 조건에 의한">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T16:30:14.072Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.04.04 Python and CE Study">
+<meta name="twitter:description" content="IP Routing 출발지(Host)에서 목적지(원하는 사이트의 ip)까지 어떤 홉(hop)들을 거쳐갈 것인지를 선택하는 것  홉(hop)  데이터 통신망에서 각 패킷이 라우터를 건너가는 모습   가능성 있는 모든 경로들에 대한 정보 수집 후, 라우팅 테이블(Routing Table)에   기록함 - 최적 경로, 시간, 거리, 비용 등 다양한 조건에 의한">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190404-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.04.04 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/04/190404-PCE-Study/" class="article-date">
+            <time datetime="2019-04-03T16:15:33.000Z" itemprop="datePublished">2019-04-04</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="IP-Routing"><a href="#IP-Routing" class="headerlink" title="IP Routing"></a>IP Routing</h2><ul>
+<li><p>출발지(Host)에서 목적지(원하는 사이트의 ip)까지 어떤 홉(hop)들을 거쳐갈 것인지를 선택하는 것</p>
+</li>
+<li><p>홉(hop)</p>
+<ul>
+<li>데이터 통신망에서 각 패킷이 라우터를 건너가는 모습</li>
+</ul>
+</li>
+<li><p>가능성 있는 모든 경로들에 대한 정보 수집 후, 라우팅 테이블(Routing Table)에</p>
+</li>
+</ul>
+<p>기록함</p>
+<pre><code>- 최적 경로, 시간, 거리, 비용 등 다양한 조건에 의한 최적 경로
+</code></pre><ul>
+<li><p>라우팅 테이블(Routing Table)</p>
+<ul>
+<li><p>최적의 경로를 저장해놓은 테이블</p>
+</li>
+<li><p>라우팅 테이블이 없으면 데이터를 전송할 수 없다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="인터넷이-안된다면…"><a href="#인터넷이-안된다면…" class="headerlink" title="인터넷이 안된다면…"></a>인터넷이 안된다면…</h3><ul>
+<li><p>Router(ex iptime)가 안될 경우</p>
+</li>
+<li><p>NIC 즉, 랜카드가 안될 경우</p>
+</li>
+<li><p>OS 자체 내에서 TCP/IP 4계층 동작이 안될 경우</p>
+<ul>
+<li><p>localhost(127.0.0.1)를 통해 loopback하여 OS 자체 내 문제 확인</p>
+</li>
+<li><p>packet을 날려서 잘돌아오는지 확인</p>
+</li>
+<li><p>NIC 하고는 상관없는 동작</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="전송-계층-Transport-Layer"><a href="#전송-계층-Transport-Layer" class="headerlink" title="전송 계층(Transport Layer)"></a>전송 계층(Transport Layer)</h2><h3 id="TCP-vs-UDP"><a href="#TCP-vs-UDP" class="headerlink" title="TCP vs UDP"></a>TCP vs UDP</h3><ol>
+<li><p>TCP(Transmission Control Protocol)</p>
+<ul>
+<li><p>연결 지향형 프로토콜</p>
+</li>
+<li><p>높은 신뢰성</p>
+</li>
+<li><p>수신 호스트를 체크</p>
+</li>
+<li><p>수신 호스트가 응답하지 않을 경우, 일정 시간 후 데이터를 재전송</p>
+</li>
+<li><p>소켓쌍(ex (source IP, source port), (dst IP, dst port))으로 연결 식별</p>
+</li>
+<li><p>커널 영역에 send buffer와 receive buffer로 동작 수행</p>
+</li>
+</ul>
+<ol>
+<li><p>TCB(Transmission Control Block)</p>
+<ul>
+<li><p>TCP 연결 처리에 필요한 정보가 있다.</p>
+</li>
+<li><p>connection state(LISTEN, ESTABLISHED, TIME_WAIT 등)</p>
+</li>
+<li><p>receive window</p>
+</li>
+<li><p>congestion window</p>
+</li>
+<li><p>sequence 번호</p>
+</li>
+<li><p>재전송 타이머 등</p>
+</li>
+</ul>
+</li>
+<li><p>3-Way Handshaking</p>
+<ul>
+<li><p>양쪽 모두 데이터를 전송할 준비가 되었다는 것을 보장한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client &lt;------------&gt; server</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>client가 처음으로 SYN(Synchronize)를 보낸다.</p>
+<ul>
+<li><p>sequence number는 ISN(Initial Sequence Number)</p>
+</li>
+<li><p>보낸 후, 응답을 기다리는 SYN_SENT 상태가 된다.</p>
+</li>
+</ul>
+</li>
+<li><p>server는 client에게 요청을 수락한다는 ACK(Acknowledgment)와 SYN를 발송한다.</p>
+<ul>
+<li><p>ACK는 SYN에 +1을 한 것</p>
+</li>
+<li><p>client가 다시 응답하기는 기다리는 SYN_RECEIVED 상태가 된다.</p>
+</li>
+</ul>
+</li>
+<li><p>client는 다시 server에게 ACK를 보내고 이후부터는 연결이 이루어진다.</p>
+<ul>
+<li>client와 server 모두 ESTABLISHED 상태가 된다.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>4-Way Handshaking</p>
+<ul>
+<li><p>연결을 종료하기 위해 수행되는 절차</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client &lt;------------&gt; server</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>client가 연결을 종료하겠다는 FIN(Finish)을 보낸다.</p>
+<ul>
+<li><p>이 때 client는 더 이상 send를 할 수 없고, received만 하는 상태가 된다.</p>
+</li>
+<li><p>client는 FIN-WAIT1 상태가 된다.</p>
+</li>
+</ul>
+</li>
+<li><p>server는 ACK를 보내고 application이 끝날 때까지 기다린다.</p>
+<ul>
+<li><p>server는 CLOSE_WAIT 상태가 된다.(TIME_WAIT)</p>
+</li>
+<li><p>client는 server의 FIN을 기다리는 FIN-WAIT2 상태가 된다.</p>
+</li>
+</ul>
+</li>
+<li><p>application이 끝나면 server는 FIN을 client로 보낸다.</p>
+<ul>
+<li>server는 client의 ACK를 기다리며 LAST_ACK 상태가 된다.</li>
+</ul>
+</li>
+<li><p>client는 ACK를 보낸 뒤에 TIME_WAIT 상태가 된다.</p>
+<ul>
+<li><p>이 때 보낸 client는 server로부터 받지 못한 데이터가 있을 수 있다.</p>
+</li>
+<li><p>그럴 경우를 대비해 MSL(Maximum Segment Lifetime)의 두 배의 시간을 기다린다.(defalut : 240s)</p>
+</li>
+<li><p>그리고 CLOSE</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- SYN(Synchronization) : 동기화. 연결 요청 플래그</span><br><span class="line"></span><br><span class="line">- ACK(Acknowledgement) : 응답</span><br><span class="line"></span><br><span class="line">- FIN(Finish) : 연결 종료 요청</span><br><span class="line"></span><br><span class="line">- MSL(Maximum Segment Lifetime) : 최대 세그먼트 수명, 주로 2분.</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>UDP(User Datagram Protocol)</p>
+<ul>
+<li><p>낮은 신뢰성</p>
+</li>
+<li><p>packet을 보내고 받았는지 체크를 하지 않음</p>
+</li>
+<li><p>스트리밍 서비스에 이용</p>
+</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/04/04/190404-PCE-Study/" data-id="cjvcl3f4000124rwugsd56o9r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.04.04 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-04-04",
+        "dateCreated": "2019-04-04",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/04/04/190404-PCE-Study/",
+        "description": "IP Routing
+출발지(Host)에서 목적지(원하는 사이트의 ip)까지 어떤 홉(hop)들을 거쳐갈 것인지를 선택하는 것
+
+홉(hop)
+
+데이터 통신망에서 각 패킷이 라우터를 건너가는 모습
+
+
+가능성 있는 모든 경로들에 대한 정보 수집 후, 라우팅 테이블(Routing Table)에
+
+
+기록함
+- 최적 경로, 시간, 거리, 비용 등 다양한 조건에 의한 "
+        "wordCount": 346
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/05/190405-PCE-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.05 Python and CE Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/04/03/190403-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.04.03 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">32</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/04/04/190404-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
