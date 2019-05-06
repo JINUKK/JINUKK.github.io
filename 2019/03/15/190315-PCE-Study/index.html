@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.03.15 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="얕은 복사(shallow copy) vs 깊은 복사(deep copy) 리스트 예시   12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.03.15 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/15/190315-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="얕은 복사(shallow copy) vs 깊은 복사(deep copy) 리스트 예시   12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T15:34:01.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.03.15 Python and CE Study">
+<meta name="twitter:description" content="얕은 복사(shallow copy) vs 깊은 복사(deep copy) 리스트 예시   12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190315-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.03.15 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/15/190315-PCE-Study/" class="article-date">
+            <time datetime="2019-03-14T15:31:39.000Z" itemprop="datePublished">2019-03-15</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="얕은-복사-shallow-copy-vs-깊은-복사-deep-copy"><a href="#얕은-복사-shallow-copy-vs-깊은-복사-deep-copy" class="headerlink" title="얕은 복사(shallow copy) vs 깊은 복사(deep copy)"></a>얕은 복사(shallow copy) vs 깊은 복사(deep copy)</h2><ul>
+<li><p>리스트 예시</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 참조(reference). 둘은 완벽하게 같은 객체.</span></span><br><span class="line">li2 = li</span><br><span class="line">li2</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">li2.append(<span class="number">4</span>)</span><br><span class="line">li</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>얕은 복사(shallow copy)</p>
+<ul>
+<li><p>얕은 복사를 하면 공간을 복사해서 다른 공간이 생긴다.</p>
+</li>
+<li><p>하지만 바라보고 있는 대상이 리스트 안에 리스트일 경우는 다르다.</p>
+<ul>
+<li>이름 객체가 같은 곳을 바라보고 있기 때문에 기존 대상과 같이 바뀌게 된다.</li>
+</ul>
+</li>
+<li><p>pythontutor.com을 통해 이해하자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">li3 = li.copy()  <span class="comment"># 얕은 복사</span></span><br><span class="line">li3</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">li3.append(<span class="number">5</span>)</span><br><span class="line">li3</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 리스트 안에 리스트를 넣을 경우</span></span><br><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line">li3 = li.copy()  <span class="comment"># 얕은 복사</span></span><br><span class="line">li3</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 리스트 안에 리스트에 요소 값 추가</span></span><br><span class="line">li3[<span class="number">4</span>].append(<span class="number">8</span>)</span><br><span class="line">li3</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 원래 있던 리스트 안 리스트도 바뀜</span></span><br><span class="line">li</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>깊은 복사(deep copy)</p>
+<ul>
+<li><p>깊은 복사를 하면 완전히 다른 객체를 만들어버린다.</p>
+</li>
+<li><p>기존 대상이 복사한 대상과 같지 않다.</p>
+</li>
+<li><p>pythontutor.com을 통해 이해하자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">li4 = copy.deepcopy(li)  <span class="comment"># 깊은 복사</span></span><br><span class="line">li4</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br><span class="line"></span><br><span class="line">li4[<span class="number">4</span>][<span class="number">1</span>] = <span class="number">10</span></span><br><span class="line">li4</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">10</span>, <span class="number">8</span>]]</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Computer-Engineering"><a href="#Computer-Engineering" class="headerlink" title="Computer Engineering"></a>Computer Engineering</h2><ul>
+<li><p>Instruction Cycle(명령 주기)</p>
+<ol>
+<li><p>fetch</p>
+<ul>
+<li>PC(Program Counter)가 가리키고 있던 Instruction을 Memory로부터 가져옴</li>
+</ul>
+</li>
+<li><p>decode</p>
+<ul>
+<li>CU(Control Unit)이 IR(Instruction Register)에 있는 값을 가지고 분석 및 해석</li>
+</ul>
+</li>
+<li><p>execute</p>
+<ul>
+<li>실제로 동작(실행)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>Memory Layout(Segment)</p>
+<ul>
+<li>메모리 영역은 크게 다음과 같이 나뉜다.(stability)</li>
+</ul>
+<ol>
+<li><p>프로그래머들이 코딩할 수 있는 <strong>User 영역</strong></p>
+</li>
+<li><p>OS 관련 코드가 있는 <strong>Kernel 영역</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>User 영역에서 함부로 Kernel 영역에 접근할 수 없다.(security)</p>
+<ul>
+<li>window 98에서는 Kernel 영역의 메모리를 바꿀 수 있어서 위험했다.(블루 스크린)</li>
+</ul>
+</li>
+<li><p>User 영역은 다음과 같다.</p>
+</li>
+</ul>
+<ol>
+<li><p>code segment</p>
+<ul>
+<li>Instruction이 된 코드가 저장됨</li>
+</ul>
+</li>
+<li><p>data segment</p>
+<ul>
+<li><p>전역 변수 저장</p>
+</li>
+<li><p>초기값이 있으면 data 영역에 할당</p>
+</li>
+<li><p>초기값이 없으면 BSS 영역에 할당</p>
+</li>
+<li><p>프로세스가 시작될 때 생성되고, 프로세스가 종료될 때 소멸됨</p>
+</li>
+</ul>
+</li>
+<li><p>heap segment</p>
+<ul>
+<li><p>프로그래머가 원할 때 지정할 수 있는 영역</p>
+</li>
+<li><p>프로그래머가 원할 때 생성하고 소멸할 수 있음</p>
+</li>
+</ul>
+</li>
+<li><p>stack segment</p>
+<ul>
+<li><p>지역 변수 저장</p>
+</li>
+<li><p>함수가 호출될 때 생성되고, 함수가 종료될 때 소멸됨</p>
+</li>
+<li><p>stack 크기는 기본적으로 1MB가 잡혀있다.</p>
+</li>
+<li><p>heap은 크기가 제한되어 있지 않아서 stack 공간을 만날 때까지 계속 커질 수 있다.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>Heap</p>
+<ul>
+<li><p>단점</p>
+<ol>
+<li><p>메모리 누수(memory leak)</p>
+</li>
+<li><p>느리다.(malloc이 느리다.)</p>
+</li>
+<li><p>메모리 단편화(memory fragmentation)</p>
+</li>
+</ol>
+<ul>
+<li>2번과 3번이 연관됨</li>
+</ul>
+</li>
+<li><p>Stack과 Heap 비교</p>
+</li>
+</ul>
+<ol>
+<li><p>Stack</p>
+<ul>
+<li><p>stack pointer가 top을 가리키고 있기 때문에 할당할 지점을 찾을 필요가 없다.</p>
+</li>
+<li><p>그래서 stack은 빠르다.</p>
+</li>
+</ul>
+</li>
+<li><p>Heap</p>
+<ul>
+<li><p>메모리에 비어있는 공간을 찾아야 한다.</p>
+</li>
+<li><p>memory header는 몇바이트가 저장되는지 기억하고 있다.</p>
+</li>
+<li><p>전체 메모리 상에서는 충분하나, 조각조각으로 나뉘어져 있는 부분을 더한 것이기 때문에 단편화가 일어난다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">8byte의 메모리 공간이 필요한 시점에서...</span><br><span class="line">4byte, 4byte, 2byte의 메모리들을 더하면 10byte로 충분해보인다.</span><br><span class="line">하지만 나누어져 있는 메모리이기 때문에 사용이 불가하다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Default Heap</p>
+<ul>
+<li>프로세스가 생성될 때 제일 먼저 잡히는 heap 공간</li>
+</ul>
+</li>
+<li><p>Dynamic heap</p>
+<ul>
+<li><p>내가 원하는 만큼 heap의 크기를 받아서 조절해서 프로그램하는 것</p>
+</li>
+<li><p>dynamic heap으로 구현한 것 중 하나가 python이다.</p>
+</li>
+<li><p>dynamic heap을 통해 memory 단편화를 해결할 수 있다.</p>
+</li>
+</ul>
+</li>
+<li><p>Garbage collection</p>
+<ul>
+<li><p>언어 차원에서 메모리를 관리해주는 것(heap을 관리해줌)</p>
+</li>
+<li><p>reference counter 값이 0이 된 메모리를 지워준다.</p>
+<ul>
+<li><p>import sys의 sys.getrefcount() 함수 사용 가능</p>
+</li>
+<li><p>카운트 값은 실제 카운트 값보다 1이 큰 값</p>
+</li>
+</ul>
+</li>
+<li><p>C++도 shared counter 기법을 통해 메모리 누수 문제를 해결할 수 있다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>가상 주소 공간(VAS. Virtual Address Space)</p>
+<ul>
+<li><p>OS가 프로세스가 시작될 때 할당해주는 가상 메모리 공간</p>
+</li>
+<li><p>Virtual Memory = RAM + Page file</p>
+</li>
+<li><p>OS가 프로세스를 시작하면 4GB를 할당해준다.</p>
+</li>
+<li><p>즉, 프로세스가 페이지 테이블을 Main Memory에 만들고 페이지 테이블의 첫 주소를 가르쳐준다.</p>
+</li>
+</ul>
+<ol>
+<li><p>Logical address(논리 주소)</p>
+<ul>
+<li>VAS에 있는 메모리 주소</li>
+</ul>
+</li>
+<li><p>Physical address(물리 주소)</p>
+<ul>
+<li>Main memory에 있는 메모리 주소</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>0x00000000 ~ 0xFFFFFFFF 중에서 앞에 0x”00000”까지가 주소를 가리킨다.</p>
+</li>
+<li><p>나머지 뒤에 0x”000”이 Offset(해당 페이지 시작으로부터 주소까지 거리)이다.</p>
+</li>
+<li><p>즉, 논리 주소(LA)를 물리 주소(PA)로 바꾸려면 앞 5자리만 바꾸면 된다.</p>
+</li>
+<li><p>Page Table</p>
+<ul>
+<li><p>VAS에서의 논리 주소(LA)와 물리 주소(PA)가 기록된다.</p>
+</li>
+<li><p>두 주소가 모두 올라와 있으면 1로, 아니면 0으로 판단하는 유효 비트(valid bit)도 존재 한다.</p>
+</li>
+</ul>
+</li>
+<li><p>MMU(Memory Management Unit)</p>
+<ul>
+<li><p>PC가 가리키고 있는 논리 주소(LA)를 물리 주소(PA)로 바꿔준다.</p>
+</li>
+<li><p>run-time mapping</p>
+</li>
+</ul>
+</li>
+<li><p>Preparing</p>
+<ul>
+<li><p>프로그램을 실행하면 page table이 만들어진다.</p>
+</li>
+<li><p>page table에서 지금 당장 필요할 것 같은 코드를 HDD에서 main memory로 가져오는 것을 말한다.</p>
+</li>
+</ul>
+</li>
+<li><p>Page Fault</p>
+<ul>
+<li><p>CPU가 logical memory를 요구하면 MMU가 physical memory로 바꿔서 가져온다.</p>
+</li>
+<li><p>page table에 physical memory가 없고, vaild bit가 0인 상황이다.</p>
+</li>
+<li><p>이렇게 되면 HDD에서 원하는 데이터를 main memory에 올린다.</p>
+</li>
+<li><p>그 후, page table의 physical address를 가져오고 valid bit가 1이 되서 다시 동작하게 된다.</p>
+</li>
+<li><p>제일 처음에 메모리를 가져올 때에는 page fault가 무조건 일어나게 된다.</p>
+</li>
+<li><p>메모리를 가져올 때까지는 아무런 동작을 할 수 없다.</p>
+</li>
+</ul>
+</li>
+<li><p>Thrashing</p>
+<ul>
+<li><p>CPU 프로그램 처리 시간보다 page 교체에 더 많은 시간을 보내는 것을 말한다.</p>
+</li>
+<li><p>main memory의 page 부재가 비정상적으로 많이 발생하여 CPU가 프로그램 처리보다 페이지 교체에 더 많은 시간을 보내 성능이 급격히 줄어드는 현상이다.</p>
+</li>
+<li><p>멀티 프로세싱 기능을 갖춘 시스템에서 가상 메모리의 페이지 부재(page fault)가 너무 많이 발생하여 프로세스 실행보다 페이지 교체에 더 많은 시간을 소모하는 현상이다.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/15/190315-PCE-Study/" data-id="cjvcj1phc000ocuwuu4p29gd0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.03.15 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-03-15",
+        "dateCreated": "2019-03-15",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/03/15/190315-PCE-Study/",
+        "description": "얕은 복사(shallow copy) vs 깊은 복사(deep copy)
+리스트 예시
+  12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&gt;&gt; [1, 2, 3]li2.append(4)li&gt;&gt; [1, 2, 3, 4]
+
+
+
+얕은 복사(shallow copy)
+
+얕은 복사"
+        "wordCount": 844
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/14/190314-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.03.14 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">20</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">10</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/15/190315-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
