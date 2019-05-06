@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.03.12 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="closure 함수 내부에 상태 정보를 가지고 있다.  상태 정보 = 관련 있는 데이터(함수가 처리하려는 데이터)  class를 사용할 수 없을 때 쓴다.  계좌 만들기 예제 1234567891011121314151617181920212223242526272829303132333435def account(clnt_name, balance):  # 상태 정보">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.03.12 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/12/190312-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="closure 함수 내부에 상태 정보를 가지고 있다.  상태 정보 = 관련 있는 데이터(함수가 처리하려는 데이터)  class를 사용할 수 없을 때 쓴다.  계좌 만들기 예제 1234567891011121314151617181920212223242526272829303132333435def account(clnt_name, balance):  # 상태 정보">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-06T15:18:06.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.03.12 Python and CE Study">
+<meta name="twitter:description" content="closure 함수 내부에 상태 정보를 가지고 있다.  상태 정보 = 관련 있는 데이터(함수가 처리하려는 데이터)  class를 사용할 수 없을 때 쓴다.  계좌 만들기 예제 1234567891011121314151617181920212223242526272829303132333435def account(clnt_name, balance):  # 상태 정보">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190312-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.03.12 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/12/190312-PCE-Study/" class="article-date">
+            <time datetime="2019-03-11T15:13:10.000Z" itemprop="datePublished">2019-03-12</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="closure"><a href="#closure" class="headerlink" title="closure"></a>closure</h2><ul>
+<li><p>함수 내부에 상태 정보를 가지고 있다.</p>
+</li>
+<li><p>상태 정보 = 관련 있는 데이터(함수가 처리하려는 데이터)</p>
+</li>
+<li><p>class를 사용할 수 없을 때 쓴다.</p>
+<ul>
+<li><p>계좌 만들기 예제</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">account</span><span class="params">(clnt_name, balance)</span>:</span>  <span class="comment"># 상태 정보 - free variable</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change_money</span><span class="params">(money)</span>:</span></span><br><span class="line">        <span class="keyword">nonlocal</span> balance</span><br><span class="line">        balance += money</span><br><span class="line">        <span class="keyword">return</span> (clnt_name, balance)</span><br><span class="line">    <span class="keyword">return</span> change_money</span><br><span class="line"></span><br><span class="line"><span class="comment"># global variable - 맨 바깥쪽</span></span><br><span class="line"><span class="comment"># local variable - 함수 내</span></span><br><span class="line"><span class="comment"># free variable - 상태 정보</span></span><br><span class="line"></span><br><span class="line">my_acnt = account(<span class="string">'greg'</span>, <span class="number">5000</span>)</span><br><span class="line">your_acnt = account(<span class="string">'john'</span>, <span class="number">3000</span>)</span><br><span class="line"></span><br><span class="line">type(my_acnt)</span><br><span class="line">&gt;&gt; function</span><br><span class="line"></span><br><span class="line">my_acnt.__name__ == your_acnt.__name__</span><br><span class="line">&gt;&gt; <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">my_acnt.__name__</span><br><span class="line">&gt;&gt; <span class="string">'change_money'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># input 값 + 상태 정보 = output이 나온다.</span></span><br><span class="line">my_acnt(<span class="number">1000</span>)</span><br><span class="line">&gt;&gt; (<span class="string">'greg'</span>, <span class="number">6000</span>)</span><br><span class="line"></span><br><span class="line">your_acnt(<span class="number">1000</span>)</span><br><span class="line">&gt;&gt; (<span class="string">'john'</span>, <span class="number">4000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># cell_contents : 담겨 있는 상태 정보를 불러옴</span></span><br><span class="line">cells = my_acnt.__closure__</span><br><span class="line"><span class="keyword">for</span> cell <span class="keyword">in</span> cells:</span><br><span class="line">    print(cell.cell_contents, end = <span class="string">' '</span>)</span><br><span class="line">&gt;&gt; <span class="number">6000</span> greg</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="문자-문자열"><a href="#문자-문자열" class="headerlink" title="문자, 문자열"></a>문자, 문자열</h2><ul>
+<li><p>character set</p>
+<ul>
+<li><p>문자 집합</p>
+</li>
+<li><p>문자(character)를 모아둔 것</p>
+</li>
+<li><p>ex) 라틴 문자</p>
+</li>
+</ul>
+</li>
+<li><p>character encoding</p>
+<ul>
+<li><p>문자 인코딩</p>
+</li>
+<li><p>문자 집합을 메모리에 저장 · 통신하기 위해 부호화하는 방식</p>
+</li>
+<li><p>ex) 모스 부호</p>
+</li>
+</ul>
+</li>
+<li><p>code point</p>
+<ul>
+<li><p>문자 하나에 정수 하나를 매핑해둠</p>
+</li>
+<li><p>ex) ASCII 코드의 ‘a’는 97</p>
+</li>
+</ul>
+</li>
+<li><p>ASCII CODE</p>
+<ul>
+<li><p>0 ~ 127의 7bit로 모두 표현 가능</p>
+</li>
+<li><p>128가지 밖에 표현하지 못함</p>
+</li>
+<li><p>ASCII table 참고</p>
+</li>
+</ul>
+</li>
+<li><p>UNICODE</p>
+<ul>
+<li><p>0x0000 ~ 0xFFFF의 다국적 기본평면(BMP)에서부터 16번 평면까지 총 17개 존재</p>
+</li>
+<li><p>기본 평면(BMP)은 한글과 한중일 통합 한자들로 이루어져 있음</p>
+</li>
+</ul>
+</li>
+<li><p>ASCII CODE와 UNICODE</p>
+</li>
+</ul>
+<ol>
+<li><p>ASCII CODE</p>
+<ul>
+<li>‘a’ = 97 ==메모리에 저장될 때==&gt; 0b01100001 = 1byte로 표현</li>
+</ul>
+</li>
+<li><p>UNICODE</p>
+<ul>
+<li><p>‘가’ = 0xac00 =(메모리에 저장될 때)=&gt; 0b1010110000000000 = 2byte로 표현</p>
+</li>
+<li><p>기본 평면(BMP)이 아닌 2번째 평면부터는 0xFFFF가 넘어감 = 3byte를 사용</p>
+</li>
+<li><p>2byte + 4bit = 3byte를 쓰기보다는 padding byte를 추가해서 4byte로 쓰는 것이 좋음</p>
+</li>
+<li><p>다양한 인코딩 방식(UTF-8, UTF-16, UTF-32)이 생겨남</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="유니코드-부호화-방식"><a href="#유니코드-부호화-방식" class="headerlink" title="유니코드 부호화 방식"></a>유니코드 부호화 방식</h2><ul>
+<li><p>UTF-8</p>
+<ul>
+<li><p>영어 때문에 1byte(8bit)를 기반으로 보내는 가변 길이 인코딩 방식</p>
+</li>
+<li><p>한글을 보낼 때는 3byte 사용</p>
+</li>
+<li><p>UTF-8이 기준</p>
+</li>
+<li><p>UTF-8 구조</p>
+<ul>
+<li><p>U+0800 - U+FFFF ==&gt; 1110XXXX 10XXXXXX 10XXXXXX의 3byte 구조</p>
+</li>
+<li><p>‘가’의 유니코드 ==&gt; U+AC00 ==&gt; 1010 1100 0000 0000 ==&gt; 1010 110000 000000</p>
+</li>
+<li><p>X자리에 넣기 ==&gt; 11101010 10110000 10000000 ==&gt; 0x EA B0 80</p>
+</li>
+<li><p>즉, 3byte로 인코딩됨</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>UTF-16</p>
+<ul>
+<li><p>1차 평면(BMP)에서는 2byte로 표현</p>
+</li>
+<li><p>2차 평면 이상부터는 앞에 “0000”을 붙여서 4byte로 표현</p>
+</li>
+<li><p>다국적 기본 평면(BMP) : 16bit = 2byte</p>
+</li>
+<li><p>다국적 보충 평면(SMP) 이상 : 32bit = 4byte</p>
+</li>
+</ul>
+</li>
+<li><p>UTF-32</p>
+<ul>
+<li>모두 4byte로 보내는 인코딩 방식</li>
+</ul>
+</li>
+<li><p>CP949</p>
+<ul>
+<li><p>통합형 한글 코드(Unified Hangul Code)</p>
+</li>
+<li><p>마이크로 소프트 사에서 만듦</p>
+</li>
+<li><p>현대의 모든 한글 수용</p>
+</li>
+</ul>
+</li>
+<li><p>유니코드 사용 방법(ASCII 호환)</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'\u0041'</span></span><br><span class="line">&gt;&gt; A</span><br><span class="line"></span><br><span class="line"><span class="comment"># 한글의 범위 U+AC00 ~ U+D7AF</span></span><br><span class="line"><span class="string">'\uac00'</span></span><br><span class="line">&gt;&gt; <span class="string">'가'</span></span><br><span class="line"></span><br><span class="line">a = <span class="string">'가'</span></span><br><span class="line">b = a. encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">type(b)</span><br><span class="line">&gt;&gt; bytes</span><br><span class="line"></span><br><span class="line">print(b)</span><br><span class="line">&gt;&gt; <span class="string">b'\xea\xb0\x80'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 0x ea b0 80의 3byte가 나온다.</span></span><br><span class="line"><span class="comment"># 통신할 때는 1byte씩하여 ea, b0, 80으로 나눠서 보내진다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>little endian과 big endian</p>
+<ul>
+<li>CPU에 따라 다르다.</li>
+</ul>
+<ol>
+<li><p>big endian</p>
+<ul>
+<li><p>‘1234’의 수에서 most significant disit은 맨 앞의 1이 된다.</p>
+</li>
+<li><p>Sparc / RISC CPU 계열</p>
+</li>
+</ul>
+</li>
+<li><p>little endian</p>
+<ul>
+<li><p>‘4321’의 수에서 most significant disit은 맨 뒤의 1이 된다.</p>
+</li>
+<li><p>Intel CPU 계열</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>big endian과 little endian 사이에서 0xac00을 보낸다고 할때,  </p>
+<p>ac 00 순으로 가는건지, 00 ac 순으로 가는건지 기준이 뭘까?</p>
+</li>
+<li><p>Networking에서의 protocol 기준은 ‘big endian’으로 한다.</p>
+</li>
+<li><p>UTF-8은 ‘endianless’이다. = little endian이건 big endian이건 상관없다.</p>
+</li>
+<li><p>ex) 0x ea b0 80은 80 b0 ea로 보낸다고 생각하겠지만, 변환하지 않는다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c = a.encode(<span class="string">'utf-16'</span>)</span><br><span class="line">print(c)</span><br><span class="line">&gt;&gt; <span class="string">b'\xff\xfe\x00\xac'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 00 ac로 나오는 것을 볼 수 있다.</span></span><br><span class="line"><span class="comment">#  little endian으로 읽는 Intel 계열 CPU이기 때문이다.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>마이크로소프트 사가 도입한 코드 - CP979</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'가'</span></span><br><span class="line">a.encode(<span class="string">'cp949'</span>)</span><br><span class="line">&gt;&gt; <span class="string">b'\xb0\xa1'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>부호화</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'가'</span></span><br><span class="line">b = a.encode() <span class="comment"># UTF-8이 default</span></span><br><span class="line">b</span><br><span class="line">&gt;&gt; <span class="string">b'\xea\xb0\x80'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>복호화</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b.decode()</span><br><span class="line">&gt;&gt; <span class="string">'가'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>CP949는 UTF-8이 아니므로 복호화할 시, 오류가 난다.</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c = a.encode(<span class="string">'cp949'</span>)</span><br><span class="line">c</span><br><span class="line">&gt;&gt; <span class="string">b'\xb0\xa1'</span></span><br><span class="line"></span><br><span class="line">c.decode()</span><br><span class="line">&gt;&gt; UnicodeDecodeError: <span class="string">'utf-8'</span> codec can<span class="string">'t decode byte 0xb0 in position 0: invalid start byte</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>UTF-8 방식이 아닐 경우, 복호화할 수 있는 방법</p>
+<ul>
+<li><p>CP949가 아닌 다른 인코딩 방식일 수도 있기 때문에 찾아야 하는 경우가 올 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    d = c.decode()</span><br><span class="line"><span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">    d = c.decode(<span class="string">'cp949'</span>)</span><br><span class="line"></span><br><span class="line">d</span><br><span class="line">&gt;&gt; <span class="string">'가'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Call-by-value"><a href="#Call-by-value" class="headerlink" title="Call by value"></a>Call by value</h2><ul>
+<li><p>값에 의한 부름</p>
+</li>
+<li><p>stack frame 그림을 직접 그려보자.</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C language code</span></span><br><span class="line">include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change_value</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    x = val;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x : %d in change_value \n"</span>, x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">10</span>;</span><br><span class="line">    change_value(x, <span class="number">20</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x : %d in main \n"</span>,x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 실행 결과</span></span><br><span class="line">&gt;&gt; x : <span class="number">20</span> in change_value</span><br><span class="line">   x : <span class="number">10</span> in main</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>두 결과값이 모두 x가 20이 나오지 않는 것을 알 수 있다.</p>
+</li>
+<li><p>stack frame에서 main 함수의 x와 change_value 함수의 x는 다르다.</p>
+</li>
+<li><p>change_value의 x는 main 함수의 x 값을 복사해오기만 한다.</p>
+</li>
+<li><p>그리고 결과적으로 change_value 함수 안에서는 x 값이 20이 된 상태로 나온다.</p>
+</li>
+<li><p>하지만 change_value 함수가 끝나면 함수가 사라진다.</p>
+</li>
+<li><p>그러면 main 함수의 x값은 여전히 10으로 남아있다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Call-by-reference"><a href="#Call-by-reference" class="headerlink" title="Call by reference"></a>Call by reference</h2><ul>
+<li><p>참조에 의한 부름</p>
+</li>
+<li><p>stack frame 그림을 직접 그려보자.</p>
+  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// C language code</span></span><br><span class="line">include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">change_value</span><span class="params">(<span class="keyword">int</span> * x, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    *x = val;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x : %d in change_value \n"</span>, *x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">10</span>;</span><br><span class="line">    change_value(&amp;x, <span class="number">20</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"x : %d in main \n"</span>,x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 실행 결과</span></span><br><span class="line">&gt;&gt; x : <span class="number">20</span> in change_value</span><br><span class="line">   x : <span class="number">20</span> in main</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>두 결과값이 모두 x가 20이 나온다.</p>
+</li>
+<li><p>change_value 함수를 호출할 때에는 주소 연산자(&amp;)를 붙여준다.</p>
+</li>
+<li><p>change_value 함수 선언에서는 매개변수에 *를 붙여준다.</p>
+</li>
+<li><p>stack frame에 쌓일 때 change_value의 x가 main 함수 x의 메모리 주소 처음을 가리키게 된다.</p>
+</li>
+<li><p>change_value 함수 내부 지역변수 x에서도 *을 붙여줘서 main 함수 x에 접근할 수 있게 만들었다.(dereference: 역참조)</p>
+</li>
+<li><p>접근할 수 있게 되면서 main 함수 x의 값을 20으로 바꿀 수 있다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Call-by-object-reference"><a href="#Call-by-object-reference" class="headerlink" title="Call by object reference"></a>Call by object reference</h2><ul>
+<li><p>Call by assignment</p>
+</li>
+<li><p>객체 참조에 의한 호출</p>
+</li>
+<li><p>stack frame 그림을 직접 그려보자.</p>
+<ol>
+<li><p>변경할 수 없는 객체(immutable)의 경우</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_value</span><span class="params">(num, new_num)</span>:</span></span><br><span class="line">    num = new_num</span><br><span class="line">    print(<span class="string">'%d in change value'</span> % num)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 파이썬에서 "="의 의미는 할당(assignment)</span></span><br><span class="line"><span class="comment"># num은 new_num이 가리키는 값을 가리킨다.</span></span><br><span class="line"></span><br><span class="line">num = <span class="number">10</span> <span class="comment"># immutable(변경할 수 없는 객체)</span></span><br><span class="line"><span class="comment"># num은 10을 가리킨다.</span></span><br><span class="line"><span class="comment"># 10을 객체(object)라고 한다.</span></span><br><span class="line"></span><br><span class="line">change_value(num, <span class="number">20</span>)</span><br><span class="line">print(num)</span><br><span class="line">&gt;&gt; <span class="number">20</span> <span class="keyword">in</span> change value</span><br><span class="line">   <span class="number">10</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>두 결과값이 모두 num이 20이 나오지 않는다.</p>
+</li>
+<li><p>change_value 함수의 num은 글로벌 변수 num의 값을 복사한 것이 아니다.</p>
+</li>
+<li><p>change_value 함수의 num은 글로벌 변수 num의 값을 가리키는 것이다.</p>
+</li>
+<li><p>따라서 call by value는 아니다.</p>
+</li>
+<li><p>num = new_num이 되면 num은 10을 가리키다가 20을 가리킨다.</p>
+</li>
+<li><p>change_value 함수가 종료되면 stack frame에서 사라진다.</p>
+</li>
+<li><p>글로벌 변수 num에는 여전히 10이 남아있다.</p>
+</li>
+<li><p>파이썬 함수 안에서는 call by reference처럼 해결할 수는 없다.</p>
+</li>
+<li><p>하지만 다음처럼 해결할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 반환값을 num으로 받음</span></span><br><span class="line"><span class="comment"># num에 반환값을 할당해서 num이 20을 가리키도록 함</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_value</span><span class="params">(num, new_num)</span>:</span></span><br><span class="line">    num = new_num</span><br><span class="line">    print(<span class="string">'%d in change value'</span> % num)</span><br><span class="line">    <span class="keyword">return</span> num</span><br><span class="line"></span><br><span class="line">num = <span class="number">10</span></span><br><span class="line">num = change_value(num, <span class="number">20</span>)</span><br><span class="line">print(num)</span><br><span class="line">&gt;&gt; <span class="number">20</span> <span class="keyword">in</span> change value</span><br><span class="line">   <span class="number">20</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li><p>변경할 수 있는 객체(mutable)의 경우</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list는 변경할 수 있는 객체(mutable)</span></span><br><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_elem</span><span class="params">(li, idx, new_num)</span>:</span></span><br><span class="line">    li[idx] = new_num</span><br><span class="line">    print(li)</span><br><span class="line"></span><br><span class="line">change_elem(li, <span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line">print(li)</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">100</span>, <span class="number">3</span>]</span><br><span class="line">   [<span class="number">1</span>, <span class="number">100</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>이번에는 두 결과값이 다 같다.</p>
+</li>
+<li><p>li[idx]도 상수 객체이기 때문에 imutable이다.</p>
+</li>
+<li><p>여기서 중요한 것은 li가 []의 object를 가리키는 것은 맞다.</p>
+</li>
+<li><p>하지만 [] 내부 각 자리에서 또 1, 2, 3을 각각 가리킨다.</p>
+</li>
+<li><p>li[idx] = new_num이 실행되면, li[1] = 100이므로, li[1]이 2가 아닌 100을 가리키게 된다.</p>
+</li>
+<li><p>change_elem 함수가 종료되면, 함수는 사라진다.</p>
+</li>
+<li><p>기존 li[1]도 100을 가리키고 있기 때문에 [1, 100, 3]이 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_elem</span><span class="params">(li, a, b, c)</span>:</span></span><br><span class="line">    li = [a, b, c]</span><br><span class="line">    print(li)</span><br><span class="line">   </span><br><span class="line">change_elem(li, <span class="number">1</span>, <span class="number">100</span>, <span class="number">3</span>)</span><br><span class="line">print(li)</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">100</span>, <span class="number">3</span>]</span><br><span class="line">   [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>위와 같은 경우는 바뀌지 않았다.</p>
+</li>
+<li><p>global 영역의 list li는 []을 가리키고 [] 안 각 자리는 1, 2, 3을 가리킨다.</p>
+</li>
+<li><p>change_elem 함수 내부에서도 object [ ]가 생성되게 된다.</p>
+</li>
+<li><p>global 영역의 1과 3 그리고 새로 지정한 100을 [] 안 각 자리가 가리키게 된다.</p>
+</li>
+<li><p>파이썬에서는 자동적으로 같은 object를 가리키도록 해준다.</p>
+</li>
+<li><p>그래서 change_elem 함수 내부 li는 내부에서 생성된 object []를 가리키게 된다.</p>
+</li>
+<li><p>따라서 함수가 사라지면 기존 global li의 값은 변하지 않게 되는 것이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># tuple은 변경할 수 없는 객체(immutable)</span></span><br><span class="line">tu = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_elem</span><span class="params">(tu, a, b, c)</span>:</span></span><br><span class="line">    tu = (a, b, c)</span><br><span class="line">    print(tu)</span><br><span class="line">    <span class="keyword">return</span> tu</span><br><span class="line"></span><br><span class="line">tu = change_elem(tu, <span class="number">1</span>, <span class="number">100</span>, <span class="number">2</span>)</span><br><span class="line">print(tu)</span><br><span class="line">&gt;&gt; (<span class="number">1</span>, <span class="number">100</span>, <span class="number">2</span>)</span><br><span class="line">   (<span class="number">1</span>, <span class="number">100</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>tuple의 요소 값은 바꿀 수는 없다.</p>
+</li>
+<li><p>그리고 또한 함수 내부에서도 바꾸는건 불가능하다.</p>
+</li>
+<li><p>따라서 위처럼 tu를 반환시킨다.</p>
+</li>
+<li><p>return으로 받은 tu를 tu에다가 할당함으로 tu가 새로운 tu를 가리키도록 해준다.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Call-by-value-의미"><a href="#Call-by-value-의미" class="headerlink" title="Call by value 의미"></a>Call by value 의미</h2><ul>
+<li><p>C 언어에서는 reference라는 개념 자체가 없다.</p>
+</li>
+<li><p>C 언어에서는 값을 복사하는 call by value 개념 밖에 없다.</p>
+</li>
+<li><p>C++에서 참조자 개념으로 등장한 것이 Call by reference이다.</p>
+</li>
+<li><p>Call by value는 stack frame 안 변수에 값이 바뀌더라도 stack frame 바깥쪽 변수에 영향을 주지 않는 것을 보장한다.</p>
+</li>
+<li><p>주소값을 복사하는 Call by address라는 말도 된다.(원본 주소의 “값”을 복사하는 Call by value의 형태)</p>
+</li>
+<li><p>Call by address vs Call by reference?</p>
+<ul>
+<li><p>둘 다 원본 변수의 값을 변경한다는 동일성을 가지고 있다.</p>
+</li>
+<li><p>하지만, 포인터 변수는 주소값을 가지고 있는 변수로서 4byte의 메모리 공간을 차지</p>
+</li>
+<li><p>참조자(레퍼런스) 변수는 메모리 공간을 차지하지 않고 원본 변수의 별명으로 붙음</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/12/190312-PCE-Study/" data-id="cjvcieul4000943wutm7sxs2p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.03.12 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-03-12",
+        "dateCreated": "2019-03-12",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/03/12/190312-PCE-Study/",
+        "description": "closure
+함수 내부에 상태 정보를 가지고 있다.
+
+상태 정보 = 관련 있는 데이터(함수가 처리하려는 데이터)
+
+class를 사용할 수 없을 때 쓴다.
+
+계좌 만들기 예제
+1234567891011121314151617181920212223242526272829303132333435def account(clnt_name, balance):  # 상태 정보"
+        "wordCount": 1901
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/11/190311-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.03.11 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/29/190429-Django-Study/" class="title">2019.04.29 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/12/190312-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
