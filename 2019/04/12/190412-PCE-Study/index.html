@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.04.12 Python and CE Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="트리(Tree) 트리의 정의  트리는 connected(연결된) acyclic(순환되지 않는) gragh 루트(root) 노드를 반드시 가진다.(부모가 없는 노드) 트리는 하나의 루트 노드만을 가진다. 트리를 구성하는 노드 간에 단순 경로가 존재 단순 경로(Simple Path) : 왔던 곳을 다시 거치지 않고 가는 것   1개 이상의 노드로 이루어진 유한">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.04.12 Python and CE Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/04/12/190412-PCE-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="트리(Tree) 트리의 정의  트리는 connected(연결된) acyclic(순환되지 않는) gragh 루트(root) 노드를 반드시 가진다.(부모가 없는 노드) 트리는 하나의 루트 노드만을 가진다. 트리를 구성하는 노드 간에 단순 경로가 존재 단순 경로(Simple Path) : 왔던 곳을 다시 거치지 않고 가는 것   1개 이상의 노드로 이루어진 유한">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-07T12:46:25.495Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.04.12 Python and CE Study">
+<meta name="twitter:description" content="트리(Tree) 트리의 정의  트리는 connected(연결된) acyclic(순환되지 않는) gragh 루트(root) 노드를 반드시 가진다.(부모가 없는 노드) 트리는 하나의 루트 노드만을 가진다. 트리를 구성하는 노드 간에 단순 경로가 존재 단순 경로(Simple Path) : 왔던 곳을 다시 거치지 않고 가는 것   1개 이상의 노드로 이루어진 유한">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190412-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.04.12 Python and CE Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/04/12/190412-PCE-Study/" class="article-date">
+            <time datetime="2019-04-12T12:44:32.000Z" itemprop="datePublished">2019-04-12</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="트리-Tree"><a href="#트리-Tree" class="headerlink" title="트리(Tree)"></a>트리(Tree)</h2><ul>
+<li><p>트리의 정의</p>
+<ul>
+<li>트리는 connected(연결된) acyclic(순환되지 않는) gragh</li>
+<li>루트(root) 노드를 반드시 가진다.(부모가 없는 노드)</li>
+<li>트리는 하나의 루트 노드만을 가진다.</li>
+<li>트리를 구성하는 노드 간에 단순 경로가 존재<ul>
+<li>단순 경로(Simple Path) : 왔던 곳을 다시 거치지 않고 가는 것</li>
+</ul>
+</li>
+<li>1개 이상의 노드로 이루어진 유한 집합</li>
+<li>나머지 노드들은 서브 트리로 분할 가능</li>
+</ul>
+</li>
+<li><p>관련 용어</p>
+<ul>
+<li><p>차수(degree)</p>
+<ul>
+<li>해당 노드의 자식 노드 개수</li>
+</ul>
+</li>
+<li><p>트리의 차수(degree of a tree)</p>
+<ul>
+<li>트리에 있는 노드의 최대 차수</li>
+<li>차수 중에 최대 차수</li>
+</ul>
+</li>
+<li><p>리프 노드(leaf node)</p>
+<ul>
+<li>차수가 0인 노드, 즉 자식이 없는 노드</li>
+<li>단말 노드(terminal node)라고도 부름</li>
+</ul>
+</li>
+<li><p>레벨(level)</p>
+<ul>
+<li>루트의 레벨을 1로 하고 자식으로 내려가면서 하나씩 더함</li>
+<li>루트 레벨의 시작을 0으로 하기도 함</li>
+</ul>
+</li>
+<li><p>트리의 높이(height) or 깊이(depth)</p>
+<ul>
+<li>트리가 가지는 최대 레벨</li>
+</ul>
+</li>
+<li><p>포레스트(forest)</p>
+<ul>
+<li>루트 노드를 없앤 서브 트리들의 집합</li>
+</ul>
+</li>
+<li><p>에지(edge)</p>
+<ul>
+<li>노드와 노드를 잇는 간선</li>
+</ul>
+</li>
+<li><p>인터널 노드(internal node)</p>
+<ul>
+<li>리프 노드가 아닌 노드</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>노드와 에지의 관계</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">노드의 개수 = n</span><br><span class="line">에지의 개수 = e</span><br><span class="line"></span><br><span class="line">&gt;&gt; e = n - 1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="이진-트리-binary-tree"><a href="#이진-트리-binary-tree" class="headerlink" title="이진 트리(binary tree)"></a>이진 트리(binary tree)</h3><ul>
+<li>어떤 노드의 자식 노드의 수가 최대 2개인 트리</li>
+<li>루트와 왼쪽 서브 트리, 오른쪽 서브 트리로 이루어진 유한 집합</li>
+<li>서브 트리도 모두 이진 트리</li>
+<li><p>특징</p>
+<ol>
+<li><p>레벨 a에서 최대 노드 수: 2^(a-1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex) Level 3에서의 최대 노드 수 : 2^(3-1) = 4</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>높이가 h인 이진 트리의 최대 노드 수 : 2^h - 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex) 트리의 높이가 3이면 2^3 - 1 = 7</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>높이가 h인 이진 트리의 최소 노드 수 : h개</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex) 트리의 높이가 3이면 최소 노드 수도 3</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>이진 트리의 종류</p>
+<ul>
+<li>포화 이진 트리(full binary tree)<ul>
+<li>모든 레벨이 꽉 차 있는 트리</li>
+</ul>
+</li>
+<li>완전 이진 트리(complete binary tree)<ul>
+<li>위에서 아래로, 왼쪽에서 오른쪽으로 채워져있는 트리</li>
+</ul>
+</li>
+<li>편향 이진 트리(skewed binary tree)<ul>
+<li>왼쪽이나 오른쪽 서브 트리만 가지는 트리<h3 id="순회-traversal"><a href="#순회-traversal" class="headerlink" title="순회(traversal)"></a>순회(traversal)</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>재방문을 허용하지 않고 트리를 구성하는 모든 노드에 다해서 반드시 한번씩 방문하는 것</li>
+</ul>
+<ol>
+<li><p>Stack 계열의 알고리즘</p>
+<ul>
+<li><p>DFS(Depth First Search) : 깊이 우선 탐색</p>
+</li>
+<li><p>재귀(recursion)와 반복문, stack 자료구조를 통한 구현 - stack frame</p>
+<ul>
+<li>전위 순회(preorder traversal)<ul>
+<li>root -&gt; 왼쪽 서브 트리 -&gt; 오른쪽 서브 트리</li>
+</ul>
+</li>
+<li>중위 순회(inorder traversal)<ul>
+<li>왼쪽 서브 트리 -&gt; root -&gt; 오른쪽 서브 트리</li>
+</ul>
+</li>
+<li>후위 순회(postorder traversal)<ul>
+<li>왼쪽 서브 트리 -&gt; 오른쪽 서브 트리 -&gt; root</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Queue 계열의 알고리즘</p>
+<ul>
+<li><p>BFS(Breadth First Search) : 너비 우선 탐색</p>
+<ul>
+<li>레벨 순서 순회(levelorder traversal)<ul>
+<li>root를 시작으로 다음 레벨 왼쪽부터 방문</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Coding-Practice"><a href="#Coding-Practice" class="headerlink" title="Coding Practice"></a>Coding Practice</h3><ul>
+<li><p>Linked List를 이용한 Stack과 Queue를 적용하여 이진 트리 및 BST 구현</p>
+<ul>
+<li><p>Linked List를 이용한 Stack과 Queue</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data=None)</span>:</span></span><br><span class="line">        self.__data = data</span><br><span class="line">        self.__next = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__data</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @data.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        self__data = data</span><br><span class="line">        </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__next</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @next.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        self.__next = n</span><br><span class="line"></span><br><span class="line"><span class="comment"># Linked List를 통한 Stack 구현</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.top = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.top <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        new_node = Node(data)</span><br><span class="line">        </span><br><span class="line">        new_node.next = self.top</span><br><span class="line">        self.top = new_node</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.empty():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        cur = self.top</span><br><span class="line">        </span><br><span class="line">        self.top = self.top.next</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cur.data</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.empty():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.top.data</span><br><span class="line"></span><br><span class="line"><span class="comment"># Linked List를 통한 Queue 구현</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LQueue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.front  = <span class="literal">None</span></span><br><span class="line">        self.rear = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.front <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        new_node = Node(data)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> self.empty():</span><br><span class="line">            self.front = new_node</span><br><span class="line">            self.rear = new_node</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        self.rear.next = new_node</span><br><span class="line">        self.rear = new_node</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.empty():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> self.front <span class="keyword">is</span> self.rear:</span><br><span class="line">            self.rear = self.rear.next</span><br><span class="line">            </span><br><span class="line">        cur = self.front</span><br><span class="line">        self.front = self.front.next</span><br><span class="line">        <span class="keyword">return</span> cur.data</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.empty():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.front.data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Binary Tree 구현</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        self.__data = data</span><br><span class="line">        self.__left = <span class="literal">None</span>  <span class="comment"># 노드의 왼쪽</span></span><br><span class="line">        self.__right = <span class="literal">None</span> <span class="comment"># 노드의 오른쪽</span></span><br><span class="line">        </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__data</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @data.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        self.__data = data</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">left</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__left</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @left.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">left</span><span class="params">(self, left)</span>:</span></span><br><span class="line">        self.__left = left</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">right</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__right</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @right.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">right</span><span class="params">(self, right)</span>:</span></span><br><span class="line">        self.__right = right</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="comment"># DFS</span></span><br><span class="line"><span class="comment"># recursion을 통한 구현</span></span><br><span class="line"><span class="comment"># 전위 순회</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    <span class="comment"># base case</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 방문했다는 것을 데이터로 출력하여 표현</span></span><br><span class="line">    <span class="comment"># root node부터 cur 방문</span></span><br><span class="line">    print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">    preorder(cur.left)</span><br><span class="line">    preorder(cur.right)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 중위 순회</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    <span class="comment"># base case</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># root node를 중간에 방문</span></span><br><span class="line">    inorder(cur.left)</span><br><span class="line">    print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">    inorder(cur.right)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 후위 방문</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    <span class="comment"># base case</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># root node를 끝에 방문</span></span><br><span class="line">    postorder(cur.left)</span><br><span class="line">    postorder(cur.right)</span><br><span class="line">    print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 반복문 + stack을 통한 구현</span></span><br><span class="line"><span class="comment"># 전위 순회</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">iter_preorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    stack = LStack()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">            stack.push(cur)</span><br><span class="line">            cur = cur.left</span><br><span class="line">        cur = stack.pop()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        cur = cur.right</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 중위 순회</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">iter_inorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    stack = LStack()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            stack.push(cur)</span><br><span class="line">            cur = cur.left</span><br><span class="line">        cur = stack.pop()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">        cur = cur.right</span><br><span class="line">        </span><br><span class="line"><span class="comment"># 후위 순회</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">iter_postorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    s1 = LStack()</span><br><span class="line">    s2 = LStack()</span><br><span class="line">    </span><br><span class="line">    s1.push(cur)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> s1.empty():</span><br><span class="line">        cur = s1.pop()</span><br><span class="line">        s2.push(cur)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> cur.left:</span><br><span class="line">            s1.push(cur.left)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">if</span> cur.right:</span><br><span class="line">            s1.push(cur.right)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> s2.empty():</span><br><span class="line">        cur = s2.pop()</span><br><span class="line">        print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># BFS</span></span><br><span class="line"><span class="comment"># Queue를 이용한 구현</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">levelorder</span><span class="params">(cur)</span>:</span></span><br><span class="line">    queue = LQueue()</span><br><span class="line">    </span><br><span class="line">    queue.enqueue(cur)</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> queue.empty():</span><br><span class="line">        cur = queue.dequeue()</span><br><span class="line">        print(cur.data, end = <span class="string">' '</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> cur.left:</span><br><span class="line">            queue.enqueue(cur.left)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">if</span> cur.right:</span><br><span class="line">            queue.enqueue(cur.right)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    n1 = TreeNode(<span class="number">1</span>)</span><br><span class="line">    n2 = TreeNode(<span class="number">2</span>)</span><br><span class="line">    n3 = TreeNode(<span class="number">3</span>)</span><br><span class="line">    n4 = TreeNode(<span class="number">4</span>)</span><br><span class="line">    n5 = TreeNode(<span class="number">5</span>)</span><br><span class="line">    n6 = TreeNode(<span class="number">6</span>)</span><br><span class="line">    n7 = TreeNode(<span class="number">7</span>)</span><br><span class="line">    </span><br><span class="line">    n1.left = n2; n1.right = n3</span><br><span class="line">    n2.left = n4; n2.right = n5</span><br><span class="line">    n3.left = n6; n3.right = n7</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">'preorder :'</span>)</span><br><span class="line">    preorder(n1)</span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'inorder :'</span>)</span><br><span class="line">    inorder(n1)</span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'postorder :'</span>)</span><br><span class="line">    postorder(n1)</span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'iter_preorder :'</span>)</span><br><span class="line">    iter_preorder(n1)</span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'iter_inorder :'</span>)</span><br><span class="line">    iter_inorder(n1)</span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'iter_postorder :'</span>)</span><br><span class="line">    iter_postorder(n1)</span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'levelorder :'</span>)</span><br><span class="line">    levelorder(n1)</span><br><span class="line"></span><br><span class="line">&gt;&gt; preorder :</span><br><span class="line">   <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span> <span class="number">6</span> <span class="number">7</span></span><br><span class="line"></span><br><span class="line">   inorder :</span><br><span class="line">   <span class="number">4</span> <span class="number">2</span> <span class="number">5</span> <span class="number">1</span> <span class="number">6</span> <span class="number">3</span> <span class="number">7</span></span><br><span class="line"></span><br><span class="line">   postorder :</span><br><span class="line">   <span class="number">4</span> <span class="number">5</span> <span class="number">2</span> <span class="number">6</span> <span class="number">7</span> <span class="number">3</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">   iter_preorder :</span><br><span class="line">   <span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span> <span class="number">3</span> <span class="number">6</span> <span class="number">7</span></span><br><span class="line"></span><br><span class="line">   iter_inorder :</span><br><span class="line">   <span class="number">4</span> <span class="number">2</span> <span class="number">5</span> <span class="number">1</span> <span class="number">6</span> <span class="number">3</span> <span class="number">7</span></span><br><span class="line"></span><br><span class="line">   iter_postorder :</span><br><span class="line">   <span class="number">4</span> <span class="number">5</span> <span class="number">2</span> <span class="number">6</span> <span class="number">7</span> <span class="number">3</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">   levelorder :</span><br><span class="line">   <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BST 구현</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        self.__key = key  <span class="comment"># data가 아닌 key 값을 기준으로 함</span></span><br><span class="line">        self.__left = <span class="literal">None</span></span><br><span class="line">        self.__right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">f'deleted data : <span class="subst">&#123;self.__key&#125;</span>'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">key</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__key</span><br><span class="line"></span><br><span class="line"><span class="meta">    @key.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">key</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        self.__key = key</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">left</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__left</span><br><span class="line"></span><br><span class="line"><span class="meta">    @left.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">left</span><span class="params">(self, left)</span>:</span></span><br><span class="line">        self.__left = left</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">right</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__right</span><br><span class="line"></span><br><span class="line"><span class="meta">    @right.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">right</span><span class="params">(self, right)</span>:</span></span><br><span class="line">        self.__right = right</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BST</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.root = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_root</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.root</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">preorder</span><span class="params">(self, cur, func)</span>:</span>   <span class="comment"># 전위 순회를 사용</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        func(cur)</span><br><span class="line">        self.preorder(cur.left, func)</span><br><span class="line">        self.preorder(cur.right, func)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        new_node = TreeNode(key)</span><br><span class="line">        </span><br><span class="line">        cur = self.root</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            self.root = new_node</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            par = cur</span><br><span class="line">            <span class="keyword">if</span> key &lt; cur.key:</span><br><span class="line">                cur = cur.left</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">                    par.left = new_node</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = cur.right</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">                    par.right = new_node</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search</span><span class="params">(self, target)</span>:</span></span><br><span class="line">        cur = self.root</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> cur:</span><br><span class="line">            <span class="keyword">if</span> target == cur.key:</span><br><span class="line">                <span class="keyword">return</span> cur</span><br><span class="line">            <span class="keyword">elif</span> target &lt; cur.key:</span><br><span class="line">                cur = cur.left</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = cur.right</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">return</span> cur</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__remove_recursion</span><span class="params">(self, cur, target)</span>:</span></span><br><span class="line">        <span class="comment"># base case 1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span>, <span class="literal">None</span></span><br><span class="line">        <span class="keyword">elif</span> target &lt; cur.key:</span><br><span class="line">            cur.left, rem = self.__remove_recursion(cur.left, target)</span><br><span class="line">        <span class="keyword">elif</span> target &gt; cur.key:</span><br><span class="line">            cur.right, rem = self.__remove_recursion(cur.right, target)</span><br><span class="line">        <span class="comment"># 지우려는 노드를 찾음</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># 삭제 노드가 리프 노드일 때</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> cur.left <span class="keyword">and</span> <span class="keyword">not</span> cur.right:</span><br><span class="line">                rem = cur</span><br><span class="line">                cur = <span class="literal">None</span></span><br><span class="line">            <span class="comment"># 삭제 노드가 자식이 하나일 때 : 왼쪽 자식이 있을 때</span></span><br><span class="line">            <span class="keyword">elif</span> <span class="keyword">not</span> cur.right:</span><br><span class="line">                rem = cur</span><br><span class="line">                cur = cur.left</span><br><span class="line">            <span class="comment"># 삭제 노드가 자식이 하나일 때 : 오른쪽 자식이 있을 때</span></span><br><span class="line">            <span class="keyword">elif</span> <span class="keyword">not</span> cur.left:</span><br><span class="line">                rem = cur</span><br><span class="line">                cur = cur.right</span><br><span class="line">            <span class="comment"># 삭제 노드가 자식이 둘일 때:</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                replace = cur.left</span><br><span class="line">                <span class="keyword">while</span> replace.right:</span><br><span class="line">                    replace = replace.right</span><br><span class="line">                <span class="comment"># 삭제 노드의 키와 대체 노드의 키를 교환</span></span><br><span class="line">                cur.key, repplace.key = replace.key, cur.key</span><br><span class="line">                cur.left, rem = self.__remove_recursion(cur.left, replace.key)</span><br><span class="line">        <span class="keyword">return</span> cur, rem</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self, target)</span>:</span></span><br><span class="line">        self.root, removed = self.__remove_recursion(self.root, target)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> removed:</span><br><span class="line">            removed.left = removed.right = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> removed</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'*'</span>*<span class="number">100</span>)</span><br><span class="line">    </span><br><span class="line">    bst = BST()</span><br><span class="line">    </span><br><span class="line">    bst.insert(<span class="number">6</span>)</span><br><span class="line">    bst.insert(<span class="number">3</span>)</span><br><span class="line">    bst.insert(<span class="number">2</span>)</span><br><span class="line">    bst.insert(<span class="number">4</span>)</span><br><span class="line">    bst.insert(<span class="number">5</span>)</span><br><span class="line">    bst.insert(<span class="number">8</span>)</span><br><span class="line">    bst.insert(<span class="number">10</span>)</span><br><span class="line">    bst.insert(<span class="number">9</span>)</span><br><span class="line">    bst.insert(<span class="number">11</span>)</span><br><span class="line">    </span><br><span class="line">    f=<span class="keyword">lambda</span> x: print(x.key, end=<span class="string">'  '</span>)</span><br><span class="line"></span><br><span class="line">    bst.preorder(bst.get_root(), f)</span><br><span class="line"></span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'searched key : &#123;&#125;'</span>.format(bst.search(<span class="number">8</span>).key))</span><br><span class="line"></span><br><span class="line">    bst.remove(<span class="number">9</span>)</span><br><span class="line">    <span class="comment">#bst.remove(8)</span></span><br><span class="line">    <span class="comment">#bst.remove(6)</span></span><br><span class="line"></span><br><span class="line">    bst.preorder(bst.get_root(), f)</span><br><span class="line"></span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'*'</span>*<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; ******************************</span><br><span class="line">   <span class="number">6</span>  <span class="number">3</span>  <span class="number">2</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">8</span>  <span class="number">10</span>  <span class="number">9</span>  <span class="number">11</span></span><br><span class="line">   searched key : <span class="number">8</span></span><br><span class="line">   deleted data : <span class="number">6</span></span><br><span class="line">   <span class="number">5</span>  <span class="number">3</span>  <span class="number">2</span>  <span class="number">4</span>  <span class="number">8</span>  <span class="number">10</span>  <span class="number">9</span>  <span class="number">11</span></span><br><span class="line">   ******************************</span><br><span class="line">   deleted data : <span class="number">5</span></span><br><span class="line">   deleted data : <span class="number">3</span></span><br><span class="line">   deleted data : <span class="number">2</span></span><br><span class="line">   deleted data : <span class="number">4</span></span><br><span class="line">   deleted data : <span class="number">8</span></span><br><span class="line">   deleted data : <span class="number">10</span></span><br><span class="line">   deleted data : <span class="number">9</span></span><br><span class="line">   deleted data : <span class="number">11</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/04/12/190412-PCE-Study/" data-id="cjvdsfro30017c4wuxnnsc0cf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.04.12 Python and CE Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-04-12",
+        "dateCreated": "2019-04-12",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/04/12/190412-PCE-Study/",
+        "description": "트리(Tree)
+트리의 정의
+
+트리는 connected(연결된) acyclic(순환되지 않는) gragh
+루트(root) 노드를 반드시 가진다.(부모가 없는 노드)
+트리는 하나의 루트 노드만을 가진다.
+트리를 구성하는 노드 간에 단순 경로가 존재
+단순 경로(Simple Path) : 왔던 곳을 다시 거치지 않고 가는 것
+
+
+1개 이상의 노드로 이루어진 유한"
+        "wordCount": 5205
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/04/22/190422-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.04.22 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/04/11/190411-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.04.11 Python and CE Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/07/190507-Django-Study/" class="title">2019.05.07 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-07T07:59:41.000Z" itemprop="datePublished">2019-05-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">38</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/04/12/190412-PCE-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
