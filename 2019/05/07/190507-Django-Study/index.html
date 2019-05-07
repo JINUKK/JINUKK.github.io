@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.07 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="[ Dstargram project ] 회원가입(Sign Up) 만들기  accounts/views.py 추가 작성 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# accounts/views.py# 기존에 입력받는">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.07 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/07/190507-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="[ Dstargram project ] 회원가입(Sign Up) 만들기  accounts/views.py 추가 작성 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# accounts/views.py# 기존에 입력받는">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-07T08:01:33.767Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.07 Django Study">
+<meta name="twitter:description" content="[ Dstargram project ] 회원가입(Sign Up) 만들기  accounts/views.py 추가 작성 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# accounts/views.py# 기존에 입력받는">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190507-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.07 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/07/190507-Django-Study/" class="article-date">
+            <time datetime="2019-05-07T07:59:41.000Z" itemprop="datePublished">2019-05-07</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Dstargram-project"><a href="#Dstargram-project" class="headerlink" title="[ Dstargram project ]"></a>[ Dstargram project ]</h2><ul>
+<li><p>회원가입(Sign Up) 만들기</p>
+<ul>
+<li><p>accounts/views.py 추가 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># accounts/views.py</span></span><br><span class="line"><span class="comment"># 기존에 입력받는 뷰 - CreateView 상속 받아서</span></span><br><span class="line"><span class="comment"># 상속받아서 만들면 커스텀이 힘들다.</span></span><br><span class="line"><span class="comment"># 회원가입 -&gt; User 모델에 값을 입력받는다.-&gt; CreateView</span></span><br><span class="line"><span class="comment"># 회원가입시 모델 필드 외에 추가 입력이 필요하다.</span></span><br><span class="line"><span class="comment"># 커스텀 뷰를 하려면 함수형 뷰가 적절하겠다.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .forms <span class="keyword">import</span> SignUpForm</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">signup</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># 함수형 뷰에서는 매개변수 request가 꼭 있어야 한다.</span></span><br><span class="line">    <span class="comment"># Class Based View였다면 dispatch -&gt; get, post</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        <span class="comment"># Todo : 입력 받은 내용을 이용해서 회원 객체 생성</span></span><br><span class="line">        <span class="comment"># 입력받은 내용 확인하기</span></span><br><span class="line">        <span class="comment"># 모델 폼을 이용해서 코드를 간결하게 바꾼다.</span></span><br><span class="line">        <span class="comment"># validation - 아이디가 중복되는지, 아이디가 한글은 아닌지</span></span><br><span class="line"></span><br><span class="line">        signup_form = SignUpForm(request.POST) <span class="comment"># 폼에 내용이 채워져 있는 형태로 출력됨</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># form validation이 진행되지 않은 채로 저장하게 되기 때문에...</span></span><br><span class="line">        <span class="keyword">if</span> signup_form.is_valid():</span><br><span class="line">            <span class="comment"># 1. 저장하고 인스턴스 생성</span></span><br><span class="line">            user_instance = signup_form.save(commit=<span class="literal">False</span>) <span class="comment"># 해당 입력받은 정보를 가지고 인스턴스를 만들어줌</span></span><br><span class="line">            <span class="comment"># commit=False 옵션을 통해 데이터베이스에는 저장이 안되도록 함</span></span><br><span class="line">            <span class="comment"># 2. 패스워드 암호화 -&gt; 저장</span></span><br><span class="line">            <span class="comment"># 폼이 가지고 있는 cleaned_data는 무엇인가? : 유효한 문자만 남긴 상태로 처리 과정을 거친 데이터</span></span><br><span class="line">            <span class="comment"># request.POST.get('password') &lt;- 이런 방법으로 받지 않는다.</span></span><br><span class="line">            user_instance.set_password(signup_form.cleaned_data[<span class="string">'password'</span>])</span><br><span class="line">            user_instance.save()</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> render(request, <span class="string">'accounts/signup_complete.html'</span>, &#123;<span class="string">'username'</span>:user_instance.username&#125;)</span><br><span class="line">            <span class="comment"># username을 던져줌. 'username'이 html에서 쓰일 이름/ 뒤에 user_instance.username이 html로 넘기는 값</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># username = request.POST.get('username')</span></span><br><span class="line">        <span class="comment"># password = request.POST.get('password')</span></span><br><span class="line">        <span class="comment"># first_name = request.POST.get('first_name')</span></span><br><span class="line">        <span class="comment"># last_name = request.POST.get('last_name')</span></span><br><span class="line">        <span class="comment"># email = request.POST.get('email')</span></span><br><span class="line">        <span class="comment"># print(username, password, first_name, last_name, email)</span></span><br><span class="line">        <span class="comment"># # 회원 객체 생성하기</span></span><br><span class="line">        <span class="comment"># user = User()</span></span><br><span class="line">        <span class="comment"># user.username = username</span></span><br><span class="line">        <span class="comment"># # user.password = password # set_password()를 쓰지 않고 저장하면 암호화되지 않은채 저장된다.</span></span><br><span class="line">        <span class="comment"># user.set_password(password) # 비밀번호를 비밀번호화 시켜주는 메서드</span></span><br><span class="line">        <span class="comment"># user.first_name = first_name</span></span><br><span class="line">        <span class="comment"># user.last_name = last_name</span></span><br><span class="line">        <span class="comment"># user.email = email</span></span><br><span class="line">        <span class="comment"># user.save()</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># form 객체를 만들어서 전달</span></span><br><span class="line">        <span class="comment"># form에는 username, password만 입력 받으면 된다.</span></span><br><span class="line"></span><br><span class="line">        signup_form = SignUpForm()</span><br><span class="line">        <span class="comment"># 1. 템플릿 불러오기</span></span><br><span class="line">        <span class="comment"># 2. 템플릿 렌더링하기</span></span><br><span class="line">        <span class="comment"># 3. HTTP Response하기</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'accounts/signup.html'</span>, &#123;<span class="string">'form'</span>:signup_form&#125;) <span class="comment"># 변수값 전달 방법</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>accounts/forms.py 생성 및 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># accounts/forms.py</span></span><br><span class="line"><span class="comment"># 모델 폼을 만드려면 2가지 필요하다.</span></span><br><span class="line"><span class="comment"># 제네릭 뷰: 제네릭 뷰, 모델</span></span><br><span class="line"><span class="comment"># 모델 폼 : 모델, 폼</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SignUpForm</span><span class="params">(forms.ModelForm)</span>:</span></span><br><span class="line"></span><br><span class="line">    password = forms.CharField(label=<span class="string">'Password'</span>, widget=forms.PasswordInput) <span class="comment"># 추가 필드</span></span><br><span class="line"></span><br><span class="line">    password2 = forms.CharField(label=<span class="string">'Repeat Password'</span>, widget=forms.PasswordInput)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = User</span><br><span class="line">        <span class="comment"># fields에는 해당 모델에 대해 입력받을 필드들을 나열한다.</span></span><br><span class="line">        <span class="comment"># + 추가 필드도 포함될 수 있다. -&gt; 필드 목록과 추가 필드가 겹치면 오버라이드(추가 필드의 우선순위가 높다.)</span></span><br><span class="line">        <span class="comment"># fields에 써준 순서대로 출력한다.</span></span><br><span class="line">        fields = [<span class="string">'username'</span>,<span class="string">'password'</span>,<span class="string">'password2'</span>,<span class="string">'first_name'</span>,<span class="string">'last_name'</span>,<span class="string">'email'</span>] <span class="comment"># 입력받을 필드명을 입력</span></span><br><span class="line">        <span class="comment"># fields = '__all__' # 전체 다 부르고 싶을 경우</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># Todo : 필드의 기본값, Placeholder 설정법, css Class 설정법법, validator 설정법법, help text 설정</span></span><br><span class="line">        <span class="comment"># Todo : 커스텀 필드 만드는 법</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 비밀번호가 일치하지 않을 경우</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clean_password2</span><span class="params">(self)</span>:</span></span><br><span class="line">        cd = self.cleaned_data</span><br><span class="line">        <span class="keyword">if</span> cd[<span class="string">'password'</span>] != cd[<span class="string">'password2'</span>]:</span><br><span class="line">            <span class="keyword">raise</span> forms.ValidationError(<span class="string">'비밀번호가 일치하지 않습니다.'</span>)</span><br><span class="line">        <span class="comment"># 항상 해당 필드의 값을 리턴한다.</span></span><br><span class="line">        <span class="keyword">return</span> cd[<span class="string">'password2'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>accounts/urls.py 추가 작성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># accounts/urls.py</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.views <span class="keyword">import</span> LoginView, LogoutView</span><br><span class="line"></span><br><span class="line"><span class="comment"># 함수형 뷰 signup 추가</span></span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> UserList, FollowerList, FollowingList, FollowButton, signup</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">'accounts'</span></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'user/list/'</span>, UserList.as_view(), name=<span class="string">'user_list'</span>),</span><br><span class="line">    path(<span class="string">'follow/&lt;int:user_id&gt;/'</span>, FollowButton.as_view(), name=<span class="string">'follow_button'</span>),</span><br><span class="line">    path(<span class="string">'follower/list/'</span>, FollowerList.as_view(), name=<span class="string">'follower_list'</span>),</span><br><span class="line">    path(<span class="string">'following/list/'</span>, FollowingList.as_view(), name=<span class="string">'following_list'</span>),</span><br><span class="line">    path(<span class="string">'singin/'</span>, LoginView.as_view(template_name=<span class="string">'accounts/signin.html'</span>), name=<span class="string">'signin'</span>),</span><br><span class="line">    path(<span class="string">'signout/'</span>, LogoutView.as_view(template_name=<span class="string">'accounts/signout.html'</span>), name=<span class="string">'signout'</span>),</span><br><span class="line"></span><br><span class="line">    <span class="comment"># signup 경로 추가</span></span><br><span class="line">    path(<span class="string">'signup/'</span>, signup, name=<span class="string">'signup'</span>), <span class="comment"># 함수형 뷰는 이름만 쓴다.</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>templates 수정 및 작성</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// base.html //--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--// signup에 대한 경로 추가 //--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'accounts:signup' %&#125;"</span>&gt;</span>Sign-up<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// signup.html //--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--// 회원가입 페이지 //--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Sign Up</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-info"</span>&gt;</span>Please enter your account information<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            &#123;&#123;form.as_p&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Sign Up"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-info"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// signup_complete //--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--// 회원가입 완료 페이지 //--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">SignUp Complete</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-success"</span>&gt;</span>&#123;&#123;username&#125;&#125; suceessfully signed up<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'accounts:signin' %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-info"</span>&gt;</span>Move to Sign in<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>heroku를 이용한 배포</p>
+<ol>
+<li><p>heroku 회원가입</p>
+<ul>
+<li>heroku.com 접속</li>
+</ul>
+</li>
+<li><p>heroku CLI 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo snap install --classic heroku</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>추가 모듈 설치</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 데이터베이스 관련 옵션을 변수로 쉽게 접근할 수 있게 해주는 유틸리티</span></span><br><span class="line">$ pip install dj-database-url</span><br><span class="line"></span><br><span class="line"><span class="comment"># wsgi용 미들웨어 - 웹서버와 장고 사이에 다리</span></span><br><span class="line">$ pip install gunicorn</span><br><span class="line"></span><br><span class="line"><span class="comment"># static 파일 서빙용 미들웨어</span></span><br><span class="line">$ pip install whitenoise</span><br><span class="line"></span><br><span class="line"><span class="comment"># postgreSQL용 드라이버</span></span><br><span class="line">$ pip install psycopg2-binary</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>의존성 리스트 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>heroku 로그인</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ heroku login</span><br><span class="line"></span><br><span class="line"><span class="comment"># 아무 키나 누르고 heroku 웹사이트로 이동해서 로그인하면 된다.</span></span><br><span class="line">&gt;&gt; heroku: Press any key to open up the browser to login or q to <span class="built_in">exit</span>:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>모듈 설정 - settings.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">DEBUG = <span class="literal">False</span> <span class="comment"># True에서 False로 수정</span></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">'*'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># whitenoise 항목 추가</span></span><br><span class="line">MIDDLEWARE = [</span><br><span class="line">    <span class="string">'django.middleware.security.SecurityMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions.middleware.SessionMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.common.CommonMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.csrf.CsrfViewMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth.middleware.AuthenticationMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages.middleware.MessageMiddleware'</span>,</span><br><span class="line">    <span class="string">'django.middleware.clickjacking.XFrameOptionsMiddleware'</span>,</span><br><span class="line">    <span class="string">'whitenoise.middleware.WhiteNoiseMiddleware'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># dj_database_url 항목 추가</span></span><br><span class="line"><span class="keyword">import</span> dj_database_url</span><br><span class="line">DATABASES[<span class="string">'default'</span>].update(dj_database_url.config(conn_max_age=<span class="number">500</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># static root 추가</span></span><br><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">'staticfiles'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일 생성 및 추가</p>
+<ul>
+<li>프로젝트 최상단에서 만들기</li>
+</ul>
+<ol>
+<li><p>Procfile(확장자 없음) 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">web: gunicorn config.wsgi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>runtime.txt 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python-3.7.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.gitignore(확장자 없음) 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*pyc</span><br><span class="line">*~</span><br><span class="line">/venv</span><br><span class="line">__pycache__</span><br><span class="line">db.sqlite3</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>git 설정</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"></span><br><span class="line">$ git add -A .</span><br><span class="line"></span><br><span class="line">$ git commit -m <span class="string">"message"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>heroku app 만들기</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku create [app_name]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>업로드</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push heroku master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DB 초기화</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku run python manage.py migrate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 계정 생성</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ heroku run python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>heroku 웹사이트로 이동하여 생성한 앱 이름을 클릭 후, Open app을 누른다.</p>
+<ul>
+<li>웹사이트가 잘 실행되는지 확인한다.</li>
+<li>관리자 사이트도 잘 실행되는지 확인한다.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/07/190507-Django-Study/" data-id="cjvdi9gq3001ptmwu9j8kc068" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.07 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-07",
+        "dateCreated": "2019-05-07",
+        "dateModified": "2019-05-07",
+        "url": "http://JINUKK.github.io/2019/05/07/190507-Django-Study/",
+        "description": "[ Dstargram project ]
+회원가입(Sign Up) 만들기
+
+accounts/views.py 추가 작성
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# accounts/views.py# 기존에 입력받는 "
+        "wordCount": 2113
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/03/190503-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.03 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/07/190507-Django-Study/" class="title">2019.05.07 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-07T07:59:41.000Z" itemprop="datePublished">2019-05-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/03/190503-Django-Study/" class="title">2019.05.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/02/190502-Django-Study/" class="title">2019.05.02 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/01/190501-Django-Study/" class="title">2019.05.01 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/04/30/190430-Django-Study/" class="title">2019.04.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">36</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/07/190507-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
