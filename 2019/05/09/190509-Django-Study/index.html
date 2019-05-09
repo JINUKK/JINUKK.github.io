@@ -6,23 +6,23 @@
     
 
     
-    <title>2019.04.22 Django Study | Develop Memory</title>
+    <title>2019.05.09 Django Study | Develop Memory</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="다음과 같은 순서로 장고 프로젝트를 시작하자.  파이썬 프로젝트 생성 가상환경 생성 장고 설치 장고 프로젝트 생성 프로젝트 내부 처리   virtualenv 설치 1$ pip3 install virtualenv  python 3.7로 가상환경 사용 1$ virtualenv --python=python3.7 venv  가상환경 activate 실행 1234$">
+    <meta name="description" content="2019.05.09 Django StudyAmazon S3 사용하기 도메인을 이용한 버킷 사용하기 media 파일 적용하기  도메인을 구입한다. Amazon - S3에서 버킷을 생성한다. 버킷 이름은 media.[도메인 주소]로 한다. 권한 설정에서 다음과 같이 설정한다. 퍼블릭 ACL 관리 체크 항목을 모두 해제한다. 퍼블릭 버킷 정책 관리 체크 항목을">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019.04.22 Django Study">
-<meta property="og:url" content="http://JINUKK.github.io/2019/04/22/190422-Django-Study/index.html">
+<meta property="og:title" content="2019.05.09 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/09/190509-Django-Study/index.html">
 <meta property="og:site_name" content="Develop Memory">
-<meta property="og:description" content="다음과 같은 순서로 장고 프로젝트를 시작하자.  파이썬 프로젝트 생성 가상환경 생성 장고 설치 장고 프로젝트 생성 프로젝트 내부 처리   virtualenv 설치 1$ pip3 install virtualenv  python 3.7로 가상환경 사용 1$ virtualenv --python=python3.7 venv  가상환경 activate 실행 1234$">
+<meta property="og:description" content="2019.05.09 Django StudyAmazon S3 사용하기 도메인을 이용한 버킷 사용하기 media 파일 적용하기  도메인을 구입한다. Amazon - S3에서 버킷을 생성한다. 버킷 이름은 media.[도메인 주소]로 한다. 권한 설정에서 다음과 같이 설정한다. 퍼블릭 ACL 관리 체크 항목을 모두 해제한다. 퍼블릭 버킷 정책 관리 체크 항목을">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-26T08:35:19.837Z">
+<meta property="og:updated_time" content="2019-05-09T11:55:53.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019.04.22 Django Study">
-<meta name="twitter:description" content="다음과 같은 순서로 장고 프로젝트를 시작하자.  파이썬 프로젝트 생성 가상환경 생성 장고 설치 장고 프로젝트 생성 프로젝트 내부 처리   virtualenv 설치 1$ pip3 install virtualenv  python 3.7로 가상환경 사용 1$ virtualenv --python=python3.7 venv  가상환경 activate 실행 1234$">
+<meta name="twitter:title" content="2019.05.09 Django Study">
+<meta name="twitter:description" content="2019.05.09 Django StudyAmazon S3 사용하기 도메인을 이용한 버킷 사용하기 media 파일 적용하기  도메인을 구입한다. Amazon - S3에서 버킷을 생성한다. 버킷 이름은 media.[도메인 주소]로 한다. 권한 설정에서 다음과 같이 설정한다. 퍼블릭 ACL 관리 체크 항목을 모두 해제한다. 퍼블릭 버킷 정책 관리 체크 항목을">
     
 
     
@@ -138,14 +138,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-190422-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-190509-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2019.04.22 Django Study
+        2019.05.09 Django Study
         </h1>
     
 
@@ -155,8 +155,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/04/22/190422-Django-Study/" class="article-date">
-            <time datetime="2019-04-22T08:33:40.000Z" itemprop="datePublished">2019-04-22</time>
+        <a href="/2019/05/09/190509-Django-Study/" class="article-date">
+            <time datetime="2019-05-09T11:53:26.000Z" itemprop="datePublished">2019-05-09</time>
         </a>
     </div>
 
@@ -167,41 +167,113 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>다음과 같은 순서로 장고 프로젝트를 시작하자.</p>
+            <h1 id="2019-05-09-Django-Study"><a href="#2019-05-09-Django-Study" class="headerlink" title="2019.05.09 Django Study"></a>2019.05.09 Django Study</h1><h2 id="Amazon-S3-사용하기"><a href="#Amazon-S3-사용하기" class="headerlink" title="Amazon S3 사용하기"></a>Amazon S3 사용하기</h2><ul>
+<li>도메인을 이용한 버킷 사용하기</li>
+<li><p>media 파일 적용하기</p>
 <ol>
-<li>파이썬 프로젝트 생성</li>
-<li>가상환경 생성</li>
-<li>장고 설치</li>
-<li>장고 프로젝트 생성</li>
-<li>프로젝트 내부 처리</li>
-</ol>
-<ul>
-<li><p>virtualenv 설치</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+<li>도메인을 구입한다.</li>
+<li>Amazon - S3에서 버킷을 생성한다.<ul>
+<li>버킷 이름은 media.[도메인 주소]로 한다.</li>
+<li>권한 설정에서 다음과 같이 설정한다.<ul>
+<li>퍼블릭 ACL 관리 체크 항목을 모두 해제한다.</li>
+<li>퍼블릭 버킷 정책 관리 체크 항목을 모두 해제한다.</li>
+<li>시스템 권한 관리에서 ‘엑세스 권한 부여함’을 선택한다.</li>
+</ul>
 </li>
-<li><p>python 3.7로 가상환경 사용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv --python=python3.7 venv</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>가상환경 activate 실행</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ source venv/bin/activate</span><br><span class="line"></span><br><span class="line"># 가상환경 종료 시</span><br><span class="line">$ deactivate</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>장고 설치</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pip install [모듈명]</span><br><span class="line">$ pip install [모듈명]==[버전]</span><br><span class="line">$ pip uninstall [모듈명]</span><br><span class="line"></span><br><span class="line">$ pip install django</span><br><span class="line">$ pip install django==2.1  <span class="comment"># 2.1버전 설치 시</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 버전 확인</span></span><br><span class="line">$ python -m django --version</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>의존성 리스트 생성</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze &gt; requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 리스트 설치 시</span></span><br><span class="line">$ pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>장고 프로젝트 생성</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin startproject [프로젝트명]</span><br><span class="line">$ django-admin startproject mysite</span><br><span class="line">$ django-admin startproject config . <span class="comment"># 현재 폴더에 설정 파일만 만들겠다는 의미</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># django-admin : 장고 매니저</span></span><br><span class="line"><span class="comment"># startproject : 프로젝트를 만들겠다라는 옵션</span></span><br></pre></td></tr></table></figure>
+<li>버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다.<ul>
+<li>index.html, error.html은 그대로 입력하고 진행한다.</li>
+</ul>
 </li>
 </ul>
-<p>프로젝트를 만들 때에는 django-admin을 사용하고, manage.py를 이용해서 장고 관련 명령어를 사용한다.</p>
-<ul>
-<li><p>127.0.0.1을 이용하여 장고 프로젝트 서버 동작 확인하기</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>앱 생성</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py startapp [앱이름]</span><br><span class="line">$ python manage.py startapp polls</span><br><span class="line"></span><br><span class="line"><span class="comment"># admin.py : 모델을 관리하기 위해 등록, 관리자 페이지 커스터마이징</span></span><br><span class="line"><span class="comment"># apps.py : 앱 정보 관리, 앱 진입 시 로드할 기능 관리</span></span><br><span class="line"><span class="comment"># models.py : 모델을 만들고 관리하는 부분(데이터베이스에 어떤 자료를 어떤 형식으로 저장할 것인지)</span></span><br><span class="line"><span class="comment"># tests.py : 테스트 셋을 지정하는 파일 - TDD</span></span><br><span class="line"><span class="comment"># views.py : 페이지나 기능을 코딩하는 파일(대부분 여기서 작업)</span></span><br></pre></td></tr></table></figure>
+<li>Amazon - Route53에서 설정한다.<ul>
+<li>호스팅 영역 생성을 누르고 구입한 도메인 이름을 입력한다.</li>
+<li>생성을 누른 후, NS 유형의 값을 확인한다.</li>
+<li>도메인을 구입한 페이지로 이동하여 도메인 관리로 이동한다.</li>
+<li>네임서버에 NS 유형의 값으로 수정한다.<ul>
+<li>whois.kisa.or.kr의 WHOIS 조회를 통해 네임서버가 바뀌었는지 확인한다.</li>
+</ul>
+</li>
+<li>다시 Amazon - Route53에서 레코드 편집 생성을 누른다.<ul>
+<li>이름에는 media를 입력한다.</li>
+<li>별칭을 ‘예’로 선택한다음 media.[도메인 주소] (s3-website)를 선택하고 생성한다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>해당 pycharm project에서 settings.py를 수정한다.</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AWS_STORAGE_BUCKET_NAME = <span class="string">'도메인 주소으로 만든 버킷 이름'</span></span><br><span class="line">AWS_S3_CUSTOM_DOMAIN = <span class="string">'%s'</span> % AWS_STORAGE_BUCKET_NAME</span><br><span class="line">AWS_S3_SECURE_URLS = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># https에서 http로 수정</span></span><br><span class="line"><span class="comment"># http를 사용함</span></span><br><span class="line">STATIC_URL = <span class="string">'http://%s/%s/'</span> % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)</span><br><span class="line">STATICFILES_STORAGE = <span class="string">'storages.backends.s3boto3.S3Boto3Storage'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># media 관련</span></span><br><span class="line">DEFAULT_FILE_STORAGE = <span class="string">'config.asset_storage.MediaStorage'</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>config/asset_storage.py를 생성하고 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># config/asset_storage/py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> storages.backends.s3boto3 <span class="keyword">import</span> S3Boto3Storage</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MediaStorage</span><span class="params">(S3Boto3Storage)</span>:</span></span><br><span class="line">location = <span class="string">'media'</span></span><br><span class="line">file_overwrite = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config/urls.py를 수정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 주석 처리</span></span><br><span class="line"><span class="comment"># urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>서버를 실행한 후, 이미지 파일을 업로드해본다.</p>
+</li>
+<li>이미지 출력이 잘 되는지 확인하자.</li>
+<li>Amazon - S3의 해당 버킷에 파일이 저장되어있는지 확인하자.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="Amazon-RDS-사용하기"><a href="#Amazon-RDS-사용하기" class="headerlink" title="Amazon - RDS 사용하기"></a>Amazon - RDS 사용하기</h2><ul>
+<li><p>Amazon Database 사용하기</p>
+<ol>
+<li><p>Amazon - RDS에서 데이터베이스를 생성한다.</p>
+<ul>
+<li>오른쪽 항목의 파라미터 그룹으로 이동하여 파라미터 그룹을 생성한다.</li>
+<li>그룹 세부 정보에서 파라미터 그룹 패밀리는 postgres9.6을 선택하고 생성한다.</li>
+<li><p>파라미터 그룹에서는 편집을 통해 파라미터를 수정할 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ex) encoding을 검색하고 편집을 누르면 해당 값인 UTF-8을 변경할 수있다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>데이터베이스 생성을 누른다.</p>
+<ol>
+<li>엔진 선택<ul>
+<li>PostgreSQL 선택</li>
+<li>RDS 프리 티어에 적용되는 옵션만 적용</li>
+</ul>
+</li>
+<li>DB 세부 정보 지정<ul>
+<li>DB 엔진 버전을 PostgreSQL 9.6.12-R1을 선택</li>
+<li>DB 인스턴스 식별자를 작성</li>
+<li>마스터 사용자 이름을 작성</li>
+<li>마스터 암호를 작성</li>
+</ul>
+</li>
+<li>고급 설정 구성<ul>
+<li>네트워크 및 보안에서 퍼블릭 엑세스 가능성을 ‘예’로 체크</li>
+<li>데이터베이스 옵션에서 DB 파라미터 그룹을 생성한 파라미터 그룹으로 선택</li>
+<li>백업은 0일로 설정</li>
+<li>삭제 방지 활성화</li>
+</ul>
+</li>
+<li>생성</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>데이터베이스 목록에서 해당 데이터베이스가 ‘사용 가능’이 될 때까지 기다린다.<ul>
+<li>해당 데이터베이스를 클릭한다.</li>
+<li>보안 - VPC 보안 그룹 - 하단 인바운드에서 IP를 추가할 수 있다.</li>
+<li>연결&amp;보안 - 엔드포인트와 구성 - DB 이름을 알아둔다.</li>
+</ul>
+</li>
+<li><p>pycharm project의 settings.py를 수정한다.</p>
+<ul>
+<li>settings.py를 수정한다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># config/settings.py</span></span><br><span class="line"><span class="comment"># 기존 데이터베이스 항목을 수정</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="comment"># psycopg2 - binary 이용</span></span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.postgresql_psycopg2'</span>,</span><br><span class="line">        <span class="comment"># Amazon 해당 DB의 구성 - DB 이름</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'dstagram'</span>,</span><br><span class="line">        <span class="comment"># Amazon database 생성 때 작성한 마스터 사용자 이름</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'amazon master user name'</span>,</span><br><span class="line">        <span class="comment"># Amazon database 생성 때 작성한 마스터 암호</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'amazon master password'</span>,</span><br><span class="line">        <span class="comment"># Amazon 해당 DB의 연결&amp;보안 - 엔드포인트</span></span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'wps10-dstagram.cnuxbldx8kex.ap-northeast-2.rds.amazonaws.com'</span>,</span><br><span class="line">        <span class="comment">#  # Amazon database 생성 때 포트</span></span><br><span class="line">        <span class="string">'POST'</span>: <span class="string">'5432'</span>,</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>pycharm project의 DB를 초기화한다.</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 계정을 생성하고 서버를 실행하여 확인한다.</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py createsuperuser</span><br><span class="line"></span><br><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 </li>
 </ul>
 
@@ -211,7 +283,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/04/22/190422-Django-Study/" data-id="cjvglijw0001j4hwuwmzj4p5n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/05/09/190509-Django-Study/" data-id="cjvglijw8001x4hwuy1a90oke" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -281,32 +353,25 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "2019.04.22 Django Study",
+        "headline": "2019.05.09 Django Study",
         "image": "http://JINUKK.github.io",
         "keywords": "",
         "genre": "Study Review",
-        "datePublished": "2019-04-22",
-        "dateCreated": "2019-04-22",
-        "dateModified": "2019-04-26",
-        "url": "http://JINUKK.github.io/2019/04/22/190422-Django-Study/",
-        "description": "다음과 같은 순서로 장고 프로젝트를 시작하자.
+        "datePublished": "2019-05-09",
+        "dateCreated": "2019-05-09",
+        "dateModified": "2019-05-09",
+        "url": "http://JINUKK.github.io/2019/05/09/190509-Django-Study/",
+        "description": "2019.05.09 Django StudyAmazon S3 사용하기
+도메인을 이용한 버킷 사용하기
+media 파일 적용하기
 
-파이썬 프로젝트 생성
-가상환경 생성
-장고 설치
-장고 프로젝트 생성
-프로젝트 내부 처리
-
-
-virtualenv 설치
-1$ pip3 install virtualenv
-
-python 3.7로 가상환경 사용
-1$ virtualenv --python=python3.7 venv
-
-가상환경 activate 실행
-1234$"
-        "wordCount": 287
+도메인을 구입한다.
+Amazon - S3에서 버킷을 생성한다.
+버킷 이름은 media.[도메인 주소]로 한다.
+권한 설정에서 다음과 같이 설정한다.
+퍼블릭 ACL 관리 체크 항목을 모두 해제한다.
+퍼블릭 버킷 정책 관리 체크 항목을 "
+        "wordCount": 646
     }
 </script>
 
@@ -346,20 +411,10 @@ python 3.7로 가상환경 사용
         
 <nav id="article-nav">
     
-        <a href="/2019/04/23/190423-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            2019.04.23 Django Study
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/04/12/190412-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/05/08/190508-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">2019.04.12 Python and CE Study</p>
+        <p class="article-nav-title">2019.05.08 Django Study</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -504,7 +559,7 @@ python 3.7로 가상환경 사용
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://JINUKK.github.io/2019/04/22/190422-Django-Study/';
+    var disqus_url = 'http://JINUKK.github.io/2019/05/09/190509-Django-Study/';
     
     (function() {
     var dsq = document.createElement('script');
