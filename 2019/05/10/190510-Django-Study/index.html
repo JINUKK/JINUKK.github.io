@@ -6,23 +6,23 @@
     
 
     
-    <title>2019.03.14 Python and CE Study | Develop Memory</title>
+    <title>2019.05.10 Django Study | Develop Memory</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="Computer Engineering CPU의 구조  CU(Control Unit)  Instruction code(machine code) execution(0과 1의 코드를 실행)   ALU(Arithmetic Logic Unit)  +, -, *, /, &amp;amp;, |, ^의 연산, 비교 수행   Register(레지스터)    General Purp">
+    <meta name="description" content="2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019.03.14 Python and CE Study">
-<meta property="og:url" content="http://JINUKK.github.io/2019/03/14/190314-PCE-Study/index.html">
+<meta property="og:title" content="2019.05.10 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/10/190510-Django-Study/index.html">
 <meta property="og:site_name" content="Develop Memory">
-<meta property="og:description" content="Computer Engineering CPU의 구조  CU(Control Unit)  Instruction code(machine code) execution(0과 1의 코드를 실행)   ALU(Arithmetic Logic Unit)  +, -, *, /, &amp;amp;, |, ^의 연산, 비교 수행   Register(레지스터)    General Purp">
+<meta property="og:description" content="2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-06T15:28:02.560Z">
+<meta property="og:updated_time" content="2019-05-13T12:01:40.739Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019.03.14 Python and CE Study">
-<meta name="twitter:description" content="Computer Engineering CPU의 구조  CU(Control Unit)  Instruction code(machine code) execution(0과 1의 코드를 실행)   ALU(Arithmetic Logic Unit)  +, -, *, /, &amp;amp;, |, ^의 연산, 비교 수행   Register(레지스터)    General Purp">
+<meta name="twitter:title" content="2019.05.10 Django Study">
+<meta name="twitter:description" content="2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save">
     
 
     
@@ -138,14 +138,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-190314-PCE-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-190510-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        2019.03.14 Python and CE Study
+        2019.05.10 Django Study
         </h1>
     
 
@@ -155,8 +155,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/03/14/190314-PCE-Study/" class="article-date">
-            <time datetime="2019-03-13T15:26:22.000Z" itemprop="datePublished">2019-03-14</time>
+        <a href="/2019/05/10/190510-Django-Study/" class="article-date">
+            <time datetime="2019-05-10T12:00:09.000Z" itemprop="datePublished">2019-05-10</time>
         </a>
     </div>
 
@@ -167,213 +167,72 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="Computer-Engineering"><a href="#Computer-Engineering" class="headerlink" title="Computer Engineering"></a>Computer Engineering</h2><ul>
-<li><p>CPU의 구조</p>
-<ul>
-<li><p>CU(Control Unit)</p>
-<ul>
-<li>Instruction code(machine code) execution(0과 1의 코드를 실행)</li>
+            <h1 id="2019-05-10-Django-Study"><a href="#2019-05-10-Django-Study" class="headerlink" title="2019.05.10 Django Study"></a>2019.05.10 Django Study</h1><h2 id="Dstargram-project"><a href="#Dstargram-project" class="headerlink" title="[ Dstargram project ]"></a>[ Dstargram project ]</h2><h4 id="aws-S3를-이용하여-이미지-파일을-저장하고"><a href="#aws-S3를-이용하여-이미지-파일을-저장하고" class="headerlink" title="aws S3를 이용하여 이미지 파일을 저장하고"></a>aws S3를 이용하여 이미지 파일을 저장하고</h4><h4 id="해당-글을-삭제했으나-S3에는-이미지가-삭제되지-않음"><a href="#해당-글을-삭제했으나-S3에는-이미지가-삭제되지-않음" class="headerlink" title="해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음"></a>해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음</h4><h4 id="signal을-사용하여-S3에도-이미지가-삭제되도록-변경"><a href="#signal을-사용하여-S3에도-이미지가-삭제되도록-변경" class="headerlink" title="signal을 사용하여 S3에도 이미지가 삭제되도록 변경"></a>signal을 사용하여 S3에도 이미지가 삭제되도록 변경</h4><ul>
+<li>signal<ul>
+<li>~하기 전에, ~한 후에 발생하는 일들을 말함</li>
+<li>후속 조치를 하는 것</li>
+<li>대표적인 signal 종류<ul>
+<li>pre_save : 저장하기 전</li>
+<li>post_save : 저장한 후</li>
+<li>pre_delete : 지우기 전</li>
+<li>post_delete : 지운 후</li>
 </ul>
-</li>
-<li><p>ALU(Arithmetic Logic Unit)</p>
-<ul>
-<li>+, -, *, /, &amp;, |, ^의 연산, 비교 수행</li>
-</ul>
-</li>
-<li><p>Register(레지스터)</p>
 </li>
 </ul>
 <ol>
-<li><p>General Purpose Register(범용 레지스터)</p>
-<ul>
-<li>AX, BX, CX 등등 데이터를 일시적으로 저장</li>
-</ul>
-</li>
-<li><p>PC(Program Counter)</p>
-<ul>
-<li>다음에 실행될 인스트럭션이 메인 메모리에서 저장된 곳의 주소값을 저장하는 레지스터</li>
-</ul>
-</li>
-<li><p>IR(Instruction Register)</p>
-<ul>
-<li><p>CU가 현재 실행 중인 인스트럭션 자체가 저장된 레지스터</p>
-</li>
-<li><p>CU가 이 곳을 참조하여 실행</p>
-</li>
-</ul>
-</li>
-<li><p>Stack Pointer</p>
-<ul>
-<li>stack frame을 생성하고 stack segment의 맨 꼭대기(Top)를 가리킴</li>
-</ul>
-</li>
-<li><p>Base Pointer(Frame Pointer)</p>
-<ul>
-<li>stack frame 내에서 변수(데이터, 메모리)에 접근하는 기준점</li>
-</ul>
-</li>
+<li>어떤 시그널이 발생했을 때 반응할 것인지 생각해야 한다.</li>
+<li>그 시그널이 발생한 것을 어떻게 알았는지 생각해야 한다.</li>
 </ol>
-</li>
-<li><p>CPU와 Memory(RAM) 관계</p>
 <ul>
-<li><p>CPU와 Memory(RAM) 사이에는 address bus, control bus, data bus로 연결되어 있다.</p>
-</li>
-<li><p>bit 수에 따라 address bus와 data bus의 수가 결정된다.</p>
-</li>
-<li><p>address bus를 통해 주소를 메모리에 전송하면, 메모리는 지정된 주소의 데이터를 data bus에 실어보낸다.</p>
-</li>
-<li><p>Memory(RAM)는 위에서부터 code, data, heap, stack 공간으로 이루어져 있다.</p>
-</li>
-<li><p>메모리 자체 내에서 연산이 수행되서 들어가는 것이 아니다.</p>
-</li>
-<li><p><u>범용 레지스터 AX, BX에서 연산한 것을 한번 더 AX에 저장한 후, RAM으로 가져오는 것이다.</u></p>
-</li>
-</ul>
-</li>
-<li><p>Instruction 의미</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">기계어 &lt;--mapping--&gt; 어셈블리어</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>ex) C code를 기계어로 변환한 것</p>
-</li>
-<li><p>RISC(Reduced Instruction Set Computer)</p>
-<ul>
-<li>기계어와 어셈블리어 매칭이 1:1</li>
-</ul>
-</li>
-<li><p>CISC(Complex Instruction Set Computer)</p>
-<ul>
-<li>기계어와 어셈블리어 매칭이 비슷</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Clock(클럭)</p>
-<ul>
-<li><p>Instruction을 싱행하거나 실행되고 있는 시간</p>
-</li>
-<li><p>GHz = 주파수(frequency)</p>
-</li>
-<li><p>주기(Period) = 1/주파수 = sec/cycle</p>
-</li>
-<li><p>Rising Edge(상승 에지)가 없으면 데이터를 보낼 수 없다.</p>
-</li>
-<li><p><strong>CPI(Clock Cycles Per Instruction)</strong></p>
-<ul>
-<li>인스터럭션 당 걸리는 수</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Stack Segment</p>
-<ul>
-<li><p>Stack Pointer - esp</p>
-<ul>
-<li>스택 영역의 맨 꼭대기(Top)를 가리킨다.</li>
-</ul>
-</li>
-<li><p>Base Pointer(Frame Pointer) - ebp</p>
-<ul>
-<li><p>스택 프레임 기준(가운데)을 가리킨다.</p>
-</li>
-<li><p>함수 안에 있는 값을 접근할 때 Base Pointer를 기준으로 접근한다.</p>
-</li>
-</ul>
-</li>
-<li><p>함수가 호출될 때</p>
-<ul>
-<li><p>최초에 함수가 호출되면 frame이 깨지지 않기 위해 미리 공간을 확보한다.</p>
-</li>
-<li><p>stack segemet에서는 메모리가 거꾸로 쌓이기 때문에 주소값에 마이너스를 해야 공간이 늘어난다.</p>
-</li>
-<li><p>함수가 끝나고 다시 호출되었던 자리로 돌아가기 위해 Return Address(ret)도 stack에 쌓아둔다.</p>
+<li>views.py에 추가<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db.models.signals <span class="keyword">import</span> post_delete</span><br><span class="line"><span class="keyword">from</span> django.dispatch <span class="keyword">import</span> receiver</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> boto3</span><br><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"></span><br><span class="line"><span class="comment"># @receiver(어떤 시그널이 발생했는가?, 누가 발생시켰는가?)</span></span><br><span class="line"><span class="comment"># sender가 없다면 모든 경우에 post_delete가 발생</span></span><br><span class="line"><span class="comment"># sender=Photo를 해줌으로써 Photo가 있는 경우에만 발생</span></span><br><span class="line"><span class="meta">@receiver(post_delete, sender=Photo)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post_delete</span><span class="params">(sender, instance, **kwargs)</span>:</span></span><br><span class="line">    session = boto3.Session(</span><br><span class="line">        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,</span><br><span class="line">        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,</span><br><span class="line">        region_name=settings.AWS_REGION</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="comment"># s3.Objects는 s3에 업로드된 파일 객체를 얻어오는 클래스</span></span><br><span class="line">    <span class="comment"># arg1 = 버킷네임</span></span><br><span class="line">    <span class="comment"># arg2 = 파일 경로 - Key</span></span><br><span class="line">    s3 = session.resource(<span class="string">'s3'</span>) <span class="comment"># s3 권한 가져오기</span></span><br><span class="line">    image = s3.Object(settings.AWS_STORAGE_BUCKET_NAME, <span class="string">"media/"</span>+str(instance.image))</span><br><span class="line">    image.delete()</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>Memory hierarchy(메모리 계층)</p>
-<ul>
-<li><p>계층 순위</p>
+<h2 id="Board-project"><a href="#Board-project" class="headerlink" title="[ Board project ]"></a>[ Board project ]</h2><ul>
+<li>DB는 AWS RDS - postgreSQL로 만들기(Postgre 10.x ver.)</li>
+<li><p>url이 있는 형태로 S3 버킷 만들기(static 파일용)</p>
 <ol>
-<li><p>Register</p>
-</li>
-<li><p>Cache</p>
-</li>
-<li><p>Memory(RAM)</p>
-</li>
-<li><p>Hard Disk(HDD)</p>
-</li>
-</ol>
-</li>
-<li><p>사이클</p>
+<li><p>장고 프로젝트 생성</p>
 <ul>
-<li><p>Register <-- 1 cycle --> 다른 Register</--></p>
+<li><p>pycharm에서 board_project를 생성 후, 진행</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pip install django</span><br><span class="line"></span><br><span class="line">django-admin startproject config .</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Register <-- 3 cycle --> Cache</--></p>
-</li>
-<li><p>Register <-- 20 100 - cycle --> Memory(RAM)</--></p>
-</li>
-<li><p>Register <-- 500,000 - 5,000,000 cycle --> HDD        </--></p>
+<li><p>관련 모듈을 미리 설치하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pip install psycopg2-binary</span><br><span class="line"></span><br><span class="line">$ pip install boto3</span><br><span class="line"></span><br><span class="line">$ pip install django-storages</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>요즘에는 SSD도 있지만, 메모리 계층에서는 HDD와 SSD가 동급이다.</p>
+<li><p>AWS RDS에 DB 만들기(Postgre 10.7 사용)</p>
+<ul>
+<li>파라미터 그룹은 Postgre 10으로 새로 생성하여 사용한다.</li>
+<li>DB 세부 정보를 지정할 때만 DB 엔진 버전을 PostgreSQL 10.7을 선택한다.</li>
+<li>나머지는 dstagram_project와 동일하게 진행했다.</li>
+<li><p>pycharm project의 settings.py를 수정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># config/settings.py</span></span><br><span class="line"><span class="comment"># 기존 데이터베이스 항목을 수정</span></span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="comment"># psycopg2 - binary 이용</span></span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.postgresql_psycopg2'</span>,</span><br><span class="line">        <span class="comment"># Amazon 해당 DB의 구성 - DB 이름</span></span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'board'</span>,</span><br><span class="line">        <span class="comment"># Amazon database 생성 때 작성한 마스터 사용자 이름</span></span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'amazon master user name'</span>,</span><br><span class="line">        <span class="comment"># Amazon database 생성 때 작성한 마스터 암호</span></span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'amazon master password'</span>,</span><br><span class="line">        <span class="comment"># Amazon 해당 DB의 연결&amp;보안 - 엔드포인트</span></span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'wps10-board.cnuxbldx8kex.ap-northeast-2.rds.amazonaws.com'</span>,</span><br><span class="line">        <span class="comment">#  # Amazon database 생성 때 포트</span></span><br><span class="line">        <span class="string">'POST'</span>: <span class="string">'5432'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>계층 순위가 올라갈수록 빠르고, 용량이 적으며, 값이 비싸다.</p>
-</li>
-<li><p>반드시 HDD -&gt; Memory -&gt; Cache -&gt; Register 순으로 저장된다.</p>
-</li>
-<li><p>HDD에서 Register로 한번에 가져올 수는 없다.</p>
-</li>
-<li><p>Memory(RAM)에도 buffer, Cache라는 공간이 있어서, HDD, SSD에서 가져온 값을 담아둘 수 있다.</p>
+<li><p>DB를 초기화하고 관리자 계정을 생성하여 확인한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py migrate</span><br><span class="line"></span><br><span class="line">$ python manage.py createsuperuser</span><br><span class="line"></span><br><span class="line">$ python manage.py runserver</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>Cache에 대해</p>
+<li><p>AWS S3에 static 파일용 버킷 만들기</p>
 <ul>
-<li>Principle of locality</li>
-</ul>
-<ol>
-<li><p>Temporal locality(시간 지연성)</p>
-<ul>
-<li>한번 접근한 메모리에 자주 접근</li>
-</ul>
+<li>board.[도메인 주소]로 버킷 이름을 설정한다.</li>
+<li>퍼블릭 ACL 관리 체크 항목을 모두 해제한다.</li>
+<li>버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다.</li>
+<li>AWS ROUTE53에서 레코드를 생성한다.</li>
+<li><p>pycharm project의 settings.py를 수정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">AWS_ACCESS_KEY_ID = <span class="string">'Amazon User Access Key ID 값'</span> <span class="comment"># 반드시 지우고 github에 올려야한다.</span></span><br><span class="line">AWS_SECRET_ACCESS_KEY = <span class="string">'Amazon User Secret Key 값'</span> <span class="comment"># # 반드시 지우고 github에 올려야한다.</span></span><br><span class="line">AWS_REGION = <span class="string">'ap-northeast-2'</span></span><br><span class="line">AWS_STORAGE_BUCKET_NAME = <span class="string">'board.jinukk.me'</span></span><br><span class="line">AWS_S3_CUSTOM_DOMAIN = <span class="string">'%s'</span> % AWS_STORAGE_BUCKET_NAME</span><br><span class="line">AWS_S3_SECURE_URLS = <span class="literal">False</span> <span class="comment"># https -&gt; http</span></span><br><span class="line">AWS_S3_OBJECT_PARAMETERS = &#123;</span><br><span class="line"><span class="string">'CacheControl'</span>: <span class="string">'max-age=86400'</span>,</span><br><span class="line">&#125;</span><br><span class="line">AWS_DEFAULT_ACL = <span class="string">'public-read'</span></span><br><span class="line">AWS_LOCATION = <span class="string">'static'</span></span><br><span class="line"></span><br><span class="line">STATIC_URL = <span class="string">'https://%s/%s/'</span> % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)</span><br><span class="line">STATICFILES_STORAGE = <span class="string">'storages.backends.s3boto3.S3Boto3Storage'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Spatial locality(공간 지연성)</p>
-<ul>
-<li>접근하는 메모리가 이전에 접근한 메모리의 근처일 확률이 높음</li>
+<li><p>다음 명렁어를 통해 Amazon S3에 static 관련 파일을 옮긴다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py collectstatic</span><br><span class="line"><span class="comment"># 명령어 입력 후, yes를 한번 더 입력한다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Amazon S3의 해당 버킷에 static 파일이 옮겨졌는지 확인하자.</p>
+</li>
 </ul>
 </li>
 </ol>
-<ul>
-<li><p>Cache line</p>
-<ul>
-<li>CPU가 Cache한테 데이터를 요청했을 때, 그 주변 데이터를 모두 가져옴(64 ~ 128byte)</li>
-</ul>
-</li>
-<li><p>Cache Hit</p>
-<ul>
-<li>CPU가 요청한 데이터가 Cache에 있을 때</li>
-</ul>
-</li>
-<li><p>Cache miss</p>
-<ul>
-<li>CPU가 요청한 데이터가 Cache에 없을 때 메모리를 다시 가져와야 하는 상황</li>
-</ul>
-</li>
-<li><p>Cache Memory</p>
-<ul>
-<li><p>L1, L2, L3로 이루어짐</p>
-</li>
-<li><p>속도는 L1 &gt; L2 &gt; L3</p>
-</li>
-<li><p>용량은 L1 &lt; L2 &lt; L3</p>
-</li>
-<li><p>요즘 Cache L1은 CPU 안에 있다.</p>
-</li>
-</ul>
-</li>
-</ul>
 </li>
 </ul>
 
@@ -383,7 +242,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/03/14/190314-PCE-Study/" data-id="cjvmbigyt0008xywurlj0suqy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/05/10/190510-Django-Study/" data-id="cjvmbigzu001vxywub26vj9ct" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -453,33 +312,21 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "2019.03.14 Python and CE Study",
+        "headline": "2019.05.10 Django Study",
         "image": "http://JINUKK.github.io",
         "keywords": "",
         "genre": "Study Review",
-        "datePublished": "2019-03-14",
-        "dateCreated": "2019-03-14",
-        "dateModified": "2019-05-07",
-        "url": "http://JINUKK.github.io/2019/03/14/190314-PCE-Study/",
-        "description": "Computer Engineering
-CPU의 구조
-
-CU(Control Unit)
-
-Instruction code(machine code) execution(0과 1의 코드를 실행)
-
-
-ALU(Arithmetic Logic Unit)
-
-+, -, *, /, &amp;, |, ^의 연산, 비교 수행
-
-
-Register(레지스터)
-
-
-
-General Purp"
-        "wordCount": 381
+        "datePublished": "2019-05-10",
+        "dateCreated": "2019-05-10",
+        "dateModified": "2019-05-13",
+        "url": "http://JINUKK.github.io/2019/05/10/190510-Django-Study/",
+        "description": "2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경
+signal
+~하기 전에, ~한 후에 발생하는 일들을 말함
+후속 조치를 하는 것
+대표적인 signal 종류
+pre_save "
+        "wordCount": 797
     }
 </script>
 
@@ -519,20 +366,20 @@ General Purp"
         
 <nav id="article-nav">
     
-        <a href="/2019/03/15/190315-PCE-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/05/13/190513-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            2019.03.15 Python and CE Study
+            2019.05.13 Django Study
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/03/13/190313-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/05/09/190509-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">2019.03.13 Python and CE Study</p>
+        <p class="article-nav-title">2019.05.09 Django Study</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -677,7 +524,7 @@ General Purp"
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://JINUKK.github.io/2019/03/14/190314-PCE-Study/';
+    var disqus_url = 'http://JINUKK.github.io/2019/05/10/190510-Django-Study/';
     
     (function() {
     var dsq = document.createElement('script');

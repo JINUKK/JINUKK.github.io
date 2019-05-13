@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.13 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="2019.05.13 Django Study[ Board project ] url이 있는 형태로 S3 버킷 만들기(media 파일용)  board.[도메인 주소]로 버킷 이름을 설정한다. 퍼블릭 ACL 관리 체크 항목을 모두 해제한다. 버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다. AWS ROUTE53에서 레코드를 생성한다. pycharm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.13 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/13/190513-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="2019.05.13 Django Study[ Board project ] url이 있는 형태로 S3 버킷 만들기(media 파일용)  board.[도메인 주소]로 버킷 이름을 설정한다. 퍼블릭 ACL 관리 체크 항목을 모두 해제한다. 버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다. AWS ROUTE53에서 레코드를 생성한다. pycharm">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-13T12:02:34.806Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.13 Django Study">
+<meta name="twitter:description" content="2019.05.13 Django Study[ Board project ] url이 있는 형태로 S3 버킷 만들기(media 파일용)  board.[도메인 주소]로 버킷 이름을 설정한다. 퍼블릭 ACL 관리 체크 항목을 모두 해제한다. 버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다. AWS ROUTE53에서 레코드를 생성한다. pycharm">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190513-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.13 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/13/190513-Django-Study/" class="article-date">
+            <time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="2019-05-13-Django-Study"><a href="#2019-05-13-Django-Study" class="headerlink" title="2019.05.13 Django Study"></a>2019.05.13 Django Study</h1><h2 id="Board-project"><a href="#Board-project" class="headerlink" title="[ Board project ]"></a>[ Board project ]</h2><ul>
+<li><p>url이 있는 형태로 S3 버킷 만들기(media 파일용)</p>
+<ul>
+<li>board.[도메인 주소]로 버킷 이름을 설정한다.</li>
+<li>퍼블릭 ACL 관리 체크 항목을 모두 해제한다.</li>
+<li>버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다.</li>
+<li>AWS ROUTE53에서 레코드를 생성한다.</li>
+<li><p>pycharm project의 settings.py에 다음과 같이 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">DEFAULT_FILE_STORAGE = <span class="string">'config.asset_storage.MediaStorage'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config/asset_storage.py를 생성하고 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> storages.backends.s3boto3 <span class="keyword">import</span> S3Boto3Storage</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MediaStorage</span><span class="params">(S3Boto3Storage)</span>:</span></span><br><span class="line">    location = <span class="string">''</span></span><br><span class="line">    <span class="comment"># 오버라이드하는 방법을 항상 찾아보고 별도로 추가해보자.</span></span><br><span class="line">    bucket_name = <span class="string">'images.jinukk.me'</span></span><br><span class="line">    custom_domain = <span class="string">'images.jinukk.me'</span></span><br><span class="line">    file_overwrite = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>‘board’ 앱을 만들고 모델 설계하기</p>
+<ul>
+<li><p>‘board’라는 이름의 앱을 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py startapp board</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py에 앱을 등록한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'storages'</span>,</span><br><span class="line">    <span class="comment"># board 앱 등록</span></span><br><span class="line">    <span class="string">'board'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>models.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Category - slug, name</span></span><br><span class="line"><span class="string">Document - author, category, title, slug, text, image, created, updated</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># User 모델을 커스텀한 경우 불러다가 써야하기 때문에 사용</span></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> get_user_model</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"><span class="comment"># class Board(models.Model):</span></span><br><span class="line">    <span class="comment"># Board 모델을 만들어서 Category나 Document에 참조하여 사용하는 방법도 있다.</span></span><br><span class="line"><span class="comment">#    pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="comment"># CharField vs TextField의 차이 = 글자 수 제한</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">20</span>)</span><br><span class="line">    <span class="comment"># DB에는 index라는 키 값이 걸려있다.</span></span><br><span class="line">    <span class="comment"># 대량의 데이터를 입력, 수정, 삭제, 검색 등을 잘 수행하기 위해 설계한 것이 DB</span></span><br><span class="line">    <span class="comment"># -&gt; file 형태 대신 DB를 쓰는 이유</span></span><br><span class="line">    <span class="comment"># 미리 검색과 정렬에 적합하도록 설계하는 것이 index</span></span><br><span class="line">    <span class="comment"># allow_unicode = 한글 처리 가능</span></span><br><span class="line">    slug = models.SlugField(max_length=<span class="number">30</span>, db_index=<span class="literal">True</span>, unique=<span class="literal">True</span>, allow_unicode=<span class="literal">True</span>)</span><br><span class="line">    description = models.CharField(max_length=<span class="number">200</span>, blank=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 검색 엔진에게 제공해주는 것이 meta_description</span></span><br><span class="line">    meta_description = models.CharField(max_length=<span class="number">200</span>, blank=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        <span class="comment"># DB에 기본적으로 설정될 정렬값</span></span><br><span class="line">        ordering = [<span class="string">'slug'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Document</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=<span class="literal">True</span>, blank=<span class="literal">True</span>, related_name=<span class="string">'documents'</span>)</span><br><span class="line">    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name=<span class="string">'documents'</span>)</span><br><span class="line">    title = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    slug = models.SlugField(max_length=<span class="number">120</span>, db_index=<span class="literal">True</span>, unique=<span class="literal">True</span>, allow_unicode=<span class="literal">True</span>)</span><br><span class="line">    text = models.TextField()</span><br><span class="line">    <span class="comment"># upload_to 동적으로 경로 설정 가능</span></span><br><span class="line">    image = models.ImageField(upload_to=<span class="string">'board_images/%Y/%m/%d'</span>)</span><br><span class="line">    created = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br><span class="line">    updated = models.DateTimeField(auto_now=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.title</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_absolute_url</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> reverse(<span class="string">'board:detail'</span>, args=[self.id])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, get_object_or_404, redirect</span><br><span class="line"></span><br><span class="line"><span class="comment"># QuerySet은 모델의 디폴트 매니저를 통해 실행한다.</span></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Document</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># QuerySet</span></span><br><span class="line">    <span class="comment"># 1. 객체를 선택</span></span><br><span class="line">    <span class="comment"># 2. 객체 생성</span></span><br><span class="line">    <span class="comment"># 3. 객체 필터링</span></span><br><span class="line">    <span class="comment"># 4. 객체 삭제</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Models.objects -&gt; 매니저 -&gt; 도와주는 객체</span></span><br><span class="line">    <span class="comment"># 1. 모델의 전체 데이터 불러오기</span></span><br><span class="line">    documents = Document.objects.all()</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_list.html'</span>,&#123;<span class="string">'object_list'</span>:documents&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .forms <span class="keyword">import</span> DocumentForm</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.decorators <span class="keyword">import</span> login_required</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_create</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># Document.objects.create() - 실행과 동시에 DB에 삽입을 한다.</span></span><br><span class="line">    <span class="comment"># 분기 - post, get</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        <span class="comment"># 처리</span></span><br><span class="line">        <span class="comment"># request.POST : 폼에서 입력한 텍스트 데이터가 넘어온다.</span></span><br><span class="line">        <span class="comment"># request.FILES : 파일</span></span><br><span class="line">        form = DocumentForm(request.POST, request.FILES)</span><br><span class="line">        form.instance.author_id = request.user.id</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            document = form.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(document)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 입력 창</span></span><br><span class="line">        form = DocumentForm()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_create.html'</span>, &#123;<span class="string">'form'</span>:form&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_update</span><span class="params">(request, document_id)</span>:</span></span><br><span class="line">    <span class="comment"># 객체를 불러와서, 데이터를 수정</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        document = Document.objects.get(pk=document_id)</span><br><span class="line">        <span class="comment"># 모델폼을 사용할 때 instance를 넘겨주면, 해당 인스턴스 값으로 초기화가 되고</span></span><br><span class="line">        <span class="comment"># 만약 pk가 있는 instance라면 update를 수행한다.</span></span><br><span class="line">        <span class="comment"># request.POST와 instance가 같이 전달되면, POST 데이터가 우선순위가 높다.</span></span><br><span class="line">        form = DocumentForm(request.POST, request.FILES, instance=document)</span><br><span class="line">        <span class="comment"># instance가 매개변수로 있어야 create가 아닌 update로 인식한다.</span></span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            document = form.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(document)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        document = Document.objects.get(pk=document_id)</span><br><span class="line">        <span class="comment"># modelform init with instance(model object)</span></span><br><span class="line">        form = DocumentForm(instance=document) <span class="comment"># instance 매개변수 사용</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_update.html'</span>,&#123;<span class="string">'form'</span>:form&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_detail</span><span class="params">(request, document_id)</span>:</span></span><br><span class="line">    document = Document.objects.get(pk=document_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_detail.html'</span>, &#123;<span class="string">'object'</span>:document&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_delete</span><span class="params">(request, document_id)</span>:</span></span><br><span class="line">    <span class="comment"># 객체를 불러와서 delete만 호출</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_delete.html'</span>,&#123;<span class="string">'object'</span>:document&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>admin.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Category,Document</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CategoryOption</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = [<span class="string">'id'</span>, <span class="string">'name'</span>, <span class="string">'slug'</span>]</span><br><span class="line">    prepopulated_fields = &#123;<span class="string">'slug'</span>:(<span class="string">'name'</span>,)&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DocumentOption</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = [<span class="string">'id'</span>, <span class="string">'author'</span>, <span class="string">'title'</span>, <span class="string">'slug'</span>, <span class="string">'created'</span>, <span class="string">'updated'</span>]</span><br><span class="line">    prepopulated_fields = &#123;<span class="string">'slug'</span>:(<span class="string">'title'</span>,)&#125;</span><br><span class="line"></span><br><span class="line">admin.site.register(Category, CategoryOption)</span><br><span class="line">admin.site.register(Document, DocumentOption)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config/urls.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'site_config/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">''</span>, include(<span class="string">'board.urls'</span>)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>board/urls.py를 생성하고 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.views <span class="keyword">import</span> LoginView, LogoutView</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> document_list, document_create, document_update, document_delete, document_detail</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">'board'</span></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'delete/&lt;int:document_id&gt;'</span>, document_delete, name=<span class="string">'delete'</span>),</span><br><span class="line">    path(<span class="string">'update/&lt;int:document_id&gt;'</span>, document_update, name=<span class="string">'update'</span>),</span><br><span class="line">    path(<span class="string">'create/'</span>, document_create, name=<span class="string">'create'</span>),</span><br><span class="line">    path(<span class="string">'detail/&lt;int:document_id&gt;/'</span>,document_detail, name=<span class="string">'detail'</span>),</span><br><span class="line">    path(<span class="string">''</span>, document_list, name=<span class="string">'list'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>templates 파일을 생성하여 작성한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">board_project/layout/base.html</span></span><br><span class="line"><span class="comment">settings.py의 TEPLATES에서 DIRS를 수정하는 것을 잊지 말자. </span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;% block title %&#125;&#123;% endblock %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span> <span class="attr">integrity</span>=<span class="string">"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">board/templates/board/document_list.html </span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Photo List</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">    &#123;% for object in object_list %&#125;</span><br><span class="line">        &#123;&#123;object.title&#125;&#125; &#123;&#123;object.text&#125;&#125; &#123;&#123;object.image.url&#125;&#125; &#123;&#123;object.author.username&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">board/templates/board/document_detail.html</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Photo Detail</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">        &#123;&#123;object.title&#125;&#125; &#123;&#123;object.text&#125;&#125; &#123;&#123;object.image.url&#125;&#125; &#123;&#123;object.author.username&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">board/templates/board/document_create.html </span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Board Create</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--// 파일을 보내는 경우 enctype를 추가해야 한다. //--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">            &#123;&#123;form.as_table&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Write"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">board/templates/board/document_update.html</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Photo Update</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">            &#123;&#123;form.as_table&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Update"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>서버를 실행하여 이미지 파일을 올려보고 S3에 업로드되는지 확인하자.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="jQuery-Practice"><a href="#jQuery-Practice" class="headerlink" title="jQuery Practice"></a>jQuery Practice</h2><ul>
+<li>html 파일을 생성한다.</li>
+<li>jQuery.com - Download - google CDN - jQuery/3.x snippet의 내용을 html 파일에 작성한다.<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    내용</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>내용 토글<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btn_menu"</span>&gt;</span>MENU<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"main_menu"</span> <span class="attr">style</span>=<span class="string">"display:none;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>메뉴1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>메뉴2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>메뉴3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>메뉴4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"contents"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn_change"</span>&gt;</span>내용바꾸기<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"register_form"</span>&gt;</span></span><br><span class="line">    username : <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    주소 : <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"address"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"회원가입"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--//</span></span><br><span class="line"><span class="comment">    jQuery : 액션에 대해서 리액션</span></span><br><span class="line"><span class="comment">    액션 : 마우스 클릭, 롤오버, 롤아웃, 키 프레스, 키 다운, 키 업, 스크롤</span></span><br><span class="line"><span class="comment">    리액션 : 어떤 요소를 보여준다. 감춘다. 변경한다.</span></span><br><span class="line"><span class="comment">    어떤 버튼을 클릭하면 - 메뉴가 나타난다.</span></span><br><span class="line"><span class="comment">    어떤 키를 누르면 - 페이지를 이동한다.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    들여쓰기를 따로 하지 않아도 동작에는 문제가 없다.</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    // 기본 코드 : 읽자마자 실행</span></span><br><span class="line"><span class="undefined">    $(function() &#123;</span></span><br><span class="line"><span class="undefined">        // 초기화 코드</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    $(document).ready(function() &#123;</span></span><br><span class="line"><span class="undefined">        // 문서 로드가 끝난 후에 실행</span></span><br><span class="line"><span class="undefined">        // 어떤 액션에 대해서 무슨 리액션을 할 것인지 연결 목록</span></span><br><span class="line"><span class="undefined">        // 액션 : a태그 클릭 - 어떤 요소 + 어떤 이벤트</span></span><br><span class="line"><span class="undefined">        // 리액션 : div태그 보이기/숨기기 - 어떤 함수</span></span><br><span class="line"><span class="undefined">        $('a').click(function() &#123;</span></span><br><span class="line"><span class="undefined">            $('div').toggle();</span></span><br><span class="line"><span class="undefined">            // $('div').hide(); - 사라지게 하고 싶다면</span></span><br><span class="line"><span class="undefined">            // $('div').show(); - 보이게 하고 싶다면</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        $('.btn_menu').click(function() &#123;</span></span><br><span class="line"><span class="undefined">            //$('.main_menu').toggle();</span></span><br><span class="line"><span class="undefined">            if ($('.main_menu').is(":visible")) &#123;</span></span><br><span class="line"><span class="undefined">                $('.main_menu').hide(1000);</span></span><br><span class="line"><span class="undefined">            &#125; else &#123;</span></span><br><span class="line"><span class="undefined">                $('.main_menu').show(1000);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        $('.btn_change').click(function() &#123;</span></span><br><span class="line"><span class="undefined">        // 요소.html() - 요소 안에 있는 html 코드 불러오기</span></span><br><span class="line"><span class="undefined">        // 요소.html(내용) - 요소 안에 있는 html 코드를 내용으로 교체한다.</span></span><br><span class="line"><span class="undefined">            $('.contents').html("내용채우기 실습!");</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        $('#register_form').submit(function() &#123;</span></span><br><span class="line"><span class="undefined">            // 위에서 validation을 하고</span></span><br><span class="line"><span class="undefined">            // val() - 비어있으면 값 읽기</span></span><br><span class="line"><span class="undefined">            // val(값) - 값이 있으면 값 할당</span></span><br><span class="line"><span class="undefined">            username = $('input[name="username"]').val();</span></span><br><span class="line"><span class="undefined">            $('input[name="address"]').val(username+"@nate.com");</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            // validation이 실패했다면 return false; 성공했다면 return true;</span></span><br><span class="line"><span class="undefined">            return false;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">    /*</span></span><br><span class="line"><span class="undefined">        - 기명함수</span></span><br><span class="line"><span class="undefined">        function [함수이름]([매개변수])&#123;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        - 무기명함수, 일회용</span></span><br><span class="line"><span class="undefined">        function([매개변수])&#123;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        - 셀렉터 만드는 법</span></span><br><span class="line"><span class="undefined">        tag : tag이름</span></span><br><span class="line"><span class="undefined">        class : .class이름</span></span><br><span class="line"><span class="undefined">        id : #id</span></span><br><span class="line"><span class="undefined">    */</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/13/190513-Django-Study/" data-id="cjvmbigzy0021xywu3falvhwd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.13 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-13",
+        "dateCreated": "2019-05-13",
+        "dateModified": "2019-05-13",
+        "url": "http://JINUKK.github.io/2019/05/13/190513-Django-Study/",
+        "description": "2019.05.13 Django Study[ Board project ]
+url이 있는 형태로 S3 버킷 만들기(media 파일용)
+
+board.[도메인 주소]로 버킷 이름을 설정한다.
+퍼블릭 ACL 관리 체크 항목을 모두 해제한다.
+버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다.
+AWS ROUTE53에서 레코드를 생성한다.
+pycharm"
+        "wordCount": 3582
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/10/190510-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.10 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/13/190513-Django-Study/" class="title">2019.05.13 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/10/190510-Django-Study/" class="title">2019.05.10 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-10T12:00:09.000Z" itemprop="datePublished">2019-05-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/09/190509-Django-Study/" class="title">2019.05.09 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-09T11:53:26.000Z" itemprop="datePublished">2019-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/08/190508-Django-Study/" class="title">2019.05.08 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-08T10:38:31.000Z" itemprop="datePublished">2019-05-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/07/190507-Django-Study/" class="title">2019.05.07 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-07T07:59:41.000Z" itemprop="datePublished">2019-05-07</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">42</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/13/190513-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

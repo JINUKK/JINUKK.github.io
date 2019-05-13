@@ -6,21 +6,20 @@
     
 
     
-    <title>about | Develop Memory</title>
+    <title>Develop Memory</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="안녕하세요.Develop Memory 블로그의 구진욱입니다.프로그래밍 관련된 지식을 공유하는 블로그 입니다. JINWOOK KOO  Python Django">
+    <meta name="description" content="What I learned">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://JINUKK.github.io/about/index.html">
+<meta property="og:title" content="Develop Memory">
+<meta property="og:url" content="http://JINUKK.github.io/page/5/index.html">
 <meta property="og:site_name" content="Develop Memory">
-<meta property="og:description" content="안녕하세요.Develop Memory 블로그의 구진욱입니다.프로그래밍 관련된 지식을 공유하는 블로그 입니다. JINWOOK KOO  Python Django">
+<meta property="og:description" content="What I learned">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-29T10:24:24.348Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="안녕하세요.Develop Memory 블로그의 구진욱입니다.프로그래밍 관련된 지식을 공유하는 블로그 입니다. JINWOOK KOO  Python Django">
+<meta name="twitter:title" content="Develop Memory">
+<meta name="twitter:description" content="What I learned">
     
 
     
@@ -131,141 +130,113 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="/about/index.html">about</em>
+    <em class="page-title-link" data-url="home">Home</em>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
+            <div class="date"><time datetime="2019-03-05T14:23:40.000Z" itemprop="datePublished">2019-03-05</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        about
+        <a href="/2019/03/05/190305-PCE-Study/">2019.03.05 Python and CE Study</a>
         </h1>
     
 
-            </header>
-        
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p>안녕하세요.<br>Develop Memory 블로그의 구진욱입니다.<br>프로그래밍 관련된 지식을 공유하는 블로그 입니다.</p>
-<p>JINWOOK KOO</p>
-<ul>
-<li>Python</li>
-<li>Django</li>
-</ul>
+        <p class="article-excerpt">
+            Dictiionary
+key와 value가 한 쌍
 
-        </div>
-        <footer class="article-footer">
-            
+hash로 구현(대응 관계)
 
 
 
-    <a data-url="http://JINUKK.github.io/about/index.html" data-id="cjvmbih5d002exywu0jfmvnyk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
+Basic
 
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
+key:value로 입력
 
-            if ($('#' + id).length) {
-                box = $('#' + id);
+중괄호 사용
+1dic = &#123;'a': 1, 'b': 2, 'c': 3&#125;
 
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
+새로운 값을 삽입
+123dic['e'] = 4dic&gt;&gt; &#123;'a': 1, 'b': 2, 'c': 3, 'e': 4&#125;
 
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+        </p>
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "JINWOOK KOO"
-        },
-        "headline": "about",
-        "image": "http://JINUKK.github.io",
-        
-        
-        "datePublished": "2019-04-29",
-        "dateCreated": "2019-04-29",
-        "dateModified": "2019-04-29",
-        "url": "http://JINUKK.github.io/about/index.html",
-        "description": "안녕하세요.Develop Memory 블로그의 구진욱입니다.프로그래밍 관련된 지식을 공유하는 블로그 입니다.
-JINWOOK KOO
-
-Python
-Django
-
-"
-        "wordCount": 10
-    }
-</script>
-
 </article>
-
-    <section id="comments">
     
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
+            <div class="date"><time datetime="2019-03-03T15:01:32.000Z" itemprop="datePublished">2019-03-04</time></div>
+        </div>
+        
     
-    </section>
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/04/190304-PCE-Study/">2019.03.04 Python and CE Study</a>
+        </h1>
+    
 
+        <p class="article-excerpt">
+            String
+python에서 문자열은 변경이 불가능한 객체(immutable)
+
+
+Basic
+
+python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.
+
+1234567a = 'abcde'print(a)&gt;&gt; abcdea = "abcde"print(a)&gt;&gt; abcde
+
+문자열 안에 ‘와 ‘’를 같이 쓰고 싶은 경우
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+
+    </div></section>
+
+
+    <nav id="page-nav">
+        <span class="pages">Page 5 of 5</span>
+        <a class="extend prev" rel="prev" href="/page/4/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    </nav>
 
 
                         </div>
@@ -425,13 +396,11 @@ Django
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://JINUKK.github.io/about/index.html';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
