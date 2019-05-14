@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.14 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="[ Board project ] get_object_or_404, get_list_or_404  데이터가 하나도 없다면 에러 발생 views.py 수정123456789101112131415161718192021222324252627282930313233343536# 해당 모듈 추가from django.shortcuts import render, get_ob">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.14 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/14/190514-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="[ Board project ] get_object_or_404, get_list_or_404  데이터가 하나도 없다면 에러 발생 views.py 수정123456789101112131415161718192021222324252627282930313233343536# 해당 모듈 추가from django.shortcuts import render, get_ob">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-14T10:40:30.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.14 Django Study">
+<meta name="twitter:description" content="[ Board project ] get_object_or_404, get_list_or_404  데이터가 하나도 없다면 에러 발생 views.py 수정123456789101112131415161718192021222324252627282930313233343536# 해당 모듈 추가from django.shortcuts import render, get_ob">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190514-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.14 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/14/190514-Django-Study/" class="article-date">
+            <time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Board-project"><a href="#Board-project" class="headerlink" title="[ Board project ]"></a>[ Board project ]</h2><ul>
+<li><p>get_object_or_404, get_list_or_404</p>
+<ul>
+<li>데이터가 하나도 없다면 에러 발생</li>
+<li>views.py 수정<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 해당 모듈 추가</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render, get_object_or_404, redirect, get_list_or_404</span><br><span class="line"></span><br><span class="line"><span class="comment"># document_list의 documents 수정</span></span><br><span class="line"><span class="comment"># get_list_or_404 사용</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># documents = Document.objects.all()</span></span><br><span class="line">    documents = get_list_or_404(Document) <span class="comment"># objects.all()을 포함하는 코드</span></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_list.html'</span>,&#123;<span class="string">'object_list'</span>:documents&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># document_update의 documents 수정</span></span><br><span class="line"><span class="comment"># get_object_or_404 사용</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_update</span><span class="params">(request, document_id)</span>:</span></span><br><span class="line">    <span class="comment"># 객체를 불러와서, 데이터를 수정</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        <span class="comment"># document = Document.objects.get(pk=document_id)</span></span><br><span class="line">        document = get_object_or_404(Document, pk=document_id)</span><br><span class="line"></span><br><span class="line">        form = DocumentForm(request.POST, request.FILES, instance=document)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            document = form.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(document)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># document = Document.objects.get(pk=document_id)</span></span><br><span class="line">        document = get_object_or_404(Document, pk=document_id)</span><br><span class="line">        form = DocumentForm(instance=document)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_update.html'</span>,&#123;<span class="string">'form'</span>:form&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># document_detail의 documents 수정</span></span><br><span class="line"><span class="comment"># get_object_or_404 수정</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_detail</span><span class="params">(request, document_id)</span>:</span></span><br><span class="line">    <span class="comment"># document = Document.objects.get(pk=document_id)</span></span><br><span class="line">    document = get_object_or_404(Document, pk=document_id)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_detail.html'</span>, &#123;<span class="string">'object'</span>:document&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>paging 기능 추가</p>
+<ul>
+<li>기능 구현 포인트<ul>
+<li>현재 페이지가 몇 페이지인지 생각한다.</li>
+<li>페이지 당 개수를 몇으로 할 것인지 생각한다.</li>
+</ul>
+</li>
+<li><p>views.py의 document_list(request) 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 모듈 추가</span></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># QuerySet</span></span><br><span class="line">    <span class="comment"># 1. 객체를 선택</span></span><br><span class="line">    <span class="comment"># 2. 객체 생성</span></span><br><span class="line">    <span class="comment"># 3. 객체 필터링</span></span><br><span class="line">    <span class="comment"># 4. 객체 삭제</span></span><br><span class="line">    page = int(request.GET.get(<span class="string">'page'</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 페이징 기능을 구현</span></span><br><span class="line">    <span class="comment"># 페이지 당 개수</span></span><br><span class="line">    paginated_by = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># QuerySet 객체 슬라이싱 할 때 [시작번호:끝번호]</span></span><br><span class="line">    <span class="comment"># 1 = 0 부터 ===== page*paginated_by</span></span><br><span class="line">    <span class="comment"># 2 = paginated_by*(page-1) ==== 6</span></span><br><span class="line">    <span class="comment"># 3 = paginated_by*(page-1) ==== 9</span></span><br><span class="line"></span><br><span class="line">    total_count = len(documents)</span><br><span class="line">    total_page = math.ceil(total_count/paginated_by)</span><br><span class="line">    page_range = range(<span class="number">1</span>, total_page+<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 전체 개수 = 전체 페이지 수</span></span><br><span class="line">    start_index = paginated_by * (page - <span class="number">1</span>)</span><br><span class="line">    end_index = paginated_by * page</span><br><span class="line"></span><br><span class="line">    documents = get_list_or_404(Document)</span><br><span class="line">    documents = documents[start_index:end_index]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_list.html'</span>,&#123;<span class="string">'object_list'</span>:documents,</span><br><span class="line">                                                    <span class="string">'total_page'</span>:total_page,</span><br><span class="line">                                                    <span class="string">'page_range'</span>:page_range&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document_list.html 수정</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">    &#123;% block title %&#125;</span><br><span class="line">    Photo List</span><br><span class="line">    &#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">    &#123;% block content %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-striped"</span>&gt;</span></span><br><span class="line">                &#123;% for object in object_list %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.title&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.author.username&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.updated&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                &#123;% endfor %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--// Pagination 적용 //--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">nav</span> <span class="attr">aria-label</span>=<span class="string">"Page navigation example"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination justify-content-center"</span>&gt;</span></span><br><span class="line">                    &#123;% for page in page_range %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'board:list' %&#125;?page=&#123;&#123;page&#125;&#125;"</span>&gt;</span>&#123;&#123;page&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                    &#123;% endfor %&#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>검색 기능 추가</p>
+<ul>
+<li>검색 기능을 구별하는 위치<ol>
+<li>DB 질의문 - like 구문</li>
+<li>코드 레벨 검색(python 구문)</li>
+</ol>
+</li>
+<li>검색 기능을 구현 순서<ol>
+<li>먼저 검색어를 제대로 받았는지 확인</li>
+<li>filter 적용<ul>
+<li>어떤 항목으로 할 것인가? - ex) 작성자, 제목, 내용</li>
+<li>어떤 옵션으로 할 것인가? - ex) 내용 중에 단어를 시작, 중간, 끝에서 검색</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>views.py의 document_list(request) 수정</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 모듈 추가</span></span><br><span class="line"><span class="keyword">from</span> django.db.models <span class="keyword">import</span> Q</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">document_list</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># QuerySet</span></span><br><span class="line">    <span class="comment"># 1. 객체를 선택</span></span><br><span class="line">    <span class="comment"># 2. 객체 생성</span></span><br><span class="line">    <span class="comment"># 3. 객체 필터링</span></span><br><span class="line">    <span class="comment"># 4. 객체 삭제</span></span><br><span class="line">    page = int(request.GET.get(<span class="string">'page'</span>, <span class="number">1</span>))</span><br><span class="line">    paginated_by = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    username =&gt; Q(author__username__icontains=search_key)</span></span><br><span class="line"><span class="string">    title =&gt; Q(title__icontains=search_key)</span></span><br><span class="line"><span class="string">    text =&gt; Q(text__icontains=search_key)</span></span><br><span class="line"><span class="string">    q1|q2|q3</span></span><br><span class="line"><span class="string">    if search_key and search_type:</span></span><br><span class="line"><span class="string">        documents = get_list_or_404(Document, q1|q2|q3)</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    필드명 = "값" 매칭</span></span><br><span class="line"><span class="string">    필드명__exact = "값" 매칭</span></span><br><span class="line"><span class="string">    필드명__iexact = "값" 대소문자 구분없이 매칭</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    __startswith, __istartswitch 값으로 시작</span></span><br><span class="line"><span class="string">    __endswith, __iendswith 값으로 끝</span></span><br><span class="line"><span class="string">    __contains, __icontains 값을 포함하는지</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    ForeignKey 매칭</span></span><br><span class="line"><span class="string">    필드명__해당모델의필드명 매칭</span></span><br><span class="line"><span class="string">    필드명__해당모델의 필드명__옵션 위와 동일하게 동작</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    __gt=값, __gte=크다, 크거나 같다.</span></span><br><span class="line"><span class="string">    ex) created__gt = 오늘 =&gt; 작성일이 오늘보다 크다.</span></span><br><span class="line"><span class="string">    __lt=값, __lte=작다, 작거나 같다.</span></span><br><span class="line"><span class="string">    ex) created__lt = 오늘 =&gt; 작성일이 오늘보다 이전</span></span><br><span class="line"><span class="string">    ex) 판매시작일__lte = 오늘 =&gt; 판매시작일 설정값이 오늘보다 작거나 같으면 판매 시작</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    objects.filter() : filter 메서드에 들어가는 매개변수들은 항상 and 연산을 한다.</span></span><br><span class="line"><span class="string">    or 연산을 하고 싶어서 Q 객체를 사용한다.</span></span><br><span class="line"><span class="string">    사용법은 filter에 들어가는 매개변수의 작성법과 똑같다.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Q() | Q() = or</span></span><br><span class="line"><span class="string">    Q() &amp; Q() = and</span></span><br><span class="line"><span class="string">    ~Q() = not</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 검색 사용방법</span></span><br><span class="line">    <span class="comment"># documents = Document.objects.filter(title__icontains='검색어')</span></span><br><span class="line">    <span class="comment"># ex) documents = get_list_or_404(Document,title__icontains='검색어')</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># request.METHOD.get -&gt; 아이템 1개</span></span><br><span class="line">    <span class="comment"># request.METHOD.getlist -&gt; 리스트형태로</span></span><br><span class="line">    search_type = request.GET.getlist(<span class="string">'search_type'</span>, <span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">    search_key = request.GET.get(<span class="string">'search_key'</span>, <span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> search_key <span class="keyword">and</span> search_type:</span><br><span class="line">        q1 = Q(author__username__icontains=search_key) <span class="keyword">if</span> <span class="string">'author'</span> <span class="keyword">in</span> search_type <span class="keyword">else</span> Q()</span><br><span class="line">        q2 = Q(title__icontains=search_key) <span class="keyword">if</span> <span class="string">'title'</span> <span class="keyword">in</span> search_type <span class="keyword">else</span> Q()</span><br><span class="line">        q3 = Q(text__icontains=search_key) <span class="keyword">if</span> <span class="string">'text'</span> <span class="keyword">in</span> search_type <span class="keyword">else</span> Q()</span><br><span class="line"></span><br><span class="line">        documents = get_list_or_404(Document, q1|q2|q3)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        documents = get_list_or_404(Document)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 다른 방법</span></span><br><span class="line">    <span class="comment"># search_q = None</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># if search_key and search_type:</span></span><br><span class="line">    <span class="comment">#     if 'author' in search_type:</span></span><br><span class="line">    <span class="comment">#         temp_q = Q(author__username__icontains=search_key)</span></span><br><span class="line">    <span class="comment">#         search_q = search_q | temp_q if search_q else temp_q</span></span><br><span class="line">    <span class="comment">#     if 'title' in search_type:</span></span><br><span class="line">    <span class="comment">#         temp_q = Q(title__icontains=search_key)</span></span><br><span class="line">    <span class="comment">#         search_q = search_q|temp_q if search_q else temp_q</span></span><br><span class="line">    <span class="comment">#     if 'text' in search_type:</span></span><br><span class="line">    <span class="comment">#         temp_q = Q(text__icontains=search_key)</span></span><br><span class="line">    <span class="comment">#         search_q = search_q | temp_q if search_q else temp_q</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#     documents = get_list_or_404(Document, search_q)</span></span><br><span class="line">    <span class="comment"># else:</span></span><br><span class="line">    <span class="comment">#     documents = get_list_or_404(Document)</span></span><br><span class="line"></span><br><span class="line">    total_count = len(documents)</span><br><span class="line">    total_page = math.ceil(total_count/paginated_by)</span><br><span class="line">    page_range = range(<span class="number">1</span>, total_page+<span class="number">1</span>)</span><br><span class="line">    start_index = paginated_by * (page - <span class="number">1</span>)</span><br><span class="line">    end_index = paginated_by * page</span><br><span class="line"></span><br><span class="line">    documents = documents[start_index:end_index]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/document_list.html'</span>,&#123;<span class="string">'object_list'</span>:documents,</span><br><span class="line">                                                    <span class="string">'total_page'</span>:total_page,</span><br><span class="line">                                                    <span class="string">'page_range'</span>:page_range&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document_list.html 수정</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Photo List</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-striped"</span>&gt;</span></span><br><span class="line">            &#123;% for object in object_list %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.title&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.author.username&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.updated&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">nav</span> <span class="attr">aria-label</span>=<span class="string">"Page navigation example"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination justify-content-center"</span>&gt;</span></span><br><span class="line">                &#123;% for page in page_range %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'board:list' %&#125;?page=&#123;&#123;page&#125;&#125;"</span>&gt;</span>&#123;&#123;page&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% endfor %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--// checkbox 적용 //--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">id</span>=<span class="string">"search_form"</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            &#123;%csrf_token%&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-row align-items-center justify-content-center"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"search_type"</span> <span class="attr">id</span>=<span class="string">"inlineCheckbox1"</span> <span class="attr">value</span>=<span class="string">"author"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span> <span class="attr">for</span>=<span class="string">"inlineCheckbox1"</span>&gt;</span>작성자<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"search_type"</span> <span class="attr">id</span>=<span class="string">"inlineCheckbox2"</span> <span class="attr">value</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span> <span class="attr">for</span>=<span class="string">"inlineCheckbox2"</span>&gt;</span>제목<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"search_type"</span> <span class="attr">id</span>=<span class="string">"inlineCheckbox3"</span> <span class="attr">value</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span> <span class="attr">for</span>=<span class="string">"inlineCheckbox3"</span>&gt;</span>본문<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!--// search 기능 추가 //--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-row align-items-center justify-content-center"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-sm-3 my-1"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>, <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"Search Keyword"</span> <span class="attr">name</span>=<span class="string">"search_key"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-auto my-1"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>python shell로 검색을 연습해보자.</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py shell</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> board.models <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">Document.objects.filter(pk=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(pk=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(pk=<span class="number">2</span>, title=<span class="string">'Image Test 2'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(pk=<span class="number">2</span>, title=<span class="string">'Image Test 3'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__startswith=<span class="string">'Image'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__endswith=<span class="string">'12'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__iexact=<span class="string">'image'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__iexact=<span class="string">'ima'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__istartswith=<span class="string">'image'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__icontains=<span class="string">'ge'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__icontains=<span class="string">'es'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(category__name=<span class="string">'Cosmetic Question'</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(category__name__endswith=<span class="string">'Question'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.db.models <span class="keyword">import</span> Q</span><br><span class="line"></span><br><span class="line">Q(title__icontains=<span class="string">'1'</span>)</span><br><span class="line"></span><br><span class="line">default_q = Q(title__icontains=<span class="string">'1'</span>)</span><br><span class="line"></span><br><span class="line">second_q = Q(text__icontains=<span class="string">'1'</span>)</span><br><span class="line"></span><br><span class="line">default_q | second_q</span><br><span class="line"></span><br><span class="line">Document.objects.filter(default_q | second_q)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/14/190514-Django-Study/" data-id="cjvno0s050026p7wuhpmy41ty" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.14 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-14",
+        "dateCreated": "2019-05-14",
+        "dateModified": "2019-05-14",
+        "url": "http://JINUKK.github.io/2019/05/14/190514-Django-Study/",
+        "description": "[ Board project ]
+get_object_or_404, get_list_or_404
+
+데이터가 하나도 없다면 에러 발생
+views.py 수정123456789101112131415161718192021222324252627282930313233343536# 해당 모듈 추가from django.shortcuts import render, get_ob"
+        "wordCount": 3564
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/13/190513-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.13 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/14/190514-Django-Study/" class="title">2019.05.14 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/13/190513-Django-Study/" class="title">2019.05.13 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/10/190510-Django-Study/" class="title">2019.05.10 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-10T12:00:09.000Z" itemprop="datePublished">2019-05-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/09/190509-Django-Study/" class="title">2019.05.09 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-09T11:53:26.000Z" itemprop="datePublished">2019-05-09</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/08/190508-Django-Study/" class="title">2019.05.08 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-08T10:38:31.000Z" itemprop="datePublished">2019-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">43</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/14/190514-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
