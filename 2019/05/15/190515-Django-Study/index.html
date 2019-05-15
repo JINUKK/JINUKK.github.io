@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.15 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="[ Board project ] F() 객체  모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.12345678from django.db.models import Q, Ffrom board.models import * # Board, Category, Document# &apos;title&apos;이라는 문자열을 검색Document.objects.filter(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.15 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/15/190515-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="[ Board project ] F() 객체  모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.12345678from django.db.models import Q, Ffrom board.models import * # Board, Category, Document# &apos;title&apos;이라는 문자열을 검색Document.objects.filter(">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-15T07:57:50.888Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.15 Django Study">
+<meta name="twitter:description" content="[ Board project ] F() 객체  모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.12345678from django.db.models import Q, Ffrom board.models import * # Board, Category, Document# &apos;title&apos;이라는 문자열을 검색Document.objects.filter(">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190515-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.15 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/15/190515-Django-Study/" class="article-date">
+            <time datetime="2019-05-15T07:56:18.000Z" itemprop="datePublished">2019-05-15</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Board-project"><a href="#Board-project" class="headerlink" title="[ Board project ]"></a>[ Board project ]</h2><ul>
+<li><p>F() 객체</p>
+<ul>
+<li>모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db.models <span class="keyword">import</span> Q, F</span><br><span class="line"><span class="keyword">from</span> board.models <span class="keyword">import</span> * <span class="comment"># Board, Category, Document</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 'title'이라는 문자열을 검색</span></span><br><span class="line">Document.objects.filter(title__icontains=<span class="string">'title'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 필드 값인 title을 참조하여 검색</span></span><br><span class="line">Document.objects.filter(title__icontains=F(<span class="string">'title'</span>))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>selet_related()</p>
+<ul>
+<li>Join Query를 만들어서 한 큐에 데이터를 불러온다.</li>
+<li>Join을 사용하기 때문에 ForeignKey와 같이 single valued relationships에서만 사용 가능하다.</li>
+</ul>
+</li>
+<li>prefetch_related()<ul>
+<li>모델 객체들을 불러서 코드 단에서 병합한다.</li>
+<li>ManyToMany를 포함해서 모든 relationships에서 사용 가능하다.</li>
+</ul>
+</li>
+<li>select_related()와 prefetch_related()를 사용하지 않는 경우<ul>
+<li><strong>참조 테이블에 대한 데이터 질의를 항상 수행한다.</strong></li>
+</ul>
+</li>
+<li><p>QuerySet Cache</p>
+<ul>
+<li><p>Query는 마지막까지 지연된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db.models <span class="keyword">import</span> Q, F</span><br><span class="line"><span class="keyword">from</span> board.models <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 아래 코드를 실행해도 DB에 쿼리는 수행되지 않는다.</span></span><br><span class="line">object_list = Document.objects.all()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 아래와 같이 쿼리셋을 순회해야 쿼리가 수행된다.</span></span><br><span class="line"><span class="keyword">for</span> object <span class="keyword">in</span> object_list:</span><br><span class="line">    print(object.author.username)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DB에 레코드들을 실제로 와서 Django model로 변환되는 것을 <strong>평가(evaluation)</strong>라고 한다.</p>
+</li>
+<li>평가된 모델들은 쿼리셋의 내장 캐시에 저장된다.</li>
+<li>따라서 같은 쿼리셋을 재순회하더라도 DB에 전달하지 않는다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 여기는 쿼리가 실행되지 않은 부분</span></span><br><span class="line">object_list = Document.objects.all()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 캐싱이 일어나지 않음</span></span><br><span class="line">object_list[<span class="number">4</span>]</span><br><span class="line"><span class="comment"># 캐싱이 일어나지 않음</span></span><br><span class="line">object_list[<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">object_list = Document.objects.all()</span><br><span class="line">[object.title <span class="keyword">for</span> object on object_list]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 캐싱이 일어남</span></span><br><span class="line">object_list[<span class="number">4</span>]</span><br><span class="line"><span class="comment"># 캐싱이 일어남</span></span><br><span class="line">object_list[<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 캐싱이 일어나지 않는다.</span></span><br><span class="line"><span class="comment"># Document.object.all()을 변수에 담아놓고 실행해야 한다.</span></span><br><span class="line"><span class="keyword">for</span> object <span class="keyword">in</span> Document.object.all():</span><br><span class="line">    print(object.title)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>exclude()</p>
+<ul>
+<li>특정 조건을 제외한 나머지 데이터들을 가져오기 위해 사용한다.</li>
+<li>여러 조건들을 묶을 때에는 사용되지 않는다.</li>
+</ul>
+</li>
+<li><p>정렬</p>
+<ul>
+<li><p>QuerySet의 기본 정렬값 = 모델에서 설정값</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Model:</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        orderng = [<span class="string">'field name'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>기본 정렬값은 pk</p>
+</li>
+<li><p>오름차순(asc)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Document.objects.all().order_by(<span class="string">'title'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>내림차순(desc)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Document.objects.all().order_by(<span class="string">'-title'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>삭제</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Document.objects.get(pk=<span class="number">1</span>).delete()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>갱신</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Document.objects.get(pk=<span class="number">1</span>).update(title=<span class="string">"example"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 전체 레코드에 대한 갱신</span></span><br><span class="line">Document.objects.all().update(title=<span class="string">"example"</span>)</span><br><span class="line"></span><br><span class="line">Document.objects.filter(title__icontain=<span class="string">'word'</span>).update(title=<span class="string">"example"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>logging 사용하기</p>
+<ul>
+<li>setting.py에 추가한다.</li>
+<li>터미널 창에서 쿼리문 출력을 확인한다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">LOGGING = &#123;</span><br><span class="line">    <span class="string">'version'</span>:<span class="number">1</span>,</span><br><span class="line">    <span class="string">'disable_existing_loggers'</span>:<span class="literal">False</span>,</span><br><span class="line">    <span class="string">'handlers'</span>: &#123;</span><br><span class="line">        <span class="string">'console'</span>:&#123;</span><br><span class="line">            <span class="string">'class'</span>:<span class="string">'logging.StreamHandler'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">'loggers'</span>:&#123;</span><br><span class="line">        <span class="string">'django'</span>:&#123;</span><br><span class="line">            <span class="string">'handlers'</span>:[<span class="string">'console'</span>],</span><br><span class="line">            <span class="string">'level'</span>:<span class="string">'DEBUG'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">import logging</span></span><br><span class="line"><span class="string">l = logging.getLogger('django.db.backends')</span></span><br><span class="line"><span class="string">l.setLevel(logging.DEBUG)</span></span><br><span class="line"><span class="string">l.addHandler(logging.StreamHandler())</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>소셜 미디어 로그인 연동하기</p>
+<ul>
+<li>Django-allauth 사용<ul>
+<li>django-allauth 문서 홈페이지로 이동하여 참고</li>
+</ul>
+</li>
+<li>네이버 이용</li>
+</ul>
+<ol>
+<li><p>해당 모듈을 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install django-allauth</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py를 수정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="string">'django.contrib.admin'</span>,</span><br><span class="line">    <span class="string">'django.contrib.auth'</span>,</span><br><span class="line">    <span class="string">'django.contrib.contenttypes'</span>,</span><br><span class="line">    <span class="string">'django.contrib.sessions'</span>,</span><br><span class="line">    <span class="string">'django.contrib.messages'</span>,</span><br><span class="line">    <span class="string">'django.contrib.staticfiles'</span>,</span><br><span class="line">    <span class="string">'board'</span>,</span><br><span class="line">    <span class="string">'storages'</span>,</span><br><span class="line">    <span class="comment"># 항목 추가</span></span><br><span class="line">    <span class="string">'django.contrib.sites'</span>,</span><br><span class="line">    <span class="string">'allauth'</span>,</span><br><span class="line">    <span class="string">'allauth.account'</span>,</span><br><span class="line">    <span class="string">'allauth.socialaccount'</span>,</span><br><span class="line">    <span class="comment"># 네이버를 이용하기 위해 추가</span></span><br><span class="line">    <span class="string">'allauth.socialaccount.providers.naver'</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 항목 추가</span></span><br><span class="line">AUTHENTICATION_BACKENDS = (</span><br><span class="line">    <span class="string">'django.contrib.auth.backends.ModelBackend'</span>,</span><br><span class="line">    <span class="string">'allauth.account.auth_backends.AuthenticationBackend'</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 추가</span></span><br><span class="line">SITE_ID = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 로그인 후에 이동할 경로 추가</span></span><br><span class="line">LOGIN_REDIRECT_URL = <span class="string">'/'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>config/urls.py에 경로를 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path(<span class="string">'accounts/'</span>, include(<span class="string">'allauth.urls'</span>)),</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>migrate를 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>django-allauth 문서 홈페이지에서 providers 탭에서 네이버 항목으로 이동한다.</p>
+<ul>
+<li><a href="https://developers.naver.com/appinfo로" target="_blank" rel="noopener">https://developers.naver.com/appinfo로</a> 이동한다.</li>
+<li>애플리케이션을 등록한다.<ul>
+<li>애플리케이션 이름을 작성한다.</li>
+<li>사용 API는 네아로(네이버 아이디로 로그인)를 선택한다.</li>
+<li>필수 항목에 회원이름과 이메일만 체크한다.<ul>
+<li>나머지는 추가 항목으로 넣을 수 있다.</li>
+</ul>
+</li>
+<li>환경은 PC웹을 선택하고 URL을 다음과 같이 설정한다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 서비스 URL</span><br><span class="line">&gt;&gt; http://127.0.0.1:8000</span><br><span class="line"></span><br><span class="line">- Callback URL</span><br><span class="line">- django-allauth 문서 홈페이지에서 providers 탭의 네이버 항목에 있다.</span><br><span class="line">&gt;&gt; http://127.0.0.1:8000/accounts/naver/login/callback/</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>서버를 실행하고 관리자 사이트로 접속하고, 소셜 어플리케이션을 추가한다.</p>
+<ul>
+<li>소셜 계정/소셜 어플리케이션/소셜 어플리케이션 추가<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">제공자 : Naver</span><br><span class="line">이름 : 네이버 로그인</span><br><span class="line">클라이언트 아이디 : 네이버 API 등록 시 발급되는 Client ID</span><br><span class="line">비밀 키 :  네이버 API 등록 시 발급되는 Client Secret</span><br><span class="line">sites : example.com 선택</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><a href="http://127.0.0.1:8000/account/login에" target="_blank" rel="noopener">http://127.0.0.1:8000/account/login에</a> 접속하여 naver를 누르고 로그인한다.</p>
+<ul>
+<li>admin으로 접속되어 있다면 로그아웃하자.</li>
+</ul>
+</li>
+<li><p>다시 관리자 페이지를 접속하여 소셜 계정에 등록되어 있는지 확인한다.</p>
+<p><br></p>
+</li>
+</ol>
+<ul>
+<li><p>회원가입을 할 때 사용자 이름 등록하기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># views.py</span></span><br><span class="line"><span class="keyword">from</span> allauth.account.signals <span class="keyword">import</span> user_signed_up</span><br><span class="line"><span class="keyword">from</span> allauth.socialaccount.models <span class="keyword">import</span> SocialAccount</span><br><span class="line"></span><br><span class="line"><span class="comment"># 시그널이 발생했을 때 실행될 함수</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naver_signup</span><span class="params">(request, user, **kwargs)</span>:</span></span><br><span class="line">    social_user = SocialAccount.objects.filter(user=user)</span><br><span class="line">    <span class="keyword">if</span> social_user.exists():</span><br><span class="line">        user.last_name = social_user[<span class="number">0</span>].extra_data[<span class="string">'name'</span>]</span><br><span class="line">        user.save()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 시그널과 해당 함수를 connect</span></span><br><span class="line"><span class="comment"># 시그널 연결 방법 2가지 receiver 쓰는 방법, connect 쓰는 방법</span></span><br><span class="line">user_signed_up.connect(naver_signup)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 페이지에서 인증 및 권한/사용자(들)에서 계정을 삭제하고 다시 만들어보자.</p>
+</li>
+<li>이름이 등록되어 있는지 확인하자.</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/15/190515-Django-Study/" data-id="cjvoxnegy002cj0wu76jubqef" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.15 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-15",
+        "dateCreated": "2019-05-15",
+        "dateModified": "2019-05-15",
+        "url": "http://JINUKK.github.io/2019/05/15/190515-Django-Study/",
+        "description": "[ Board project ]
+F() 객체
+
+모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.12345678from django.db.models import Q, Ffrom board.models import * # Board, Category, Document# 'title'이라는 문자열을 검색Document.objects.filter("
+        "wordCount": 1026
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/14/190514-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.14 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/15/190515-Django-Study/" class="title">2019.05.15 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-15T07:56:18.000Z" itemprop="datePublished">2019-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/14/190514-Django-Study/" class="title">2019.05.14 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/13/190513-Django-Study/" class="title">2019.05.13 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/10/190510-Django-Study/" class="title">2019.05.10 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-10T12:00:09.000Z" itemprop="datePublished">2019-05-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/09/190509-Django-Study/" class="title">2019.05.09 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-09T11:53:26.000Z" itemprop="datePublished">2019-05-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">44</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/15/190515-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
