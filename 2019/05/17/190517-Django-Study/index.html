@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.17 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="[ Board project ] AJAX  비동기식 JavaScript와 XML(Asynchronos Javascript And XML) JavaScript를 통해서 서버에 데이터를 요청 서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음 ajax를 통해 주로 주고 받는 형태가 XML이나 JSON   댓글 기능에 AJAX 적용">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.17 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/17/190517-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="[ Board project ] AJAX  비동기식 JavaScript와 XML(Asynchronos Javascript And XML) JavaScript를 통해서 서버에 데이터를 요청 서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음 ajax를 통해 주로 주고 받는 형태가 XML이나 JSON   댓글 기능에 AJAX 적용">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-17T11:27:01.207Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.17 Django Study">
+<meta name="twitter:description" content="[ Board project ] AJAX  비동기식 JavaScript와 XML(Asynchronos Javascript And XML) JavaScript를 통해서 서버에 데이터를 요청 서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음 ajax를 통해 주로 주고 받는 형태가 XML이나 JSON   댓글 기능에 AJAX 적용">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190517-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.17 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/17/190517-Django-Study/" class="article-date">
+            <time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Board-project"><a href="#Board-project" class="headerlink" title="[ Board project ]"></a>[ Board project ]</h2><ul>
+<li><p>AJAX</p>
+<ul>
+<li>비동기식 JavaScript와 XML(Asynchronos Javascript And XML)</li>
+<li>JavaScript를 통해서 서버에 데이터를 요청</li>
+<li>서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음</li>
+<li>ajax를 통해 주로 주고 받는 형태가 XML이나 JSON</li>
+</ul>
+</li>
+<li><p>댓글 기능에 AJAX 적용하기</p>
+<ol>
+<li><p>버튼을 통해 데이터 가져오기</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># views.py에 추가</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">일반적인 경우 데이터를 전송하기 위해 json 사용</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> JsonResponse</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_data_ajax</span><span class="params">(request)</span>:</span></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">"name"</span>:<span class="string">'Jake'</span>,</span><br><span class="line">        <span class="string">"age"</span>:<span class="number">100</span>,</span><br><span class="line">        <span class="string">"bloodtype"</span>:<span class="string">"0"</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> JsonResponse(data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># urls.py에 추가</span></span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> get_data_ajax</span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'ajax/get_data/'</span>, get_data_ajax, name=<span class="string">'get_data_ajax'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// board_project/layout/base.html //--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// </span></span><br><span class="line"><span class="comment">bootstrap JS 적용에서 3개의 Script 중에 첫번째 Script 교체 적용</span></span><br><span class="line"><span class="comment">jQuery.com - Download - google CDN - jQuery/3.x snippet의 내용 작성</span></span><br><span class="line"><span class="comment">//--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</span> <span class="attr">integrity</span>=<span class="string">"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// board_project/board/templates/board/document_list.html //--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Document List</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-12"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-striped"</span>&gt;</span></span><br><span class="line">            &#123;% for object in object_list %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.title&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.author.username&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.updated&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--// 데이터가 표시될 곳 지정 //--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"data_area"</span>&gt;</span></span><br><span class="line">            데이터가 입력될 곳</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--// url 연결 //--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'board:get_data_ajax' %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn_get_data btn btn-primary"</span>&gt;</span>데이터 가져오기<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">nav</span> <span class="attr">aria-label</span>=<span class="string">"Page navigation example"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination justify-content-center"</span>&gt;</span></span><br><span class="line">                &#123;% for page in page_range %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'board:list' %&#125;?page=&#123;&#123;page&#125;&#125;"</span>&gt;</span>&#123;&#123;page&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% endfor %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"get"</span> <span class="attr">id</span>=<span class="string">"search_form"</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            &#123;%csrf_token%&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-row align-items-center justify-content-center"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"search_type"</span> <span class="attr">id</span>=<span class="string">"inlineCheckbox1"</span> <span class="attr">value</span>=<span class="string">"author"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span> <span class="attr">for</span>=<span class="string">"inlineCheckbox1"</span>&gt;</span>작성자<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"search_type"</span> <span class="attr">id</span>=<span class="string">"inlineCheckbox2"</span> <span class="attr">value</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span> <span class="attr">for</span>=<span class="string">"inlineCheckbox2"</span>&gt;</span>제목<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-check form-check-inline"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-check-input"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"search_type"</span> <span class="attr">id</span>=<span class="string">"inlineCheckbox3"</span> <span class="attr">value</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"form-check-label"</span> <span class="attr">for</span>=<span class="string">"inlineCheckbox3"</span>&gt;</span>본문<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-row align-items-center justify-content-center"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-sm-3 my-1"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>, <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"Search Keyword"</span> <span class="attr">name</span>=<span class="string">"search_key"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-auto my-1"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line">&#123;% block extra_script %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">// 1. 버튼을 누르면 페이지 이동이 안되도록</span></span><br><span class="line"><span class="undefined">// 2. 데이터를 가져오기</span></span><br><span class="line"><span class="undefined">$(function()&#123;</span></span><br><span class="line"><span class="undefined">    // 페이지 로딩이 끝나면 할일들</span></span><br><span class="line"><span class="undefined">    $('.btn_get_data').click(function(e)&#123;</span></span><br><span class="line"><span class="undefined">        e.preventDefault(); // 버튼을 클릭하면 이동 못하게 기본 기능 취소</span></span><br><span class="line"><span class="undefined">        //alert('clicked'); // 확인을 위해 알림창 띄우기</span></span><br><span class="line"><span class="undefined">        url = $(this).attr('href');</span></span><br><span class="line"><span class="undefined">        $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">            // ajax 호출이 사용할 매개변수</span></span><br><span class="line"><span class="undefined">            url:url</span></span><br><span class="line"><span class="undefined">        &#125;).done(function(data)&#123;</span></span><br><span class="line"><span class="undefined">            // 호출이 끝나면 받은 데이터를 처리하는 부분</span></span><br><span class="line"><span class="undefined">            name = data.name;</span></span><br><span class="line"><span class="undefined">            age = data.age;</span></span><br><span class="line"><span class="undefined">            bloodtype = data.bloodtype</span></span><br><span class="line"><span class="undefined">            //alert(data.bloodtype);</span></span><br><span class="line"><span class="xml">            html = "<span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>"+name+"<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>"+age+"<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span>"+bloodtype+"<span class="tag">&lt;/<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span>";</span></span><br><span class="line"><span class="undefined">            $('.data_area').html(html);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>댓글 기능에 ajax 적용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># views.py에 추가</span></span><br><span class="line"><span class="keyword">from</span> django.template.loader <span class="keyword">import</span> render_to_string</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">comment_create</span><span class="params">(request, document_id)</span>:</span></span><br><span class="line">    <span class="comment"># ajax 기능에 의해 호출된 것인지 구분하기 위한 값</span></span><br><span class="line">    is_ajax = request.POST.get(<span class="string">'is_ajax'</span>)</span><br><span class="line"></span><br><span class="line">    document = get_object_or_404(Document, pk=document_id)</span><br><span class="line">    comment_form = CommentForm(request.POST)</span><br><span class="line">    comment_form.instance.author_id = request.user.id</span><br><span class="line">    comment_form.instance.document_id = document_id</span><br><span class="line">    <span class="keyword">if</span> comment_form.is_valid():</span><br><span class="line">        comment = comment_form.save()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 만약 ajax에 의해 호출되었다면 redirection없이 Json 형태로 응답</span></span><br><span class="line">    <span class="keyword">if</span> is_ajax:</span><br><span class="line">        <span class="comment"># 데이터를 만들어서 던져주기</span></span><br><span class="line">        html = render_to_string(<span class="string">'board/comment/comment_single.html'</span>,&#123;<span class="string">'comment'</span>:comment&#125;)</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">'html'</span>:html&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> redirect(document)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> messages</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">comment_update</span><span class="params">(request, comment_id)</span>:</span></span><br><span class="line">    <span class="comment"># GET과 POST를 구분</span></span><br><span class="line">    is_ajax, data = (request.GET.get(<span class="string">'is_ajax'</span>), request.GET) <span class="keyword">if</span> <span class="string">'is_ajax'</span> <span class="keyword">in</span> request.GET \</span><br><span class="line">        <span class="keyword">else</span> (request.POST.get(<span class="string">'is_ajax'</span>, <span class="literal">False</span>), request.POST)</span><br><span class="line"></span><br><span class="line">    comment = get_object_or_404(Comment, pk=comment_id)</span><br><span class="line">    document = get_object_or_404(Document, pk=comment.document.id)</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">if</span> request.user != comment.author:</span><br><span class="line">        messages.warning(request, <span class="string">"권한 없음"</span>)</span><br><span class="line">        <span class="keyword">return</span> redirect(document)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ajax에 의해 호출될 때 응답</span></span><br><span class="line">    <span class="keyword">if</span> is_ajax:</span><br><span class="line">        form = CommentForm(data, instance=comment)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            form.save()</span><br><span class="line">            <span class="keyword">return</span> JsonResponse(&#123;<span class="string">'works'</span>:<span class="literal">True</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        form = CommentForm(request.POST, instance=comment)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            form.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(document)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = CommentForm(instance=comment)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'board/comment/update.html'</span>, &#123;<span class="string">'form'</span>:form&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">comment_delete</span><span class="params">(request, comment_id)</span>:</span></span><br><span class="line">    <span class="comment"># GET과 POST를 구분</span></span><br><span class="line">    is_ajax = request.GET.get(<span class="string">'is_ajax'</span>) <span class="keyword">if</span> <span class="string">'is_ajax'</span> <span class="keyword">in</span> request.GET <span class="keyword">else</span> request.POST.get(<span class="string">'is_ajax'</span>, <span class="literal">False</span>)</span><br><span class="line">    comment = get_object_or_404(Comment, pk=comment_id)</span><br><span class="line">    document = get_object_or_404(Document, pk=comment.document.id)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.user != comment.author <span class="keyword">and</span> <span class="keyword">not</span> request.user.is_staff <span class="keyword">and</span> request.user != document.author:</span><br><span class="line">        messages.warning(request, <span class="string">"권한 없음"</span>)</span><br><span class="line">        <span class="keyword">return</span> redirect(document)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ajax에 의해 호출될 때 응답</span></span><br><span class="line">    <span class="keyword">if</span> is_ajax:</span><br><span class="line">        comment.delete()</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">'works'</span>:<span class="literal">True</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        comment.delete()</span><br><span class="line">        <span class="keyword">return</span> redirect(document)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'board/comment/delete.html'</span>, &#123;<span class="string">'object'</span>:comment&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--// board_project/board/templates/board/document_detail.html //--&gt;</span></span><br><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line">Document Detail</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-6"</span>&gt;</span></span><br><span class="line">        &#123;&#123;object.title&#125;&#125; &#123;&#123;object.text&#125;&#125; &#123;&#123;object.image.url&#125;&#125; &#123;&#123;object.author.username&#125;&#125;<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--// form에 id 추가 //--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"&#123;% url 'board:comment_create' object.id %&#125;"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">id</span>=<span class="string">"comment_form"</span>&gt;</span></span><br><span class="line">            &#123;% csrf_token %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"is_ajax"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            &#123;&#123;comment_form.as_p&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Comment"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"docs_comment_list_area"</span>&gt;</span></span><br><span class="line">            &#123;% include 'board/comment_list.html' %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line">&#123;% block extra_script %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">// 댓글의 생성, 수정, 삭제에 대한 script 추가</span></span><br><span class="line"><span class="undefined">    $(function() &#123;</span></span><br><span class="line"><span class="undefined">        // 1. 누구한테 이벤트를 설정할 것인가?</span></span><br><span class="line"><span class="undefined">        // 2. 어떤 이벤트를 설정할 것인가?</span></span><br><span class="line"><span class="undefined">        $('#comment_form').submit(function(e) &#123;</span></span><br><span class="line"><span class="undefined">            // alert('댓글 쓰기 완료');</span></span><br><span class="line"><span class="undefined">            // 댓글 남기기</span></span><br><span class="line"><span class="undefined">            $('input[name="is_ajax"]').val("1");</span></span><br><span class="line"><span class="undefined">            url = $(this).attr('action');</span></span><br><span class="line"><span class="undefined">            params = $(this).serialize(); // 전달해주는 데이터들을 하나로 합침</span></span><br><span class="line"><span class="undefined">            $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                url:url,</span></span><br><span class="line"><span class="undefined">                method:"POST",</span></span><br><span class="line"><span class="undefined">                data:params</span></span><br><span class="line"><span class="undefined">            &#125;).done(function(data) &#123;</span></span><br><span class="line"><span class="undefined">                // 댓글 입력창 내용 비우기</span></span><br><span class="line"><span class="undefined">                $('#id_text').val("");</span></span><br><span class="line"><span class="undefined">                $('#comment_list tbody').prepend(data.html); // tbody 시작 지점에 요소 끼워넣기</span></span><br><span class="line"><span class="undefined">                // $('#comment_list tbody').append(tr); // tbody 끝 지점에 요소 끼워넣기</span></span><br><span class="line"><span class="undefined">                // is_ajax 값 초기화</span></span><br><span class="line"><span class="undefined">                $('input[name="is_ajax"]').val("");</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">            return false;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        $('.btn_comment_delete').click(function(e) &#123;</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="undefined">            var input = confirm('댓글을 삭제하시겠습니까?');</span></span><br><span class="line"><span class="undefined">            if (input==true) &#123;</span></span><br><span class="line"><span class="undefined">                alert('댓글을 삭제하였습니다.');</span></span><br><span class="line"><span class="undefined">                // ajax 호출</span></span><br><span class="line"><span class="undefined">                comment = $(this).parents('tr');</span></span><br><span class="line"><span class="undefined">                url = $(this).attr('href')+"?is_ajax=1";</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                    url:url</span></span><br><span class="line"><span class="undefined">                &#125;).done(function(data) &#123;</span></span><br><span class="line"><span class="undefined">                    if(data.works) &#123;</span></span><br><span class="line"><span class="undefined">                        comment.remove(); // 해당 객체 지우기</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="undefined">                &#125;);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        $('.btn_comment_update').click(function(e) &#123;</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="undefined">            url = $(this).attr('href')+"?is_ajax=1";</span></span><br><span class="line"><span class="undefined">            comment = $(this).parent().siblings('.comment_text'); // 원래 댓글을 찾음</span></span><br><span class="line"><span class="undefined">            //text = prompt('수정될 댓글 내용을 입력하세요.', comment.text()); // 원래 댓글을 프롬프트로 보여줌</span></span><br><span class="line"><span class="undefined">            //if(text==null) return false; // 입력 취소면 함수 종료</span></span><br><span class="line"><span class="xml">            input = "<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">class</span>=<span class="string">'update_text'</span> <span class="attr">value</span>=<span class="string">'"+comment.text()+"'</span>&gt;</span>";</span></span><br><span class="line"><span class="undefined">            comment.html(input);</span></span><br><span class="line"><span class="undefined">            $('.update_text').keypress(function(e)&#123;</span></span><br><span class="line"><span class="undefined">                if(e.keyCode==13) &#123;   // 키보드 Enter에 대한 키 값 설정</span></span><br><span class="line"><span class="undefined">                    text = $(this).val();</span></span><br><span class="line"><span class="undefined">                    $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                        url:url,</span></span><br><span class="line"><span class="undefined">                        data:&#123;</span></span><br><span class="line"><span class="undefined">                        text:text</span></span><br><span class="line"><span class="undefined">                        &#125;</span></span><br><span class="line"><span class="undefined">                    &#125;).done(function(data) &#123;</span></span><br><span class="line"><span class="undefined">                        // 댓글 수정이 끝나면 할 일</span></span><br><span class="line"><span class="undefined">                        if(data.works) &#123;</span></span><br><span class="line"><span class="undefined">                            comment.text(text);</span></span><br><span class="line"><span class="undefined">                        &#125;</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// board_project/board/templates/board/comment_list.html //--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--// table에 id 추가//--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-strped"</span> <span class="attr">id</span>=<span class="string">"comment_list"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">"3"</span> <span class="attr">class</span>=<span class="string">"align-left"</span>&gt;</span>댓글 목록<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">    &#123;% for comment in comments %&#125;</span><br><span class="line">        <span class="comment">&lt;!--// include를 통해 겹치는 구문 제거 //--&gt;</span></span><br><span class="line">        &#123;% include 'board/comment/comment_single.html' %&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--// board_project/board/templates/board/comment_list.html //--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--// tr 문에 class 이름 추가 //--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">"comment_row"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--// 해당 td 문에 class 이름 추가 //--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"3"</span> <span class="attr">class</span>=<span class="string">"comment_text"</span>&gt;</span>&#123;&#123;comment.text&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;comment.author.username&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;comment.created&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'board:comment_update' comment.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-dark btn-sm btn_comment_update"</span>&gt;</span>Update<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'board:comment_delete' comment.id %&#125;"</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-danger btn0sm btn_comment_delete"</span>&gt;</span>Delete<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/17/190517-Django-Study/" data-id="cjvs005i20029v1wum49am0hh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.17 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-17",
+        "dateCreated": "2019-05-17",
+        "dateModified": "2019-05-17",
+        "url": "http://JINUKK.github.io/2019/05/17/190517-Django-Study/",
+        "description": "[ Board project ]
+AJAX
+
+비동기식 JavaScript와 XML(Asynchronos Javascript And XML)
+JavaScript를 통해서 서버에 데이터를 요청
+서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음
+ajax를 통해 주로 주고 받는 형태가 XML이나 JSON
+
+
+댓글 기능에 AJAX 적용"
+        "wordCount": 4307
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/16/190516-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.16 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/17/190517-Django-Study/" class="title">2019.05.17 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/16/190516-Django-Study/" class="title">2019.05.16 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-16T12:45:36.000Z" itemprop="datePublished">2019-05-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/15/190515-Django-Study/" class="title">2019.05.15 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-15T07:56:18.000Z" itemprop="datePublished">2019-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/14/190514-Django-Study/" class="title">2019.05.14 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/13/190513-Django-Study/" class="title">2019.05.13 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">46</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/17/190517-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
