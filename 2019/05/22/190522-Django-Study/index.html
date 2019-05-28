@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.22 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="Django Project EC2에 웹 서버 설정하기  EC2에 SSH로 접속한다. 1$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]  접속이 성공했다면 패키지를 최신으로 업데이트한다. 1$ sudo apt-get update  Nginx를 설치한다. 12# apt-get 사용$ sudo apt-get install">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.22 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/22/190522-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="Django Project EC2에 웹 서버 설정하기  EC2에 SSH로 접속한다. 1$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]  접속이 성공했다면 패키지를 최신으로 업데이트한다. 1$ sudo apt-get update  Nginx를 설치한다. 12# apt-get 사용$ sudo apt-get install">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-28T14:42:10.895Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.22 Django Study">
+<meta name="twitter:description" content="Django Project EC2에 웹 서버 설정하기  EC2에 SSH로 접속한다. 1$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]  접속이 성공했다면 패키지를 최신으로 업데이트한다. 1$ sudo apt-get update  Nginx를 설치한다. 12# apt-get 사용$ sudo apt-get install">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190522-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.22 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/22/190522-Django-Study/" class="article-date">
+            <time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Django-Project"><a href="#Django-Project" class="headerlink" title="Django Project"></a>Django Project</h2><ul>
+<li><p>EC2에 웹 서버 설정하기</p>
+<ol>
+<li><p>EC2에 SSH로 접속한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>접속이 성공했다면 패키지를 최신으로 업데이트한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Nginx를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get 사용</span></span><br><span class="line">$ sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx가 잘 동작하는지 다음 명령어를 통해 확인한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl status nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># nginx를 설치했다면...</span></span><br><span class="line"><span class="comment"># status 명령어를 통해 상태를 확인한다.(active)</span></span><br><span class="line"><span class="comment"># 웹 브라우저에서 퍼블릭 DNS 주소를 입력하여 확인한다.(Welcome to nginx 화면)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 아래 명령어를 알아두자.</span></span><br><span class="line">$ sudo systemctl stop nginx</span><br><span class="line">$ sudo systemctl start nginx</span><br><span class="line">$ sudo systemctl restart nginx</span><br><span class="line">$ systemctl status nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Nginx는 한 서버 컴ㅍ퓨터에서 여러 사이트를 운영할 수 있다.</p>
+<ul>
+<li>사이트 별로 설정 파일을 만들어야 한다.</li>
+<li>여기서는 staticweb이라는 이름을 예시로 사용해본다.<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># default 파일을 복사하여 staticweb 파일 생성</span></span><br><span class="line"><span class="comment"># 파일 이름은 자유롭게 생성하자.</span></span><br><span class="line">$ sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/staticweb</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>생성한 설정 파일을 수정한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vim /etc/nginx/sites-available/staticweb</span><br><span class="line"></span><br><span class="line"><span class="comment"># staticweb</span></span><br><span class="line"><span class="comment"># default 파일을 복사했기 때문에 아래와 같이 내용을 수정한다.</span></span><br><span class="line"><span class="comment"># server_name에는 퍼블릭 DNS 주소를 기입한다.</span></span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    listen [::]:80;</span><br><span class="line"></span><br><span class="line">    root /var/www/staticweb;</span><br><span class="line"></span><br><span class="line">    index index.html index.htm index.nginx-debian.html;</span><br><span class="line"></span><br><span class="line">    server_name [퍼블릭 DNS]</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">            try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ =404;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>설정 파일을 Nginx에 활성화시킨다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 심볼릭 링크를 사용하여 sites-enabled에 링크 파일을 생성한다.</span></span><br><span class="line"><span class="comment"># site-enabled에 파일이 위치해야 사이트가 동작한다.</span></span><br><span class="line">$ sudo ln -s /etc/nginx/sites-available/staticweb /etc/nginx/sites-enabled</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>테스트를 위해 staticweb이라는 폴더를 만든다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www/</span><br><span class="line">$ sudo mkdir staticweb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>staticweb 폴더 안에 index.html을 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www/staticweb</span><br><span class="line">$ vim index.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        hello</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>웹 브라우저에서 퍼블릭 DHS 주소를 입력하여 hello가 출력되는지 확인한다.</p>
+</li>
+</ol>
+</li>
+<li><p>EC2 인스턴스에 고정 IP 설정하기</p>
+<ul>
+<li>퍼블릭 DNS의 IP는 동적으로 변하는 상태이기 때문에 연결이 끊기는 상황이 발생할 수 있다.</li>
+<li>Elastic IP 서비스를 사용하여 고정 IP를 할당받을 수 있다.</li>
+</ul>
+<ol>
+<li>EC2 화면 좌측 메뉴에서 네트워크 및 보안 / 탄력적 IP를 선택한다.</li>
+<li>새 주소 할당을 누른다.<ul>
+<li>IP의 사용은 무료이지만, IP를 할당받고 사용하지 않으면 비용이 청구된다.</li>
+<li>따라서 사용하지 않는다면 삭제하자.</li>
+</ul>
+</li>
+<li>할당을 누르고 새 주소 요청 성공이 보이면 닫기를 누른다.</li>
+<li>IP 목록에서 할당받은 IP를 마우스 오른쪽 버튼으로 클릭한다.</li>
+<li>주소 연결을 누르고 인스턴스 항목에 사용할 인스턴스를 선택하고 연결을 누른다.</li>
+<li>주소 연결 요청 성공이 보이면 닫기를 누른다.</li>
+<li>인스턴스 목록으로 가서 사용할 인스턴스에 설정이 되었는지 확인한다.<ul>
+<li>퍼블릭 DNS 주소 대신에 탄력적 IP가 나타나는지 확인한다.</li>
+</ul>
+</li>
+<li>[서비스] 메뉴에서 네트워킹 및 콘텐츠 전송/Route53으로 이동한다.</li>
+<li>호스팅 영역으로 이동하여 사용중인 도메인을 누른다.</li>
+<li>레코드 세트 생성을 누른다.<ul>
+<li>원하는 이름을 설정한다.</li>
+<li>유형은 A-IPv4 주소를 선택한다.</li>
+<li>값에 할당받은 탄력적 IP를 기입하고 생성한다.</li>
+</ul>
+</li>
+<li>이제 ssh로 접속할 때 설정한 도메인 이름으로 접속할 수 있다.</li>
+</ol>
+</li>
+<li><p>커스텀 유저 모델 만들기</p>
+<ul>
+<li><p>생성한 장고 프로젝트에서 account 앱을 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py starapp account</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py의 INSTALLED_APPS에 앱을 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> INSTALLED_APPS = [</span><br><span class="line">    <span class="comment">#...</span></span><br><span class="line">    <span class="string">'account'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>models.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="comment"># 기존에 있던 User 모델을 확장해서</span></span><br><span class="line"><span class="comment"># 내가 원하는 추가 필드를 만드는 것</span></span><br><span class="line"><span class="comment"># 커뮤니티 사이트 - 프로필 사진, 자기소개</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">기존에 모델을 확장(필드를 추가)하려면 모델 소스코드를 변경하는데,</span></span><br><span class="line"><span class="string">애시당초 모델을 만들 때는 models.Model을 상속받는다.</span></span><br><span class="line"><span class="string">* 모델은 어떤 모델을 상속받아서 확장할 수도 있다.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">기존 User 모델은 AbstractUser라는 모델을 상속받아서 구현된다.</span></span><br><span class="line"><span class="string">AbstractUser모델은 AbstractBaseUser라는 모델을 상속받아서 구현된다.</span></span><br><span class="line"><span class="string">* Abstract : 추상이라고 해석되는 단어인데, 모델의 설정값에 Abstract라는 값을 설정할 수 있다.</span></span><br><span class="line"><span class="string">abstract가 설정되어 있으면 실제 모델로 사용 불가</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">1) 기존 User 모델은 AbstractUser라는 모델을 상속받아서 필수 필드들이 이미 구현이 되어있는 상태다.</span></span><br><span class="line"><span class="string">- 우리가 익히 보던 기본 필드들과 권한 관련 기능 등 장고에서 유저에게 기본적으로 필요한 기능이 구현이 되어있다.</span></span><br><span class="line"><span class="string">- 추가 필드가 필요한 경우에는 AbstractUser 모델을 상속받아서 구현하는 것이 제일 편하다.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2) AbstractBaseUser로 구현해야 되는 경우</span></span><br><span class="line"><span class="string">- 모든 필드 구조를 변경할 필요가 있을 때</span></span><br><span class="line"><span class="string">- 퍼미션 기능 등 장고에서 사용하는 유저 기본 기능 전체를 뜯어 고치고 싶을 때</span></span><br><span class="line"><span class="string">- Backend를 새로 구현해줘야 한다.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3) 기존 User 모델을 상속받거나, 확장해서 사용하는 경우</span></span><br><span class="line"><span class="string">- User + AdditionalInfo(생일, 주소, 주민번호)</span></span><br><span class="line"><span class="string">-&gt; 회원 수정 페이지 AdditionalInfoForm을 추가로 입력</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">1번을 제일 권장하는 확장 방식 - 프로젝트 시작 시점에 고려, (* 기존 데이터 유지 불가)</span></span><br><span class="line"><span class="string">3번은  사이트를 운영 중에 확장을 고려해야 할 때 선택 가능, 기존 User 데이터 그대로 존재, + 추가 테이블</span></span><br><span class="line"><span class="string">* OneToOne 필드</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">swappable은 AUTH_USER_MODEL 값에 설정된 모델과 교체가 가능하다라고 미리 설정해둔 것</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">class User(AbstractUser):</span></span><br><span class="line"><span class="string">    class Meta(AbstractUser.Meta):</span></span><br><span class="line"><span class="string">        swappable = 'AUTH_USER_MODEL'</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> AbstractUser</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(AbstractUser)</span>:</span></span><br><span class="line">    message = models.TextField(blank=<span class="literal">True</span>)</span><br><span class="line">    profile = models.ImageField(upload_to=<span class="string">'user_images/profile/%Y/%m/%d'</span>, blank=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py에 아래 항목을 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AUTH_USER_MODEL = <span class="string">'account.User'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>새로 만든 유저 모델의 데이터베이스 생성을 위해 아래 명령어를 실행한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 모델에 이미지 필드가 있으므로 pillow 모듈 설치</span></span><br><span class="line">$ pip install pillow</span><br><span class="line"></span><br><span class="line">$ python manage.py makemigrations account</span><br><span class="line"></span><br><span class="line">$ python manage.py migrate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 계정을 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py createsuperuser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>admin.py에 유저 모델을 등록해준다. 등록하지 않으면 관리자 페이지에서 볼 수 없다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> User</span><br><span class="line"></span><br><span class="line">admin.site.register(User)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 페이지에 접속하여 유저 모델을 수정해보면 기존 유저 모델 화면과 다른 것을 확인할 수 있다.</p>
+<ul>
+<li>UserAdmin 클래스 옵션을 등록하여 기존 유저 모델과 같이 보이게 할 수 있다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> User</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.admin <span class="keyword">import</span> UserAdmin</span><br><span class="line"></span><br><span class="line">admin.site.register(User, CustomUserAdmin)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>모델에서 만든 추가 필드 값에 대한 클래스를 새로 만들어서 등록해줘야 한다.</p>
+<ul>
+<li>message와 profile의 필드 값이 나타나지 않는 것을 확인할 수 있다.</li>
+<li>admin.py를 다음과 같이 수정한다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> User</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth.admin <span class="keyword">import</span> UserAdmin</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomUserAdmin</span><span class="params">(UserAdmin)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># fieldsets - 상세 화면에서 출력될 수정 폼 설정</span></span><br><span class="line">    <span class="comment"># add_fieldsets - 추가 화면에 출력될 입력 폼의 설정</span></span><br><span class="line">    UserAdmin.fieldsets[<span class="number">1</span>][<span class="number">1</span>][<span class="string">'fields'</span>]+=(<span class="string">'profile'</span>,<span class="string">'message'</span>)</span><br><span class="line"></span><br><span class="line">    UserAdmin.add_fieldsets += (</span><br><span class="line">        ((<span class="string">'Additional Info'</span>), &#123;<span class="string">'fields'</span>:(<span class="string">'profile'</span>,<span class="string">'message'</span>)&#125;),</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"><span class="comment"># CustomUserAdmin으로 옵션 클래스 수정</span></span><br><span class="line">admin.site.register(User, CustomUserAdmin)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>관리자 페이지로 접속하여 추가 필드 값이 출력되는지 확인한다.</p>
+<ul>
+<li>추가 필드에 값이 정상적으로 입력되는지 확인하자.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Email 로그인 기능 추가하기</p>
+<ul>
+<li>로그인 기능을 제어하는 것은 AUTHENTICATION_BACKENDS에 설정된 모델 백엔드를 통해 이뤄진다.</li>
+<li>커스텀 모델 백엔드를 추가하여 username과 email 모두 가능한 로그인 기능을 만든다.</li>
+</ul>
+<ol>
+<li><p>account 앱에 backends.py를 추가하고 다음과 같이 입력한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> get_user_model</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomUserBackend</span><span class="params">(ModelBackend)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">authenticate</span><span class="params">(self, request, username=None, password=None, **kwargs)</span>:</span></span><br><span class="line">        user = super().authenticate(request, username, password, **kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> user:</span><br><span class="line">            <span class="keyword">return</span> user</span><br><span class="line"></span><br><span class="line">        <span class="comment"># id 로그인 실패 상황</span></span><br><span class="line">        <span class="comment"># email 로그인 시도</span></span><br><span class="line">        UserModel = get_user_model()</span><br><span class="line">        <span class="comment"># 원래 id 로그인 처리를 할 때 username이 넘어왔을 경우</span></span><br><span class="line">        <span class="comment"># email 변수에 새로 값을 할당하려고</span></span><br><span class="line">        email = username</span><br><span class="line">        <span class="keyword">if</span> email <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            email = kwargs.get(UserModel.EMAIL_FIELD, kwargs.get(<span class="string">'email'</span>))</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            user = UserModel._default_manager.get(email=email)</span><br><span class="line">        <span class="keyword">except</span> UserModel.DoesNotExist:</span><br><span class="line">            <span class="comment"># Run the default password hasher once to reduce the timing</span></span><br><span class="line">            <span class="comment"># difference between an existing and a nonexistent user (#20760).</span></span><br><span class="line">            UserModel().set_password(password)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> user.check_password(password) <span class="keyword">and</span> self.user_can_authenticate(user):</span><br><span class="line">                <span class="keyword">return</span> user</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py에 아래 항목을 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AUTHENTICATION_BACKENDS = [</span><br><span class="line">    <span class="string">'account.backends.CustomUserBackend'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 페이지를 접속하여 이메일로 접속되는지 확인한다.</p>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/22/190522-Django-Study/" data-id="cjw7wti1n002jmtwu4sibtcyh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.22 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-22",
+        "dateCreated": "2019-05-22",
+        "dateModified": "2019-05-28",
+        "url": "http://JINUKK.github.io/2019/05/22/190522-Django-Study/",
+        "description": "Django Project
+EC2에 웹 서버 설정하기
+
+EC2에 SSH로 접속한다.
+1$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]
+
+접속이 성공했다면 패키지를 최신으로 업데이트한다.
+1$ sudo apt-get update
+
+Nginx를 설치한다.
+12# apt-get 사용$ sudo apt-get install"
+        "wordCount": 1662
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/21/190521-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.21 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/22/190522-Django-Study/" class="title">2019.05.22 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/21/190521-Django-Study/" class="title">2019.05.21 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-21T14:40:04.000Z" itemprop="datePublished">2019-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/20/190520-Django-Study/" class="title">2019.05.20 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-20T10:54:33.000Z" itemprop="datePublished">2019-05-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/17/190517-Django-Study/" class="title">2019.05.17 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/16/190516-Django-Study/" class="title">2019.05.16 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-16T12:45:36.000Z" itemprop="datePublished">2019-05-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">49</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/22/190522-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
