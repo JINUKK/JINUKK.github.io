@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.23 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="Django Project EC2에 장고 서버 셋팅하기  EC2에 SSH로 접속한다. 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.23 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/23/190523-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="Django Project EC2에 장고 서버 셋팅하기  EC2에 SSH로 접속한다. 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-29T03:59:52.471Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.23 Django Study">
+<meta name="twitter:description" content="Django Project EC2에 장고 서버 셋팅하기  EC2에 SSH로 접속한다. 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190523-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.23 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/23/190523-Django-Study/" class="article-date">
+            <time datetime="2019-05-23T03:56:59.000Z" itemprop="datePublished">2019-05-23</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Django-Project"><a href="#Django-Project" class="headerlink" title="Django Project"></a>Django Project</h2><ul>
+<li><p>EC2에 장고 서버 셋팅하기</p>
+<ol>
+<li><p>EC2에 SSH로 접속한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 퍼블릭 DNS 주소를 가지고 있다면</span></span><br><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 탄력적 IP를 가지고 있다면</span></span><br><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Route53을 통해 도메인을 연결했다면</span></span><br><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[연결한 도메인 주소]</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>장고를 위한 계정을 추가한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www</span><br><span class="line"></span><br><span class="line"><span class="comment"># -g : 현재 그룹에 바로 추가</span></span><br><span class="line"><span class="comment"># -b : 홈 폴더 지정</span></span><br><span class="line"><span class="comment"># -m : 유저의 홈 폴더 생성</span></span><br><span class="line"><span class="comment"># -s : 기본으로 사용할 쉘 지정</span></span><br><span class="line">$ sudo useradd -g www-data -b /home -m -s /bin/bash django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>소스 코드를 업로드할 폴더를 만든다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mkdir /var/www/django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>소스 코드 폴더의 소유자를 변경한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown django:www-data /var/www/django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일 업로드를 위해 ubuntu 계정을 www-data 그룹에 추가한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -a : 추가 명령</span></span><br><span class="line"><span class="comment"># -G : 그룹 추가 명령</span></span><br><span class="line">$ sudo usermod -a -G www-data ubuntu</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파이썬 관련 패키지를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install python3-dev python3-venv python3-pip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>소스 코드 폴더 밑에 파이썬 가상 환경을 만든다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo python3 -m venv /var/www/django/venv</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관리자 모드로 변경한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo -s</span><br><span class="line"><span class="comment"># ubuntu에서 root로 바뀌는지 확인한다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가상 환경을 활성화한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> venv/bin/activate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가상 환경에 장고를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>장고 프로젝트를 생성하고 migrate한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin startproject config .</span><br><span class="line"></span><br><span class="line">$ python manage.py migrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 장고에서 서버를 실행해서 동작을 확인한다.</span></span><br><span class="line"><span class="comment"># 인스턴스 보안에서 테스트를 위해 인바운드 규칙에 포트 번호 8000을 추가한 것을 이용</span></span><br><span class="line"><span class="comment"># 0:8000에서 0은 외부 트래픽에서도 받아보겠다는 의미</span></span><br><span class="line">$ python manage.py runserver 0:8000</span><br><span class="line"></span><br><span class="line"><span class="comment"># 반드시 장고에서 서버 동작을 확인하도록 하자.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uwsgi 모듈을 설치한다.(WSGI 모듈 중 하나)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install uwsgi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>uwsgi가 동작하는지 아래 명령어를 입력한 후, 웹 브라우저로 접속해본다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ uwsgi --http :8000 --home /var/www/django/venv/ --<span class="built_in">chdir</span> /var/www/django/ --module config.wsgi</span><br><span class="line"><span class="comment"># 웹 브라우저에 [ssh 접속 시 사용한 주소]:8000으로 접속해본다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>관련 폴더를 만들고 설정해본다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># run과 logs 폴더를 만든다.</span></span><br><span class="line">$ sudo mkdir run logs</span><br><span class="line"></span><br><span class="line"><span class="comment"># 폴더의 소유권을 변경한다.</span></span><br><span class="line">$ sudo chown django:www-data run</span><br><span class="line">$ sudo chown django:www-data logs</span><br><span class="line"></span><br><span class="line"><span class="comment"># ini 폴더를 만든다.</span></span><br><span class="line">$ sudo mkdir ini</span><br><span class="line"></span><br><span class="line"><span class="comment"># ini 폴더 안에 uwsgi.ini 파일을 작성한다.</span></span><br><span class="line">$ sudo vim ini/uwsgi.ini</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># uwsgi.ini 내용</span></span><br><span class="line">[uwsgi]</span><br><span class="line">uid = django</span><br><span class="line">base = /var/www/django</span><br><span class="line"></span><br><span class="line">home = %(base)/venv</span><br><span class="line"><span class="built_in">chdir</span> = %(base)</span><br><span class="line">module = config.wsgi:application</span><br><span class="line">env = DJANGO_SETTINGS_MODULE=config.settings</span><br><span class="line"></span><br><span class="line">master = <span class="literal">true</span></span><br><span class="line">processes = 5</span><br><span class="line"></span><br><span class="line">socket = %(base)/run/uwsgi.sock</span><br><span class="line">logto = %(base)/logs/uwsgi.log</span><br><span class="line">chown-socket = %(uid):www-data</span><br><span class="line">chmod-socket = 660</span><br><span class="line">vacuum = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># uwsgi.service 파일을 만든다.</span></span><br><span class="line">$ sudo vim /etc/systemed/system/uwsgi.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># uwsgi.service 내용</span></span><br><span class="line">[Unit]</span><br><span class="line">Description=uWSGI Emperor service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/var/www/django/venv/bin/uwsgi --emperor /var/www/django/ini</span><br><span class="line">User=django</span><br><span class="line">Group=www-data</span><br><span class="line">Restart=on-failure</span><br><span class="line">KillSignal=SIGQUIT</span><br><span class="line">Type=notify</span><br><span class="line">NotifyAccess=all</span><br><span class="line">StandardError=syslog</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># uwsgi.service를 시작하고 시작 프로그램으로 등록한다.</span></span><br><span class="line">$ sudo systemctl start uwsgi</span><br><span class="line">$ sudo systemctl <span class="built_in">enable</span> uwsgi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사이트 설정 파일을 변경하여 장고 애플리케이션이 구동되도록 한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 기존에 만들어두었던 staticweb 파일을 사용한다.</span></span><br><span class="line">$ sudo vim /etc/nginx/sites-available/staticweb</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># staticweb 내용</span></span><br><span class="line">upstream django &#123;</span><br><span class="line">        server unix:/var/www/django/run/uwsgi.sock</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        charset utf-8;</span><br><span class="line">        access_log /var/www/django/logs/access.log;</span><br><span class="line">        error_log /var/www/django/logs/error.log;</span><br><span class="line">        server_name [Route53으로 연결한 도메인 주소]</span><br><span class="line"></span><br><span class="line">        location = /favicon.ico &#123; access_log off; log_not_found off; &#125;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                include         /etc/nginx/uwsgi_params;</span><br><span class="line">                uwsgi_pass      django;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>웹 브라우저에 도메인 주소를 입력하고 구동되는지 확인한다.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/23/190523-Django-Study/" data-id="cjw8pbfb0002mufwu7fwkuxz9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.23 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-23",
+        "dateCreated": "2019-05-23",
+        "dateModified": "2019-05-29",
+        "url": "http://JINUKK.github.io/2019/05/23/190523-Django-Study/",
+        "description": "Django Project
+EC2에 장고 서버 셋팅하기
+
+EC2에 SSH로 접속한다.
+12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53"
+        "wordCount": 826
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/05/22/190522-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.22 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/23/190523-Django-Study/" class="title">2019.05.23 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-23T03:56:59.000Z" itemprop="datePublished">2019-05-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/22/190522-Django-Study/" class="title">2019.05.22 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/21/190521-Django-Study/" class="title">2019.05.21 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-21T14:40:04.000Z" itemprop="datePublished">2019-05-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/20/190520-Django-Study/" class="title">2019.05.20 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-20T10:54:33.000Z" itemprop="datePublished">2019-05-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/17/190517-Django-Study/" class="title">2019.05.17 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">50</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/23/190523-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
