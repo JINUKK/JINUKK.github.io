@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="Django Project EC2에 장고 서버 셋팅하기  EC2에 SSH로 접속한다. 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-29T03:59:52.471Z">
+<meta property="og:updated_time" content="2019-05-29T04:02:35.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.05.23 Django Study">
 <meta name="twitter:description" content="Django Project EC2에 장고 서버 셋팅하기  EC2에 SSH로 접속한다. 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53">
@@ -172,7 +172,7 @@
 <ol>
 <li><p>EC2에 SSH로 접속한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 퍼블릭 DNS 주소를 가지고 있다면</span></span><br><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 탄력적 IP를 가지고 있다면</span></span><br><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Route53을 통해 도메인을 연결했다면</span></span><br><span class="line">$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[연결한 도메인 주소]</span><br></pre></td></tr></table></figure>
-<ol start="2">
+</li>
 <li><p>장고를 위한 계정을 추가한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/www</span><br><span class="line"></span><br><span class="line"><span class="comment"># -g : 현재 그룹에 바로 추가</span></span><br><span class="line"><span class="comment"># -b : 홈 폴더 지정</span></span><br><span class="line"><span class="comment"># -m : 유저의 홈 폴더 생성</span></span><br><span class="line"><span class="comment"># -s : 기본으로 사용할 쉘 지정</span></span><br><span class="line">$ sudo useradd -g www-data -b /home -m -s /bin/bash django</span><br></pre></td></tr></table></figure>
 </li>
@@ -219,8 +219,6 @@
 </li>
 </ol>
 </li>
-</ol>
-</li>
 </ul>
 
         </div>
@@ -229,7 +227,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/05/23/190523-Django-Study/" data-id="cjw8pbfb0002mufwu7fwkuxz9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/05/23/190523-Django-Study/" data-id="cjw8petmx002m1twu120bsurm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -312,7 +310,7 @@ EC2에 장고 서버 셋팅하기
 
 EC2에 SSH로 접속한다.
 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53"
-        "wordCount": 826
+        "wordCount": 825
     }
 </script>
 
