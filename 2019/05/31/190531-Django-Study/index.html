@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="blog Project ACM으로 SSL 인증서 발급받기  https 기능을 사이트에 적용하기 위해 ssl 인증서를 등록해야 한다. 로드밸런서를 사용하면 쉽게 인증서를 적용할 수 있다. Amazon에서는 ACM Service를 통해 무료로 인증서를 발급하고 있다.   서비스 탭에서 보안, 자격 증명 및 규정 준수/Certificate Manager를 누른다">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-05T07:23:03.492Z">
+<meta property="og:updated_time" content="2019-06-05T07:27:42.670Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.05.31 Django Study">
 <meta name="twitter:description" content="blog Project ACM으로 SSL 인증서 발급받기  https 기능을 사이트에 적용하기 위해 ssl 인증서를 등록해야 한다. 로드밸런서를 사용하면 쉽게 인증서를 적용할 수 있다. Amazon에서는 ACM Service를 통해 무료로 인증서를 발급하고 있다.   서비스 탭에서 보안, 자격 증명 및 규정 준수/Certificate Manager를 누른다">
@@ -187,25 +187,24 @@
 </li>
 </ul>
 </li>
+<li><p>검증 방법에서는 DNS 검증을 누르고 검토로 넘어간다.</p>
+</li>
+<li><p>내용을 확인하고 확인 및 요청을 누른다.</p>
+</li>
+<li><p>검증 단계에서는 검증 보류 메세지를 볼 수 있는데 도메인 주소 왼쪽 화살표를 누른다.</p>
+</li>
+<li><p>상세 정보에서 Route53에서 레코드 생성을 누른다.</p>
+</li>
+<li><p>레코드 내용을 확인하고 생성을 누른다.</p>
+</li>
+<li><p>생성 성공 메시지를 확인하면 계속을 누른다.</p>
+</li>
+<li><p>인증서 목록으로 돌아오면 검증 미완료 상태를 볼 수 있다.</p>
+</li>
+<li><p>일정 시간이 지나면 검증 완료가 되고 인증서가 발급된 것을 확인할 수 있다.</p>
+</li>
 </ol>
 </li>
-</ul>
-<pre><code>5. 검증 방법에서는 DNS 검증을 누르고 검토로 넘어간다.
-
-6. 내용을 확인하고 확인 및 요청을 누른다.
-
-7. 검증 단계에서는 검증 보류 메세지를 볼 수 있는데 도메인 주소 왼쪽 화살표를 누른다.
-
-8. 상세 정보에서 Route53에서 레코드 생성을 누른다.
-
-9. 레코드 내용을 확인하고 생성을 누른다.
-
-10. 생성 성공 메시지를 확인하면 계속을 누른다.
-
-11. 인증서 목록으로 돌아오면 검증 미완료 상태를 볼 수 있다.
-
-12. 일정 시간이 지나면 검증 완료가 되고 인증서가 발급된 것을 확인할 수 있다.
-</code></pre><ul>
 <li><p>ELB Setting 하기</p>
 <ul>
 <li>ELB는 Amazon AWS의 Load Balancer Service</li>
@@ -423,7 +422,7 @@ Amazon에서는 ACM Service를 통해 무료로 인증서를 발급하고 있다
 
 
 서비스 탭에서 보안, 자격 증명 및 규정 준수/Certificate Manager를 누른다"
-        "wordCount": 454
+        "wordCount": 446
     }
 </script>
 
