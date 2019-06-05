@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="editor Project WYSIWYG 사용하기  WYSIWYG(What you see is what you get) 웹 브라우저에서 사용할 수 있는 HTML 편집기   django-ckeditor 모듈을 다운받아 설치한다. 1$ pip install django-ckeditor  settings.py의 INSTALLED_APPS에 추가한다. 1234IN">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-05T07:16:21.185Z">
+<meta property="og:updated_time" content="2019-06-05T07:17:53.646Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.05.27 Django Study">
 <meta name="twitter:description" content="editor Project WYSIWYG 사용하기  WYSIWYG(What you see is what you get) 웹 브라우저에서 사용할 수 있는 HTML 편집기   django-ckeditor 모듈을 다운받아 설치한다. 1$ pip install django-ckeditor  settings.py의 INSTALLED_APPS에 추가한다. 1234IN">
@@ -216,6 +216,27 @@
 </li>
 </ol>
 </li>
+<li><p>Media 파일 서빙하기</p>
+<ul>
+<li>Amazon AWS S3를 사용할 수 없을 경우, serve view를 사용하여 서빙할 수 있다.</li>
+</ul>
+<ol>
+<li><p>settings.py에 media 관련 경로를 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MEDIA_URL = <span class="string">'/media/'</span></span><br><span class="line">MEDIA_ROOT = os.path.join(BASE_DIR, <span class="string">'media'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>디버그 모드일 경우, 다음과 같이 url pattern을 추가하여 사용할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> settings.DEBUG:</span><br><span class="line">    <span class="keyword">from</span> django.conf.urls.static <span class="keyword">import</span> static</span><br><span class="line">    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>라이브 상태일 경우, serve view를 사용하여 연결해준다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.views.static <span class="keyword">import</span> serve</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> re_path</span><br><span class="line"></span><br><span class="line">url_patterns = [</span><br><span class="line">    <span class="comment">#...</span></span><br><span class="line">    re_path(<span class="string">r'^media/(?P&lt;path&gt;.*)$'</span>, serve, &#123;<span class="string">'document_root'</span>: settings.MEDIA_ROOT&#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py에서 DEBUG를 False로 변경한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DEBUG = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">'*'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>이미지를 업로드해보고 출력되는지 확인한다.</p>
+</li>
+</ol>
+</li>
 </ul>
 
         </div>
@@ -314,7 +335,7 @@ django-ckeditor 모듈을 다운받아 설치한다.
 
 settings.py의 INSTALLED_APPS에 추가한다.
 1234IN"
-        "wordCount": 407
+        "wordCount": 559
     }
 </script>
 
