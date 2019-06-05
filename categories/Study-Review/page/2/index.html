@@ -158,6 +158,142 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
             </div>
+            <div class="date"><time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/17/190517-Django-Study/">2019.05.17 Django Study</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            [ Board project ]
+AJAX
+
+비동기식 JavaScript와 XML(Asynchronos Javascript And XML)
+JavaScript를 통해서 서버에 데이터를 요청
+서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음
+ajax를 통해 주로 주고 받는 형태가 XML이나 JSON
+
+
+댓글 기능에 AJAX 적용
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
+            <div class="date"><time datetime="2019-05-16T12:45:36.000Z" itemprop="datePublished">2019-05-16</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/16/190516-Django-Study/">2019.05.16 Django Study</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            [ Board project ]
+댓글 기능 적용
+
+models.py에 comment 모델 작성
+123456789101112131415161718class Comment(models.Model):    # Todo : 댓글 남기기를 위해서 Form    # Todo : 뷰 처리는 Documents의 뷰    # 해당 게시글의 댓글이기 때문에 document라
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
+            <div class="date"><time datetime="2019-05-15T07:56:18.000Z" itemprop="datePublished">2019-05-15</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/15/190515-Django-Study/">2019.05.15 Django Study</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            [ Board project ]
+F() 객체
+
+모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.12345678from django.db.models import Q, Ffrom board.models import * # Board, Category, Document# 'title'이라는 문자열을 검색Document.objects.filter(
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
+            <div class="date"><time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/14/190514-Django-Study/">2019.05.14 Django Study</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            [ Board project ]
+get_object_or_404, get_list_or_404
+
+데이터가 하나도 없다면 에러 발생
+views.py 수정123456789101112131415161718192021222324252627282930313233343536# 해당 모듈 추가from django.shortcuts import render, get_ob
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
             <div class="date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></div>
         </div>
         
@@ -363,168 +499,6 @@ models.py 수정
         </div>
     
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
-            </div>
-            <div class="date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/02/190502-Django-Study/">2019.05.02 Django Study</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            [ Dstargram project ]
-접근 권한 주기
-
-해당 글을 올린 글쓴이가 아니라면 수정이나 삭제를 할 수 없도록 처리
-views.py에서 dispatch() 적용
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
-            </div>
-            <div class="date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/01/190501-Django-Study/">2019.05.01 Django Study</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            [ Dstargram project ]
-두 가지 앱을 만들어서 진행
-accounts : 로그인, 로그아웃, 회원가입 관련
-photo : 사진 업로드 관련
-
-
-
-
-파이썬 프로젝트 생성
-장고 설치
-1$ pip install django
-
-장고 프로젝트 생성
-1$ django-admin startproject config .
-
-DB 초기화
-1$ python ma
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
-            </div>
-            <div class="date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/30/190430-Django-Study/">2019.04.30 Django Study</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            [ Bookmark project ]
-Bootstrap 적용
-github 업로드
-pythonanywhere.com을 이용한 배포
-
-
-bootstrap 적용하기
-
-base.html에 bootstrap 설치
-CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가)
-다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
-            </div>
-            <div class="date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/29/190429-Django-Study/">2019.04.29 Django Study</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            [ Bookmark project ]
-프로젝트 생성
-장고 설치
-1$ pip install django
-
-장고 프로젝트 생성
-1django-admin startproject config .
-
-DB 초기화
-1$ python manage.py migrate
-
-관리자 계정 생성
-1$ python manage.py createsuperuser
-
-기본 앱 생성
-1$ 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
 
     </div></section>
 
@@ -571,44 +545,44 @@ DB 초기화
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/04/190604-Django-Study/" class="title">2019.06.04 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/03/190603-Django-Study/" class="title">2019.06.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-03T07:21:17.000Z" itemprop="datePublished">2019-06-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/31/190531-Django-Study/" class="title">2019.05.31 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-31T07:21:12.000Z" itemprop="datePublished">2019-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/30/190530-Django-Study/" class="title">2019.05.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-30T07:21:07.000Z" itemprop="datePublished">2019-05-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
                             <p class="item-title"><a href="/2019/05/28/190528-Django-Study/" class="title">2019.05.28 Django Study</a></p>
                             <p class="item-date"><time datetime="2019-05-28T07:19:49.000Z" itemprop="datePublished">2019-05-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/05/27/190527-Django-Study/" class="title">2019.05.27 Django Study</a></p>
-                            <p class="item-date"><time datetime="2019-05-27T07:10:44.000Z" itemprop="datePublished">2019-05-27</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/05/23/190523-Django-Study/" class="title">2019.05.23 Django Study</a></p>
-                            <p class="item-date"><time datetime="2019-05-23T03:56:59.000Z" itemprop="datePublished">2019-05-23</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/05/22/190522-Django-Study/" class="title">2019.05.22 Django Study</a></p>
-                            <p class="item-date"><time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/05/21/190521-Django-Study/" class="title">2019.05.21 Django Study</a></p>
-                            <p class="item-date"><time datetime="2019-05-21T14:40:04.000Z" itemprop="datePublished">2019-05-21</time></p>
                         </div>
                     </li>
                 
@@ -621,7 +595,7 @@ DB 초기화
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">52</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
         </div>
     </div>
 
@@ -631,7 +605,7 @@ DB 초기화
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
         </div>
     </div>
 

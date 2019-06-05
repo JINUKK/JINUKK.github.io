@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.06.04 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="new blog Project 새로운 블로그 웹 사이트를 만들어본다.  프로젝트를 생성하고 django를 설치한다. 1$ pip install django  django project를 만든다. 1$ django-admin startproject config .  다음 항목을 설치하고 해당 관련 항목들의 코드를 추가하도록 한다. 123456789101112">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.06.04 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/06/04/190604-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="new blog Project 새로운 블로그 웹 사이트를 만들어본다.  프로젝트를 생성하고 django를 설치한다. 1$ pip install django  django project를 만든다. 1$ django-admin startproject config .  다음 항목을 설치하고 해당 관련 항목들의 코드를 추가하도록 한다. 123456789101112">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-05T07:25:08.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.06.04 Django Study">
+<meta name="twitter:description" content="new blog Project 새로운 블로그 웹 사이트를 만들어본다.  프로젝트를 생성하고 django를 설치한다. 1$ pip install django  django project를 만든다. 1$ django-admin startproject config .  다음 항목을 설치하고 해당 관련 항목들의 코드를 추가하도록 한다. 123456789101112">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190604-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.06.04 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/04/190604-Django-Study/" class="article-date">
+            <time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="new-blog-Project"><a href="#new-blog-Project" class="headerlink" title="new blog Project"></a>new blog Project</h2><ul>
+<li><p>새로운 블로그 웹 사이트를 만들어본다.</p>
+<ol>
+<li><p>프로젝트를 생성하고 django를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install django</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>django project를 만든다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin startproject config .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다음 항목을 설치하고 해당 관련 항목들의 코드를 추가하도록 한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># debug tool bar 설치</span></span><br><span class="line">$ pip install django-debug-toolbar</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모델 간의 관계도를 그리기 위해 extentions 설치</span></span><br><span class="line">$ pip install django-extensions</span><br><span class="line"></span><br><span class="line"><span class="comment"># HTML 편집기를 사용하기 위해 ckeditor 설치</span></span><br><span class="line">$ pip install django-ckeditor</span><br><span class="line"></span><br><span class="line"><span class="comment"># tag 기능을 사용하기 위해 tagging 설치</span></span><br><span class="line">$ pip install django-tagging</span><br><span class="line"></span><br><span class="line"><span class="comment"># static 파일을 서빙하기 위해 whitenoise 설치</span></span><br><span class="line">$ pip install whitenoise</span><br><span class="line"></span><br><span class="line"><span class="comment"># 의존성 리스트 생성</span></span><br><span class="line">$ pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post라는 이름을 가진 앱을 만든다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py startapp post</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>models.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post/models.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">from</span> ckeditor_uploader.fields <span class="keyword">import</span> RichTextUploadingField</span><br><span class="line"><span class="keyword">from</span> tagging.fields <span class="keyword">import</span> TagField</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> resolve_url</span><br><span class="line"><span class="comment"># Create your models here.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    slug = models.SlugField(max_length=<span class="number">120</span>, unique=<span class="literal">True</span>, allow_unicode=<span class="literal">True</span>, db_index=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 상위 카테고리를 만들기 위해</span></span><br><span class="line">    parent_category = models.ForeignKey(<span class="string">"self"</span>, on_delete=models.SET_NULL, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_absolute_url</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> resolve_url(<span class="string">'post:post_list_with_category'</span>, self.slug)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line">    title = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line">    slug = models.SlugField(max_length=<span class="number">120</span>, unique=<span class="literal">True</span>, allow_unicode=<span class="literal">True</span>, db_index=<span class="literal">True</span>)</span><br><span class="line">    text = RichTextUploadingField()</span><br><span class="line">    material = models.FileField(upload_to=<span class="string">'material/%Y/%m/%d'</span>,blank=<span class="literal">True</span>)</span><br><span class="line">    tag = TagField(blank=<span class="literal">True</span>)</span><br><span class="line">    created = models.DateTimeField(auto_now_add=<span class="literal">True</span>)</span><br><span class="line">    updated = models.DateTimeField(auto_now=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.title + <span class="string">" at "</span> + self.created.strftime(<span class="string">"%Y-%m-%d"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_absolute_url</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> resolve_url(<span class="string">'post:post_detail'</span>, self.slug)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 날짜.월.일만 나오는 포맷을 사용하고 싶어서 추가</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">formatcreated</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.created.strftime(<span class="string">'%Y.%m.%d'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">formatupdated</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.updated.strftime(<span class="string">'%Y.%m.%d'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모델 설계가 끝났다면 반드시 makemigrations와 migrate를 진행한다.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>admin.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post/admin.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CategoryAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = [<span class="string">'id'</span>,<span class="string">'name'</span>,<span class="string">'slug'</span>]</span><br><span class="line">    prepopulated_fields = &#123;<span class="string">'slug'</span>:(<span class="string">'name'</span>,)&#125;</span><br><span class="line">admin.site.register(Category, CategoryAdmin)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostAdmin</span><span class="params">(admin.ModelAdmin)</span>:</span></span><br><span class="line">    list_display = [<span class="string">'id'</span>,<span class="string">'title'</span>,<span class="string">'slug'</span>,<span class="string">'created'</span>,<span class="string">'updated'</span>]</span><br><span class="line">    ordering = [<span class="string">'-updated'</span>,<span class="string">'-created'</span>]</span><br><span class="line">    prepopulated_fields = &#123;<span class="string">'slug'</span>: (<span class="string">'title'</span>,)&#125;</span><br><span class="line">admin.site.register(Post, PostAdmin)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>views.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># post/views.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.views.generic.list <span class="keyword">import</span> ListView</span><br><span class="line"><span class="keyword">from</span> django.views.generic.edit <span class="keyword">import</span> CreateView, UpdateView, DeleteView</span><br><span class="line"><span class="keyword">from</span> django.views.generic.detail <span class="keyword">import</span> DetailView</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostList</span><span class="params">(ListView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    <span class="comment"># paginate 테스트를 위해 1로 설정</span></span><br><span class="line">    paginate_by = <span class="number">1</span></span><br><span class="line">    template_name = <span class="string">'post/post_list.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 해당 category에 속한 리스트만을 불러오기 위해</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_queryset</span><span class="params">(self)</span>:</span></span><br><span class="line">        queryset = super().get_queryset()</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'category_slug'</span> <span class="keyword">in</span> self.kwargs:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                category = Category.objects.get(slug=self.kwargs[<span class="string">'category_slug'</span>])</span><br><span class="line">                queryset = queryset.filter(category=category)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> queryset</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostDetail</span><span class="params">(DetailView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    template_name = <span class="string">'post/post_detail.html'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>context_processors.py를 생성하고 작성한 후, settings.py도 수정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># context 항목을 만드는 데 있어서 중복 작업이 있을 경우,</span></span><br><span class="line"><span class="comment"># context_processors를 만들어서 사용하면 중복 작업을 제거할 수 있다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># post/contest_processors.py</span></span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Category</span><br><span class="line"></span><br><span class="line"><span class="comment"># 상위 카테고리만 구별하기 위해</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">category</span><span class="params">(request)</span>:</span></span><br><span class="line">    categories = Category.objects.filter(parent_category=<span class="literal">None</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">'categories'</span>: categories&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># config/settings.py</span></span><br><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">#...</span></span><br><span class="line">        <span class="string">'OPTIONS'</span>: &#123;</span><br><span class="line">            <span class="string">'context_processors'</span>: [</span><br><span class="line">                <span class="string">'django.template.context_processors.debug'</span>,</span><br><span class="line">                <span class="string">'django.template.context_processors.request'</span>,</span><br><span class="line">                <span class="string">'django.contrib.auth.context_processors.auth'</span>,</span><br><span class="line">                <span class="string">'django.contrib.messages.context_processors.messages'</span>,</span><br><span class="line">                <span class="comment"># 추가</span></span><br><span class="line">                <span class="string">'post.context_processors.category'</span>,</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>urls.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># config/urls.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.views.static <span class="keyword">import</span> serve</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path,re_path, include</span><br><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'ckeditor/'</span>, include(<span class="string">'ckeditor_uploader.urls'</span>)),</span><br><span class="line">    re_path(<span class="string">r'^media/(?P&lt;path&gt;.*)$'</span>, serve, &#123;<span class="string">'document_root'</span>:settings.MEDIA_ROOT&#125;),</span><br><span class="line">    <span class="comment"># post.urls 추가</span></span><br><span class="line">    path(<span class="string">''</span>, include(<span class="string">'post.urls'</span>))</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> settings.DEBUG:</span><br><span class="line">    <span class="keyword">import</span> debug_toolbar</span><br><span class="line">    urlpatterns = [</span><br><span class="line">        path(<span class="string">'__debug__/'</span>, include(debug_toolbar.urls)),</span><br><span class="line">    ] + urlpatterns</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># post/urls.py</span></span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> .views <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">app_name = <span class="string">'post'</span></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'detail/&lt;slug&gt;/'</span>, PostDetail.as_view(), name=<span class="string">'post_detail'</span>),</span><br><span class="line">    path(<span class="string">'&lt;category_slug&gt;/'</span>, PostList.as_view(), name=<span class="string">'post_list_with_category'</span>),</span><br><span class="line">    path(<span class="string">''</span>, PostList.as_view(), name=<span class="string">'post_list'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>template 파일을 생성하고 작성한다.</p>
+</li>
+</ol>
+<ul>
+<li><p>layout/base.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&#123;% block title %&#125;Blog&#123;% endblock %&#125;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">integrity</span>=<span class="string">"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"</span> <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-expand-lg navbar-light bg-light sticky-top"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"navbar-toggler"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span> <span class="attr">data-target</span>=<span class="string">"#navbarSupportedContent"</span></span></span><br><span class="line"><span class="tag">                <span class="attr">aria-controls</span>=<span class="string">"navbarSupportedContent"</span> <span class="attr">aria-expanded</span>=<span class="string">"false"</span> <span class="attr">aria-label</span>=<span class="string">"Toggle navigation"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"navbar-toggler-icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"collapse navbar-collapse"</span> <span class="attr">id</span>=<span class="string">"navbarSupportedContent"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"navbar-nav mr-auto"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item active"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"nav-item"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"nav-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Guest Book<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"form-inline my-2 my-lg-0"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-control mr-sm-2"</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">placeholder</span>=<span class="string">"Search"</span> <span class="attr">aria-label</span>=<span class="string">"Search"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-outline-success my-2 my-sm-0"</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>Search<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">    &#123;% block content %&#125;</span><br><span class="line"></span><br><span class="line">    &#123;% endblock %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">integrity</span>=<span class="string">"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">integrity</span>=<span class="string">"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">integrity</span>=<span class="string">"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post/templates/post/post_list.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row mt-3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col col-md-2"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- category --&gt;</span></span><br><span class="line">        &#123;% include 'post/category_list.html' %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-10 col-md-8"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- list --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table table-striped"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>#<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>title<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>created<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>updated<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                &#123;% if user.is_authenticated %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>update<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">            &#123;% for object in object_list %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.id&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123;object.get_absolute_url&#125;&#125;"</span>&gt;</span>&#123;&#123;object.title&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.formatcreated&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;object.formatupdated&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                &#123;% if user.is_authenticated %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'post:post_update' object.id %&#125;"</span>&gt;</span>update<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;% url 'post:post_delete' object.id %&#125;"</span>&gt;</span>delete<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        &#123;% if is_paginated %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">nav</span> <span class="attr">aria-label</span>=<span class="string">"Page navigation"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination justify-content-center"</span>&gt;</span></span><br><span class="line">                &#123;% if page_obj.has_previous %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"?page=&#123;&#123;page_obj.previous_page_number&#125;&#125;"</span>&gt;</span>Previous<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% else %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Previous<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">                &#123;% for page in paginator.page_range %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"?page=&#123;&#123;page&#125;&#125;"</span>&gt;</span>&#123;&#123;page&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% endfor %&#125;</span><br><span class="line">                &#123;% if page_obj.has_next %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"?page=&#123;&#123;page_obj.next_page_number&#125;&#125;"</span>&gt;</span>Next<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% else %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"page-link"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Next<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                &#123;% endif %&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">        &#123;% endif %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post/templates/post/category_list.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"accordion"</span> <span class="attr">id</span>=<span class="string">"category_list"</span>&gt;</span></span><br><span class="line">    &#123;% for category in categories %&#125;</span><br><span class="line">        &#123;% include 'post/part_category_list.html' %&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post/templates/post/part_category_list.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> &#123;% <span class="attr">if</span> <span class="attr">parent_id</span> %&#125; <span class="attr">class</span>=<span class="string">"collapse card category_sub_&#123;&#123;parent_id&#125;&#125;"</span> &#123;% <span class="attr">else</span> %&#125; <span class="attr">class</span>=<span class="string">"card"</span> &#123;% <span class="attr">endif</span> %&#125;&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span> <span class="attr">style</span>=<span class="string">"padding:0;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"mb-0"</span>&gt;</span></span><br><span class="line">            &#123;% if parent_id %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-link"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123;category.get_absolute_url&#125;&#125;"</span>&gt;</span></span><br><span class="line">                &#123;&#123;category&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            &#123;% else %&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-link"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">data-target</span>=<span class="string">".category_sub_&#123;&#123;category.id&#125;&#125;"</span> <span class="attr">aria-expanded</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">                &#123;&#123;category&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            &#123;% endif %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- related_name을 쓰지 않았기 때문에 [default_name]_set으로 불러온다. --&gt;</span></span><br><span class="line">&#123;% if category.category_set %&#125;</span><br><span class="line"><span class="comment">&lt;!-- category.id를 parent_id로 사용 --&gt;</span></span><br><span class="line">&#123;% with category.id as parent_id %&#125;</span><br><span class="line">&#123;% for category in category.category_set.all %&#125;</span><br><span class="line">&#123;% include 'post/part_category_list.html' %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br><span class="line">&#123;% endwith %&#125;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>post/templates/post/post_detail.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends 'base.html' %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block title %&#125;</span><br><span class="line"><span class="comment">&lt;!-- 커스텀 템플릿 태그 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- truncatechars : 문자열을 지정 글자 개수까지 제한 --&gt;</span></span><br><span class="line">&#123;&#123;object.title|truncatechars:15&#125;&#125;</span><br><span class="line">&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block content %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row mt-3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span></span><br><span class="line">        &#123;% include 'post/category_list.html' %&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-8"</span>&gt;</span></span><br><span class="line">        &#123;&#123;object.text|safe&#125;&#125;</span><br><span class="line"></span><br><span class="line">        Tags :</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>커스텀 템플릿 태그 만들기</p>
+<ul>
+<li>커스텀 탬플릿 태그를 만들렸면 templatetags 폴더를 만들어야 한다.</li>
+<li>templatetags에 작성한 파일 이름으로 템플릿 파일에서 불러올 수 있다.</li>
+<li><p>템플릿 라이브러리 변수를 만든다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templatetags/exam.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> template</span><br><span class="line"></span><br><span class="line">register = template.Library()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>필터를 등록할 때는 다음과 같이 사용한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templatetags/exam.py</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@ register.filter</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_two</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> value + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록한 필터는 다음과 같이 사용한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load exam %&#125;</span><br><span class="line">&#123;&#123;변수|add_two&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>추가 인자가 있는 필터는 다음과 같이 사용한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># templatetags/exam.py</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@register.filter</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">string_append</span><span class="params">(left, right)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> left+<span class="string">"-"</span>+right</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록한 필터는 다음과 같이 사용한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load exam %&#125;</span><br><span class="line">&#123;&#123;'string1'|string_append:'string2'&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>태그를 등록할 때는 다음과 같이 사용한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@register.simple_tag</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_template</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_to_string(<span class="string">'exam/test.html'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>등록한 태그는 다음과 같이 사용한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% load exam %&#125;</span><br><span class="line">&#123;% print_template %&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 태그 결과를 변수로 지정할 경우 --&gt;</span></span><br><span class="line">&#123;% load exam %&#125;</span><br><span class="line">&#123;% print_template as test %&#125;</span><br><span class="line">&#123;&#123;test&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/06/04/190604-Django-Study/" data-id="cjwiwqb42002yadwuesdxo6yw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.06.04 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-06-04",
+        "dateCreated": "2019-06-04",
+        "dateModified": "2019-06-05",
+        "url": "http://JINUKK.github.io/2019/06/04/190604-Django-Study/",
+        "description": "new blog Project
+새로운 블로그 웹 사이트를 만들어본다.
+
+프로젝트를 생성하고 django를 설치한다.
+1$ pip install django
+
+django project를 만든다.
+1$ django-admin startproject config .
+
+다음 항목을 설치하고 해당 관련 항목들의 코드를 추가하도록 한다.
+123456789101112"
+        "wordCount": 4054
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/03/190603-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.06.03 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/04/190604-Django-Study/" class="title">2019.06.04 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/03/190603-Django-Study/" class="title">2019.06.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-03T07:21:17.000Z" itemprop="datePublished">2019-06-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/31/190531-Django-Study/" class="title">2019.05.31 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-31T07:21:12.000Z" itemprop="datePublished">2019-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/30/190530-Django-Study/" class="title">2019.05.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-30T07:21:07.000Z" itemprop="datePublished">2019-05-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/28/190528-Django-Study/" class="title">2019.05.28 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-28T07:19:49.000Z" itemprop="datePublished">2019-05-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/06/04/190604-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

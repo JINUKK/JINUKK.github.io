@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.05.30 Django Study | Develop Memory</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="blog Project 클래스형 뷰와 함수형 뷰  클래스형 뷰(Class Based View) 자주 처리하는 내용을 미리 구현해 놓은 뷰 제대로 사용하려면 내부 속성 값들을 알고 있어야 함 클래스형 뷰를 사용하여 뷰를 구현해도 최종 실행에서는 함수형 뷰로 변환되어 동작 as_view() 메서드를 통해 클래스형 뷰를 함수형 뷰로 변환   함수형 뷰(Funct">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.05.30 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/05/30/190530-Django-Study/index.html">
+<meta property="og:site_name" content="Develop Memory">
+<meta property="og:description" content="blog Project 클래스형 뷰와 함수형 뷰  클래스형 뷰(Class Based View) 자주 처리하는 내용을 미리 구현해 놓은 뷰 제대로 사용하려면 내부 속성 값들을 알고 있어야 함 클래스형 뷰를 사용하여 뷰를 구현해도 최종 실행에서는 함수형 뷰로 변환되어 동작 as_view() 메서드를 통해 클래스형 뷰를 함수형 뷰로 변환   함수형 뷰(Funct">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-05T07:22:15.209Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.05.30 Django Study">
+<meta name="twitter:description" content="blog Project 클래스형 뷰와 함수형 뷰  클래스형 뷰(Class Based View) 자주 처리하는 내용을 미리 구현해 놓은 뷰 제대로 사용하려면 내부 속성 값들을 알고 있어야 함 클래스형 뷰를 사용하여 뷰를 구현해도 최종 실행에서는 함수형 뷰로 변환되어 동작 as_view() 메서드를 통해 클래스형 뷰를 함수형 뷰로 변환   함수형 뷰(Funct">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop Memory</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190530-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.05.30 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/05/30/190530-Django-Study/" class="article-date">
+            <time datetime="2019-05-30T07:21:07.000Z" itemprop="datePublished">2019-05-30</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="blog-Project"><a href="#blog-Project" class="headerlink" title="blog Project"></a>blog Project</h2><ul>
+<li><p>클래스형 뷰와 함수형 뷰</p>
+<ul>
+<li>클래스형 뷰(Class Based View)<ul>
+<li>자주 처리하는 내용을 미리 구현해 놓은 뷰</li>
+<li>제대로 사용하려면 내부 속성 값들을 알고 있어야 함</li>
+<li>클래스형 뷰를 사용하여 뷰를 구현해도 최종 실행에서는 함수형 뷰로 변환되어 동작</li>
+<li>as_view() 메서드를 통해 클래스형 뷰를 함수형 뷰로 변환</li>
+</ul>
+</li>
+<li><p>함수형 뷰(Function Based View)</p>
+<ul>
+<li>함수형 뷰는 request를 기본 매개변수로 가짐</li>
+<li><p>URL에 포함된 패턴그룹을 추가 변수로 가짐</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urls.py</span></span><br><span class="line">path(<span class="string">'update/&lt;int:pk&gt;/'</span>, create_view)</span><br><span class="line"></span><br><span class="line"><span class="comment"># views.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_view</span><span class="params">(request, pk)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>클래스형 뷰는 자주 처리하는 일들을 묶어둔 반면, 함수형 뷰는 모든 일을 직접 처리해야 함</p>
+</li>
+</ul>
+</li>
+<li><p>클래스형 뷰와 함수형 뷰 비교</p>
+<ul>
+<li><p>View</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> JsonResponse</span><br><span class="line"><span class="keyword">from</span> django.views.generic <span class="keyword">import</span> View</span><br><span class="line"></span><br><span class="line"><span class="comment"># 제네릭 뷰를 사용해서 클래스형 뷰를 만들 때는 상속</span></span><br><span class="line"><span class="comment"># 함수형 뷰처럼 모든 내용을 직접 구현하고 싶을 때는 View를 상속받는다 ex) API View</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexView</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> render(self.request, <span class="string">'blog/test.html'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">indexView</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'blog/test.html'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JsonView</span><span class="params">(View)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">"data"</span>: <span class="string">'test'</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">"data"</span>: <span class="string">'test'</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">jsonView</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"GET"</span>:</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">"data"</span>: <span class="string">'test'</span>&#125;)</span><br><span class="line">    <span class="keyword">elif</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        <span class="keyword">return</span> JsonResponse(&#123;<span class="string">"data"</span>: <span class="string">'test'</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>CRUDL(Create, Detail, Update, Delete, List View)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.views.generic.detail <span class="keyword">import</span> DetailView</span><br><span class="line"><span class="keyword">from</span> django.views.generic.list <span class="keyword">import</span> ListView</span><br><span class="line"><span class="keyword">from</span> django.views.generic.edit <span class="keyword">import</span> CreateView, UpdateView, DeleteView</span><br><span class="line"><span class="keyword">from</span> .models <span class="keyword">import</span> Post</span><br><span class="line"><span class="keyword">from</span> django.core.paginator <span class="keyword">import</span> Paginator</span><br><span class="line"><span class="keyword">from</span> django.db.models <span class="keyword">import</span> Q</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> Http404</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> redirect</span><br><span class="line"><span class="keyword">from</span> django.forms <span class="keyword">import</span> modelform_factory</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> get_object_or_404</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> reverse_lazy</span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line"><span class="comment"># ListView CBV</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostList</span><span class="params">(ListView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    <span class="comment"># default : app_name/model_list.html</span></span><br><span class="line">    template_name = <span class="string">'blog/post_list.html'</span></span><br><span class="line">    <span class="comment"># 페이징 기능 활성화</span></span><br><span class="line">    paginate_by = <span class="number">1</span>  <span class="comment"># 한 페이지당 요소 갯수</span></span><br><span class="line">    page_kwarg = <span class="string">'p'</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    setup()</span></span><br><span class="line"><span class="string">    dispatch()</span></span><br><span class="line"><span class="string">    get_queryset()</span></span><br><span class="line"><span class="string">    get_context_data()</span></span><br><span class="line"><span class="string">    render_to_response()</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line"> <span class="comment"># ListView FBV</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postList</span><span class="params">(request, page)</span>:</span></span><br><span class="line">    <span class="comment"># 페이지 번호 얻기</span></span><br><span class="line">    page = page <span class="keyword">if</span> page <span class="keyword">else</span> <span class="number">1</span></span><br><span class="line">    page = int(page)</span><br><span class="line"></span><br><span class="line">    queryset = Post.objects.all()  <span class="comment"># CBV : get_queryset</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># post으로 전달된 데이터 중에서 search 변수값 찾기</span></span><br><span class="line">    search_keyword = request.POST.get(<span class="string">'search'</span>, request.GET.get(<span class="string">'search'</span>, <span class="literal">None</span>))</span><br><span class="line">    context_data = &#123;&#125;</span><br><span class="line">    <span class="keyword">if</span> search_keyword:</span><br><span class="line">        q = Q(text__icontains=search_keyword)</span><br><span class="line">        q |= Q(title__icontains=search_keyword)</span><br><span class="line">        queryset = queryset.filter(q)</span><br><span class="line">        context_data.update(&#123;<span class="string">'search_keyword'</span>: search_keyword&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 페이징 처리</span></span><br><span class="line">    paginator = Paginator(queryset, <span class="number">1</span>)</span><br><span class="line">    page = paginator.page(page)</span><br><span class="line">    context_data.update(&#123;<span class="string">'object_list'</span>: page.object_list,</span><br><span class="line">                        <span class="string">'paginator'</span>: paginator, <span class="string">'page_obj'</span>: page, <span class="string">'is_paginated'</span>: <span class="literal">True</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'blog/post_list.html'</span>, context_data)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># DetailView CBV</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostDetail</span><span class="params">(DetailView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    template_name = <span class="string">'blog/post_detail.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># pk의 이름을 post_id로 바꾸기</span></span><br><span class="line">    pk_url_kwarg = <span class="string">'post_id'</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    setup()</span></span><br><span class="line"><span class="string">    dispatch()</span></span><br><span class="line"><span class="string">    get()</span></span><br><span class="line"><span class="string">    get_object() - get_queryset()</span></span><br><span class="line"><span class="string">    get_context_data()</span></span><br><span class="line"><span class="string">    render_to_response()</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># DetailView FBV</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postDetail</span><span class="params">(request, pk)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        object = Post.objects.get(pk=pk)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">raise</span> Http404(<span class="string">"Post does not exists"</span>)</span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'blog/post_detail.html'</span>, &#123;<span class="string">'object'</span>: object&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># CreateView CBV</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostCreate</span><span class="params">(CreateView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    fields = [<span class="string">'category'</span>, <span class="string">'title'</span>, <span class="string">'text'</span>]</span><br><span class="line">    <span class="comment"># appname/model_form.html</span></span><br><span class="line">    template_name = <span class="string">'blog/post_create.html'</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># success_url이 있는 Create, Update, Delete의 경우</span></span><br><span class="line">    <span class="comment"># 클래스의 속성값을 사용해서 URL을 만들 수 있다.</span></span><br><span class="line">    <span class="comment"># success_url = 'pattern/&#123;변수명&#125;/'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">form_valid</span><span class="params">(self, form)</span>:</span></span><br><span class="line">        form.instance.author_id = self.request.user.id</span><br><span class="line">        <span class="keyword">return</span> super().form_valid(form)</span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    setup()</span></span><br><span class="line"><span class="string">    dispatch()</span></span><br><span class="line"><span class="string">    get()</span></span><br><span class="line"><span class="string">    post() - 저장처리</span></span><br><span class="line"><span class="string">    get_context_data()</span></span><br><span class="line"><span class="string">    render_to_response()</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># CreateView FBV</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postCreate</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># form_factory : 폼을 쉽게 생성하기 위해 사용하는 클래스, Factory 패턴</span></span><br><span class="line">    <span class="comment"># 기존에 Form Class를 별도로 만드는 방식보다 간단하게 폼을 만들어서 처리할 수 있다는 장점이 있다.</span></span><br><span class="line">    form_class = modelform_factory(Post, fields=[<span class="string">'category'</span>, <span class="string">'title'</span>, <span class="string">'text'</span>])</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        form = form_class(request.POST)</span><br><span class="line">        form.instance.author_id = request.user.id</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            instance = form.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(instance)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        form = form_class()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'blog/post_create.html'</span>, &#123;<span class="string">'form'</span>: form&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># UpdateView CBV</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostUpdate</span><span class="params">(UpdateView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    fields = [<span class="string">'category'</span>, <span class="string">'title'</span>, <span class="string">'text'</span>]</span><br><span class="line">    template_name = <span class="string">'blog/post_update.html'</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    setup()</span></span><br><span class="line"><span class="string">    dispatch()</span></span><br><span class="line"><span class="string">    get()</span></span><br><span class="line"><span class="string">    post() - 저장처리</span></span><br><span class="line"><span class="string">    get_object()</span></span><br><span class="line"><span class="string">    get_context_data()</span></span><br><span class="line"><span class="string">    render_to_response()</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># UpdateView FBV</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postUpdate</span><span class="params">(request, pk)</span>:</span></span><br><span class="line">    object = get_object_or_404(Post, pk=pk)</span><br><span class="line">    form_class = modelform_factory(Post, fields=[<span class="string">'category'</span>, <span class="string">'title'</span>, <span class="string">'text'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        <span class="comment"># 수정시에는 instance 필히 지정</span></span><br><span class="line">        form = form_class(request.POST, instance=object)</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():</span><br><span class="line">            instance = form.save()</span><br><span class="line">            <span class="keyword">return</span> redirect(instance)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 수정시에는 instance 필히 지정</span></span><br><span class="line">        form = form_class(instance=object)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render(request, <span class="string">'blog/post_update.html'</span>, &#123;<span class="string">'form'</span>: form&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># DeleteView CBV</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostDelete</span><span class="params">(DeleteView)</span>:</span></span><br><span class="line">    model = Post</span><br><span class="line">    template_name = <span class="string">'blog/post_delete.html'</span></span><br><span class="line">    success_url = reverse_lazy(<span class="string">'blog:post_list_cbv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># DeleteView FBV</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postDelete</span><span class="params">(request, pk)</span>:</span></span><br><span class="line">    post = get_object_or_404(Post, pk=pk)</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">"POST"</span>:</span><br><span class="line">        post.delete()</span><br><span class="line">        <span class="keyword">return</span> redirect(reverse(<span class="string">'blog:post_list_cbv'</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> render(request, <span class="string">'blog/post_delete.html'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>URL 만들기</p>
+<ol>
+<li><p>reverse</p>
+<ul>
+<li>가장 일반적으로 활용하는 메서드</li>
+<li>URLConf에 있는 패턴 이름과 URL에 들어갈 매개변수 전달<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> reverse</span><br><span class="line"></span><br><span class="line">reverse(<span class="string">'blog:list'</span>)</span><br><span class="line">reverse(<span class="string">'blog:update'</span>, args=[<span class="number">1</span>])</span><br><span class="line">reverse(<span class="string">'blog:update'</span>, kwargs=&#123;<span class="string">'pk'</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>reverse_lazy</p>
+<ul>
+<li>클래스형 뷰에서 success_url을 설정할 때<ul>
+<li>reverse를 사용하면 URLConf가 로드되기 전에 동작하므로 오류 발생</li>
+<li>이럴 경우, reverse_lazy를 사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.url <span class="keyword">import</span> reverse_lazy</span><br><span class="line"></span><br><span class="line">reverse_lazy(<span class="string">'blog:list'</span>)</span><br><span class="line">reverse_lazy(<span class="string">'blog:update'</span>, args=[<span class="number">1</span>])</span><br><span class="line">reverse_lazy(<span class="string">'blog:update'</span>, kwargs=&#123;<span class="string">'pk'</span>:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>resolve_url</p>
+<ul>
+<li>reverse의 간략화 버전<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> resolve_url</span><br><span class="line"></span><br><span class="line">resolve_url(<span class="string">'blog:list'</span>)</span><br><span class="line">resolve_url(<span class="string">'blog:update'</span>, <span class="number">1</span>)</span><br><span class="line">resolve_url(<span class="string">'blog:update'</span>, pk=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># object의 get_absolute_url을 호출하고 싶은 경우</span></span><br><span class="line">resolve_url(object)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>redirect</p>
+<ul>
+<li>URL을 생성하고 해당 URL로 이동하는 redirect response 메세지 생성<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> redirect</span><br><span class="line"></span><br><span class="line">redirect(<span class="string">'blog:list'</span>)</span><br><span class="line">redirect(<span class="string">'blog:update'</span>, <span class="number">1</span>)</span><br><span class="line">redirect(<span class="string">'blog:update'</span>, pk=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># object의 get_absolute_url을 호출하고 싶은 경우</span></span><br><span class="line">redirect(object)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>resolve</p>
+<ul>
+<li>주어진 URL로부터 URLConf 정보를 찾아냄<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> resolve</span><br><span class="line"></span><br><span class="line">url = resolve(request.path)</span><br><span class="line">url.route</span><br><span class="line">url.view_name</span><br><span class="line">url.url_name</span><br><span class="line">url.func</span><br><span class="line">url.kwargs</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/05/30/190530-Django-Study/" data-id="cjwiwqb41002wadwu0kojww3d" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.05.30 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-05-30",
+        "dateCreated": "2019-05-30",
+        "dateModified": "2019-06-05",
+        "url": "http://JINUKK.github.io/2019/05/30/190530-Django-Study/",
+        "description": "blog Project
+클래스형 뷰와 함수형 뷰
+
+클래스형 뷰(Class Based View)
+자주 처리하는 내용을 미리 구현해 놓은 뷰
+제대로 사용하려면 내부 속성 값들을 알고 있어야 함
+클래스형 뷰를 사용하여 뷰를 구현해도 최종 실행에서는 함수형 뷰로 변환되어 동작
+as_view() 메서드를 통해 클래스형 뷰를 함수형 뷰로 변환
+
+
+함수형 뷰(Funct"
+        "wordCount": 1974
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/05/31/190531-Django-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2019.05.31 Django Study
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/05/28/190528-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.05.28 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/04/190604-Django-Study/" class="title">2019.06.04 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/03/190603-Django-Study/" class="title">2019.06.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-03T07:21:17.000Z" itemprop="datePublished">2019-06-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/31/190531-Django-Study/" class="title">2019.05.31 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-31T07:21:12.000Z" itemprop="datePublished">2019-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/30/190530-Django-Study/" class="title">2019.05.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-30T07:21:07.000Z" itemprop="datePublished">2019-05-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/28/190528-Django-Study/" class="title">2019.05.28 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-28T07:19:49.000Z" itemprop="datePublished">2019-05-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">17</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/05/30/190530-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
