@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Develop Memory">
 <meta property="og:description" content="editor Project WYSIWYG 사용하기  WYSIWYG(What you see is what you get) 웹 브라우저에서 사용할 수 있는 HTML 편집기   django-ckeditor 모듈을 다운받아 설치한다. 1$ pip install django-ckeditor  settings.py의 INSTALLED_APPS에 추가한다. 1234IN">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-05T07:15:04.976Z">
+<meta property="og:updated_time" content="2019-06-05T07:16:21.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.05.27 Django Study">
 <meta name="twitter:description" content="editor Project WYSIWYG 사용하기  WYSIWYG(What you see is what you get) 웹 브라우저에서 사용할 수 있는 HTML 편집기   django-ckeditor 모듈을 다운받아 설치한다. 1$ pip install django-ckeditor  settings.py의 INSTALLED_APPS에 추가한다. 1234IN">
@@ -192,6 +192,30 @@
 </li>
 </ol>
 </li>
+<li><p>CKEditor 이미지 파일 업로더 설정하기</p>
+<ol>
+<li><p>django-ckeditor 모듈을 다운받아 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install django-ckeditor</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py의 INSTALLED_APPS에 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    <span class="comment">#...</span></span><br><span class="line">    <span class="string">'ckeditor'</span>,</span><br><span class="line">    <span class="string">'ckeditor_uploader'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>settings.py에 MEDIA_ROOT를 꼭 지정한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Amazon AWS S3를 사용할 경우, 지정할 필요가 없다.</span></span><br><span class="line">MEDIA_ROOT = os.path.join(BASE_DIR, <span class="string">'media'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># MEDIA_ROOT 하위 폴더에 전용 경로를 설정하고 싶다면</span></span><br><span class="line">CKEDITOR_UPLOAD_PATH = <span class="string">'upload/'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 에디터를 사용하는 유저별로 자신이 올린 파일드란 사용할 수 있게 하려면</span></span><br><span class="line">CKEDITOR_RESTRICT_BY_USER = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>models.py를 작성한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="keyword">from</span> ckeditor_uploader.fields <span class="keyword">import</span> RichTextUploadingField</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    content = RichTextUploadingField()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>migrate를 진행한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ python manage.py makemigrations [앱 이름]</span><br><span class="line"></span><br><span class="line">$ python manage.py migrate [앱 이름]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>urls.py에 업로더 내용을 추가한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    <span class="comment">#...</span></span><br><span class="line">    path(<span class="string">'ckeditor/'</span>, include(<span class="string">'ckeditor_uploader.urls'</span>)),</span><br><span class="line">    <span class="comment"># Amazon AWS S3를 사용하지 않는 경우, media 파일 서빙하기</span></span><br><span class="line">    re_path(<span class="string">r'^media/(?P&lt;path&gt;.*)$'</span>, serve, &#123;<span class="string">'document_root'</span>:settings.MEDIA_ROOT&#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일을 업로드하여 확인한다.</p>
+</li>
+</ol>
+</li>
 </ul>
 
         </div>
@@ -200,7 +224,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/05/27/190527-Django-Study/" data-id="cjwiw93kh002qixwumsjyocqx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/05/27/190527-Django-Study/" data-id="cjwiwf7jy002otowuts5waoak" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -290,7 +314,7 @@ django-ckeditor 모듈을 다운받아 설치한다.
 
 settings.py의 INSTALLED_APPS에 추가한다.
 1234IN"
-        "wordCount": 183
+        "wordCount": 407
     }
 </script>
 
