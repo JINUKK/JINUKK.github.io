@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="python,radix">
     
-    <meta name="description" content="기수(radix)  한 자리에 표현할 수 있는 수  10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9  2진수 - 0, 1  16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F  ‘0b’는 2진수 1a = 0b1010 # 0b는 2진수  ‘0x’는 16진수  hex()를 이용하여 16진수 변환">
+    <meta name="description" content="기수(radix) 한 자리에 표현할 수 있는 수 10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9 2진수 - 0, 1 16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F  ‘0b’는 2진수 1a = 0b1010 # 0b는 2진수  ‘0x’는 16진수  hex()를 이용하여 16진수 변환 1234">
 <meta name="keywords" content="python,radix">
 <meta property="og:type" content="article">
 <meta property="og:title" content="radix">
 <meta property="og:url" content="http://JINUKK.github.io/2019/03/07/190307-Python-radix/index.html">
 <meta property="og:site_name" content="KOO|삽질하는개발로그">
-<meta property="og:description" content="기수(radix)  한 자리에 표현할 수 있는 수  10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9  2진수 - 0, 1  16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F  ‘0b’는 2진수 1a = 0b1010 # 0b는 2진수  ‘0x’는 16진수  hex()를 이용하여 16진수 변환">
+<meta property="og:description" content="기수(radix) 한 자리에 표현할 수 있는 수 10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9 2진수 - 0, 1 16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F  ‘0b’는 2진수 1a = 0b1010 # 0b는 2진수  ‘0x’는 16진수  hex()를 이용하여 16진수 변환 1234">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-16T07:20:51.721Z">
+<meta property="og:updated_time" content="2019-06-16T07:29:16.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="radix">
-<meta name="twitter:description" content="기수(radix)  한 자리에 표현할 수 있는 수  10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9  2진수 - 0, 1  16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F  ‘0b’는 2진수 1a = 0b1010 # 0b는 2진수  ‘0x’는 16진수  hex()를 이용하여 16진수 변환">
+<meta name="twitter:description" content="기수(radix) 한 자리에 표현할 수 있는 수 10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9 2진수 - 0, 1 16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F  ‘0b’는 2진수 1a = 0b1010 # 0b는 2진수  ‘0x’는 16진수  hex()를 이용하여 16진수 변환 1234">
     
 
     
@@ -172,14 +172,10 @@
         
         <div class="article-entry" itemprop="articleBody">
             <ul>
-<li><p>기수(radix)</p>
-</li>
-<li><p>한 자리에 표현할 수 있는 수</p>
-</li>
-<li><p>10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9</p>
-</li>
-<li><p>2진수 - 0, 1</p>
-</li>
+<li>기수(radix)</li>
+<li>한 자리에 표현할 수 있는 수</li>
+<li>10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9</li>
+<li>2진수 - 0, 1</li>
 <li><p>16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F</p>
 <ul>
 <li><p>‘0b’는 2진수</p>
@@ -188,10 +184,10 @@
 <li><p>‘0x’는 16진수</p>
 </li>
 <li><p>hex()를 이용하여 16진수 변환</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hex(a) <span class="comment"># 0x는 16진수</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'0xa'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">b = <span class="number">0b10101111</span></span><br><span class="line"></span><br><span class="line">hex(b)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'0xaf'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hex(a) <span class="comment"># 0x는 16진수</span></span><br><span class="line">&gt;&gt; <span class="string">'0xa'</span></span><br><span class="line"></span><br><span class="line">b = <span class="number">0b10101111</span></span><br><span class="line">hex(b)</span><br><span class="line">&gt;&gt; <span class="string">'0xaf'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>bin()을 이용하여 2진수 변환</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">0xaf</span></span><br><span class="line"></span><br><span class="line">bin(c)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="string">'0b10101111'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="number">0xaf</span></span><br><span class="line"></span><br><span class="line">bin(c)</span><br><span class="line">&gt;&gt; <span class="string">'0b10101111'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -283,13 +279,9 @@
         "url": "http://JINUKK.github.io/2019/03/07/190307-Python-radix/",
         "description": "
 기수(radix)
-
 한 자리에 표현할 수 있는 수
-
 10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9
-
 2진수 - 0, 1
-
 16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
 
 ‘0b’는 2진수
@@ -298,8 +290,8 @@
 ‘0x’는 16진수
 
 hex()를 이용하여 16진수 변환
-"
-        "wordCount": 115
+1234"
+        "wordCount": 103
     }
 </script>
 
