@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="python,algorithm,linear search">
     
-    <meta name="description" content="Linear search(선형 탐색)  데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음 12345678910111213141516171819202122232425262728293031323334def linear_search(li, target):    &quot;&quot;&quot;    linear_search(li, target) -&amp;gt; idx">
+    <meta name="description" content="Linear search(선형 탐색)  데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음1234567891011121314151617181920def linear_search(li, target):    &quot;&quot;&quot;    linear_search(li, target) -&amp;gt; idx    반환값은 target이 있다면 target의 인덱스">
 <meta name="keywords" content="python,algorithm,linear search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linear search">
 <meta property="og:url" content="http://JINUKK.github.io/2019/03/07/190307-Algorithm-linear-search/index.html">
 <meta property="og:site_name" content="KOO|삽질하는개발로그">
-<meta property="og:description" content="Linear search(선형 탐색)  데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음 12345678910111213141516171819202122232425262728293031323334def linear_search(li, target):    &quot;&quot;&quot;    linear_search(li, target) -&amp;gt; idx">
+<meta property="og:description" content="Linear search(선형 탐색)  데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음1234567891011121314151617181920def linear_search(li, target):    &quot;&quot;&quot;    linear_search(li, target) -&amp;gt; idx    반환값은 target이 있다면 target의 인덱스">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-16T07:10:00.973Z">
+<meta property="og:updated_time" content="2019-06-16T10:04:46.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linear search">
-<meta name="twitter:description" content="Linear search(선형 탐색)  데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음 12345678910111213141516171819202122232425262728293031323334def linear_search(li, target):    &quot;&quot;&quot;    linear_search(li, target) -&amp;gt; idx">
+<meta name="twitter:description" content="Linear search(선형 탐색)  데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음1234567891011121314151617181920def linear_search(li, target):    &quot;&quot;&quot;    linear_search(li, target) -&amp;gt; idx    반환값은 target이 있다면 target의 인덱스">
     
 
     
@@ -174,8 +174,7 @@
             <ol>
 <li><p>Linear search(선형 탐색)</p>
 <ul>
-<li><p>데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_search</span><span class="params">(li, target)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    linear_search(li, target) -&gt; idx</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    반환값은 target이 있다면 target의 인덱스</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    target이 없다면 None을 반환</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(li)):</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> li[i] == target:</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li = [<span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">linear_search(li, <span class="number">8</span>)</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">3</span></span><br><span class="line"></span><br><span class="line">print(linear_search(li,<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+<li>데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linear_search</span><span class="params">(li, target)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    linear_search(li, target) -&gt; idx</span></span><br><span class="line"><span class="string">    반환값은 target이 있다면 target의 인덱스</span></span><br><span class="line"><span class="string">    target이 없다면 None을 반환</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(li)):</span><br><span class="line">        <span class="keyword">if</span> li[i] == target:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li = [<span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">1</span>]</span><br><span class="line">linear_search(li, <span class="number">8</span>)</span><br><span class="line">&gt;&gt; <span class="number">3</span></span><br><span class="line"></span><br><span class="line">print(linear_search(li,<span class="number">10</span>))</span><br><span class="line">&gt;&gt; <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -268,9 +267,8 @@
         "description": "
 Linear search(선형 탐색)
 
-데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음
-12345678910111213141516171819202122232425262728293031323334def linear_search(li, target):    """    linear_search(li, target) -&gt; idx    "
-        "wordCount": 200
+데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음1234567891011121314151617181920def linear_search(li, target):    """    linear_search(li, target) -&gt; idx    반환값은 target이 있다면 target의 인덱스 "
+        "wordCount": 168
     }
 </script>
 
