@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>dictionary | KOO|삽질하는개발로그</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="python,dictionary">
+    
+    <meta name="description" content="key와 value가 한 쌍 hash로 구현(대응 관계)   Basic  key:value로 입력 중괄호 사용 1dic = &amp;#123;&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3&amp;#125;  새로운 값을 삽입 123dic[&apos;e&apos;] = 4dic&amp;gt;&amp;gt; &amp;#123;&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3, &apos;e&apos;: 4&amp;#125;  기존 값 변경이 가능 1">
+<meta name="keywords" content="python,dictionary">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dictionary">
+<meta property="og:url" content="http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/index.html">
+<meta property="og:site_name" content="KOO|삽질하는개발로그">
+<meta property="og:description" content="key와 value가 한 쌍 hash로 구현(대응 관계)   Basic  key:value로 입력 중괄호 사용 1dic = &amp;#123;&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3&amp;#125;  새로운 값을 삽입 123dic[&apos;e&apos;] = 4dic&amp;gt;&amp;gt; &amp;#123;&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3, &apos;e&apos;: 4&amp;#125;  기존 값 변경이 가능 1">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-16T06:32:14.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="dictionary">
+<meta name="twitter:description" content="key와 value가 한 쌍 hash로 구현(대응 관계)   Basic  key:value로 입력 중괄호 사용 1dic = &amp;#123;&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3&amp;#125;  새로운 값을 삽입 123dic[&apos;e&apos;] = 4dic&amp;gt;&amp;gt; &amp;#123;&apos;a&apos;: 1, &apos;b&apos;: 2, &apos;c&apos;: 3, &apos;e&apos;: 4&amp;#125;  기존 값 변경이 가능 1">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jinwook&#39;s Sabjil Log</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190305-Python-dictionary" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        dictionary
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/03/05/190305-Python-dictionary/" class="article-date">
+            <time datetime="2019-03-05T06:29:12.000Z" itemprop="datePublished">2019-03-05</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/dictionary/">dictionary</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ul>
+<li>key와 value가 한 쌍</li>
+<li>hash로 구현(대응 관계)</li>
+</ul>
+<ol>
+<li><p>Basic</p>
+<ul>
+<li>key:value로 입력</li>
+<li><p>중괄호 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>새로운 값을 삽입</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic[<span class="string">'e'</span>] = <span class="number">4</span></span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'e'</span>: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>기존 값 변경이 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic[<span class="string">'a'</span>] = <span class="number">20</span></span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">20</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'e'</span>: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>변경이 불가능한 객체를 key로 사용</p>
+</li>
+<li>key 값은 변경이 가능한 객체로 사용 불가능(unhashable)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dic[(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)] = <span class="number">50</span></span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">20</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'e'</span>: <span class="number">4</span>, (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>): <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line">dic[[<span class="number">5</span>, <span class="number">6</span>, <span class="string">'a'</span>]] = <span class="number">60</span> <span class="comment"># 변경이 가능한 객체를 키로 사용 불가능</span></span><br><span class="line">&gt;&gt; TypeError: unhashable type: <span class="string">'list'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>관련 함수들</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir(dic)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dictionary 예시</span></span><br><span class="line">dic = &#123;<span class="string">'a'</span> : <span class="number">1</span>, <span class="string">'b'</span> : <span class="number">2</span>, <span class="string">'c'</span> : <span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+<p> 1) search 계열</p>
+<pre><code>- get() : key로 value 얻기
+- key가 없는 값을 불러오면 에러가 발생하지만, get()을 사용하면 None을 반환
+</code></pre> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">dic.get(<span class="string">'c'</span>)</span><br><span class="line">&gt;&gt; <span class="number">3</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"dic.get('e') : "</span>, dic.get(<span class="string">'e'</span>))</span><br><span class="line">&gt;&gt; dic.get(<span class="string">'e'</span>) :  <span class="literal">None</span></span><br><span class="line">print(<span class="string">"dic['e'] : "</span>, dic[<span class="string">'e'</span>])</span><br><span class="line">&gt;&gt; KeyError: <span class="string">'e'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> dic.get(<span class="string">'e'</span>):</span><br><span class="line">    print(dic[<span class="string">'e'</span>])</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'No data'</span>)  <span class="comment"># dic.get('e') = None이므로 if문이 실행하지 않음</span></span><br><span class="line">&gt;&gt; No data</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(dic[<span class="string">'e'</span>])</span><br><span class="line"><span class="keyword">except</span> KeyError:</span><br><span class="line">    print(<span class="string">'No data'</span>)  <span class="comment"># try except문을 사용</span></span><br><span class="line">&gt;&gt; No data</span><br><span class="line"></span><br><span class="line"><span class="comment"># key 값이 없을 경우, get(key, default_value)를 사용하여 default 값을 대신 가져옴</span></span><br><span class="line">dic.get(<span class="string">'e'</span>, <span class="number">2</span>)</span><br><span class="line">&gt;&gt; <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for문을 사용할 경우, key 값만 가져옴</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> dic:</span><br><span class="line">    print(i, end = <span class="string">' '</span>)</span><br><span class="line">&gt;&gt; a b c</span><br><span class="line"></span><br><span class="line"><span class="comment"># items()를 사용할 경우, key와 value 모두를 가져옴</span></span><br><span class="line"><span class="keyword">for</span> pair <span class="keyword">in</span> dic.items():</span><br><span class="line">    print(pair, end = <span class="string">' '</span>)  <span class="comment"># tuple 형태</span></span><br><span class="line">&gt;&gt; (<span class="string">'a'</span>, <span class="number">1</span>) (<span class="string">'b'</span>, <span class="number">2</span>) (<span class="string">'c'</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dic.items():</span><br><span class="line">print(key, value, end = <span class="string">' '</span>)  <span class="comment"># tuple 형태로 가져오지 않음</span></span><br><span class="line">&gt;&gt; a <span class="number">1</span> b <span class="number">2</span> c <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p> 2) delete 계열</p>
+<pre><code>- pop() : 원하는 key의 value를 반환하고 삭제
+- popitems() : 임의의 key와 value를 반환하고 삭제
+</code></pre> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dic.pop(<span class="string">'b'</span>)</span><br><span class="line">&gt;&gt; <span class="number">2</span></span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">dic.popitem()</span><br><span class="line">&gt;&gt; (<span class="string">'c'</span>, <span class="number">3</span>)</span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<p> 3) insert 계열</p>
+<pre><code>- update() : key가 있으면 원하는 value로 바꾸고 key가 없으면 추가
+- setdefault() : 원하는 key의 value를 찾아 반환
+</code></pre> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">'a'</span> : <span class="number">1</span>, <span class="string">'b'</span> : <span class="number">2</span>, <span class="string">'c'</span> : <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">dic.update(&#123;<span class="string">'b'</span>:<span class="number">40</span>, <span class="string">'d'</span>:<span class="number">50</span>&#125;)</span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">40</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">50</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># tuple을 사용하면 dictionary 안에서는 key와 value로 넣어줌</span></span><br><span class="line">c = ((<span class="string">'e'</span>, <span class="number">11</span>), (<span class="string">'f'</span>, <span class="number">12</span>))</span><br><span class="line">dic.update(c)</span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">40</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">50</span>, <span class="string">'e'</span>: <span class="number">11</span>, <span class="string">'f'</span>: <span class="number">12</span>&#125;</span><br><span class="line"></span><br><span class="line">dic = &#123;<span class="string">'a'</span> : <span class="number">1</span>, <span class="string">'b'</span> : <span class="number">2</span>, <span class="string">'c'</span> : <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line">dic.setdefault(<span class="string">'b'</span>)</span><br><span class="line">&gt;&gt; <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># setdefault()는 key가 없을 경우, default 값으로 새로운 요소 추가</span></span><br><span class="line">dic.setdefault(<span class="string">'e'</span>, <span class="number">10</span>)</span><br><span class="line">&gt;&gt; <span class="number">10</span></span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'e'</span>: <span class="number">10</span>&#125;</span><br></pre></td></tr></table></figure>
+<p> 4) view 객체 사용</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">dic = &#123;<span class="string">'a'</span> : <span class="number">1</span>, <span class="string">'b'</span> : <span class="number">2</span>, <span class="string">'c'</span> : <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># keys()를 사용하여 key에 관한 view 객체 반환</span></span><br><span class="line"><span class="comment"># list 형변환을 사용하여 list로 사용 가능</span></span><br><span class="line">key_view = dic.keys()</span><br><span class="line">key_view</span><br><span class="line">&gt;&gt; dict_keys([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"></span><br><span class="line">key_list = list(dic.keys())</span><br><span class="line">key_list</span><br><span class="line">&gt;&gt; [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># values()를 사용하여 value에 관한 view 객체 반환</span></span><br><span class="line"><span class="comment"># list 형변환을 사용하여 list로 사용 가능</span></span><br><span class="line">value_view = dic.values()</span><br><span class="line">value_view</span><br><span class="line">&gt;&gt; dict_values([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">value_list = list(dic.values())</span><br><span class="line">value_list</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 요소 값을 추가할 경우, view 객체는 변경됨</span></span><br><span class="line"><span class="comment"># list 형변환을 통해 대입해준 list 변수는 변하지 않음</span></span><br><span class="line">dic[<span class="string">'d'</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line">key_view</span><br><span class="line">&gt;&gt; dict_keys([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>])</span><br><span class="line">value_view</span><br><span class="line">&gt;&gt; dict_values([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line">key_list</span><br><span class="line">&gt;&gt; [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">value_list</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># list 형변환을 다시 해줘야 한다.</span></span><br><span class="line">list(dic.keys())</span><br><span class="line">&gt;&gt; [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 대입해준 list는 여전히 변하지 않는다.</span></span><br><span class="line">key_list</span><br><span class="line">&gt;&gt; [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"></span><br><span class="line">dic</span><br><span class="line">&gt;&gt; &#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>, <span class="string">'c'</span>: <span class="number">3</span>, <span class="string">'d'</span>: <span class="number">4</span>&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/" data-id="cjwykrj5n000mu0wuykpqqrgz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "dictionary",
+        "image": "http://JINUKK.github.io",
+        "keywords": "python dictionary",
+        "genre": "Python",
+        "datePublished": "2019-03-05",
+        "dateCreated": "2019-03-05",
+        "dateModified": "2019-06-16",
+        "url": "http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/",
+        "description": "
+key와 value가 한 쌍
+hash로 구현(대응 관계)
+
+
+Basic
+
+key:value로 입력
+중괄호 사용
+1dic = &#123;'a': 1, 'b': 2, 'c': 3&#125;
+
+새로운 값을 삽입
+123dic['e'] = 4dic&gt;&gt; &#123;'a': 1, 'b': 2, 'c': 3, 'e': 4&#125;
+
+기존 값 변경이 가능
+1"
+        "wordCount": 1008
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/03/05/190305-Python-boolean/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            boolean
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/03/04/190304-Python-tuple/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">tuple</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/06/16/190305-Algorithm-Sort-bubble-sort/" class="title">190305_Algorithm_Sort_bubble_sort</a></p>
+                            <p class="item-date"><time datetime="2019-06-16T06:30:23.000Z" itemprop="datePublished">2019-06-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/04/190604-Django-Study/" class="title">2019.06.04 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/03/190603-Django-Study/" class="title">2019.06.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-03T07:21:17.000Z" itemprop="datePublished">2019-06-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/31/190531-Django-Study/" class="title">2019.05.31 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-31T07:21:12.000Z" itemprop="datePublished">2019-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/30/190530-Django-Study/" class="title">2019.05.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-30T07:21:07.000Z" itemprop="datePublished">2019-05-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">26</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/while/" style="font-size: 10px;">while</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jinukk';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
