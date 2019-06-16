@@ -197,13 +197,10 @@ excel file로 저장하기
         <p class="article-excerpt">
             
 Call by assignment
-
 객체 참조에 의한 호출
-
 stack frame 그림을 직접 그려보자.
 
-변경할 수 없는 객체(immutable)의 경우
-123456789101112131415161718192021222324252627282930def change_value(num, new_num):    num = new_num    print('%d
+변경할 수 없는 객체(immutable)의 경우12345678910111213141516def change_value(num, new_num):    num = new_num    print('%d in change value' % num)# 파이썬에서
         </p>
     </div>
 </article>
@@ -216,6 +213,41 @@ stack frame 그림을 직접 그려보자.
     
     
         <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Python/">Python</a>
+            </div>
+            <div class="date"><time datetime="2019-03-12T07:34:58.000Z" itemprop="datePublished">2019-03-12</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/12/190312-Python-closure/">closure</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+함수 내부에 상태 정보를 가지고 있다.
+
+상태 정보 = 관련 있는 데이터(함수가 처리하려는 데이터)
+
+class를 사용할 수 없을 때 쓴다.
+
+계좌 만들기 예제
+12345678910111213141516171819202122232425262728293031323334353637383940414243def account(clnt_name, balance):
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -241,10 +273,14 @@ stack frame 그림을 직접 그려보자.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -280,14 +316,10 @@ stack frame 그림을 직접 그려보자.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -323,10 +355,14 @@ stack frame 그림을 직접 그려보자.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -363,14 +399,10 @@ hex()를 이용하여 16진수 변환
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -400,10 +432,14 @@ argument(parameter) - 매개 변수
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -437,14 +473,10 @@ blocking이 걸린 다음에 함수가 호출되며 stack fra
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -476,43 +508,6 @@ unpacking
 위 container 변수를 unpacking 함
 변수 앞에 *를 붙여주면 묶음
 1234567a, b, *c = container
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2019-03-06T06:45:22.000Z" itemprop="datePublished">2019-03-06</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/06/190306-Python-pass-continue/">pass와 continue</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-pass
-
-실행할 코드가 없다는 것을 의미
-다음 코드를 실행12345for i in range(1, 5):    if i == 3:        pass    print(i, end = ' ') # 3일 때에도 print 함수를 실행함&gt;&gt; 1 2 3 4
-
-
-
-continue
-
-조건이 참이 되면 다음 순번으로 강제 이동12345for i in r
         </p>
     </div>
 </article>
@@ -616,7 +611,7 @@ continue
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
         </div>
     </div>
 
