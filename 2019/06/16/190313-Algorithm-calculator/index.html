@@ -6,19 +6,22 @@
     
 
     
-    <title>Tag: if | KOO|삽질하는개발로그</title>
+    <title>calculator | KOO|삽질하는개발로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+        <meta name="keywords" content>
+    
     <meta name="description" content="What I learned">
-<meta property="og:type" content="website">
-<meta property="og:title" content="KOO|삽질하는개발로그">
-<meta property="og:url" content="http://JINUKK.github.io/tags/if/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="calculator">
+<meta property="og:url" content="http://JINUKK.github.io/2019/06/16/190313-Algorithm-calculator/index.html">
 <meta property="og:site_name" content="KOO|삽질하는개발로그">
 <meta property="og:description" content="What I learned">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-16T11:34:06.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KOO|삽질하는개발로그">
+<meta name="twitter:title" content="calculator">
 <meta name="twitter:description" content="What I learned">
     
 
@@ -128,61 +131,141 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>if</em>
+    uncategorized
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-190313-Algorithm-calculator" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2019-03-06T06:46:37.000Z" itemprop="datePublished">2019-03-06</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/06/190306-Python-ternary-operator/">삼항 연산자</a>
+        calculator
         </h1>
     
 
-        <p class="article-excerpt">
-            
-‘참인 경우의 값’ if ‘조건’ else ‘거짓인 경우의 값’
-
-if문의 일반 사용 예
-123456a = 10if a &gt;= 10:    print('good!')else:    print('bad!')&gt;&gt; good!
-
-삼항 연산자 적용 예
-1234# if 조건문 결과는 앞에, else 조건문 결과는 뒤에 위치시킨다.# if else 간에
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/16/190313-Algorithm-calculator/" class="article-date">
+            <time datetime="2019-06-16T10:15:36.000Z" itemprop="datePublished">2019-06-16</time>
+        </a>
     </div>
-</article>
-    
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
         </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/06/16/190313-Algorithm-calculator/" data-id="cjwyvsgxq004v1hwupvkqvee5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "calculator",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "",
+        "datePublished": "2019-06-16",
+        "dateCreated": "2019-06-16",
+        "dateModified": "2019-06-16",
+        "url": "http://JINUKK.github.io/2019/06/16/190313-Algorithm-calculator/",
+        "description": ""
+        "wordCount": 1
+    }
+</script>
+
+</article>
+
+    <section id="comments">
     
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-
-    </div></section>
+    
+    </section>
 
 
 
@@ -204,6 +287,19 @@ if문의 일반 사용 예
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/04/190604-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.06.04 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -347,11 +443,13 @@ if문의 일반 사용 예
     var disqus_shortname = 'jinukk';
     
     
+    var disqus_url = 'http://JINUKK.github.io/2019/06/16/190313-Algorithm-calculator/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
