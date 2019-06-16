@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="python,algorithm,sort,bubble\_sort">
     
-    <meta name="description" content="bubble_sort(거품 정렬)  Comparson sort의 한 종류 두 수를 비교해서 정렬하는 방법 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬 한번 순회가 끝나면 가장 큰 자료가 맨 뒤로 이동 2번째 순회에서는 맨 끝에 잇는 자료는 정렬에서 제외되는 방식 순회할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어남12345678910">
+    <meta name="description" content="bubble sort(거품 정렬) Comparison sort의 한 종류 두 수를 비교해서 정렬하는 방법 O(n^2) simple sort 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬 한번 순회가 끝나면 가장 큰 자료가 맨뒤로 이동 2번째 순회에서는 맨 끝에 있는 자료를 정렬에서 제외되는 방식 순회할 때마다 정렬에서 제외되는 데이터가">
 <meta name="keywords" content="python,algorithm,sort,bubble\_sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bubble sort">
 <meta property="og:url" content="http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/index.html">
 <meta property="og:site_name" content="KOO|삽질하는개발로그">
-<meta property="og:description" content="bubble_sort(거품 정렬)  Comparson sort의 한 종류 두 수를 비교해서 정렬하는 방법 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬 한번 순회가 끝나면 가장 큰 자료가 맨 뒤로 이동 2번째 순회에서는 맨 끝에 잇는 자료는 정렬에서 제외되는 방식 순회할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어남12345678910">
+<meta property="og:description" content="bubble sort(거품 정렬) Comparison sort의 한 종류 두 수를 비교해서 정렬하는 방법 O(n^2) simple sort 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬 한번 순회가 끝나면 가장 큰 자료가 맨뒤로 이동 2번째 순회에서는 맨 끝에 있는 자료를 정렬에서 제외되는 방식 순회할 때마다 정렬에서 제외되는 데이터가">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-16T07:00:16.467Z">
+<meta property="og:updated_time" content="2019-06-16T14:40:27.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bubble sort">
-<meta name="twitter:description" content="bubble_sort(거품 정렬)  Comparson sort의 한 종류 두 수를 비교해서 정렬하는 방법 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬 한번 순회가 끝나면 가장 큰 자료가 맨 뒤로 이동 2번째 순회에서는 맨 끝에 잇는 자료는 정렬에서 제외되는 방식 순회할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어남12345678910">
+<meta name="twitter:description" content="bubble sort(거품 정렬) Comparison sort의 한 종류 두 수를 비교해서 정렬하는 방법 O(n^2) simple sort 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬 한번 순회가 끝나면 가장 큰 자료가 맨뒤로 이동 2번째 순회에서는 맨 끝에 있는 자료를 정렬에서 제외되는 방식 순회할 때마다 정렬에서 제외되는 데이터가">
     
 
     
@@ -172,16 +172,16 @@
         
         <div class="article-entry" itemprop="articleBody">
             <ul>
-<li><p>bubble_sort(거품 정렬)</p>
-<ul>
-<li>Comparson sort의 한 종류</li>
+<li>bubble sort(거품 정렬)</li>
+<li>Comparison sort의 한 종류</li>
 <li>두 수를 비교해서 정렬하는 방법</li>
+<li>O(n^2)</li>
+<li>simple sort</li>
 <li>마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬</li>
-<li>한번 순회가 끝나면 가장 큰 자료가 맨 뒤로 이동</li>
-<li>2번째 순회에서는 맨 끝에 잇는 자료는 정렬에서 제외되는 방식</li>
-<li>순회할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어남<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">li = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(li)</span>:</span></span><br><span class="line">n = len(li)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">1</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n - <span class="number">1</span> - i):</span><br><span class="line">        <span class="keyword">if</span> li[j] &gt; li[j+<span class="number">1</span>]:</span><br><span class="line">            li[j], li[j + <span class="number">1</span>] = li[j + <span class="number">1</span>], li[j]</span><br><span class="line"></span><br><span class="line">bubble_sort(li)</span><br><span class="line">li</span><br><span class="line">&gt;&gt; [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li>한번 순회가 끝나면 가장 큰 자료가 맨뒤로 이동</li>
+<li>2번째 순회에서는 맨 끝에 있는 자료를 정렬에서 제외되는 방식</li>
+<li><p>순회할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어남</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(li)</span>:</span></span><br><span class="line"> </span><br><span class="line">    n = len(li)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n-i<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> li[j] &gt; li[j+<span class="number">1</span>]:</span><br><span class="line">                li[j], li[j+<span class="number">1</span>] = li[j+<span class="number">1</span>], li[j]</span><br><span class="line"></span><br><span class="line">                </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        num_data = int(input(<span class="string">'데이터 개수(종료:0):'</span>))</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> num_data:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        data = [random.randint(<span class="number">1</span>,<span class="number">100</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(num_data)]</span><br><span class="line">        print(data)</span><br><span class="line"></span><br><span class="line">        bubble_sort(data)</span><br><span class="line">        print(data)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>python에서의 두 변수 값 바꾸기(swap)</p>
 <ul>
@@ -201,7 +201,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/" data-id="cjwz0wyuk0006spwuqk21yxn0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/" data-id="cjwz2i5op000i0twu8hm7pzsv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -280,15 +280,16 @@
         "dateModified": "2019-06-16",
         "url": "http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/",
         "description": "
-bubble_sort(거품 정렬)
-
-Comparson sort의 한 종류
+bubble sort(거품 정렬)
+Comparison sort의 한 종류
 두 수를 비교해서 정렬하는 방법
+O(n^2)
+simple sort
 마지막 전 자료와 마지막 자료를 비교하여 교환하면서 자료를 정렬
-한번 순회가 끝나면 가장 큰 자료가 맨 뒤로 이동
-2번째 순회에서는 맨 끝에 잇는 자료는 정렬에서 제외되는 방식
-순회할 때마다 정렬에서 제외되는 데이터가 하나씩 늘어남12345678910"
-        "wordCount": 233
+한번 순회가 끝나면 가장 큰 자료가 맨뒤로 이동
+2번째 순회에서는 맨 끝에 있는 자료를 정렬에서 제외되는 방식
+순회할 때마다 정렬에서 제외되는 데이터가 "
+        "wordCount": 374
     }
 </script>
 
@@ -363,6 +364,15 @@ Comparson sort의 한 종류
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2019/06/16/190321-Python-class/" class="title">class</a></p>
+                            <p class="item-date"><time datetime="2019-06-16T14:26:00.000Z" itemprop="datePublished">2019-06-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
                             <p class="item-title"><a href="/2019/06/04/190604-Django-Study/" class="title">2019.06.04 Django Study</a></p>
                             <p class="item-date"><time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time></p>
@@ -396,15 +406,6 @@ Comparson sort의 한 종류
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/05/28/190528-Django-Study/" class="title">2019.05.28 Django Study</a></p>
-                            <p class="item-date"><time datetime="2019-05-28T07:19:49.000Z" itemprop="datePublished">2019-05-28</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -414,7 +415,7 @@ Comparson sort의 한 종류
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
         </div>
     </div>
 
@@ -424,7 +425,7 @@ Comparson sort의 한 종류
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">42</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">48</span></li></ul>
         </div>
     </div>
 
@@ -434,7 +435,7 @@ Comparson sort의 한 종류
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble\_sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a>
+            <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble\_sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a>
         </div>
     </div>
 

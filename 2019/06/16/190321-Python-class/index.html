@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>class | KOO|삽질하는개발로그</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="python,class">
+    
+    <meta name="description" content="OOP 설계  계좌 만들기 예제를 통해 구현 class 모습을 살펴보자. 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838">
+<meta name="keywords" content="python,class">
+<meta property="og:type" content="article">
+<meta property="og:title" content="class">
+<meta property="og:url" content="http://JINUKK.github.io/2019/06/16/190321-Python-class/index.html">
+<meta property="og:site_name" content="KOO|삽질하는개발로그">
+<meta property="og:description" content="OOP 설계  계좌 만들기 예제를 통해 구현 class 모습을 살펴보자. 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-16T14:32:17.656Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class">
+<meta name="twitter:description" content="OOP 설계  계좌 만들기 예제를 통해 구현 class 모습을 살펴보자. 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Jinwook&#39;s Sabjil Log</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190321-Python-class" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        class
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/16/190321-Python-class/" class="article-date">
+            <time datetime="2019-06-16T14:26:00.000Z" itemprop="datePublished">2019-06-16</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/class/">class</a>, <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ul>
+<li><p>OOP 설계</p>
+<ul>
+<li>계좌 만들기 예제를 통해 구현</li>
+<li><p>class 모습을 살펴보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 전역 함수 : 어느 클래스에도 속하지 않는다.</span></span><br><span class="line"><span class="comment"># OOP 설계에서는 쓰지 않는 방법이기 때문에 staticmethod 개념 존재</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Account</span>:</span></span><br><span class="line">    <span class="comment"># 클래스 이름의 맨 앞은 대문자로 하도록 하자.</span></span><br><span class="line">    <span class="comment"># 클래스 멤버(class member)</span></span><br><span class="line">    <span class="comment"># 모든 객체가 공유한다.</span></span><br><span class="line">    <span class="comment"># 전역 변수(global variable)를 대체</span></span><br><span class="line">    <span class="comment"># ex) 이자율</span></span><br><span class="line">    interest_rate = <span class="number">0.08</span></span><br><span class="line">    num_of_account = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 클래스 메소드(class method)</span></span><br><span class="line">    <span class="comment"># 객체가 하나도 없는 상태에서도 호출이 가능!!</span></span><br><span class="line">    <span class="comment"># 전역 함수(global variable)를 대체</span></span><br><span class="line">    <span class="comment"># 전역 함수를 대체할 때는 static method를 쓸 수도 있다.</span></span><br><span class="line">    <span class="comment"># 대체 생성자(alternative constructor)</span></span><br><span class="line">    <span class="comment"># cls는 클래스 자체를 받는다.</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># staticmethod는 메소드처럼 보이지만 함수 : 전역 함수</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> a + b</span><br><span class="line">    </span><br><span class="line"><span class="meta">    @classmethod #데코레이터</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_num_of_account</span><span class="params">(cls)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Account.get_num_of_account() -&gt; integer</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> cls.num_of_account</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 대체 생성자</span></span><br><span class="line">    <span class="comment"># 받을 데이터에 맞춰서 설계</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">string_constructor</span><span class="params">(cls, string)</span>:</span></span><br><span class="line">        data = string.split(<span class="string">'_'</span>)</span><br><span class="line">        clnt_name = data[<span class="number">0</span>]</span><br><span class="line">        balance = int(data[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> cls(clnt_name, balance)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 생성자(constructor) : 파이썬에서는 오직 하나</span></span><br><span class="line">    <span class="comment"># 객체(object)가 생성될 때 반드시!!! 한번 호출된다.</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, clnt_name, balance)</span>:</span></span><br><span class="line">        <span class="comment"># 인스턴스 멤버(instance member) --&gt; 상태 정보 = 데이터</span></span><br><span class="line">        <span class="comment"># self라는 말은 자기 스스로의 메모리를 가리킨다는 의미</span></span><br><span class="line">        <span class="comment"># self는 객체 메모리를 자체 참조</span></span><br><span class="line">        self.clnt_name = clnt_name</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 변수 앞에 "__"를 붙이면 정보 은닉으로 접근하지 말라는 표시</span></span><br><span class="line">        <span class="comment"># 변환 규칙 중에 "_현재클래스이름__멤버변수"를 하면 접근 가능</span></span><br><span class="line">        self.__balance = balance</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 클래스 멤버에 접근하는 방법</span></span><br><span class="line">        Account.num_of_account += <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 인스턴스 메소드(instance method)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deposit</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        deposit(money) --&gt; boolean</span></span><br><span class="line"><span class="string">        만약에 money &gt; 0이면 입금 성공!</span></span><br><span class="line"><span class="string">        아니면 에러 메시지 출력 후 실패!</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> money &lt; <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"입금은 0원 초과부터 가능합니다."</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.__balance += money</span><br><span class="line">            print(<span class="string">f'<span class="subst">&#123;money&#125;</span>원을 입금하셨고, 현재 남아있는 금액은 <span class="subst">&#123;self.__balance&#125;</span>원입니다.'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 인스턴스 메소드</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">withdraw</span><span class="params">(self, money)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        withdraw(money) --&gt; integer</span></span><br><span class="line"><span class="string">        return : 인출된 돈</span></span><br><span class="line"><span class="string">        만약 잔고가 모자라면 None</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> self.__balance &lt; money:</span><br><span class="line">            print(<span class="string">f'현재 금액은 <span class="subst">&#123;self.__balance&#125;</span>원으로, 출금하실 금액 <span class="subst">&#123;money&#125;</span>원보다 부족하여 출금하실 수 없습니다.'</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.__balance -= money</span><br><span class="line">            print(<span class="string">f'<span class="subst">&#123;money&#125;</span>원을 출금하였고, 현재 남아있는 금액은 <span class="subst">&#123;self.__balance&#125;</span>원입니다.'</span>)</span><br><span class="line">            <span class="keyword">return</span> money</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">transfer</span><span class="params">(self, other, money)</span>:</span></span><br><span class="line">        <span class="comment"># 내 객체가 가진돈</span></span><br><span class="line">        self.__balance -= money</span><br><span class="line">        <span class="comment"># message passing</span></span><br><span class="line">        <span class="comment"># 다른 객체의 상태 정보(인스턴스 멤버)를 변경할 대는 반드시 상대 객체가</span></span><br><span class="line">        <span class="comment"># 가진 메소드를 이용</span></span><br><span class="line">        <span class="comment"># 절대 상대의 객체에 직접 접근하면 안된다.</span></span><br><span class="line">        other.deposit(money)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;self.clnt_name&#125;</span> : <span class="subst">&#123;self.__balance&#125;</span>'</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 객체가 생성되지 않아도 호출이 가능</span></span><br><span class="line">    print(Account.interest_rate)</span><br><span class="line">    print(Account.get_num_of_account())</span><br><span class="line">   </span><br><span class="line">    <span class="comment"># 객체를 생성</span></span><br><span class="line">    my_acnt = Account(<span class="string">'greg'</span>, <span class="number">5000</span>)</span><br><span class="line">    your_acnt = Account(<span class="string">'john'</span>, <span class="number">2000</span>)</span><br><span class="line">    print(my_acnt.interest_rate)</span><br><span class="line">    print(my_acnt.get_num_of_account())</span><br><span class="line">    print(Account.func(<span class="number">5</span>, <span class="number">4</span>))</span><br><span class="line">    print(type(Account.func))</span><br><span class="line">    print(type(Account.get_num_of_account))</span><br><span class="line">    print(type(my_acnt.deposit))</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 대체 생성자를 이용한 객체의 생성</span></span><br><span class="line">    s = <span class="string">'james_6000'</span></span><br><span class="line">    his_acnt = Account.string_constructor(s)</span><br><span class="line">    print(his_acnt)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># instance method 호출하는 방법</span></span><br><span class="line">    <span class="comment"># 외부에서는 self는 자동으로 들어가기 때문에 매개 변수에 쓸 필요가 없다.</span></span><br><span class="line">    my_acnt.deposit(<span class="number">7000</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 메소드 vs 함수(일반)</span></span><br><span class="line">    <span class="comment"># 메소드 = 입력 + 인스턴스 멤버(상태 정보, 데이터)에 의해 결과값이 결정!</span></span><br><span class="line">    <span class="comment">#        = 인스턴스 멤버(상태 정보)를 바꾸는 역할!</span></span><br><span class="line">    <span class="comment"># 함수 = 입력에 의해서 출력이 결정</span></span><br><span class="line">    res1 = my_acnt.withdraw(<span class="number">3000</span>)</span><br><span class="line">    res2 = your_acnt.withdraw(<span class="number">3000</span>)</span><br><span class="line">    print(my_acnt)</span><br><span class="line">    print(your_acnt)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 객체 간에 상호 작용 --&gt; 객체가 가지고 있는 멤버 값(데이터, 상태정보)</span></span><br><span class="line">    <span class="comment"># INTERACTRION by 메소드에 의해!!</span></span><br><span class="line">    <span class="comment"># my_acnt.transfer(your_acnt, 1000)</span></span><br><span class="line">    my_acnt.transfer(your_acnt, <span class="number">1000</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 절대 짜서는 안되는 코드</span></span><br><span class="line">    <span class="comment"># 이렇게 멤버 변수에 직접 접근하는 방법은 좋지 않다.</span></span><br><span class="line">    <span class="comment"># my_acnt.balance -= 1000</span></span><br><span class="line">    <span class="comment"># your_acnt.balance += 1000</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="number">0.08</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0.08</span></span><br><span class="line">   <span class="number">2</span></span><br><span class="line">   <span class="number">9</span></span><br><span class="line">   &lt;<span class="class"><span class="keyword">class</span> '<span class="title">function</span>'&gt;</span></span><br><span class="line"><span class="class">   &lt;<span class="title">class</span> '<span class="title">method</span>'&gt;</span></span><br><span class="line"><span class="class">   &lt;<span class="title">class</span> '<span class="title">method</span>'&gt;</span></span><br><span class="line"><span class="class">   <span class="title">james</span> :</span> <span class="number">6000</span></span><br><span class="line">   <span class="number">7000</span>원을 입금하셨고, 현재 남아있는 금액은 <span class="number">12000</span>원입니다.</span><br><span class="line">   <span class="number">3000</span>원을 출금하였고, 현재 남아있는 금액은 <span class="number">9000</span>원입니다.</span><br><span class="line">   현재 금액은 <span class="number">2000</span>원으로, 출금하실 금액 <span class="number">3000</span>원보다 부족하여 출금하실 수 없습니다.</span><br><span class="line">   greg : <span class="number">9000</span></span><br><span class="line">   john : <span class="number">2000</span></span><br><span class="line">   <span class="number">1000</span>원을 입금하셨고, 현재 남아있는 금액은 <span class="number">3000</span>원입니다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/06/16/190321-Python-class/" data-id="cjwz2i5pj00310twu02upe007" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "class",
+        "image": "http://JINUKK.github.io",
+        "keywords": "python class",
+        "genre": "Python",
+        "datePublished": "2019-06-16",
+        "dateCreated": "2019-06-16",
+        "dateModified": "2019-06-16",
+        "url": "http://JINUKK.github.io/2019/06/16/190321-Python-class/",
+        "description": "
+OOP 설계
+
+계좌 만들기 예제를 통해 구현
+class 모습을 살펴보자.
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838"
+        "wordCount": 1783
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/04/190604-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.06.04 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2019/06/16/190321-Python-class/" class="title">class</a></p>
+                            <p class="item-date"><time datetime="2019-06-16T14:26:00.000Z" itemprop="datePublished">2019-06-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/04/190604-Django-Study/" class="title">2019.06.04 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-04T07:21:21.000Z" itemprop="datePublished">2019-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/03/190603-Django-Study/" class="title">2019.06.03 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-03T07:21:17.000Z" itemprop="datePublished">2019-06-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/31/190531-Django-Study/" class="title">2019.05.31 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-31T07:21:12.000Z" itemprop="datePublished">2019-05-31</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/05/30/190530-Django-Study/" class="title">2019.05.30 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-05-30T07:21:07.000Z" itemprop="datePublished">2019-05-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">56</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">48</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble\_sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jinukk';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/06/16/190321-Python-class/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
