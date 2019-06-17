@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="KOO|삽질하는개발로그">
 <meta property="og:description" content="Django Rest Framework 사용하기 Views.py에서 만든 뷰를 Templates에서 활용해야 할 경우, django Template filter를 사용해야 한다. 프론트엔드 개발자도 django에 대해서 어느정도 알아야 한다는 말이 된다. 이렇게 되면 프론트엔드와 백엔드는 끊임없이 함께 코드를 고쳐야 한다. 따라서 프론트엔드와 백엔드가 완전">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-17T09:26:25.777Z">
+<meta property="og:updated_time" content="2019-06-17T10:20:47.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.06.17 Django Study">
 <meta name="twitter:description" content="Django Rest Framework 사용하기 Views.py에서 만든 뷰를 Templates에서 활용해야 할 경우, django Template filter를 사용해야 한다. 프론트엔드 개발자도 django에 대해서 어느정도 알아야 한다는 말이 된다. 이렇게 되면 프론트엔드와 백엔드는 끊임없이 함께 코드를 고쳐야 한다. 따라서 프론트엔드와 백엔드가 완전">
@@ -339,6 +339,25 @@
 </li>
 </ul>
 </li>
+<li><p>Postman에서도 확인할 수 있다.</p>
+<ul>
+<li>Postman을 설치하고 실행한다.</li>
+<li><p>유저 리스트를 보기 위해 다음과 같이 설정한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Method : GET</span><br><span class="line">Address : 127.0.0.1:8000/accounts/list</span><br><span class="line">Headers : KEY - Authorization</span><br><span class="line">          VALUE - Token [토큰 값]</span><br><span class="line"></span><br><span class="line">위 설정을 입력하고 SEND를 누른다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>유저 리스트가 나오는지 확인하자.</p>
+</li>
+<li><p>tweet 앱에서 글을 작성할 경우 다음과 같이 설정한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Method : POST</span><br><span class="line">Address : 127.0.0.1:8000/tweet/</span><br><span class="line">Headers : KEY - Authorization</span><br><span class="line">          VALUE - Token [토큰 값]</span><br><span class="line">Body : raw/JSON(application/json) 선택</span><br><span class="line">Body 내용: &#123;</span><br><span class="line">            &quot;text&quot;: &quot;test&quot;,</span><br><span class="line">            &quot;author&quot;: 1</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>결과를 확인한다.</p>
+</li>
+<li>설정하는 내용은 swagger 페이지에서 확인하면 된다.<ul>
+<li>메소드와 형식, 입력하는 곳이 어디인지 확인해서 적용하자.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 
         </div>
@@ -347,7 +366,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/06/17/190617-Django-Study/" data-id="cjx06ckea007w7ewuszzoxscd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/06/17/190617-Django-Study/" data-id="cjx08acn3008611wuxt129qhd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -430,7 +449,7 @@ Views.py에서 만든 뷰를 Templates에서 활용해야 할 경우, django Tem
 프론트엔드 개발자도 django에 대해서 어느정도 알아야 한다는 말이 된다.
 이렇게 되면 프론트엔드와 백엔드는 끊임없이 함께 코드를 고쳐야 한다.
 따라서 프론트엔드와 백엔드가 완전"
-        "wordCount": 4082
+        "wordCount": 4243
     }
 </script>
 
