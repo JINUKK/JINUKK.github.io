@@ -12,18 +12,18 @@
     
         <meta name="keywords" content="python,copy">
     
-    <meta name="description" content="리스트 예시   1234567891011121314151617181920li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사를 하면 공간을 복사해서 다른 공간">
+    <meta name="description" content="리스트 예시   12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사를 하면 공간을 복사해서 다른 공간이 생긴다. 하지만 바라보고 있는 대">
 <meta name="keywords" content="python,copy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="얕은 복사(shallow copy)와 깊은 복사(deep copy)">
 <meta property="og:url" content="http://JINUKK.github.io/2019/03/15/190315-Python-copy/index.html">
 <meta property="og:site_name" content="KOO|삽질하는개발로그">
-<meta property="og:description" content="리스트 예시   1234567891011121314151617181920li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사를 하면 공간을 복사해서 다른 공간">
+<meta property="og:description" content="리스트 예시   12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사를 하면 공간을 복사해서 다른 공간이 생긴다. 하지만 바라보고 있는 대">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-16T14:21:19.802Z">
+<meta property="og:updated_time" content="2019-06-18T05:07:49.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="얕은 복사(shallow copy)와 깊은 복사(deep copy)">
-<meta name="twitter:description" content="리스트 예시   1234567891011121314151617181920li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사를 하면 공간을 복사해서 다른 공간">
+<meta name="twitter:description" content="리스트 예시   12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&amp;gt;&amp;gt; [1, 2, 3]li2.append(4)li&amp;gt;&amp;gt; [1, 2, 3, 4]    얕은 복사(shallow copy)  얕은 복사를 하면 공간을 복사해서 다른 공간이 생긴다. 하지만 바라보고 있는 대">
     
 
     
@@ -173,7 +173,7 @@
         <div class="article-entry" itemprop="articleBody">
             <ul>
 <li><p>리스트 예시</p>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 참조(reference). 둘은 완벽하게 같은 객체.</span></span><br><span class="line"></span><br><span class="line">li2 = li</span><br><span class="line"></span><br><span class="line">li2</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">li2.append(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">li</span><br><span class="line"></span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">li = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment"># 참조(reference). 둘은 완벽하게 같은 객체.</span></span><br><span class="line"></span><br><span class="line">li2 = li</span><br><span class="line">li2</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">li2.append(<span class="number">4</span>)</span><br><span class="line">li</span><br><span class="line">&gt;&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ol>
@@ -205,7 +205,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/03/15/190315-Python-copy/" data-id="cjx08aclc002f11wuomky851p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/03/15/190315-Python-copy/" data-id="cjx1ck08x002tt6wul0cof8wt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -281,18 +281,19 @@
         "genre": "Python",
         "datePublished": "2019-03-15",
         "dateCreated": "2019-03-15",
-        "dateModified": "2019-06-16",
+        "dateModified": "2019-06-18",
         "url": "http://JINUKK.github.io/2019/03/15/190315-Python-copy/",
         "description": "
 리스트 예시
-  1234567891011121314151617181920li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&gt;&gt; [1, 2, 3]li2.append(4)li&gt;&gt; [1, 2, 3, 4]
+  12345678910li = [1, 2, 3]# 참조(reference). 둘은 완벽하게 같은 객체.li2 = lili2&gt;&gt; [1, 2, 3]li2.append(4)li&gt;&gt; [1, 2, 3, 4]
 
 
 
 얕은 복사(shallow copy)
 
-얕은 복사를 하면 공간을 복사해서 다른 공간"
-        "wordCount": 393
+얕은 복사를 하면 공간을 복사해서 다른 공간이 생긴다.
+하지만 바라보고 있는 대"
+        "wordCount": 373
     }
 </script>
 
