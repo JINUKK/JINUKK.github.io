@@ -188,6 +188,47 @@ Views.py에서 만든 뷰를 Templates에서 활용해야 할 경우, django Tem
             <div class="category">
             <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
             </div>
+            <div class="date"><time datetime="2019-06-10T06:33:45.000Z" itemprop="datePublished">2019-06-10</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/06/10/190610-Django-Study/">2019.06.10 Django Study</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+allauth template 파일 수정하기
+
+django-allauth를 사용했을때, 이미 만들어진 template 파일을 사용하게 된다.
+template 파일을 커스텀하려면 다음과 같이 진행하도록 한다.
+
+
+회원을 관리하는 앱에서 template 폴더를 생성한다.
+
+회원을 관리하는 앱 이름은 account로 하지 않는 것이 좋다.
+만약 account로
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            </div>
             <div class="date"><time datetime="2019-06-07T05:27:00.000Z" itemprop="datePublished">2019-06-07</time></div>
         </div>
         
@@ -207,14 +248,10 @@ Views.py에 추가 작성한다.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -248,10 +285,14 @@ django project를 만든다.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -287,14 +328,10 @@ DB 엔진
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -326,10 +363,14 @@ Amazon에서는 ACM Service를 통해 무료로 인증서를 발급하고 있다
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -363,14 +404,10 @@ as_view() 메서드를 통해 클래스형 뷰를 함수형 뷰로 변환
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -406,10 +443,14 @@ openssl의 버전을 확인한다.
     </div>
 </article>
     
+        </div>
+    
 
     
     
     
+    
+        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -444,14 +485,10 @@ settings.py의 INSTALLED_APPS에 추가한다.
     </div>
 </article>
     
-        </div>
-    
 
     
     
     
-    
-        <div class="article-row">
     
         <article class="article article-summary">
     <div class="article-summary-inner">
@@ -475,43 +512,6 @@ EC2에 장고 서버 셋팅하기
 
 EC2에 SSH로 접속한다.
 12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
-            </div>
-            <div class="date"><time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/22/190522-Django-Study/">2019.05.22 Django Study</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Django Project
-EC2에 웹 서버 설정하기
-
-EC2에 SSH로 접속한다.
-1$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]
-
-접속이 성공했다면 패키지를 최신으로 업데이트한다.
-1$ sudo apt-get update
-
-Nginx를 설치한다.
-12# apt-get 사용$ sudo apt-get install
         </p>
     </div>
 </article>
@@ -574,6 +574,15 @@ Nginx를 설치한다.
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/10/190610-Django-Study/" class="title">2019.06.10 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-10T06:33:45.000Z" itemprop="datePublished">2019-06-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
                             <p class="item-title"><a href="/2019/06/07/190607-Django-Study/" class="title">2019.06.07 Django Study</a></p>
                             <p class="item-date"><time datetime="2019-06-07T05:27:00.000Z" itemprop="datePublished">2019-06-07</time></p>
                         </div>
@@ -597,15 +606,6 @@ Nginx를 설치한다.
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/05/31/190531-Django-Study/" class="title">2019.05.31 Django Study</a></p>
-                            <p class="item-date"><time datetime="2019-05-31T07:21:12.000Z" itemprop="datePublished">2019-05-31</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -615,7 +615,7 @@ Nginx를 설치한다.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">58</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">59</span></li></ul>
         </div>
     </div>
 
@@ -625,7 +625,7 @@ Nginx를 설치한다.
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 
