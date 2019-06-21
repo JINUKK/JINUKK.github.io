@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>2019.06.20 Django Study | KOO|개발메모리</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="DOCKER Basic 가상 컴퓨팅 환경과 비슷한 컨테이너 서비스 초기에는 LXC(Linux Container) 방식으로 구현되어 리눅스에서만 동작했었다. 현재는 runC라는 방식으로 변경되어 다양한 운영체제에서 사용할 수 있다.  httpsL//hub.docker.com 에 접속해 가입을 진행한다. 추가 정보는 입력하지 않아도 된다. email 인증까지">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.06.20 Django Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/06/20/190620-Django-Study/index.html">
+<meta property="og:site_name" content="KOO|개발메모리">
+<meta property="og:description" content="DOCKER Basic 가상 컴퓨팅 환경과 비슷한 컨테이너 서비스 초기에는 LXC(Linux Container) 방식으로 구현되어 리눅스에서만 동작했었다. 현재는 runC라는 방식으로 변경되어 다양한 운영체제에서 사용할 수 있다.  httpsL//hub.docker.com 에 접속해 가입을 진행한다. 추가 정보는 입력하지 않아도 된다. email 인증까지">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T10:39:02.867Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.06.20 Django Study">
+<meta name="twitter:description" content="DOCKER Basic 가상 컴퓨팅 환경과 비슷한 컨테이너 서비스 초기에는 LXC(Linux Container) 방식으로 구현되어 리눅스에서만 동작했었다. 현재는 runC라는 방식으로 변경되어 다양한 운영체제에서 사용할 수 있다.  httpsL//hub.docker.com 에 접속해 가입을 진행한다. 추가 정보는 입력하지 않아도 된다. email 인증까지">
+    
+    <link rel="canonical" href="http://JINUKK.github.io/2019/06/20/190620-django-study/">
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Develop &amp; Sabjil Log</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-190620-Django-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2019.06.20 Django Study
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/06/20/190620-Django-Study/" class="article-date">
+            <time datetime="2019-06-20T10:38:08.000Z" itemprop="datePublished">2019-06-20</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="DOCKER-Basic"><a href="#DOCKER-Basic" class="headerlink" title="DOCKER Basic"></a>DOCKER Basic</h2><ul>
+<li>가상 컴퓨팅 환경과 비슷한 컨테이너 서비스</li>
+<li>초기에는 LXC(Linux Container) 방식으로 구현되어 리눅스에서만 동작했었다.</li>
+<li><p>현재는 runC라는 방식으로 변경되어 다양한 운영체제에서 사용할 수 있다.</p>
+<ol>
+<li>httpsL//hub.docker.com 에 접속해 가입을 진행한다.<ul>
+<li>추가 정보는 입력하지 않아도 된다.</li>
+<li>email 인증까지 진행하도록 한다.</li>
+</ul>
+</li>
+<li><p>도커를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 리눅스에서 설치 시</span></span><br><span class="line">$ curl -s https://get.docker.com/ | sudo sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># curl이 없다면</span></span><br><span class="line">$ sudo apt-get -y install curl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>도커의 권한을 변경한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 관리자 계정 권한</span></span><br><span class="line">$ sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>docker 명령을 실행하여 옵션이 나타나는지 확인한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>도커에서 ubuntu 18.04 가상 컨테이너를 사용해본다.</p>
+<ul>
+<li>run 명령어를 사용하여 이미지명을 지정하고 새로운 컨테이너를 실행한다.</li>
+<li>컨테이너는 프로세스가 돌고있는 동안만 유효하다.<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run ubuntu:18.04</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>다음 명령을 통해 현재 로컬에 있는 이미지 목록을 볼 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image ls</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다음 명령을 통해 bash shell를 실행할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --rm -it ubuntu:18.04 bin/bash</span><br><span class="line"><span class="comment"># --rm : 실행 종료 후 컨테이너 제거</span></span><br><span class="line"><span class="comment"># -it : 터미널 사용</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>nginx를 설치하고 서버 접속 테스트를 해본다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 포트는 여러 개를 지정할 수 있음</span></span><br><span class="line">$ docker container run --rm -it -p 8080:80 ubuntu:18.04 bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment"># -y 옵션은 yes</span></span><br><span class="line">$ apt-get -y update</span><br><span class="line"></span><br><span class="line">$ apt-get -y install nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># nginx version 확인</span></span><br><span class="line">$ nginx -v</span><br><span class="line"></span><br><span class="line">$ service nginx start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 서버에 접속하여 확인해보자.(127.0.0.1:8080)</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>베이스 파일을 만들어서 원하는 추가 프로그램 설치 목록을 넣어본다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim Dockerfile.base</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>추가를 원하는 프로그램을 넣으면 된다.</li>
+<li>Amazon AWS의 EC2를 이용하여 배포할 때 넣은 내용을 넣었다.</li>
+<li>supervisor 명령을 통해 설정 파일을 복사하는 명령어를 입력한다.<ul>
+<li>docker는 하나의 프로세스만 동작하는 명령을 실행할 수 있다.</li>
+<li>동작하고 있는 프로세스가 없는 경우 컨테이너는 종료된다.</li>
+<li>nginx와 uwsgi가 모두 동작해야 하기 때문에 supervisor 모듈을 사용한다.</li>
+</ul>
+</li>
+<li>FROM의 내용은 base image를 지정하는 것이기 때문에 정해져 있는 목록에서 지정해야 한다.</li>
+<li>RUN을 통해 생성 및 설치를 한다.</li>
+<li>ADD를 통해 이미 만들어진 파일을 복사할 수 있다.</li>
+<li><p>bash shell teminal를 하나 더 실행하여 추가 프로그램 설치 명령어를 직접 입력해보고 추가하도록 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[Dockerfile.base의 내용]</span><br><span class="line"></span><br><span class="line">FROM django:latest</span><br><span class="line">MAINTAINER askjw123@naver.com</span><br><span class="line"></span><br><span class="line">RUN apt-get -y update</span><br><span class="line">RUN apt-get -y install nginx</span><br><span class="line">RUN apt-get -y install python3-dev python3-venv python3-pip</span><br><span class="line">RUN useradd -b /home -m -s /bin/bash django</span><br><span class="line">RUN usermod -a -G www-data django</span><br><span class="line">RUN mkdir -p /var/www/django</span><br><span class="line">RUN mkdir /var/www/django/run</span><br><span class="line">RUN mkdir /var/www/django/logs</span><br><span class="line">RUN mkdir /var/www/django/ini</span><br><span class="line"></span><br><span class="line">ADD ./conf/nginx/default /etc/nginx/sites-available/default</span><br><span class="line">ADD ./conf/uwsgi/uwsgi.ini /var/www/django/ini/uwsgi.ini</span><br><span class="line">ADD ./conf/requirements.txt /var/www/django/requirements.txt</span><br><span class="line"></span><br><span class="line">RUN python3 -m venv /var/www/django/venv</span><br><span class="line">RUN /var/www/django/venv/bin/pip3 install -r /var/www/django/requirements.txt</span><br><span class="line">RUN /var/www/django/venv/bin/django-admin startproject config /var/www/django</span><br><span class="line"></span><br><span class="line">RUN apt-get -y install supervisor</span><br><span class="line">ADD ./conf/supervisord.conf /etc/supervisor/supervisord.conf</span><br><span class="line"></span><br><span class="line">CMD [&quot;/usr/bin/supervisord&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>로컬에 conf 폴더를 만들어서 복사할 파일 내용들을 생성해둔다.</p>
+<ul>
+<li><p>conf/requirements.txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Django==2.2.2</span><br><span class="line">uwsgi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>conf/supervisord.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[supervisord]</span><br><span class="line">nodaemon=true</span><br><span class="line"></span><br><span class="line">[program:nginx]</span><br><span class="line">command = nginx -g &quot;daemon off;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>conf/nginx/default</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">upstream django &#123;</span><br><span class="line">    server unix:/var/www/django/run/uwsgi.sock;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    access_log /var/www/django/logs/access.log;</span><br><span class="line">    error_log /var/www/django/logs/error.log;</span><br><span class="line">    server_name _;</span><br><span class="line"></span><br><span class="line">    location = /favicon.ico &#123; access_log off; log_not_found off; &#125;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">            include         /etc/nginx/uwsgi_params;</span><br><span class="line">            uwsgi_pass      django;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>conf/uwsgi/uwsgi.ini</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[uwsgi]</span><br><span class="line">uid = django</span><br><span class="line">base = /var/www/django</span><br><span class="line"></span><br><span class="line">home = %(base)/venv</span><br><span class="line">chdir = %(base)</span><br><span class="line">module = config.wsgi:application</span><br><span class="line">env = DJANGO_SETTINGS_MODULE=config.settings</span><br><span class="line"></span><br><span class="line">master = true</span><br><span class="line">processes = 5</span><br><span class="line"></span><br><span class="line">socket = %(base)/run/uwsgi.sock</span><br><span class="line">logto = %(base)/logs/uwsgi.log</span><br><span class="line">chown-socket = %(uid):www-data</span><br><span class="line">chmod-socket = 660</span><br><span class="line">vacuum = true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>conf/uwsgi/uwsgi.service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=uWSGI Emperor service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">ExecStart=/var/www/django/venv/bin/uwsgi --emperor /var/www/django/ini</span><br><span class="line">User=django</span><br><span class="line">Group=www-data</span><br><span class="line">Restart=on-failure</span><br><span class="line">KillSignal=SIGQUIT</span><br><span class="line">Type=notify</span><br><span class="line">NotifyAccess=all</span><br><span class="line">StandardError=syslog</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>새로운 내용으로 이미지를 만들어 본다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 베이스를 사용하여 처음 이미지를 생성할 경우, 시간이 어느정도 걸릴 수 있다.</span></span><br><span class="line">$ docker iamge build -f Dockerfile.base -t django:0.2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>생성된 이미지로 컨테이너를 실행해보고 사이트에도 접속해본다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run it --rm -p 7000:80 django:0.2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/06/20/190620-Django-Study/" data-id="cjx5yp9wc00avxxwuadk0k5ep" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.06.20 Django Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-06-20",
+        "dateCreated": "2019-06-20",
+        "dateModified": "2019-06-21",
+        "url": "http://JINUKK.github.io/2019/06/20/190620-Django-Study/",
+        "description": "DOCKER Basic
+가상 컴퓨팅 환경과 비슷한 컨테이너 서비스
+초기에는 LXC(Linux Container) 방식으로 구현되어 리눅스에서만 동작했었다.
+현재는 runC라는 방식으로 변경되어 다양한 운영체제에서 사용할 수 있다.
+
+httpsL//hub.docker.com 에 접속해 가입을 진행한다.
+추가 정보는 입력하지 않아도 된다.
+email 인증까지 "
+        "wordCount": 789
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/06/19/190619-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.06.19 Django Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/20/190620-Django-Study/" class="title">2019.06.20 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-20T10:38:08.000Z" itemprop="datePublished">2019-06-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/19/190619-Django-Study/" class="title">2019.06.19 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-19T09:12:34.000Z" itemprop="datePublished">2019-06-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/18/190618-Django-Study/" class="title">2019.06.18 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-18T07:33:17.000Z" itemprop="datePublished">2019-06-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/17/190617-Django-Study/" class="title">2019.06.17 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-17T09:25:22.000Z" itemprop="datePublished">2019-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
+                            <p class="item-title"><a href="/2019/06/10/190610-Django-Study/" class="title">2019.06.10 Django Study</a></p>
+                            <p class="item-date"><time datetime="2019-06-10T06:33:45.000Z" itemprop="datePublished">2019-06-10</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">62</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble\_sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dummy-double-linked-list/" style="font-size: 10px;">dummy double linked list</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/linked-list/" style="font-size: 13.33px;">linked list</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 13.33px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/single-linked-list/" style="font-size: 10px;">single linked list</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/stopiteration/" style="font-size: 13.33px;">stopiteration</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/yield-from/" style="font-size: 10px;">yield from</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jinukk';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/06/20/190620-Django-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
