@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="KOO|개발메모리">
 <meta property="og:description" content="Elastic Beanstalk로 배포하기 배포하기에 앞서 S3와 RDS는 자동으로 만들어지지 않기 때문에 설정을 완료한 후 진행해야 한다. 먼저 Elastic Beanstalk API 키를 설정해야 한다.  Amazon AWS에서 서비스 탭에 IAM으로 이동한다. 사용자 메뉴로 이동하여 사용자 추가를 클릭한다. 사용자 이름을 입력하고 액세스 유형은 [프로">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-21T07:45:51.234Z">
+<meta property="og:updated_time" content="2019-06-21T09:18:23.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.06.18 Django Study">
 <meta name="twitter:description" content="Elastic Beanstalk로 배포하기 배포하기에 앞서 S3와 RDS는 자동으로 만들어지지 않기 때문에 설정을 완료한 후 진행해야 한다. 먼저 Elastic Beanstalk API 키를 설정해야 한다.  Amazon AWS에서 서비스 탭에 IAM으로 이동한다. 사용자 메뉴로 이동하여 사용자 추가를 클릭한다. 사용자 이름을 입력하고 액세스 유형은 [프로">
@@ -201,6 +201,9 @@
 <li><p>git을 초기화하고 commit까지 진행한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"></span><br><span class="line">$ git add -A .</span><br><span class="line"></span><br><span class="line">$ git commit -m <span class="string">"Elstic Beanstalk first commit"</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>EB CLI를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install awsebcli</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>eb init 명령을 실행한다.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ eb init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 사용하는 리전 선택: 10) ap-northeast-2 : Asia Pacific (Seoul)</span></span><br><span class="line"><span class="comment"># IAM에서 만든 액세스 키와 보안 키를 입력</span></span><br><span class="line"><span class="comment"># 새 애플리케이션을 생성하고 이름 지정</span></span><br><span class="line"><span class="comment"># 언어 및 버전 선택 : Python 3.6</span></span><br><span class="line"><span class="comment"># SSH 키 페어 선택</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -313,7 +316,7 @@
 Amazon AWS에서 서비스 탭에 IAM으로 이동한다.
 사용자 메뉴로 이동하여 사용자 추가를 클릭한다.
 사용자 이름을 입력하고 액세스 유형은 [프로"
-        "wordCount": 360
+        "wordCount": 371
     }
 </script>
 
