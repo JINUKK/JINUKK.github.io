@@ -8,6 +8,46 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
+        <lastmod>2019-07-21T07:29:34.956Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
+        <lastmod>2019-07-21T07:29:05.677Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
+        <lastmod>2019-07-21T07:27:48.031Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-insertion-sort/</loc>
+        <lastmod>2019-07-21T07:27:14.776Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/</loc>
+        <lastmod>2019-07-21T07:26:03.715Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/</loc>
         <lastmod>2019-07-21T07:23:16.472Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -34,14 +74,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/07/01/190701-DSAA-Study/</loc>
         <lastmod>2019-07-21T06:04:08.154Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/</loc>
-        <lastmod>2019-07-21T05:21:28.781Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -170,38 +202,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/03/28/190328-Python-iterator/</loc>
         <lastmod>2019-06-16T14:57:19.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-insertion-sort/</loc>
-        <lastmod>2019-06-16T14:52:59.437Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
-        <lastmod>2019-06-16T14:51:07.331Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
-        <lastmod>2019-06-16T14:48:45.852Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
-        <lastmod>2019-06-16T14:45:55.007Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
