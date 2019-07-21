@@ -3,14 +3,35 @@
 
 
     <url>
-        <loc>http://JINUKK.github.io/tags/copy/</loc>
-        <lastmod>2019-06-18T05:07:49.864Z</lastmod>
+        <loc>http://JINUKK.github.io/tags/bubble-sort/</loc>
+        <lastmod>2019-07-21T05:21:28.781Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/sort/</loc>
+        <lastmod>2019-07-21T05:21:28.781Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/algorithm/</loc>
+        <lastmod>2019-07-21T05:21:28.781Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://JINUKK.github.io/tags/python/</loc>
+        <lastmod>2019-07-21T05:21:28.781Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/copy/</loc>
         <lastmod>2019-06-18T05:07:49.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -25,13 +46,6 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/queue/</loc>
-        <lastmod>2019-06-16T15:38:15.883Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/algorithm/</loc>
         <lastmod>2019-06-16T15:38:15.883Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -66,13 +80,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/stopiteration/</loc>
-        <lastmod>2019-06-16T15:01:04.755Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/tags/yield-from/</loc>
         <lastmod>2019-06-16T15:01:04.755Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -88,6 +95,13 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/generator/</loc>
+        <lastmod>2019-06-16T15:01:04.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/stopiteration/</loc>
         <lastmod>2019-06-16T15:01:04.755Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -131,20 +145,6 @@
     <url>
         <loc>http://JINUKK.github.io/tags/selection-sort/</loc>
         <lastmod>2019-06-16T14:45:55.007Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/bubble-sort/</loc>
-        <lastmod>2019-06-16T14:40:27.927Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/sort/</loc>
-        <lastmod>2019-06-16T14:40:27.927Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
