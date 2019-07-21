@@ -6,22 +6,25 @@
     
 
     
-    <title>Tag: comparison | KOO|디벨로그</title>
+    <title>2019.07.11 Data Structure and Algorithm Study | KOO|디벨로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="What I learned">
-<meta property="og:type" content="website">
-<meta property="og:title" content="KOO|디벨로그">
-<meta property="og:url" content="http://JINUKK.github.io/tags/comparison/index.html">
-<meta property="og:site_name" content="KOO|디벨로그">
-<meta property="og:description" content="What I learned">
-<meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KOO|디벨로그">
-<meta name="twitter:description" content="What I learned">
+        <meta name="keywords" content>
     
-    <link rel="canonical" href="http://JINUKK.github.io/tags/comparison/">
+    <meta name="description" content="동적 배열(Dynamic array) vs 연결 리스트(Linked list) 동적 배열(Dynamic array)   장점 : search - O(1) = Indexing 단점 : insert, delete - O(n) python의 동적배열은 list이다.  append, pop - O(1)123456789다음과 같이 이미 할당된 배열의 공간이 있을 경">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2019.07.11 Data Structure and Algorithm Study">
+<meta property="og:url" content="http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/index.html">
+<meta property="og:site_name" content="KOO|디벨로그">
+<meta property="og:description" content="동적 배열(Dynamic array) vs 연결 리스트(Linked list) 동적 배열(Dynamic array)   장점 : search - O(1) = Indexing 단점 : insert, delete - O(n) python의 동적배열은 list이다.  append, pop - O(1)123456789다음과 같이 이미 할당된 배열의 공간이 있을 경">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-21T07:23:16.472Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2019.07.11 Data Structure and Algorithm Study">
+<meta name="twitter:description" content="동적 배열(Dynamic array) vs 연결 리스트(Linked list) 동적 배열(Dynamic array)   장점 : search - O(1) = Indexing 단점 : insert, delete - O(n) python의 동적배열은 list이다.  append, pop - O(1)123456789다음과 같이 이미 할당된 배열의 공간이 있을 경">
+    
+    <link rel="canonical" href="http://JINUKK.github.io/2019/07/11/190711-dsaa-study/">
 
     
 
@@ -129,66 +132,196 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>Tag: <em>comparison</em>
+    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-190711-DSAA-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2019-03-08T07:13:02.000Z" itemprop="datePublished">2019-03-08</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/08/190308-Python-comparison/">comparison</a>
+        2019.07.11 Data Structure and Algorithm Study
         </h1>
     
 
-        <p class="article-excerpt">
-            
-아래와 같이 a와 b 모두 0.3으로 참이 나와야 하는데 거짓이 나온다.
-  12345a = 0.3b = 0.1*3a == b&gt;&gt; False
-
-이 문제를 해결하기 위한 비교 방법들이다.
-
-
-
-절대 비교 기법(Absolute comparison)
-
-두 수의 차를 절대값으로 만든다.
-‘1.0e-10’과 같이 기준을 잡아서 비교하는 것이다.
-하지만 
-        </p>
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/07/11/190711-DSAA-Study/" class="article-date">
+            <time datetime="2019-07-11T07:22:26.000Z" itemprop="datePublished">2019-07-11</time>
+        </a>
     </div>
-</article>
-    
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="동적-배열-Dynamic-array-vs-연결-리스트-Linked-list"><a href="#동적-배열-Dynamic-array-vs-연결-리스트-Linked-list" class="headerlink" title="동적 배열(Dynamic array) vs 연결 리스트(Linked list)"></a>동적 배열(Dynamic array) vs 연결 리스트(Linked list)</h4><ol>
+<li>동적 배열(Dynamic array)</li>
+</ol>
+<ul>
+<li>장점 : search - O(1) = Indexing</li>
+<li>단점 : insert, delete - O(n)</li>
+<li><p>python의 동적배열은 list이다.</p>
+<ul>
+<li>append, pop - O(1)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">다음과 같이 이미 할당된 배열의 공간이 있을 경우</span><br><span class="line"></span><br><span class="line">ex) [a][b][c][d][ ][ ][ ][ ]</span><br><span class="line"></span><br><span class="line">append(e)를 하게되면 d의 바로 뒤에 붙게 되고</span><br><span class="line">pop을 해도 바로 뒤에서 빼게되기 때문에 O(1)이다.</span><br><span class="line"></span><br><span class="line">그런데 a의 앞에 e를 넣으려고 하면 d부터 데이터를 한칸씩 밀어야한다.</span><br><span class="line">있는 데이터만큼 옮겨야 하기 때문에 O(n)이다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>메모리가 붙어 있기 때문에 cache hit가 존재한다.</p>
+</li>
+<li>메모리를 가져올 때 통째로 그 주변까지 가져온다.</li>
+</ul>
+<ol start="2">
+<li>연결 리스트(Linked list)</li>
+</ol>
+<ul>
+<li>장점 : insert, delete - O(1)<ul>
+<li>head와 tail만 이어주는 두번의 작업으로 끝난다.</li>
+<li>delete의 경우 한번의 작업으로 끝나고 하무것도 연결이 되지 않은 데이터는 가비지컬렉터에 의해 사라진다.</li>
+</ul>
+</li>
+<li>단점 : search - O(n)<ul>
+<li>데이터를 찾을 때 데이터의 개수만큼 if으로 찾아야 한다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="BST-Binary-Search-Tree"><a href="#BST-Binary-Search-Tree" class="headerlink" title="BST(Binary Search Tree)"></a>BST(Binary Search Tree)</h4><ul>
+<li>insert, delete, search - O(log(n)) = 3가지 모두 성능이 좋음</li>
+<li><p>height of tree -&gt; 아무리 많이 비교해도 트리의 높이만큼만 비교하게 된다.(log(n))</p>
+</li>
+<li><p>데이터는 다른 곳에 저장되어 있고 tree 구조로 search만 한다. </p>
+</li>
+<li>실제 데이터와 포인터로 연결되어 있기 때문에 접근가능하다.</li>
+</ul>
+<h4 id="분할-상환-분석-Amortized-Analysis"><a href="#분할-상환-분석-Amortized-Analysis" class="headerlink" title="분할 상환 분석(Amortized Analysis)"></a>분할 상환 분석(Amortized Analysis)</h4><ul>
+<li><p>평균적으로 실행시간이 얼마나 걸리는지 측정하는 방법</p>
+</li>
+<li><p>동적 배열(DA)의 예</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1) 배열이 다 찼을 경우, 배열의 크기를 2배로 늘림(Array Doubling)</span><br><span class="line">2) 공간을 할당할 경우 = O(n)</span><br><span class="line">3) 공간을 할당한 상태에서 데이터를 넣을 경우 = O(1)</span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">[a] x 2 = [a][ ] : O(n)</span><br><span class="line">[a][ ] = [a][b] : O(1)</span><br><span class="line"></span><br><span class="line">[a][b] x 2 = [a][b][ ][ ] : O(n)</span><br><span class="line">[a][b][ ][ ] = [a][b][c][d] : O(1)</span><br><span class="line"></span><br><span class="line">[a][b][c][d] x 2 = [a][b][c][d][ ][ ][ ][ ] : O(n)</span><br><span class="line">[a][b][c][d][ ][ ][ ][ ] = [a][b][c][d][e][f][g][h] : O(1)</span><br><span class="line"></span><br><span class="line">4) 수가 늘어날수록 O(n)보다 O(1)이 더 자주 일어나게 됨</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>어떤 특정 상황에서는 최악의 경우이지만 나머지 상황에서는 좋은 결과를 보여줌</p>
+</li>
+</ul>
+
         </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/" data-id="cjycmwy6600aze6wu9fkexnht" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "2019.07.11 Data Structure and Algorithm Study",
+        "image": "http://JINUKK.github.io",
+        "keywords": "",
+        "genre": "Study Review",
+        "datePublished": "2019-07-11",
+        "dateCreated": "2019-07-11",
+        "dateModified": "2019-07-21",
+        "url": "http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/",
+        "description": "동적 배열(Dynamic array) vs 연결 리스트(Linked list)
+동적 배열(Dynamic array)
+
+
+장점 : search - O(1) = Indexing
+단점 : insert, delete - O(n)
+python의 동적배열은 list이다.
+
+append, pop - O(1)123456789다음과 같이 이미 할당된 배열의 공간이 있을 경"
+        "wordCount": 319
+    }
+</script>
+
+</article>
+
+    <section id="comments">
     
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
 
-
-    </div></section>
+    
+    </section>
 
 
 
@@ -210,6 +343,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/07/08/190708-DSAA-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2019.07.08 Data Structure and Algorithm Study</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -353,11 +499,13 @@
     var disqus_shortname = 'jinukk';
     
     
+    var disqus_url = 'http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
