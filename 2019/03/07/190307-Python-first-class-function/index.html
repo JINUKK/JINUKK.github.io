@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  
 
-    
-
-    
-    <title>First class function | KOO|디벨로그</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-        <meta name="keywords" content="python,first class function">
-    
-    <meta name="description" content="first class function 조건   argument(parameter) - 매개 변수  함수 자체를 매개변수로 다른 함수에 전달1234567891011def f(a, b):    return a + bdef g(func, c, d):    return func(c, d)a = 10b = 20g(f, a, b)  # 함수 자체를 매개변수로 전달&amp;">
+  
+  <title>First class function | KOO|디벨로그</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="first class function 조건   argument(parameter) - 매개 변수  함수 자체를 매개변수로 다른 함수에 전달1234567891011def f(a, b):    return a + bdef g(func, c, d):    return func(c, d)a = 10b = 20g(f, a, b)  # 함수 자체를 매개변수로 전달&amp;">
 <meta name="keywords" content="python,first class function">
 <meta property="og:type" content="article">
 <meta property="og:title" content="First class function">
@@ -24,155 +19,83 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="First class function">
 <meta name="twitter:description" content="first class function 조건   argument(parameter) - 매개 변수  함수 자체를 매개변수로 다른 함수에 전달1234567891011def f(a, b):    return a + bdef g(func, c, d):    return func(c, d)a = 10b = 20g(f, a, b)  # 함수 자체를 매개변수로 전달&amp;">
-    
-    <link rel="canonical" href="http://JINUKK.github.io/2019/03/07/190307-python-first-class-function/">
-
-    
-
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-
-
+  
+    <link rel="alternate" href="/atom.xml" title="KOO|디벨로그" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
 <body>
+  <div id="container">
     <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                        <h2 class="subtitle-wrap">
-                            <p class="subtitle">Develop &amp; Sabjil Log</p>
-                        </h2>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                <li class="main-nav-list-item">
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
-
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something...">
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">KOO|디벨로그</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Develop &amp; Sabjil Log</a>
+        </h2>
+      
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://JINUKK.github.io"></form>
+      </div>
     </div>
+  </div>
 </header>
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
+      <div class="outer">
+        <section id="main"><article id="post-190307-Python-first-class-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/07/190307-Python-first-class-function/" class="article-date">
+  <time datetime="2019-03-07T06:58:04.000Z" itemprop="datePublished">2019-03-07</time>
+</a>
     
-    <a class="page-title-link" href="/categories/Python/">Python</a>
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      First class function
     </h1>
-</div>
+  
 
-                        <div class="main-body-content">
-                            <article id="post-190307-Python-first-class-function" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
+      </header>
     
-        <h1 class="article-title" itemprop="name">
-        First class function
-        </h1>
-    
-
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2019/03/07/190307-Python-first-class-function/" class="article-date">
-            <time datetime="2019-03-07T06:58:04.000Z" itemprop="datePublished">2019-03-07</time>
-        </a>
-    </div>
-
-		
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/first-class-function/">first class function</a>, <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <ul>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
 <li>first class function 조건</li>
 </ul>
 <ol>
@@ -196,334 +119,147 @@
 </li>
 </ol>
 
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/" data-id="cjyco4knp001o31wurhkdvtqr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+      
     </div>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "author": {
-            "@type": "Person",
-            "name": "JINWOOK KOO"
-        },
-        "headline": "First class function",
-        "image": "http://JINUKK.github.io",
-        "keywords": "python first class function",
-        "genre": "Python",
-        "datePublished": "2019-03-07",
-        "dateCreated": "2019-03-07",
-        "dateModified": "2019-06-16",
-        "url": "http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/",
-        "description": "
-first class function 조건
+    <footer class="article-footer">
+      <a data-url="http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/" data-id="cjyco4knp001o31wurhkdvtqr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/first-class-function/">first class function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 
-
-argument(parameter) - 매개 변수
-
-함수 자체를 매개변수로 다른 함수에 전달1234567891011def f(a, b):    return a + bdef g(func, c, d):    return func(c, d)a = 10b = 20g(f, a, b)  # 함수 자체를 매개변수로 전달&"
-        "wordCount": 289
-    }
-</script>
-
-</article>
-
-    <section id="comments">
+    </footer>
+  </div>
+  
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
-    
-    </section>
-
-
-
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-        
 <nav id="article-nav">
-    
-        <a href="/2019/03/07/190307-Python-radix/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
+  
+    <a href="/2019/03/07/190307-Python-radix/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-            radix
+          radix
         
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+      </div>
     </a>
-    
-    
-        <a href="/2019/03/07/190307-Algorithm-tower-of-hanoi/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">tower of hanoi</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
+  
+  
+    <a href="/2019/03/07/190307-Algorithm-tower-of-hanoi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">tower of hanoi</div>
+    </a>
+  
 </nav>
 
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
     
-    <div class="widgets-container">
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/args/">args</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary-search/">binary search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boolean/">boolean</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bubble-sort/">bubble sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caculator/">caculator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-object-reference/">call by object reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/comparison/">comparison</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/comprehension/">comprehension</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue/">continue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/copy/">copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv/">csv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/decorator/">decorator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dummy-double-linked-list/">dummy double linked list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/epsilon/">epsilon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/first-class-function/">first class function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for/">for</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/generator/">generator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/if/">if</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/insertion-sort/">insertion sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterator/">iterator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kwargs/">kwargs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda-function/">lambda function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linear-search/">linear search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linked-list/">linked list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list/">list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/merge-sort/">merge sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/namespace/">namespace</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/packing/">packing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pass/">pass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/queue/">queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quick-sort/">quick sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/radix/">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursive-function/">recursive function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reduce/">reduce</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selection-sort/">selection sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/single-linked-list/">single linked list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stack/">stack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stopiteration/">stopiteration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/text/">text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tower-of-hanoi/">tower of hanoi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuple/">tuple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unpacking/">unpacking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/while/">while</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrap/">wrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yield/">yield</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yield-from/">yield from</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dummy-double-linked-list/" style="font-size: 10px;">dummy double linked list</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/linked-list/" style="font-size: 13.33px;">linked list</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 13.33px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/single-linked-list/" style="font-size: 10px;">single linked list</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/stopiteration/" style="font-size: 13.33px;">stopiteration</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/yield-from/" style="font-size: 10px;">yield from</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
         
-            
-                
-
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="no-thumbnail">
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/07/18/190718-DSAA-Study/" class="title">2019.07.18 Data Structure and Algorithm Study</a></p>
-                            <p class="item-date"><time datetime="2019-07-18T07:41:57.000Z" itemprop="datePublished">2019-07-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/07/15/190715-DSAA-Study/" class="title">2019.07.15 Data Structure and Algorithm Study</a></p>
-                            <p class="item-date"><time datetime="2019-07-15T07:39:19.000Z" itemprop="datePublished">2019-07-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/07/11/190711-DSAA-Study/" class="title">2019.07.11 Data Structure and Algorithm Study</a></p>
-                            <p class="item-date"><time datetime="2019-07-11T07:22:26.000Z" itemprop="datePublished">2019-07-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/07/08/190708-DSAA-Study/" class="title">2019.07.08 Data Structure and Algorithm Study</a></p>
-                            <p class="item-date"><time datetime="2019-07-08T06:37:17.000Z" itemprop="datePublished">2019-07-08</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study-Review/">Study Review</a></p>
-                            <p class="item-title"><a href="/2019/07/04/190704-DSAA-Study/" class="title">2019.07.04 Data Structure and Algorithm Study</a></p>
-                            <p class="item-date"><time datetime="2019-07-04T06:24:50.000Z" itemprop="datePublished">2019-07-04</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">categories</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">68</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-float">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dummy-double-linked-list/" style="font-size: 10px;">dummy double linked list</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/linked-list/" style="font-size: 13.33px;">linked list</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 13.33px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/single-linked-list/" style="font-size: 10px;">single linked list</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/stopiteration/" style="font-size: 13.33px;">stopiteration</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/yield-from/" style="font-size: 10px;">yield from</a>
-        </div>
-    </div>
-
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
+          <li>
+            <a href="/2019/07/18/190718-DSAA-Study/">2019.07.18 Data Structure and Algorithm Study</a>
+          </li>
         
+          <li>
+            <a href="/2019/07/15/190715-DSAA-Study/">2019.07.15 Data Structure and Algorithm Study</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/11/190711-DSAA-Study/">2019.07.11 Data Structure and Algorithm Study</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/08/190708-DSAA-Study/">2019.07.08 Data Structure and Algorithm Study</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/04/190704-DSAA-Study/">2019.07.04 Data Structure and Algorithm Study</a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
+
+  
 </aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-<!--//                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1> //-->
-                <p>&copy; 2019 JINWOOK KOO</p>
-                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
-            </div>
-            <div class="footer-plugins">
-              
-    
-
-
-            </div>
-        </div>
-    </div>
-</footer>
-
         
-    
-    <script>
-    var disqus_shortname = 'jinukk';
-    
-    
-    var disqus_url = 'http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
-
-
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 JINWOOK KOO<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
 </body>
 </html>
