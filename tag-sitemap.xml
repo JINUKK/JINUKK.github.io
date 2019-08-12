@@ -108,6 +108,13 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/tags/stopiteration/</loc>
+        <lastmod>2019-06-16T15:01:04.755Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/tags/yield-from/</loc>
         <lastmod>2019-06-16T15:01:04.755Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -123,13 +130,6 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/generator/</loc>
-        <lastmod>2019-06-16T15:01:04.755Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/stopiteration/</loc>
         <lastmod>2019-06-16T15:01:04.755Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
