@@ -12,17 +12,17 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="분할 정복(Divide and Conquer) 알고리즘 문제알고리즘 해결 전략 1권 p.190 쿼드 트리 뒤집기 모든 픽셀이 블랙인 경우 : b 모든 픽셀이 화이트인 경우 : w 모든 픽셀이 같은 색이 아니면 2 x 2로 4등분하여 x(0,0)(0,1)(1,0)(1,1)로 압축한다. 압축된 문자열이 주어질 때, 이를 뒤집은 압축 문자열을 생성하는 프로그램을">
+    <meta name="description" content="분할 정복(Divide and Conquer) 알고리즘 문제분할 정복(Divide and Conquer) 먼저 분할하고 정렬하는 경우 - merge sort  먼저 정렬하고 분할하는 경우 - quick sort  recursion(재귀)에서 중요한 것  base case(기저 조건) 재귀할 때 문제의 사이즈(부분 문제, sub problem)를 줄여야 한다">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019.07.22 Data Structure and Algorithm Study">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/22/190722-DSAA-Study/index.html">
 <meta property="og:site_name" content="KOO|디벨로그">
-<meta property="og:description" content="분할 정복(Divide and Conquer) 알고리즘 문제알고리즘 해결 전략 1권 p.190 쿼드 트리 뒤집기 모든 픽셀이 블랙인 경우 : b 모든 픽셀이 화이트인 경우 : w 모든 픽셀이 같은 색이 아니면 2 x 2로 4등분하여 x(0,0)(0,1)(1,0)(1,1)로 압축한다. 압축된 문자열이 주어질 때, 이를 뒤집은 압축 문자열을 생성하는 프로그램을">
+<meta property="og:description" content="분할 정복(Divide and Conquer) 알고리즘 문제분할 정복(Divide and Conquer) 먼저 분할하고 정렬하는 경우 - merge sort  먼저 정렬하고 분할하는 경우 - quick sort  recursion(재귀)에서 중요한 것  base case(기저 조건) 재귀할 때 문제의 사이즈(부분 문제, sub problem)를 줄여야 한다">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-12T11:58:21.451Z">
+<meta property="og:updated_time" content="2019-08-12T12:06:32.946Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.07.22 Data Structure and Algorithm Study">
-<meta name="twitter:description" content="분할 정복(Divide and Conquer) 알고리즘 문제알고리즘 해결 전략 1권 p.190 쿼드 트리 뒤집기 모든 픽셀이 블랙인 경우 : b 모든 픽셀이 화이트인 경우 : w 모든 픽셀이 같은 색이 아니면 2 x 2로 4등분하여 x(0,0)(0,1)(1,0)(1,1)로 압축한다. 압축된 문자열이 주어질 때, 이를 뒤집은 압축 문자열을 생성하는 프로그램을">
+<meta name="twitter:description" content="분할 정복(Divide and Conquer) 알고리즘 문제분할 정복(Divide and Conquer) 먼저 분할하고 정렬하는 경우 - merge sort  먼저 정렬하고 분할하는 경우 - quick sort  recursion(재귀)에서 중요한 것  base case(기저 조건) 재귀할 때 문제의 사이즈(부분 문제, sub problem)를 줄여야 한다">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/22/190722-dsaa-study/">
 
@@ -166,7 +166,21 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="분할-정복-Divide-and-Conquer-알고리즘-문제"><a href="#분할-정복-Divide-and-Conquer-알고리즘-문제" class="headerlink" title="분할 정복(Divide and Conquer) 알고리즘 문제"></a>분할 정복(Divide and Conquer) 알고리즘 문제</h4><h5 id="알고리즘-해결-전략-1권-p-190"><a href="#알고리즘-해결-전략-1권-p-190" class="headerlink" title="알고리즘 해결 전략 1권 p.190"></a>알고리즘 해결 전략 1권 p.190</h5><ul>
+            <h4 id="분할-정복-Divide-and-Conquer-알고리즘-문제"><a href="#분할-정복-Divide-and-Conquer-알고리즘-문제" class="headerlink" title="분할 정복(Divide and Conquer) 알고리즘 문제"></a>분할 정복(Divide and Conquer) 알고리즘 문제</h4><h5 id="분할-정복-Divide-and-Conquer"><a href="#분할-정복-Divide-and-Conquer" class="headerlink" title="분할 정복(Divide and Conquer)"></a>분할 정복(Divide and Conquer)</h5><ul>
+<li><p>먼저 분할하고 정렬하는 경우 - merge sort</p>
+</li>
+<li><p>먼저 정렬하고 분할하는 경우 - quick sort</p>
+</li>
+<li><p>recursion(재귀)에서 중요한 것</p>
+<ul>
+<li>base case(기저 조건)</li>
+<li>재귀할 때 문제의 사이즈(부분 문제, sub problem)를 줄여야 한다.</li>
+</ul>
+</li>
+<li><p>분할 정복(Divide and Conquer)도 문제의 사이즈를 절반으로 줄인다.</p>
+</li>
+</ul>
+<h5 id="알고리즘-해결-전략-1권-p-190"><a href="#알고리즘-해결-전략-1권-p-190" class="headerlink" title="알고리즘 해결 전략 1권 p.190"></a>알고리즘 해결 전략 1권 p.190</h5><ul>
 <li>쿼드 트리 뒤집기</li>
 <li>모든 픽셀이 블랙인 경우 : b</li>
 <li>모든 픽셀이 화이트인 경우 : w</li>
@@ -266,13 +280,16 @@
         "dateCreated": "2019-07-22",
         "dateModified": "2019-08-12",
         "url": "http://JINUKK.github.io/2019/07/22/190722-DSAA-Study/",
-        "description": "분할 정복(Divide and Conquer) 알고리즘 문제알고리즘 해결 전략 1권 p.190
-쿼드 트리 뒤집기
-모든 픽셀이 블랙인 경우 : b
-모든 픽셀이 화이트인 경우 : w
-모든 픽셀이 같은 색이 아니면 2 x 2로 4등분하여 x(0,0)(0,1)(1,0)(1,1)로 압축한다.
-압축된 문자열이 주어질 때, 이를 뒤집은 압축 문자열을 생성하는 프로그램을"
-        "wordCount": 1550
+        "description": "분할 정복(Divide and Conquer) 알고리즘 문제분할 정복(Divide and Conquer)
+먼저 분할하고 정렬하는 경우 - merge sort
+
+먼저 정렬하고 분할하는 경우 - quick sort
+
+recursion(재귀)에서 중요한 것
+
+base case(기저 조건)
+재귀할 때 문제의 사이즈(부분 문제, sub problem)를 줄여야 한다"
+        "wordCount": 1591
     }
 </script>
 
