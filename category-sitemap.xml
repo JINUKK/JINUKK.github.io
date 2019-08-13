@@ -8,6 +8,20 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/categories/Study/Django-and-Web-server/</loc>
+        <lastmod>2019-08-13T07:42:08.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/categories/Study/</loc>
+        <lastmod>2019-08-13T07:42:08.511Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/categories/Algorithm/Sort/</loc>
         <lastmod>2019-08-13T07:25:49.256Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -29,13 +43,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/categories/Study/</loc>
-        <lastmod>2019-08-13T07:20:21.341Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/categories/Python/</loc>
         <lastmod>2019-08-13T07:14:40.467Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -45,13 +52,6 @@
     <url>
         <loc>http://JINUKK.github.io/categories/Study/Python-and-CE/</loc>
         <lastmod>2019-08-13T06:48:22.873Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/categories/Study/Django-and-Web-server/</loc>
-        <lastmod>2019-08-13T06:08:01.765Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
