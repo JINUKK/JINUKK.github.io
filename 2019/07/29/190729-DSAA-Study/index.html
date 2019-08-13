@@ -12,18 +12,18 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="그래프(Graph)정의 그래프 G는 두 ‘집합’ V, E로 나타낸다. V(G) : 노드(node) 혹은 정점(vertex)의 집합 E(G) : 정점을 잇는 에지(edge)의 집합    방향1. 무방향 그래프(Undirected graph)  출처 : https://github.com/ythwork/CS   G = (V, E) V(G) = {0, 1, 2,">
+    <meta name="description" content="그래프(Graph)정의 그래프는 객체와 객체 사이의 ‘관계’를 표현하기 위한 자료구조이다. 그래프 G는 두 ‘집합’ V, E로 나타낸다. V(G) : 노드(node) 혹은 정점(vertex)의 집합 E(G) : 정점을 잇는 에지(edge)의 집합    방향1. 무방향 그래프(Undirected graph)  출처 : https://github.com/yth">
 <meta property="og:type" content="article">
 <meta property="og:title" content="그래프 순회(Graph traversal)">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/29/190729-DSAA-Study/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="그래프(Graph)정의 그래프 G는 두 ‘집합’ V, E로 나타낸다. V(G) : 노드(node) 혹은 정점(vertex)의 집합 E(G) : 정점을 잇는 에지(edge)의 집합    방향1. 무방향 그래프(Undirected graph)  출처 : https://github.com/ythwork/CS   G = (V, E) V(G) = {0, 1, 2,">
+<meta property="og:description" content="그래프(Graph)정의 그래프는 객체와 객체 사이의 ‘관계’를 표현하기 위한 자료구조이다. 그래프 G는 두 ‘집합’ V, E로 나타낸다. V(G) : 노드(node) 혹은 정점(vertex)의 집합 E(G) : 정점을 잇는 에지(edge)의 집합    방향1. 무방향 그래프(Undirected graph)  출처 : https://github.com/yth">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
-<meta property="og:updated_time" content="2019-08-13T12:11:51.418Z">
+<meta property="og:updated_time" content="2019-08-13T12:47:30.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="그래프 순회(Graph traversal)">
-<meta name="twitter:description" content="그래프(Graph)정의 그래프 G는 두 ‘집합’ V, E로 나타낸다. V(G) : 노드(node) 혹은 정점(vertex)의 집합 E(G) : 정점을 잇는 에지(edge)의 집합    방향1. 무방향 그래프(Undirected graph)  출처 : https://github.com/ythwork/CS   G = (V, E) V(G) = {0, 1, 2,">
+<meta name="twitter:description" content="그래프(Graph)정의 그래프는 객체와 객체 사이의 ‘관계’를 표현하기 위한 자료구조이다. 그래프 G는 두 ‘집합’ V, E로 나타낸다. V(G) : 노드(node) 혹은 정점(vertex)의 집합 E(G) : 정점을 잇는 에지(edge)의 집합    방향1. 무방향 그래프(Undirected graph)  출처 : https://github.com/yth">
 <meta name="twitter:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/29/190729-dsaa-study/">
@@ -169,6 +169,7 @@
         
         <div class="article-entry" itemprop="articleBody">
             <h3 id="그래프-Graph"><a href="#그래프-Graph" class="headerlink" title="그래프(Graph)"></a>그래프(Graph)</h3><h4 id="정의"><a href="#정의" class="headerlink" title="정의"></a>정의</h4><ul>
+<li>그래프는 객체와 객체 사이의 ‘관계’를 표현하기 위한 자료구조이다.</li>
 <li>그래프 G는 두 ‘집합’ V, E로 나타낸다.<ul>
 <li>V(G) : 노드(node) 혹은 정점(vertex)의 집합</li>
 <li>E(G) : 정점을 잇는 에지(edge)의 집합</li>
@@ -176,7 +177,7 @@
 </li>
 </ul>
 <h4 id="방향"><a href="#방향" class="headerlink" title="방향"></a>방향</h4><p><strong>1. 무방향 그래프(Undirected graph)</strong></p>
-<img src="/images/undirected_graph.png" width="300" height="200">
+<img src="/images/undirected_graph.png" width="250" height="150">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <ul>
@@ -187,7 +188,7 @@
 <li>최대 에지 수 : n(n-1)/2</li>
 </ul>
 <p><strong>2. 방향 그래프(Directed graph)</strong></p>
-<img src="/images/directed_graph.png" width="300" height="200">
+<img src="/images/directed_graph.png" width="250" height="150">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <ul>
@@ -198,12 +199,82 @@
 <li>최대 에지 수 : n(n-1)</li>
 </ul>
 <h4 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h4><ul>
-<li>자기 간선(self-edge)를 가질 수 없다.<ul>
-<li>(v, v)나 &lt;v, v&gt;</li>
+<li>자기 간선(self-edge)를 가질 수 없음 = (v, v)나 &lt;v, v&gt;를 가질 수 없음</li>
+<li>두 정점 사이에 같은 에지를 여러 개 가질 수 없음</li>
+</ul>
+<img src="/images/graph_adjacent.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>adjacent : (u, v)가 E(G)에 속해있다면 정점 u와 v는 인접한다.</li>
+<li>incident : 에지 (u, v)는 u와 v에 부속된다.</li>
+</ul>
+<img src="/images/graph_path.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>경로(path)<ul>
+<li>(v1, v2), (v2, v3), (v3, v4)가 E(G)의 원소라고 할때</li>
+<li>v1에서 v4까지의 정점 순서(v1 -&gt; v2 -&gt; v3 -&gt; v4)</li>
+</ul>
+</li>
+<li>경로 길이(length) : 어떤 경로에서 에지의 수</li>
+<li>어떤 경로에서 처음과 마지막을 제외하고 모든 정점이 다를 때 <strong>단순 경로(simple path)</strong>라고 한다.</li>
+</ul>
+<img src="/images/graph_degree.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>차수(degree) : 정점 v에 부속된 에지의 수 = d(v) = 3</li>
+</ul>
+<img src="/images/graph_directed_degree.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li><strong>방향 그래프</strong>에서는 진입 차수(In-degree)와 진출 차수(Out-degree)가 존재한다.<ul>
+<li>진입 차수(In-degree) : in-d(v) = 1</li>
+<li>진출 차수(Out-degree) : out-d(v) = 1</li>
+<li>차수 = 진입 차수 + 진출 차수 = d(v) = 2</li>
 </ul>
 </li>
 </ul>
+<h4 id="부분-그래프-subgraph-와-신장-부분-그래프-spanning-subgraph"><a href="#부분-그래프-subgraph-와-신장-부분-그래프-spanning-subgraph" class="headerlink" title="부분 그래프(subgraph)와  신장 부분 그래프(spanning subgraph)"></a>부분 그래프(subgraph)와  신장 부분 그래프(spanning subgraph)</h4><ul>
+<li><p>부분 그래프(subgraph)</p>
+<ul>
+<li>V(G’) ⊆ V(G’)이고 E(G’) ⊆ E(G)인 그래프 G’를 그래프 G의 부분 그래프라고 한다.</li>
+</ul>
+</li>
+<li><p>신장 부분 그래프(spanning subgraph)</p>
+<ul>
+<li>V’ = V이고 E(G’) ⊆ E(G)인 그래프 G’를 그래프 G의 신장 부분 그래프라고 한다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="그래프-표현-graph-representation"><a href="#그래프-표현-graph-representation" class="headerlink" title="그래프 표현(graph representation)"></a>그래프 표현(graph representation)</h4><img src="/images/graph_example.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
+<ul>
+<li>인접 행렬(adjacency matrix)<ul>
+<li>정점 u와 v에서 (u, v)가 E(G)에 속한다면 1로, 그렇지 않으면 0으로 표시한다.</li>
+<li>인접하는 모든 노드 : O(n)</li>
+<li>(u, v) 검사 : O(1)</li>
+</ul>
+</li>
+</ul>
+<img src="/images/adjacency_matrix.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>인접 리스트(adjacency list)<ul>
+<li>인접하는 모든 노드 : O(d(v))</li>
+<li>(u, v) 검사 : O(d(v))</li>
+</ul>
+</li>
+</ul>
+<img src="/images/adjacency_list.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<h4 id="그래프-순회-Graph-traversal"><a href="#그래프-순회-Graph-traversal" class="headerlink" title="그래프 순회(Graph traversal)"></a>그래프 순회(Graph traversal)</h4>
         </div>
         <footer class="article-footer">
             
@@ -289,6 +360,7 @@
         "dateModified": "2019-08-13",
         "url": "http://JINUKK.github.io/2019/07/29/190729-DSAA-Study/",
         "description": "그래프(Graph)정의
+그래프는 객체와 객체 사이의 ‘관계’를 표현하기 위한 자료구조이다.
 그래프 G는 두 ‘집합’ V, E로 나타낸다.
 V(G) : 노드(node) 혹은 정점(vertex)의 집합
 E(G) : 정점을 잇는 에지(edge)의 집합
@@ -297,12 +369,8 @@ E(G) : 정점을 잇는 에지(edge)의 집합
 
 방향1. 무방향 그래프(Undirected graph)
 
-출처 : https://github.com/ythwork/CS
-
-
-G = (V, E)
-V(G) = {0, 1, 2, "
-        "wordCount": 105
+출처 : https://github.com/yth"
+        "wordCount": 361
     }
 </script>
 
