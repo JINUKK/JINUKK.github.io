@@ -12,18 +12,18 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="균형 이진 트리 self-balancing(balanced-binary tree)    출처:https://github.com/ythwork/CS/  BST에서 최악의 경우 search의 빅오는 O(n)이다.">
+    <meta name="description" content="이진 탐색 트리(BST)는 O(log(n))의 시간 복잡도를 가진다. 이것은 탐색 트리가 균형 트리일 경우에만 해당된다.   출처 : https://github.com/ythwork/CS/   위 그림처럼 최악의 경우, O(n)의 시간 복잡도를 가지게 된다.  균형 이진 트리 self-balancing(balanced-binary tree) 균형 이진 트">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019.07.25 Data Structure and Algorithm Study">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/25/190725-DSAA-Study/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="균형 이진 트리 self-balancing(balanced-binary tree)    출처:https://github.com/ythwork/CS/  BST에서 최악의 경우 search의 빅오는 O(n)이다.">
+<meta property="og:description" content="이진 탐색 트리(BST)는 O(log(n))의 시간 복잡도를 가진다. 이것은 탐색 트리가 균형 트리일 경우에만 해당된다.   출처 : https://github.com/ythwork/CS/   위 그림처럼 최악의 경우, O(n)의 시간 복잡도를 가지게 된다.  균형 이진 트리 self-balancing(balanced-binary tree) 균형 이진 트">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
-<meta property="og:updated_time" content="2019-08-13T09:01:53.042Z">
+<meta property="og:updated_time" content="2019-08-13T11:32:27.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019.07.25 Data Structure and Algorithm Study">
-<meta name="twitter:description" content="균형 이진 트리 self-balancing(balanced-binary tree)    출처:https://github.com/ythwork/CS/  BST에서 최악의 경우 search의 빅오는 O(n)이다.">
+<meta name="twitter:description" content="이진 탐색 트리(BST)는 O(log(n))의 시간 복잡도를 가진다. 이것은 탐색 트리가 균형 트리일 경우에만 해당된다.   출처 : https://github.com/ythwork/CS/   위 그림처럼 최악의 경우, O(n)의 시간 복잡도를 가지게 된다.  균형 이진 트리 self-balancing(balanced-binary tree) 균형 이진 트">
 <meta name="twitter:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/25/190725-dsaa-study/">
@@ -168,16 +168,89 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="균형-이진-트리"><a href="#균형-이진-트리" class="headerlink" title="균형 이진 트리"></a>균형 이진 트리</h4><ul>
-<li>self-balancing(balanced-binary tree)</li>
+            <ul>
+<li>이진 탐색 트리(BST)는 O(log(n))의 시간 복잡도를 가진다.</li>
+<li>이것은 탐색 트리가 균형 트리일 경우에만 해당된다.</li>
 </ul>
 <img src="/images/The_worst_BST.png" width="350" height="250">
+<center>출처 : <a href="https://github.com/ythwork/CS/" target="_blank" rel="noopener">https://github.com/ythwork/CS/</a></center>
+
 <ul>
-<li><p>출처:<a href="https://github.com/ythwork/CS/" target="_blank" rel="noopener">https://github.com/ythwork/CS/</a></p>
+<li>위 그림처럼 최악의 경우, O(n)의 시간 복잡도를 가지게 된다.</li>
+</ul>
+<h4 id="균형-이진-트리"><a href="#균형-이진-트리" class="headerlink" title="균형 이진 트리"></a>균형 이진 트리</h4><ul>
+<li>self-balancing(balanced-binary tree)</li>
+<li>균형 이진 트리의 종류<ul>
+<li>AVL tree</li>
+<li>Red - Black tree</li>
+</ul>
 </li>
-<li><p>BST에서 최악의 경우 search의 빅오는 O(n)이다.</p>
+<li>AVL tree와 Red - Black tree 모두 Rotation 기반이다.</li>
+</ul>
+<h5 id="확장-이진-트리"><a href="#확장-이진-트리" class="headerlink" title="확장 이진 트리"></a>확장 이진 트리</h5><ul>
+<li><p>extended binary tree</p>
+<img src="/images/extended_binary_tree.png" width="350" height="250">
+<center>출처 : <a href="https://github.com/ythwork/CS/" target="_blank" rel="noopener">https://github.com/ythwork/CS/</a></center>
+</li>
+<li><p>모든 공백 이진 서브 트리를 외부 노드(external node)로 대체</p>
 </li>
 </ul>
+<h5 id="레드-블랙-트리-Red-Black-tree"><a href="#레드-블랙-트리-Red-Black-tree" class="headerlink" title="레드 블랙 트리(Red - Black tree)"></a>레드 블랙 트리(Red - Black tree)</h5><img src="/images/red_black_tree.png" width="350" height="250">
+<center>출처:<a href="https://github.com/ythwork/CS/" target="_blank" rel="noopener">https://github.com/ythwork/CS/</a></center>
+
+<ul>
+<li>모든 노드의 컬러가 레드 혹은 블랙인 이진 탐색 트리</li>
+<li>균형 이진 트리</li>
+<li>루트 노드와 외부 노드의 컬러는 블랙</li>
+<li>루트 노드에서 외부 노드로의 경로 중에 <strong>레드 노드가 연속으로 나올 수 없다.</strong></li>
+<li>루트 노드에서 외부 노드로의 모든 경로에서 <strong>블랙 노드의 수는 같다.</strong></li>
+<li>다음 사이트에서 레드 블랙 트리 동작을 확인할 수 있다.<ul>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html" target="_blank" rel="noopener">https://www.cs.usfca.edu/~galles/visualization/RedBlack.html</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="메모리-계층"><a href="#메모리-계층" class="headerlink" title="메모리 계층"></a>메모리 계층</h4><img src="/images/memory_hierarchy.png" width="350" height="250">
+<center>출처:<a href="https://github.com/ythwork/CS/" target="_blank" rel="noopener">https://github.com/ythwork/CS/</a></center>
+
+<ul>
+<li>메모리에서는 Red - Black tree 만으로도 충분하다.</li>
+<li>대량의 데이터를 처리하는 HDD에서는 B-tree가 적합하다.</li>
+<li>B-tree의 경우<ul>
+<li>tree의 높이(height)를 줄여서 메모리 접근을 줄이고 비교 회수를 늘림</li>
+<li>외부 노드는 모두 같은 레벨이어야 한다.</li>
+<li>insert를 할 때는 split 연산을 한다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Tree-정리"><a href="#Tree-정리" class="headerlink" title="Tree 정리"></a>Tree 정리</h4><ol>
+<li><p>순회</p>
+<ul>
+<li>전위 순회 - Stack</li>
+<li>중위 순회 - Stack</li>
+<li>후위 순회 - Stack</li>
+<li>레벨 순회 - Queue</li>
+</ul>
+</li>
+<li><p>BST </p>
+<ul>
+<li>insert, search, delete = O(log(n))</li>
+<li>최악의 경우 = O(n)</li>
+</ul>
+</li>
+<li><p>Red-Black Tree </p>
+<ul>
+<li>균형 이진 트리</li>
+<li>rotation</li>
+<li>O(log(n))</li>
+</ul>
+</li>
+<li><p>B-Tree</p>
+<ul>
+<li>대량의 데이터를 처리하는데 이용</li>
+<li>메모리의 접근 회수를 줄이고 비교 회수를 늘림</li>
+</ul>
+</li>
+</ol>
 
         </div>
         <footer class="article-footer">
@@ -185,7 +258,7 @@
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/07/25/190725-DSAA-Study/" data-id="cjz9m8k32009ryhwuf5wu8opa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/07/25/190725-DSAA-Study/" data-id="cjz9qyot700ahkuwu1engub3j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -263,18 +336,20 @@
         "dateCreated": "2019-07-25",
         "dateModified": "2019-08-13",
         "url": "http://JINUKK.github.io/2019/07/25/190725-DSAA-Study/",
-        "description": "균형 이진 트리
+        "description": "
+이진 탐색 트리(BST)는 O(log(n))의 시간 복잡도를 가진다.
+이것은 탐색 트리가 균형 트리일 경우에만 해당된다.
+
+
+출처 : https://github.com/ythwork/CS/
+
+
+위 그림처럼 최악의 경우, O(n)의 시간 복잡도를 가지게 된다.
+
+균형 이진 트리
 self-balancing(balanced-binary tree)
-
-
-
-출처:https://github.com/ythwork/CS/
-
-BST에서 최악의 경우 search의 빅오는 O(n)이다.
-
-
-"
-        "wordCount": 21
+균형 이진 트"
+        "wordCount": 226
     }
 </script>
 
