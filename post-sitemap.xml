@@ -8,6 +8,126 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/</loc>
+        <lastmod>2019-08-13T07:25:49.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/07/190307-Algorithm-tower-of-hanoi/</loc>
+        <lastmod>2019-08-13T07:25:49.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/07/190307-Algorithm-linear-search/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/13/190313-Algorithm-calculator/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-insertion-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-single-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-dummy-double-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-queue-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-stack-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/07/190307-Algorithm-binary-search/</loc>
+        <lastmod>2019-08-13T07:25:48.924Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/10/190410-Git-lecture/</loc>
+        <lastmod>2019-08-13T07:20:21.341Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/03/190403-Git-lecture/</loc>
+        <lastmod>2019-08-13T07:20:15.097Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/04/26/190426-Python-how-to-save/</loc>
         <lastmod>2019-08-13T07:14:40.467Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -226,22 +346,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/04/10/190410-PCE-Study/</loc>
         <lastmod>2019-08-13T06:46:44.033Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/03/190403-Git-lecture/</loc>
-        <lastmod>2019-08-13T06:45:48.591Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/10/190410-Git-lecture/</loc>
-        <lastmod>2019-08-13T06:45:42.699Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -752,46 +856,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
-        <lastmod>2019-07-21T07:29:34.956Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
-        <lastmod>2019-07-21T07:29:05.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
-        <lastmod>2019-07-21T07:27:48.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-insertion-sort/</loc>
-        <lastmod>2019-07-21T07:27:14.776Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Algorithm-Sort-bubble-sort/</loc>
-        <lastmod>2019-07-21T07:26:03.715Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/</loc>
         <lastmod>2019-07-21T07:23:16.472Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -818,70 +882,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/07/01/190701-DSAA-Study/</loc>
         <lastmod>2019-07-21T06:04:08.154Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-queue-linked-list/</loc>
-        <lastmod>2019-06-16T15:38:15.883Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-stack-linked-list/</loc>
-        <lastmod>2019-06-16T15:36:39.110Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-single-linked-list/</loc>
-        <lastmod>2019-06-16T15:28:38.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-dummy-double-linked-list/</loc>
-        <lastmod>2019-06-16T15:28:23.662Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/13/190313-Algorithm-calculator/</loc>
-        <lastmod>2019-06-16T14:14:16.657Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/07/190307-Algorithm-binary-search/</loc>
-        <lastmod>2019-06-16T10:05:31.786Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/07/190307-Algorithm-linear-search/</loc>
-        <lastmod>2019-06-16T10:04:46.742Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/07/190307-Algorithm-tower-of-hanoi/</loc>
-        <lastmod>2019-06-16T10:04:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

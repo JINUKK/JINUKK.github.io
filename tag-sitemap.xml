@@ -3,6 +3,125 @@
 
 
     <url>
+        <loc>http://JINUKK.github.io/tags/bubble-sort/</loc>
+        <lastmod>2019-08-13T07:25:49.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/sort/</loc>
+        <lastmod>2019-08-13T07:25:49.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/algorithm/</loc>
+        <lastmod>2019-08-13T07:25:49.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/python/</loc>
+        <lastmod>2019-08-13T07:25:49.256Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/tower-of-hanoi/</loc>
+        <lastmod>2019-08-13T07:25:49.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/stack/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/selection-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/merge-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/dummy-double-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/quick-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/single-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/insertion-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/queue/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/caculator/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/linear-search/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/binary-search/</loc>
+        <lastmod>2019-08-13T07:25:48.924Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/tags/csv/</loc>
         <lastmod>2019-08-13T07:14:40.467Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,13 +137,6 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/excel/</loc>
-        <lastmod>2019-08-13T07:14:40.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/python/</loc>
         <lastmod>2019-08-13T07:14:40.467Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -68,13 +180,6 @@
     <url>
         <loc>http://JINUKK.github.io/tags/generator/</loc>
         <lastmod>2019-08-13T07:14:27.599Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/queue/</loc>
-        <lastmod>2019-08-13T07:14:22.119Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -306,111 +411,6 @@
     <url>
         <loc>http://JINUKK.github.io/tags/list/</loc>
         <lastmod>2019-08-13T07:11:38.161Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/merge-sort/</loc>
-        <lastmod>2019-07-21T07:29:34.956Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/algorithm/</loc>
-        <lastmod>2019-07-21T07:29:34.956Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/quick-sort/</loc>
-        <lastmod>2019-07-21T07:29:05.677Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/selection-sort/</loc>
-        <lastmod>2019-07-21T07:27:48.031Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/insertion-sort/</loc>
-        <lastmod>2019-07-21T07:27:14.776Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/bubble-sort/</loc>
-        <lastmod>2019-07-21T07:26:03.715Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/sort/</loc>
-        <lastmod>2019-07-21T07:26:03.715Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/linked-list/</loc>
-        <lastmod>2019-06-16T15:38:15.883Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/stack/</loc>
-        <lastmod>2019-06-16T15:36:39.110Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/single-linked-list/</loc>
-        <lastmod>2019-06-16T15:28:38.866Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/dummy-double-linked-list/</loc>
-        <lastmod>2019-06-16T15:28:23.662Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/caculator/</loc>
-        <lastmod>2019-06-16T14:14:16.657Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/binary-search/</loc>
-        <lastmod>2019-06-16T10:05:31.786Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/linear-search/</loc>
-        <lastmod>2019-06-16T10:04:46.742Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/tower-of-hanoi/</loc>
-        <lastmod>2019-06-16T10:04:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
