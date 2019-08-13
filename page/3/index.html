@@ -174,23 +174,23 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-23T03:56:59.000Z" itemprop="datePublished">2019-05-23</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/23/190523-Django-Study/">2019.05.23 Django Study</a>
+        <a href="/2019/05/23/190523-Django-Study/">AWS EC2에 Django 서버 설정하기</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Django Project
+            
 EC2에 장고 서버 셋팅하기
 
 EC2에 SSH로 접속한다.
-12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53
+12345678# 퍼블릭 DNS 주소를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]# 탄력적 IP를 가지고 있다면$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[할당받은 탄력적 IP]# Route53을 통해 도메인을 연결했다
         </p>
     </div>
 </article>
@@ -224,19 +224,19 @@ EC2에 SSH로 접속한다.
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/22/190522-Django-Study/">2019.05.22 Django Study</a>
+        <a href="/2019/05/22/190522-Django-Study/">AWS EC2 서버 설정하기</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Django Project
+            
 EC2에 웹 서버 설정하기
 
 EC2에 SSH로 접속한다.
@@ -246,7 +246,9 @@ EC2에 SSH로 접속한다.
 1$ sudo apt-get update
 
 Nginx를 설치한다.
-12# apt-get 사용$ sudo apt-get install
+12# apt-get 사용$ sudo apt-get install nginx
+
+nginx가
         </p>
     </div>
 </article>
@@ -284,26 +286,26 @@ Nginx를 설치한다.
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-21T14:40:04.000Z" itemprop="datePublished">2019-05-21</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/21/190521-Django-Study/">2019.05.21 Django Study</a>
+        <a href="/2019/05/21/190521-Django-Study/">AWS EC2 인스턴스 만들기</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Django Project
+            
 debug tool bar 설치하기
 
 debug tool bar를 설치한다.
 1$ pip install django-debug-toolbar
 
 settings.py에 해당 관련 항목을 추가한다.
-1234567891011# INSTALLED_APPS에 항목 추가INSTALLED_APPS = [    #...    'debug_too
+1234567891011# INSTALLED_APPS에 항목 추가INSTALLED_APPS = [    #...    'debug_toolbar',]# MIDDL
         </p>
     </div>
 </article>
@@ -337,19 +339,19 @@ settings.py에 해당 관련 항목을 추가한다.
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-20T10:54:33.000Z" itemprop="datePublished">2019-05-20</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/20/190520-Django-Study/">2019.05.20 Django Study</a>
+        <a href="/2019/05/20/190520-Django-Study/">Django project 설정 복습</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Django Project 복습
+            
 프로젝트 만들기
 가상 환경 만들기
 데이터베이스 설정하기
@@ -364,7 +366,9 @@ django 설치
 1$ pip install django
 
 django 프로젝트 생성
-1$ django-admin startpr
+1$ django-admin startproject config .
+
+의
         </p>
     </div>
 </article>
@@ -402,14 +406,14 @@ django 프로젝트 생성
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/17/190517-Django-Study/">2019.05.17 Django Study</a>
+        <a href="/2019/05/17/190517-Django-Study/">Board project - 5</a>
         </h1>
     
 
@@ -457,14 +461,14 @@ ajax를 통해 주로 주고 받는 형태가 XML이나 JSON
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-16T12:45:36.000Z" itemprop="datePublished">2019-05-16</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/16/190516-Django-Study/">2019.05.16 Django Study</a>
+        <a href="/2019/05/16/190516-Django-Study/">Board project - 4</a>
         </h1>
     
 
@@ -511,14 +515,14 @@ models.py에 comment 모델 작성
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-15T07:56:18.000Z" itemprop="datePublished">2019-05-15</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/15/190515-Django-Study/">2019.05.15 Django Study</a>
+        <a href="/2019/05/15/190515-Django-Study/">Board project - 3</a>
         </h1>
     
 
@@ -560,14 +564,14 @@ F() 객체
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/14/190514-Django-Study/">2019.05.14 Django Study</a>
+        <a href="/2019/05/14/190514-Django-Study/">Board project - 2</a>
         </h1>
     
 
@@ -614,26 +618,26 @@ views.py 수정123456789101112131415161718192021222324252627282930313233343536# 
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/13/190513-Django-Study/">2019.05.13 Django Study</a>
+        <a href="/2019/05/13/190513-Django-Study/">Board project - 1</a>
         </h1>
     
 
         <p class="article-excerpt">
-            2019.05.13 Django Study[ Board project ]
+            [ Board project ]
 url이 있는 형태로 S3 버킷 만들기(media 파일용)
 
 board.[도메인 주소]로 버킷 이름을 설정한다.
 퍼블릭 ACL 관리 체크 항목을 모두 해제한다.
 버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다.
 AWS ROUTE53에서 레코드를 생성한다.
-pycharm
+pycharm project의 settings.py에 
         </p>
     </div>
 </article>
@@ -667,24 +671,25 @@ pycharm
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study-Review/">Study Review</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
             <div class="date"><time datetime="2019-05-10T12:00:09.000Z" itemprop="datePublished">2019-05-10</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/10/190510-Django-Study/">2019.05.10 Django Study</a>
+        <a href="/2019/05/10/190510-Django-Study/">Dstargram project - 5</a>
         </h1>
     
 
         <p class="article-excerpt">
-            2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경
+            [ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경
 signal
 ~하기 전에, ~한 후에 발생하는 일들을 말함
 후속 조치를 하는 것
 대표적인 signal 종류
-pre_save 
+pre_save : 저장하기 전
+post_save : 저장
         </p>
     </div>
 </article>
@@ -842,7 +847,7 @@ pre_save
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">43</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">62</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 

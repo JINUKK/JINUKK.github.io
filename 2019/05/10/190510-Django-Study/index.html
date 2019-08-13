@@ -6,23 +6,23 @@
     
 
     
-    <title>2019.05.10 Django Study | KOO|디벨로그</title>
+    <title>Dstargram project - 5 | KOO|디벨로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save">
+    <meta name="description" content="[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save : 저장하기 전 post_save : 저장">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019.05.10 Django Study">
+<meta property="og:title" content="Dstargram project - 5">
 <meta property="og:url" content="http://JINUKK.github.io/2019/05/10/190510-Django-Study/index.html">
 <meta property="og:site_name" content="KOO|디벨로그">
-<meta property="og:description" content="2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save">
+<meta property="og:description" content="[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save : 저장하기 전 post_save : 저장">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-13T12:01:40.739Z">
+<meta property="og:updated_time" content="2019-08-13T05:51:03.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019.05.10 Django Study">
-<meta name="twitter:description" content="2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save">
+<meta name="twitter:title" content="Dstargram project - 5">
+<meta name="twitter:description" content="[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경 signal ~하기 전에, ~한 후에 발생하는 일들을 말함 후속 조치를 하는 것 대표적인 signal 종류 pre_save : 저장하기 전 post_save : 저장">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/05/10/190510-django-study/">
 
@@ -132,7 +132,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
     </h1>
 </div>
 
@@ -144,7 +144,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        2019.05.10 Django Study
+        Dstargram project - 5
         </h1>
     
 
@@ -166,7 +166,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="2019-05-10-Django-Study"><a href="#2019-05-10-Django-Study" class="headerlink" title="2019.05.10 Django Study"></a>2019.05.10 Django Study</h1><h2 id="Dstargram-project"><a href="#Dstargram-project" class="headerlink" title="[ Dstargram project ]"></a>[ Dstargram project ]</h2><h4 id="aws-S3를-이용하여-이미지-파일을-저장하고"><a href="#aws-S3를-이용하여-이미지-파일을-저장하고" class="headerlink" title="aws S3를 이용하여 이미지 파일을 저장하고"></a>aws S3를 이용하여 이미지 파일을 저장하고</h4><h4 id="해당-글을-삭제했으나-S3에는-이미지가-삭제되지-않음"><a href="#해당-글을-삭제했으나-S3에는-이미지가-삭제되지-않음" class="headerlink" title="해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음"></a>해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음</h4><h4 id="signal을-사용하여-S3에도-이미지가-삭제되도록-변경"><a href="#signal을-사용하여-S3에도-이미지가-삭제되도록-변경" class="headerlink" title="signal을 사용하여 S3에도 이미지가 삭제되도록 변경"></a>signal을 사용하여 S3에도 이미지가 삭제되도록 변경</h4><ul>
+            <h2 id="Dstargram-project"><a href="#Dstargram-project" class="headerlink" title="[ Dstargram project ]"></a>[ Dstargram project ]</h2><h4 id="aws-S3를-이용하여-이미지-파일을-저장하고"><a href="#aws-S3를-이용하여-이미지-파일을-저장하고" class="headerlink" title="aws S3를 이용하여 이미지 파일을 저장하고"></a>aws S3를 이용하여 이미지 파일을 저장하고</h4><h4 id="해당-글을-삭제했으나-S3에는-이미지가-삭제되지-않음"><a href="#해당-글을-삭제했으나-S3에는-이미지가-삭제되지-않음" class="headerlink" title="해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음"></a>해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음</h4><h4 id="signal을-사용하여-S3에도-이미지가-삭제되도록-변경"><a href="#signal을-사용하여-S3에도-이미지가-삭제되도록-변경" class="headerlink" title="signal을 사용하여 S3에도 이미지가 삭제되도록 변경"></a>signal을 사용하여 S3에도 이미지가 삭제되도록 변경</h4><ul>
 <li>signal<ul>
 <li>~하기 전에, ~한 후에 발생하는 일들을 말함</li>
 <li>후속 조치를 하는 것</li>
@@ -311,21 +311,22 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "2019.05.10 Django Study",
+        "headline": "Dstargram project - 5",
         "image": "http://JINUKK.github.io",
         "keywords": "",
-        "genre": "Study Review",
+        "genre": "Study Django and Web server",
         "datePublished": "2019-05-10",
         "dateCreated": "2019-05-10",
-        "dateModified": "2019-05-13",
+        "dateModified": "2019-08-13",
         "url": "http://JINUKK.github.io/2019/05/10/190510-Django-Study/",
-        "description": "2019.05.10 Django Study[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경
+        "description": "[ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경
 signal
 ~하기 전에, ~한 후에 발생하는 일들을 말함
 후속 조치를 하는 것
 대표적인 signal 종류
-pre_save "
-        "wordCount": 797
+pre_save : 저장하기 전
+post_save : 저장"
+        "wordCount": 789
     }
 </script>
 
@@ -369,7 +370,7 @@ pre_save "
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            2019.05.13 Django Study
+            Board project - 1
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -378,7 +379,7 @@ pre_save "
     
         <a href="/2019/05/09/190509-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">2019.05.09 Django Study</p>
+        <p class="article-nav-title">AWS S3 and RDS</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -506,7 +507,7 @@ pre_save "
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">43</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">62</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 

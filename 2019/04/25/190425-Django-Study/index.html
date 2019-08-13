@@ -6,7 +6,7 @@
     
 
     
-    <title>2019.04.25 Django Study | KOO|디벨로그</title>
+    <title>Crawler 실습 - 2 | KOO|디벨로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -14,14 +14,14 @@
     
     <meta name="description" content="Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 프로그램-&amp;gt; 웹 브라우저를 흉내내는 프로그램  1) requests : 웹 사이트에 접속, 데이터를 받아오는 역할2) BeautifulSoup : 데이터를 HTML로 해석하는 역할-&amp;gt; 선행지식 : HTML에 대한 이해, CSS Selector를 만드는 방법  요소 검사를 통해">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019.04.25 Django Study">
+<meta property="og:title" content="Crawler 실습 - 2">
 <meta property="og:url" content="http://JINUKK.github.io/2019/04/25/190425-Django-Study/index.html">
 <meta property="og:site_name" content="KOO|디벨로그">
 <meta property="og:description" content="Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 프로그램-&amp;gt; 웹 브라우저를 흉내내는 프로그램  1) requests : 웹 사이트에 접속, 데이터를 받아오는 역할2) BeautifulSoup : 데이터를 HTML로 해석하는 역할-&amp;gt; 선행지식 : HTML에 대한 이해, CSS Selector를 만드는 방법  요소 검사를 통해">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-26T08:52:14.768Z">
+<meta property="og:updated_time" content="2019-08-13T05:43:08.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2019.04.25 Django Study">
+<meta name="twitter:title" content="Crawler 실습 - 2">
 <meta name="twitter:description" content="Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 프로그램-&amp;gt; 웹 브라우저를 흉내내는 프로그램  1) requests : 웹 사이트에 접속, 데이터를 받아오는 역할2) BeautifulSoup : 데이터를 HTML로 해석하는 역할-&amp;gt; 선행지식 : HTML에 대한 이해, CSS Selector를 만드는 방법  요소 검사를 통해">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/04/25/190425-django-study/">
@@ -132,7 +132,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Study-Review/">Study Review</a>
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
     </h1>
 </div>
 
@@ -144,7 +144,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        2019.04.25 Django Study
+        Crawler 실습 - 2
         </h1>
     
 
@@ -195,8 +195,7 @@
 </li>
 </ol>
 <ul>
-<li>NAVER 개발자센터 API 사용 - 단축 URL<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">client_id = <span class="string">"xxxxx"</span> <span class="comment"># 개발자센터에서 발급받은 Client ID</span></span><br><span class="line">client_secret = <span class="string">"xxxxx"</span> <span class="comment"># 개발자센터에서 발급받은 Client Secret</span></span><br><span class="line"></span><br><span class="line">custom_header = &#123;</span><br><span class="line">    <span class="string">"X-Naver-Client-Id"</span>:client_id,</span><br><span class="line">    <span class="string">"X-Naver-Client-Secret"</span>:client_secret</span><br><span class="line">&#125;</span><br><span class="line">encText = <span class="string">"https://developers.naver.com/docs/utils/shortenurl"</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">"url"</span>:encText</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://openapi.naver.com/v1/util/shorturl"</span></span><br><span class="line">req = requests.post(url, headers=custom_header, data=data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> req.status_code == requests.codes.ok:</span><br><span class="line">    print(<span class="string">"접속 성공"</span>)</span><br><span class="line">    trans_data = json.loads(req.text)</span><br><span class="line">    print(trans_data) <span class="comment"># 데이터 형태 파악</span></span><br><span class="line">    print(trans_data[<span class="string">'result'</span>][<span class="string">'url'</span>]) <span class="comment"># 원하는 데이터 출력</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>NAVER 개발자센터 API 사용 - 단축 URL<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">client_id = <span class="string">"xxxxx"</span> <span class="comment"># 개발자센터에서 발급받은 Client ID</span></span><br><span class="line">client_secret = <span class="string">"xxxxx"</span> <span class="comment"># 개발자센터에서 발급받은 Client Secret</span></span><br><span class="line"></span><br><span class="line">custom_header = &#123;</span><br><span class="line">    <span class="string">"X-Naver-Client-Id"</span>:client_id,</span><br><span class="line">    <span class="string">"X-Naver-Client-Secret"</span>:client_secret</span><br><span class="line">&#125;</span><br><span class="line">encText = <span class="string">"https://developers.naver.com/docs/utils/shortenurl"</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">"url"</span>:encText</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://openapi.naver.com/v1/util/shorturl"</span></span><br><span class="line">req = requests.post(url, headers=custom_header, data=data)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> req.status_code == requests.codes.ok:</span><br><span class="line">    print(<span class="string">"접속 성공"</span>)</span><br><span class="line">    trans_data = json.loads(req.text)</span><br><span class="line">    print(trans_data) <span class="comment"># 데이터 형태 파악</span></span><br><span class="line">    print(trans_data[<span class="string">'result'</span>][<span class="string">'url'</span>]) <span class="comment"># 원하는 데이터 출력</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
         </div>
@@ -275,13 +274,13 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "2019.04.25 Django Study",
+        "headline": "Crawler 실습 - 2",
         "image": "http://JINUKK.github.io",
         "keywords": "",
-        "genre": "Study Review",
+        "genre": "Study Django and Web server",
         "datePublished": "2019-04-25",
         "dateCreated": "2019-04-25",
-        "dateModified": "2019-04-26",
+        "dateModified": "2019-08-13",
         "url": "http://JINUKK.github.io/2019/04/25/190425-Django-Study/",
         "description": "
 Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 프로그램-&gt; 웹 브라우저를 흉내내는 프로그램
@@ -342,7 +341,7 @@ Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 
     
         <a href="/2019/04/24/190424-Django-Study/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">2019.04.24 Django Study</p>
+        <p class="article-nav-title">Crawler 실습 - 1</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -470,7 +469,7 @@ Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">27</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">43</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">62</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
