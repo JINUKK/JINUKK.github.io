@@ -6,24 +6,24 @@
     
 
     
-    <title>Python and Computer engineering | KOO|디벨로그</title>
+    <title>Network - 1 | KOO|디벨로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="git 특강 git란?  VCS(Version Control System) == SCM(Source Code Management: 형상관리)  빠른 속도, 단순한 구조  수정내용은 commit 단위로 관리  모든 파일이 Blob이라는 단위로 구성  파일에 대한 정보들을 모은 것이 commit  source + history = commit =&amp;gt; blo">
+    <meta name="description" content="Network OSI 7계층  응용 계층(Application Layer) - FTP, HTTP, SSH  표현 계층(Presentation Layer)  세션 계층(Session Layer)  전송 계층(Transport Layer) - TCP, UDP  네트워크 계층(Network Layer) - IP  데이터 링크 계층(Data Link Layer)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python and Computer engineering">
+<meta property="og:title" content="Network - 1">
 <meta property="og:url" content="http://JINUKK.github.io/2019/04/03/190403-PCE-Study/index.html">
 <meta property="og:site_name" content="KOO|디벨로그">
-<meta property="og:description" content="git 특강 git란?  VCS(Version Control System) == SCM(Source Code Management: 형상관리)  빠른 속도, 단순한 구조  수정내용은 commit 단위로 관리  모든 파일이 Blob이라는 단위로 구성  파일에 대한 정보들을 모은 것이 commit  source + history = commit =&amp;gt; blo">
+<meta property="og:description" content="Network OSI 7계층  응용 계층(Application Layer) - FTP, HTTP, SSH  표현 계층(Presentation Layer)  세션 계층(Session Layer)  전송 계층(Transport Layer) - TCP, UDP  네트워크 계층(Network Layer) - IP  데이터 링크 계층(Data Link Layer)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/PCE_thumnail.png">
-<meta property="og:updated_time" content="2019-08-13T05:09:40.117Z">
+<meta property="og:updated_time" content="2019-08-13T06:42:02.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python and Computer engineering">
-<meta name="twitter:description" content="git 특강 git란?  VCS(Version Control System) == SCM(Source Code Management: 형상관리)  빠른 속도, 단순한 구조  수정내용은 commit 단위로 관리  모든 파일이 Blob이라는 단위로 구성  파일에 대한 정보들을 모은 것이 commit  source + history = commit =&amp;gt; blo">
+<meta name="twitter:title" content="Network - 1">
+<meta name="twitter:description" content="Network OSI 7계층  응용 계층(Application Layer) - FTP, HTTP, SSH  표현 계층(Presentation Layer)  세션 계층(Session Layer)  전송 계층(Transport Layer) - TCP, UDP  네트워크 계층(Network Layer) - IP  데이터 링크 계층(Data Link Layer)">
 <meta name="twitter:image" content="http://jinukk.github.io/images/PCE_thumnail.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/04/03/190403-pce-study/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Python and Computer engineering
+        Network - 1
         </h1>
     
 
@@ -168,98 +168,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="git-특강"><a href="#git-특강" class="headerlink" title="git 특강"></a>git 특강</h2><ul>
-<li><p>git란?</p>
-<ul>
-<li><p>VCS(Version Control System) == SCM(Source Code Management: 형상관리)</p>
-</li>
-<li><p>빠른 속도, 단순한 구조</p>
-</li>
-<li><p>수정내용은 commit 단위로 관리</p>
-<ul>
-<li><p>모든 파일이 Blob이라는 단위로 구성</p>
-</li>
-<li><p>파일에 대한 정보들을 모은 것이 commit</p>
-</li>
-<li><p>source + history = commit =&gt; blob + label = commit</p>
-</li>
-<li><p>commit들을 나열하는게 Tree</p>
-</li>
-</ul>
-</li>
-<li><p>인터넷이 연결되지 않아도 개발 가능</p>
-</li>
-</ul>
-</li>
-<li><p>내 정보 작성(git config list)</p>
-<ul>
-<li><p>git 관리를 위한 디렉토리를 만든 후, global config list 작성</p>
-</li>
-<li><p>유저 작성</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name [유저 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>유저 이메일 작성</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.email [유저 이메일]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>작성된 리스트 보기</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>git 명령어</p>
-<ul>
-<li><p>해당 디렉토리에서 git 저장소를 만듦</p>
-</li>
-<li><p>github 사이트에서도 해당 디렉토리와 이름이 같은 프로젝트 생성</p>
-</li>
-<li><p>해당 디렉토리와 이름을 같게 하는 이유는 헷갈리지 않기 위함</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"><span class="comment"># 반드시 관리하기 위해 만들어두었던 디렉토리에서 명령어 실행</span></span><br><span class="line"><span class="comment"># 그렇지 않고 다른 디렉토리에 했다면 ls -al 통해 확인 후, rm -rf .git로 지우기 가능</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>주소 별명 지정</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add [주소 별명] [내 github 디렉토리 주소]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>주소 별명의 url 확인</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote get-url [주소 별명]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>주소 별명 제거</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote remove [주소 별명]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>현재 파일의 commit 진행 상황 확인</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git init를 진행한 디렉토리 안에서 원하는 소스 파일 생성</p>
-<ul>
-<li><p>vim으로 작업한 후, 저장</p>
-</li>
-<li><p>소스 파일이 잘 실행되는지 확인</p>
-</li>
-<li><p>git status를 통해 파일의 현재 커밋 상황 확인</p>
-</li>
-</ul>
-</li>
-<li><p>add 명령어를 통해 workspace에 저장해둔 소스 파일을 stage 위로 올림</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add [소스 파일]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>commit 작성</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim 진입</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 첫 줄은 해당 소스 파일 작업에 대해 요약 ex) feat: add hello.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 요약할 때에는 첫 줄만 봐도 파악될 수 있게 정리</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 밑에 줄 부터는 무엇을 수정했는지 서술</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 영어로 서술하도록 한다.</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>끝나면 저장하고 나온 후, git status를 통해 진행 상황 확인</p>
-</li>
-<li><p>이 지점에서 다시 수정해서 local repository에 계속 축적 대기시킬 수 있음</p>
-</li>
-<li><p>git remote repositorry에 추가</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u [주소 별명] master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 처음만 -u를 통해 명령어 입력</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># -u를 입력하여 master 브랜치를 맞춰줌</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>리스트나 딕셔너리의 컬렉션 자료형을 쓸 때에는 인덱스를 세로로 명시하는 것이 좋다.</p>
-</li>
-<li><p>또한 마지막 인덱스에는 콤마를 붙여서 끝내는 것이 좋다.(아무 문제 없다.)</p>
-</li>
-<li><p>그래야 commit을 했을 때 수정한 부분이 명확하게 보인다.</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Computer-Engineering"><a href="#Computer-Engineering" class="headerlink" title="Computer Engineering"></a>Computer Engineering</h2><h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><ol>
+            <h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><ol>
 <li><p>OSI 7계층</p>
 <ul>
 <li><p>응용 계층(Application Layer) - FTP, HTTP, SSH</p>
@@ -588,7 +497,7 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "Python and Computer engineering",
+        "headline": "Network - 1",
         "image": "http://JINUKK.github.io/images/PCE_thumnail.png",
         "keywords": "",
         "genre": "Study Python and CE",
@@ -596,21 +505,21 @@
         "dateCreated": "2019-04-03",
         "dateModified": "2019-08-13",
         "url": "http://JINUKK.github.io/2019/04/03/190403-PCE-Study/",
-        "description": "git 특강
-git란?
+        "description": "Network
+OSI 7계층
 
-VCS(Version Control System) == SCM(Source Code Management: 형상관리)
+응용 계층(Application Layer) - FTP, HTTP, SSH
 
-빠른 속도, 단순한 구조
+표현 계층(Presentation Layer)
 
-수정내용은 commit 단위로 관리
+세션 계층(Session Layer)
 
-모든 파일이 Blob이라는 단위로 구성
+전송 계층(Transport Layer) - TCP, UDP
 
-파일에 대한 정보들을 모은 것이 commit
+네트워크 계층(Network Layer) - IP
 
-source + history = commit =&gt; blo"
-        "wordCount": 1348
+데이터 링크 계층(Data Link Layer) "
+        "wordCount": 947
     }
 </script>
 
@@ -654,16 +563,16 @@ source + history = commit =&gt; blo"
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            Python and Computer engineering
+            Network - 2
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/2019/04/02/190402-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/04/03/190403-Git-lecture/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Python and Computer engineering</p>
+        <p class="article-nav-title">Git에 대해 - 1</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -791,7 +700,7 @@ source + history = commit =&gt; blo"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">62</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">64</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -801,7 +710,7 @@ source + history = commit =&gt; blo"
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 

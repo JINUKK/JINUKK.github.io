@@ -6,24 +6,24 @@
     
 
     
-    <title>Python and Computer engineering | KOO|디벨로그</title>
+    <title>Database - 3 | KOO|디벨로그</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
+    <meta name="description" content="python에서 mariaDB Database 활용하기 mysql 관련 모듈 설치   1$ pip install mysql-connector  python 소스 작성   12345678910111213141516171819202122232425262728293031from mysql.connector import MySQLConnection# mariaDB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python and Computer engineering">
+<meta property="og:title" content="Database - 3">
 <meta property="og:url" content="http://JINUKK.github.io/2019/04/10/190410-PCE-Study/index.html">
 <meta property="og:site_name" content="KOO|디벨로그">
-<meta property="og:description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
+<meta property="og:description" content="python에서 mariaDB Database 활용하기 mysql 관련 모듈 설치   1$ pip install mysql-connector  python 소스 작성   12345678910111213141516171819202122232425262728293031from mysql.connector import MySQLConnection# mariaDB">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/PCE_thumnail.png">
-<meta property="og:updated_time" content="2019-08-13T05:09:55.793Z">
+<meta property="og:updated_time" content="2019-08-13T06:46:44.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python and Computer engineering">
-<meta name="twitter:description" content="git 특강 clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.  branch  분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델  가로는 시간, 세로는 공간을 의미  github에서 Insights/Network를 통해 현황 보기 가능  origin의 master는 하나  현재 위치 확인 1$ git branch  모">
+<meta name="twitter:title" content="Database - 3">
+<meta name="twitter:description" content="python에서 mariaDB Database 활용하기 mysql 관련 모듈 설치   1$ pip install mysql-connector  python 소스 작성   12345678910111213141516171819202122232425262728293031from mysql.connector import MySQLConnection# mariaDB">
 <meta name="twitter:image" content="http://jinukk.github.io/images/PCE_thumnail.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/04/10/190410-pce-study/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        Python and Computer engineering
+        Database - 3
         </h1>
     
 
@@ -168,82 +168,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="git-특강"><a href="#git-특강" class="headerlink" title="git 특강"></a>git 특강</h2><ul>
-<li><p>clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.</p>
-</li>
-<li><p>branch</p>
-<ul>
-<li><p>분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델</p>
-</li>
-<li><p>가로는 시간, 세로는 공간을 의미</p>
-</li>
-<li><p>github에서 Insights/Network를 통해 현황 보기 가능</p>
-</li>
-<li><p>origin의 master는 하나</p>
-</li>
-<li><p>현재 위치 확인</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>모든 branch 보기</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>공간 추가</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch [공간 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>다른 공간 이동</p>
-<ul>
-<li><p>이동한 공간에서 push를 한다면 당연히 remote는 현재 공간을 모름</p>
-</li>
-<li><p>처음에는 -u 명령어를 사용해야 한다.</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout [공간 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>다른 공간에서 수정한 파일은 master에서는 아직 수정되어 있지 않은 상태</p>
-</li>
-<li><p>master로 가져오기(업데이트)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge [공간 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>merge를 한 경우, push를 통해 remote에 올려줘야 함</p>
-</li>
-<li><p>기존에 있던 복제한 공간은 제거해줘야 한다.(master만 남겨둠)</p>
-</li>
-<li><p>공간 제거</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -D [공간 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>개발할 때에는 master와 develop 두 개를 두고 써야 한다.</p>
-</li>
-<li><p>master는 프로그램을 사용하는 사용자에게 배포하는 최신 업로드 프로그램 공간으로 관리</p>
-</li>
-<li><p>develop는 프로그램을 개발하는 공간으로 관리</p>
-</li>
-</ul>
-</li>
-<li><p>git flow</p>
-<ul>
-<li><p>git flow를 설치한 후, 사용</p>
-</li>
-<li><p>내가 사용하고자 하는 프로젝트에서 flow 사용을 알림</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git flow는 자동적으로 master와 develop의 공간을 나눠줌</p>
-</li>
-<li><p>branch 생성 후, 그 공간으로 자동 이동</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow feature start [생성 파일 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>develop에 자동 merge</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow feature finish [생성 파일 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>release 생성</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow release start [파일 이름]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>release 종료</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git flow release finish [파일 이름]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="python에서-mariaDB-Database-활용하기"><a href="#python에서-mariaDB-Database-활용하기" class="headerlink" title="python에서 mariaDB Database 활용하기"></a>python에서 mariaDB Database 활용하기</h2><ul>
+            <h2 id="python에서-mariaDB-Database-활용하기"><a href="#python에서-mariaDB-Database-활용하기" class="headerlink" title="python에서 mariaDB Database 활용하기"></a>python에서 mariaDB Database 활용하기</h2><ul>
 <li><p>mysql 관련 모듈 설치</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install mysql-connector</span><br></pre></td></tr></table></figure>
 </li>
@@ -542,7 +467,7 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "Python and Computer engineering",
+        "headline": "Database - 3",
         "image": "http://JINUKK.github.io/images/PCE_thumnail.png",
         "keywords": "",
         "genre": "Study Python and CE",
@@ -550,24 +475,13 @@
         "dateCreated": "2019-04-10",
         "dateModified": "2019-08-13",
         "url": "http://JINUKK.github.io/2019/04/10/190410-PCE-Study/",
-        "description": "git 특강
-clone으로 생성한 project는 -u 옵션을 사용할 필요가 없다.
+        "description": "python에서 mariaDB Database 활용하기
+mysql 관련 모듈 설치
+  1$ pip install mysql-connector
 
-branch
-
-분기점을 생성하고 독립적으로 코드를 변경할 수 있도록 도와주는 모델
-
-가로는 시간, 세로는 공간을 의미
-
-github에서 Insights/Network를 통해 현황 보기 가능
-
-origin의 master는 하나
-
-현재 위치 확인
-1$ git branch
-
-모"
-        "wordCount": 2300
+python 소스 작성
+  12345678910111213141516171819202122232425262728293031from mysql.connector import MySQLConnection# mariaDB"
+        "wordCount": 2060
     }
 </script>
 
@@ -607,11 +521,11 @@ origin의 master는 하나
         
 <nav id="article-nav">
     
-        <a href="/2019/04/11/190411-Algorithm-stack-linked-list/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2019/04/10/190410-Git-lecture/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            linked list를 이용한 stack 구현
+            Git에 대해 - 2
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -620,7 +534,7 @@ origin의 master는 하나
     
         <a href="/2019/04/09/190409-PCE-Study/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Python and Computer engineering</p>
+        <p class="article-nav-title">Database - 2</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -748,7 +662,7 @@ origin의 master는 하나
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">62</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">64</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study-Review/">Study Review</a><span class="category-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -758,7 +672,7 @@ origin의 master는 하나
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 
