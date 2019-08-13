@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/categories/Python/</loc>
+        <lastmod>2019-08-13T07:14:40.467Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/categories/Study/Python-and-CE/</loc>
         <lastmod>2019-08-13T06:48:22.873Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -52,13 +59,6 @@
     <url>
         <loc>http://JINUKK.github.io/categories/Algorithm/</loc>
         <lastmod>2019-07-21T07:29:34.956Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/categories/Python/</loc>
-        <lastmod>2019-06-18T05:07:49.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
