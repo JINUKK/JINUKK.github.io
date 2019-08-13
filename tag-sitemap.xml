@@ -52,14 +52,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/selection-sort/</loc>
-        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/merge-sort/</loc>
+        <loc>http://JINUKK.github.io/tags/single-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -73,6 +66,13 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/tags/selection-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/tags/quick-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -80,7 +80,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/single-linked-list/</loc>
+        <loc>http://JINUKK.github.io/tags/merge-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -283,6 +283,13 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/tags/recursive-function/</loc>
+        <lastmod>2019-08-13T07:12:59.188Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/tags/continue/</loc>
         <lastmod>2019-08-13T07:12:59.188Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -292,27 +299,6 @@
     <url>
         <loc>http://JINUKK.github.io/tags/pass/</loc>
         <lastmod>2019-08-13T07:12:59.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/recursive-function/</loc>
-        <lastmod>2019-08-13T07:12:59.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/namespace/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/function/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -346,6 +332,13 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/tags/operator/</loc>
+        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/tags/comprehension/</loc>
         <lastmod>2019-08-13T07:12:59.184Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -367,14 +360,14 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/boolean/</loc>
+        <loc>http://JINUKK.github.io/tags/namespace/</loc>
         <lastmod>2019-08-13T07:12:59.184Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/operator/</loc>
+        <loc>http://JINUKK.github.io/tags/function/</loc>
         <lastmod>2019-08-13T07:12:59.184Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -382,6 +375,13 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/dictionary/</loc>
+        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/boolean/</loc>
         <lastmod>2019-08-13T07:12:59.184Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
