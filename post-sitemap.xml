@@ -8,6 +8,206 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/03/21/190321-Python-class/</loc>
+        <lastmod>2019-08-13T08:07:41.997Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/26/190326-Python-queue/</loc>
+        <lastmod>2019-08-13T08:07:41.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/15/190315-Python-copy/</loc>
+        <lastmod>2019-08-13T08:07:40.545Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/12/190312-Python-closure/</loc>
+        <lastmod>2019-08-13T08:07:39.597Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/28/190328-Python-generator/</loc>
+        <lastmod>2019-08-13T08:07:38.777Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/12/190312-Python-call-by-object-reference/</loc>
+        <lastmod>2019-08-13T08:07:37.990Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/28/190328-Python-iterator/</loc>
+        <lastmod>2019-08-13T08:07:37.018Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/11/190311-Python-lambda-function/</loc>
+        <lastmod>2019-08-13T08:07:36.358Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/26/190426-Python-how-to-save/</loc>
+        <lastmod>2019-08-13T08:07:35.230Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/11/190311-Python-decorator/</loc>
+        <lastmod>2019-08-13T08:07:34.530Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/08/190308-Python-comparison/</loc>
+        <lastmod>2019-08-13T08:07:33.822Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/07/190307-Python-radix/</loc>
+        <lastmod>2019-08-13T08:07:32.974Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/</loc>
+        <lastmod>2019-08-13T08:07:32.086Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/06/190306-Python-recursive-function/</loc>
+        <lastmod>2019-08-13T08:07:31.142Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/06/190306-Python-pass-continue/</loc>
+        <lastmod>2019-08-13T08:07:30.323Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/06/190306-Python-packing-unpacking/</loc>
+        <lastmod>2019-08-13T08:07:27.983Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-operator/</loc>
+        <lastmod>2019-08-13T08:07:26.767Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-loop/</loc>
+        <lastmod>2019-08-13T08:07:24.367Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-function/</loc>
+        <lastmod>2019-08-13T08:07:23.563Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/</loc>
+        <lastmod>2019-08-13T08:07:22.523Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-boolean/</loc>
+        <lastmod>2019-08-13T08:07:21.300Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-tuple/</loc>
+        <lastmod>2019-08-13T08:07:17.632Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-string/</loc>
+        <lastmod>2019-08-13T08:07:13.113Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-set/</loc>
+        <lastmod>2019-08-13T08:07:11.157Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-list/</loc>
+        <lastmod>2019-08-13T08:06:51.571Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/07/18/190718-DSAA-Study/</loc>
         <lastmod>2019-08-13T07:54:07.801Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -466,206 +666,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/04/03/190403-Git-lecture/</loc>
         <lastmod>2019-08-13T07:20:15.097Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/26/190426-Python-how-to-save/</loc>
-        <lastmod>2019-08-13T07:14:40.467Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/28/190328-Python-iterator/</loc>
-        <lastmod>2019-08-13T07:14:34.063Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/28/190328-Python-generator/</loc>
-        <lastmod>2019-08-13T07:14:27.599Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/26/190326-Python-queue/</loc>
-        <lastmod>2019-08-13T07:14:22.119Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/21/190321-Python-class/</loc>
-        <lastmod>2019-08-13T07:14:15.511Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/15/190315-Python-copy/</loc>
-        <lastmod>2019-08-13T07:14:10.759Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/12/190312-Python-closure/</loc>
-        <lastmod>2019-08-13T07:14:02.399Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/12/190312-Python-call-by-object-reference/</loc>
-        <lastmod>2019-08-13T07:13:55.099Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/08/190308-Python-comparison/</loc>
-        <lastmod>2019-08-13T07:13:47.279Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/11/190311-Python-decorator/</loc>
-        <lastmod>2019-08-13T07:13:46.027Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/11/190311-Python-lambda-function/</loc>
-        <lastmod>2019-08-13T07:13:44.776Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/07/190307-Python-radix/</loc>
-        <lastmod>2019-08-13T07:13:22.320Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/06/190306-Python-pass-continue/</loc>
-        <lastmod>2019-08-13T07:12:59.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/06/190306-Python-recursive-function/</loc>
-        <lastmod>2019-08-13T07:12:59.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/</loc>
-        <lastmod>2019-08-13T07:12:59.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-set/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-string/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-tuple/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-boolean/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-function/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-operator/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-loop/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/06/190306-Python-packing-unpacking/</loc>
-        <lastmod>2019-08-13T07:12:59.184Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-list/</loc>
-        <lastmod>2019-08-13T07:11:38.161Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
