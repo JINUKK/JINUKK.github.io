@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/08/08/190808-DSAA-Study/</loc>
+        <lastmod>2019-08-14T07:44:54.182Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/</loc>
+        <lastmod>2019-08-14T07:22:05.242Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/08/06/190806-DSAA-Study/</loc>
         <lastmod>2019-08-14T07:17:59.346Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -40,14 +56,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/08/08/190808-DSAA-Study/</loc>
-        <lastmod>2019-08-13T12:48:19.604Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/2019/07/22/190722-DSAA-Study/</loc>
         <lastmod>2019-08-13T11:37:47.479Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -66,14 +74,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/07/15/190715-DSAA-Study/</loc>
         <lastmod>2019-08-13T11:37:06.729Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/</loc>
-        <lastmod>2019-08-13T11:36:42.954Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -648,7 +648,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -656,7 +656,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -680,7 +680,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-queue-linked-list/</loc>
+        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-stack-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -688,7 +688,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-stack-linked-list/</loc>
+        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-queue-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
