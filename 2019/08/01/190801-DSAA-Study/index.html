@@ -6,24 +6,24 @@
     
 
     
-    <title>190801-DSAA-Study | KOO|개발자</title>
+    <title>최소 비용 신장 트리(Minimum Cost Spanning Tree) | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190801-DSAA-Study">
+<meta property="og:title" content="최소 비용 신장 트리(Minimum Cost Spanning Tree)">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
-<meta property="og:updated_time" content="2019-08-13T11:50:31.426Z">
+<meta property="og:updated_time" content="2019-08-14T05:57:25.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190801-DSAA-Study">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="최소 비용 신장 트리(Minimum Cost Spanning Tree)">
+<meta name="twitter:description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
 <meta name="twitter:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/08/01/190801-dsaa-study/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190801-DSAA-Study
+        최소 비용 신장 트리(Minimum Cost Spanning Tree)
         </h1>
     
 
@@ -168,14 +168,278 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <h4 id="신장-트리"><a href="#신장-트리" class="headerlink" title="신장 트리"></a>신장 트리</h4><ul>
+<li>Spanning Tree</li>
+<li>연결되어 있다(Connected)</li>
+<li>최소 에지 수 = |E| = |V| - 1<ul>
+<li>트리의 조건</li>
+<li>E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.</li>
+</ul>
+</li>
+</ul>
+<h4 id="최소-비용-신장-트리"><a href="#최소-비용-신장-트리" class="headerlink" title="최소 비용 신장 트리"></a>최소 비용 신장 트리</h4><ul>
+<li>MST(Minimum Cost Spanning Tree)</li>
+<li>무방향 그래프</li>
+<li>가중치 그래프</li>
+<li>비용이 최소가 된다.<ul>
+<li>에지들의 비용이 가장 작은 트리를 구한다.</li>
+<li>에지 비용이 같은게 존재할 수 있으므로 유일하지 않는 특성도 있다.</li>
+</ul>
+</li>
+<li>탐욕 알고리즘(Greedy Algorithm) 기반<ul>
+<li>Kruskal Algorithm</li>
+<li>Prim Algorithm</li>
+</ul>
+</li>
+</ul>
+<h5 id="탐욕-알고리즘-Greedy-Algorithm"><a href="#탐욕-알고리즘-Greedy-Algorithm" class="headerlink" title="탐욕 알고리즘(Greedy Algorithm)"></a>탐욕 알고리즘(Greedy Algorithm)</h5><ul>
+<li>전역적 최적해를 찾기 위해 각 단계에서 지역적 최적해를 선택하는 알고리즘</li>
+</ul>
+<img src="/images/greedy_algorithm.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>위 그림의 경우<ul>
+<li>탐욕 알고리즘에 의한 경로 = 4 + 30 + 5 = 39</li>
+<li>실제 최적 경로 = 4 + 8 + 80 = 92</li>
+</ul>
+</li>
+<li>위와 같이 지역적 최적 선택의 모임이 전역적으로 최적해라는 보장이 없다.</li>
+<li>그래서 다음과 같이 탐욕 알고리즘이 성공하기 위한 조건이 있다.<ul>
+<li>Greedy choice property : 지역 최적해를 선택해 나가면 전역 최적해에 도달할 수 있다.</li>
+<li>Optimal substructure : 문제에 대한 최적해가 부분 문제에 대한 최적해를 포함한다.</li>
+</ul>
+</li>
+</ul>
+<h5 id="Greedy-MST-Algorithm-단순화"><a href="#Greedy-MST-Algorithm-단순화" class="headerlink" title="Greedy MST Algorithm 단순화"></a>Greedy MST Algorithm 단순화</h5><ul>
+<li>에지 가중치는 서로 다르다고 가정한다.</li>
+<li>그래프는 연결되어 있다고 가정한다.</li>
+<li>따라서 최소 비용 신장 트리가 존재하며 유일하다고 가정할 수 있다.</li>
+</ul>
+<h5 id="컷-Cut"><a href="#컷-Cut" class="headerlink" title="컷(Cut)"></a>컷(Cut)</h5><img src="/images/mst_cut.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>V(G) 집합을 공집합이 아닌 두 집합으로 나눈 것</li>
+<li>Crossing edge : 컷으로 나뉜 한 집합의 정점과 다른 집합의 정점을 연결</li>
+<li>Cut property : Crossing edge 중 가장 작은 에지로, MST의 한 에지가 된다.</li>
+<li>Kruskal과 Prim 모두 Cut property 기반으로 만들어졌으며, 다른 점은 어떻게 자를 것인가의 차이이다.</li>
+</ul>
+<h5 id="알고리즘-과정"><a href="#알고리즘-과정" class="headerlink" title="알고리즘 과정"></a>알고리즘 과정</h5><ol>
+<li><p>시작점에서 인접한 정점을 주변으로 컷을 찾는다.</p>
+<img src="/images/mst_algorithm1.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>crossing edge 중에서 가중치가 가장 작은 에지인 2를 선택한다.</p>
+<img src="/images/mst_algorithm2.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>선택된 crossing edge를 포함하지 않는 컷을 찾는다.</p>
+<img src="/images/mst_algorithm3.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>crossing edge 중에서 가중치가 가장 작은 에지인 7을 선택한다.</p>
+<img src="/images/mst_algorithm4.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>선택된 crossing edge를 포함하지 않는 컷을 찾는다.</p>
+<img src="/images/mst_algorithm5.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>crossing edge 중에서 가중치가 가장 작은 에지인 5를 선택한다.</p>
+<img src="/images/mst_algorithm6.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>선택된 crossing edge를 포함하지 않는 컷을 찾는다.</p>
+<img src="/images/mst_algorithm7.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+</li>
+<li><p>crossing edge 중에서 가중치가 가장 작은 에지인 4를 선택한다.</p>
+<img src="/images/mst_algorithm8.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+</li>
+</ol>
+<img src="/images/mst_algorithm9.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>MST의 핵심은 에지(E)</li>
+<li>생각해야 할 점<ul>
+<li>어떻게 <strong>컷</strong>을 선택할 것인가?</li>
+<li>어떻게 가중치가 <strong>가장 작은 에지</strong>를 찾을 것인가?</li>
+</ul>
+</li>
+</ul>
+<h5 id="분리-집합-disjoint-set"><a href="#분리-집합-disjoint-set" class="headerlink" title="분리 집합(disjoint set)"></a>분리 집합(disjoint set)</h5><img src="/images/disjoint_set.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">parent</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>위 그림을 표로 정리</li>
+<li>root node라면 parent는 -1로 표현한다.</li>
+<li>{1, 2, 4}와 {0, 3}</li>
+</ul>
+<ol>
+<li>FIND(i)</li>
+</ol>
+<ul>
+<li>정점 i가 포함된 트리의 루트를 찾아 반환한다.</li>
+<li>FIND(1) = 2</li>
+</ul>
+<ol start="2">
+<li>UNION(i, j)</li>
+</ol>
+<img src="/images/disjoint_set_union.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">parent</td>
+<td style="text-align:center">-1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>i, j는 모두 root이다.</li>
+<li>parent[i] = j</li>
+<li>parent[2] = -1에서 0으로 바뀐다.</li>
+</ul>
+<h6 id="성능-향상"><a href="#성능-향상" class="headerlink" title="성능 향상"></a>성능 향상</h6><img src="/images/disjoint_set.png" width="250" height="150">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">parent</td>
+<td style="text-align:center"><strong>-2</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>-3</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>root node의 parent 값을 -1 아닌 정점의 수를 가진 음수로 바꾼다.</li>
+<li>parent[i] &lt; 0이면 root node의 abs(parent[i]) = size[i]</li>
+<li>parent[i] &gt;= 0이면 parent[i]는 정점 i의 부모</li>
+<li>위에서는 parent[0]은 -1에서 -2로, parent[2]는 -1에서 -3이 된다.</li>
+</ul>
+<ol>
+<li>collapsing-find</li>
+</ol>
+<img src="/images/collapsing_find.png" width="600" height="300">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<ul>
+<li>루트의 높이를 낮춰서 성능을 높인다.</li>
+</ul>
+<ol start="2">
+<li>weighted-union</li>
+</ol>
+<img src="/images/weighted_union.png" width="300" height="200">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">i</th>
+<th style="text-align:center">0</th>
+<th style="text-align:center">1</th>
+<th style="text-align:center">2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">parent</td>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:center">2</td>
+<td style="text-align:center"><strong>-5</strong></td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>weighted-union(i, j)</li>
+<li>i, j는 모두 root이다.</li>
+<li>i, j 중에서 size가 큰 root가 parent가 된다.</li>
+<li>parent[0]은 -1에서 2로, parent[2]는 -1에서 -5가 된다.</li>
+</ul>
+<h5 id="Kruskal-Algorithm"><a href="#Kruskal-Algorithm" class="headerlink" title="Kruskal Algorithm"></a>Kruskal Algorithm</h5><ul>
+<li>에지를 가중치가 작은 것에서 큰 것으로 정렬한다.</li>
+<li>트리에 에지를 하나씩 추가한다.</li>
+<li>사이클이 생기면 추가하지 않는다.</li>
+<li>최소 비용 신장 트리가 완성되면 종료(|E| = |V| - 1)</li>
+</ul>
+<h5 id="Prim-Algorithm"><a href="#Prim-Algorithm" class="headerlink" title="Prim Algorithm"></a>Prim Algorithm</h5><ul>
+<li>정점 하나를 가진 트리에서 시작한다.</li>
+<li>트리 내에 있는 정점 u와 트리 밖의 정점 v를 잇는 에지 중 최소 비용을 가진 (u, v)를 트리 에지로 만든다.</li>
+<li>트리 밖의 정점 v도 트리의 정점으로 만든다.</li>
+<li>트리 정점이 기존 정점의 수와 같아지면 종료(TV = V(G))</li>
+<li>트리 내의 정점 u와 트리 밖의 정점 v를 잇는 에지를 선택하기 때문에 사이클이 형성되지 않는다.</li>
+</ul>
+<h5 id="MST-Example"><a href="#MST-Example" class="headerlink" title="MST Example"></a>MST Example</h5><img src="/images/weighted_union.png" width="500" height="250">
+<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Union Find Algorithm</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DisjointSet</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vnum)</span>:</span></span><br><span class="line">        self.parent = [<span class="number">-1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(vnum)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_find</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        <span class="comment"># i가 속한 트리의 루트를 반환</span></span><br><span class="line">        <span class="keyword">while</span> self.parent[i] &gt;= <span class="number">0</span>:</span><br><span class="line">            i = self.parent[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_union</span><span class="params">(self, i, j)</span>:</span></span><br><span class="line">        <span class="comment"># i, j must be ROOTS</span></span><br><span class="line">        self.parent[i] = j</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 성능 향상</span></span><br><span class="line">    <span class="comment"># 노드의 개수대로 root의 음수 값을 변경(노드가 3개라면 -3)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">collapsing_find</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        root = i</span><br><span class="line">        <span class="keyword">while</span> self.parent[root] &gt;= <span class="number">0</span>:</span><br><span class="line">            root = self.parent[root]</span><br><span class="line">            </span><br><span class="line">        trail = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> trail != root:</span><br><span class="line">            lead = self.parent[trail]</span><br><span class="line">            self.parent[trail] = root</span><br><span class="line">            trail = lead</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">weighted_union</span><span class="params">(self, i, j)</span>:</span></span><br><span class="line">        <span class="comment"># i, j must be ROOTS</span></span><br><span class="line">        temp = self.parent[i] + self.parent[j]</span><br><span class="line">        <span class="keyword">if</span> self.parent[i] &gt; self.parent[j]:</span><br><span class="line">            self.parent[i] = j</span><br><span class="line">            self.parent[j] = temp</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.parent[j] = i</span><br><span class="line">            self.parent[i] = temp</span><br><span class="line"></span><br><span class="line"><span class="comment"># test code</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    ds=DisjointSet(<span class="number">5</span>)</span><br><span class="line">    ds.parent[<span class="number">2</span>]=<span class="number">-5</span></span><br><span class="line">    ds.parent[<span class="number">4</span>]=<span class="number">2</span></span><br><span class="line">    ds.parent[<span class="number">0</span>]=<span class="number">4</span></span><br><span class="line">    ds.parent[<span class="number">1</span>]=<span class="number">0</span></span><br><span class="line">    ds.parent[<span class="number">3</span>]=<span class="number">1</span></span><br><span class="line">    print(ds.parent)</span><br><span class="line">    print(<span class="string">"the root is &#123;&#125;"</span>.format(ds.collapsing_find(<span class="number">3</span>)))</span><br><span class="line">    print(ds.parent)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">from</span> disjoint_set <span class="keyword">import</span> DisjointSet</span><br><span class="line"></span><br><span class="line"><span class="comment"># Graph representation : adjacency list</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">MST</span></span><br><span class="line"><span class="string">1. 무방향</span></span><br><span class="line"><span class="string">2. 가중치</span></span><br><span class="line"><span class="string">3. 인접 리스트</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vertex, weight)</span>:</span></span><br><span class="line">        self.vertex = vertex</span><br><span class="line">        self.weight = weight</span><br><span class="line">        self.link = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Edge</span>:</span></span><br><span class="line">    <span class="comment"># ex) (2,3): 7 -&gt; (u,v): w</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, u, v, w)</span>:</span></span><br><span class="line">        self.u = u</span><br><span class="line">        self.v = v</span><br><span class="line">        self.w = w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 그래프는 객체와 객체 사이의 "관계"</span></span><br><span class="line"><span class="comment"># 새로운 노드(정점)을 추가하는 경우가 거의 없다!</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Graph</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vnum)</span>:</span></span><br><span class="line">        self.adjacency_list = [<span class="literal">None</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(vnum)]</span><br><span class="line">        self.edge_list = []</span><br><span class="line">        self.vertex_num = vnum</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add_node</span><span class="params">(self, n, nNode)</span>:</span></span><br><span class="line">        cur = self.adjacency_list[n]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            self.adjacency_list[n] = nNode</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> cur.link:</span><br><span class="line">            cur = cur.link</span><br><span class="line"></span><br><span class="line">        cur.link = nNode</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert_edge</span><span class="params">(self, u, v, w)</span>:</span></span><br><span class="line">        unode = GNode(u, w)</span><br><span class="line">        vnode = GNode(v, w)</span><br><span class="line"></span><br><span class="line">        self.__add_node(u, vnode)</span><br><span class="line">        self.__add_node(v, unode)</span><br><span class="line">        self.edge_list.append(Edge(u, v, w))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># kruskal</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MST_kruskal</span><span class="params">(self)</span>:</span></span><br><span class="line">        mst = Graph(self.vertex_num)</span><br><span class="line">        ds = DisjointSet(self.vertex_num)</span><br><span class="line">        self.edge_list.sort(key=<span class="keyword">lambda</span> e: e.w)</span><br><span class="line"></span><br><span class="line">        mst_edge_num = <span class="number">0</span></span><br><span class="line">        edge_idx = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> mst_edge_num &lt; self.vertex_num - <span class="number">1</span>:</span><br><span class="line">            edge = self.edge_list[edge_idx]</span><br><span class="line">            <span class="comment"># 사이클이 있는지 체크</span></span><br><span class="line">            <span class="comment"># 사이클이 없다면 이 에지를 선택한다.</span></span><br><span class="line">            <span class="keyword">if</span> ds.collapsing_find(edge.u) != ds.collapsing_find(edge.v):</span><br><span class="line">                <span class="comment"># 에지를 선택</span></span><br><span class="line">                mst.insert_edge(edge.u, edge.v, edge.w)</span><br><span class="line">                ds.weighted_union(ds.collapsing_find(edge.u), ds.collapsing_find(edge.v))</span><br><span class="line">                mst_edge_num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            edge_idx += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> mst</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_min_v</span><span class="params">(self, w)</span>:</span></span><br><span class="line">        _min = math.inf</span><br><span class="line">        min_v = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(w)):</span><br><span class="line">            <span class="keyword">if</span> _min &gt; w[i]:</span><br><span class="line">                _min = w[i]</span><br><span class="line">                min_v = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> min_v</span><br><span class="line"></span><br><span class="line">    <span class="comment"># prim</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MST_prim</span><span class="params">(self)</span>:</span></span><br><span class="line">        mst = Graph(self.vertex_num)</span><br><span class="line">        TV = set()</span><br><span class="line">        w = [math.inf <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.vertex_num)]</span><br><span class="line">        _from = [<span class="literal">None</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.vertex_num)]</span><br><span class="line">        w[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> len(TV) &lt; self.vertex_num:</span><br><span class="line">            v = self.get_min_v(w)</span><br><span class="line">            <span class="comment"># TV = TV U &#123;v&#125;</span></span><br><span class="line">            <span class="comment"># TE = TE U &#123;(v, from[v])&#125;</span></span><br><span class="line">            <span class="comment"># each u in adj[v]</span></span><br><span class="line">            TV.add(v)</span><br><span class="line">            <span class="keyword">if</span> _from[v] != <span class="literal">None</span>:</span><br><span class="line">                mst.insert_edge(v, _from[v], w[v])</span><br><span class="line">            </span><br><span class="line">            w[v] = math.inf</span><br><span class="line">            <span class="comment"># adj[v]</span></span><br><span class="line">            u = self.adjacency_list[v]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> u:</span><br><span class="line">                <span class="keyword">if</span> u.vertex  <span class="keyword">not</span> <span class="keyword">in</span> TV <span class="keyword">and</span> u.weight &lt; w[u.vertex]:</span><br><span class="line">                    w[u.vertex] = u.weight</span><br><span class="line">                    _from[u.vertex] = v</span><br><span class="line"></span><br><span class="line">                u = u.link</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mst</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 테스트를 위한 함수 코드</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_edges</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> edge <span class="keyword">in</span> self.edge_list:</span><br><span class="line">            print(<span class="string">f"(<span class="subst">&#123;edge.u&#125;</span>, <span class="subst">&#123;edge.v&#125;</span>) : <span class="subst">&#123;edge.w&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># test code</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    g=Graph(<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line">    g.insert_edge(<span class="number">0</span>, <span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">    g.insert_edge(<span class="number">0</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">    g.insert_edge(<span class="number">0</span>, <span class="number">3</span>, <span class="number">8</span>)</span><br><span class="line">    g.insert_edge(<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line">    g.insert_edge(<span class="number">1</span>, <span class="number">4</span>, <span class="number">12</span>)</span><br><span class="line">    g.insert_edge(<span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>)</span><br><span class="line">    g.insert_edge(<span class="number">2</span>, <span class="number">4</span>, <span class="number">17</span>)</span><br><span class="line">    g.insert_edge(<span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">    g.insert_edge(<span class="number">3</span>, <span class="number">5</span>, <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"kruskal : "</span>)</span><br><span class="line">    mst=g.MST_kruskal()</span><br><span class="line">    mst.print_edges()</span><br><span class="line"></span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"prim : "</span>)</span><br><span class="line">    mst=g.MST_prim()</span><br><span class="line">    mst.print_edges()</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/" data-id="cjz9sjh1o00a8wcwuohjgwm56" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/" data-id="cjzaufxxt009ozzwu2x8v44n0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -245,16 +509,30 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190801-DSAA-Study",
+        "headline": "최소 비용 신장 트리(Minimum Cost Spanning Tree)",
         "image": "http://JINUKK.github.io/images/DSAA_thumnail.png",
         "keywords": "",
         "genre": "Study Data Structure",
         "datePublished": "2019-08-01",
         "dateCreated": "2019-08-01",
-        "dateModified": "2019-08-13",
+        "dateModified": "2019-08-14",
         "url": "http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/",
-        "description": ""
-        "wordCount": 1
+        "description": "신장 트리
+Spanning Tree
+연결되어 있다(Connected)
+최소 에지 수 = |E| = |V| - 1
+트리의 조건
+E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.
+
+
+
+최소 비용 신장 트리
+MST(Minimum Cost Spanning Tree)
+무방향 그래프
+가중치 그래프
+비용이 최소가 된다.
+에지들의 비용이 가장 작은 트리를 구한다"
+        "wordCount": 2778
     }
 </script>
 
@@ -372,7 +650,7 @@
                             <a href="/2019/08/01/190801-DSAA-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="190801-DSAA-Study" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="최소 비용 신장 트리(Minimum Cost Spanning Tree)" class="thumbnail-image"></span>
     
     
 </a>
@@ -381,7 +659,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/01/190801-DSAA-Study/" class="title">190801-DSAA-Study</a></p>
+                            <p class="item-title"><a href="/2019/08/01/190801-DSAA-Study/" class="title">최소 비용 신장 트리(Minimum Cost Spanning Tree)</a></p>
                             <p class="item-date"><time datetime="2019-08-01T11:49:13.000Z" itemprop="datePublished">2019-08-01</time></p>
                         </div>
                     </li>
