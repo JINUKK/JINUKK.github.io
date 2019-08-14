@@ -20,7 +20,7 @@
 <meta property="og:description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
-<meta property="og:updated_time" content="2019-08-14T05:57:25.495Z">
+<meta property="og:updated_time" content="2019-08-14T06:07:33.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="최소 비용 신장 트리(Minimum Cost Spanning Tree)">
 <meta name="twitter:description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
@@ -195,7 +195,7 @@
 <h5 id="탐욕-알고리즘-Greedy-Algorithm"><a href="#탐욕-알고리즘-Greedy-Algorithm" class="headerlink" title="탐욕 알고리즘(Greedy Algorithm)"></a>탐욕 알고리즘(Greedy Algorithm)</h5><ul>
 <li>전역적 최적해를 찾기 위해 각 단계에서 지역적 최적해를 선택하는 알고리즘</li>
 </ul>
-<img src="/images/greedy_algorithm.png" width="300" height="200">
+<img src="/images/greedy_algorithm.png" width="400" height="300">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <ul>
@@ -216,7 +216,7 @@
 <li>그래프는 연결되어 있다고 가정한다.</li>
 <li>따라서 최소 비용 신장 트리가 존재하며 유일하다고 가정할 수 있다.</li>
 </ul>
-<h5 id="컷-Cut"><a href="#컷-Cut" class="headerlink" title="컷(Cut)"></a>컷(Cut)</h5><img src="/images/mst_cut.png" width="300" height="200">
+<h5 id="컷-Cut"><a href="#컷-Cut" class="headerlink" title="컷(Cut)"></a>컷(Cut)</h5><img src="/images/mst_cut.png" width="500" height="300">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <ul>
@@ -227,40 +227,40 @@
 </ul>
 <h5 id="알고리즘-과정"><a href="#알고리즘-과정" class="headerlink" title="알고리즘 과정"></a>알고리즘 과정</h5><ol>
 <li><p>시작점에서 인접한 정점을 주변으로 컷을 찾는다.</p>
-<img src="/images/mst_algorithm1.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm1.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>crossing edge 중에서 가중치가 가장 작은 에지인 2를 선택한다.</p>
-<img src="/images/mst_algorithm2.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm2.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>선택된 crossing edge를 포함하지 않는 컷을 찾는다.</p>
-<img src="/images/mst_algorithm3.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm3.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>crossing edge 중에서 가중치가 가장 작은 에지인 7을 선택한다.</p>
-<img src="/images/mst_algorithm4.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm4.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>선택된 crossing edge를 포함하지 않는 컷을 찾는다.</p>
-<img src="/images/mst_algorithm5.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm5.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>crossing edge 중에서 가중치가 가장 작은 에지인 5를 선택한다.</p>
-<img src="/images/mst_algorithm6.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm6.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>선택된 crossing edge를 포함하지 않는 컷을 찾는다.</p>
-<img src="/images/mst_algorithm7.png" width="300" height="200">
-<center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
+<img src="/images/mst_algorithm7.png" width="500" height="300">
+<p><center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center><br><br></p>
 </li>
 <li><p>crossing edge 중에서 가중치가 가장 작은 에지인 4를 선택한다.</p>
-<img src="/images/mst_algorithm8.png" width="300" height="200">
+<img src="/images/mst_algorithm8.png" width="500" height="300">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 </li>
 </ol>
-<img src="/images/mst_algorithm9.png" width="300" height="200">
+<img src="/images/mst_algorithm9.png" width="500" height="300">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <ul>
@@ -271,7 +271,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="분리-집합-disjoint-set"><a href="#분리-집합-disjoint-set" class="headerlink" title="분리 집합(disjoint set)"></a>분리 집합(disjoint set)</h5><img src="/images/disjoint_set.png" width="250" height="150">
+<h5 id="분리-집합-disjoint-set"><a href="#분리-집합-disjoint-set" class="headerlink" title="분리 집합(disjoint set)"></a>분리 집합(disjoint set)</h5><img src="/images/disjoint_set.png" width="300" height="200">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <table>
@@ -311,7 +311,7 @@
 <ol start="2">
 <li>UNION(i, j)</li>
 </ol>
-<img src="/images/disjoint_set_union.png" width="250" height="150">
+<img src="/images/disjoint_set_union.png" width="300" height="200">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <table>
@@ -428,7 +428,7 @@
 <li>트리 정점이 기존 정점의 수와 같아지면 종료(TV = V(G))</li>
 <li>트리 내의 정점 u와 트리 밖의 정점 v를 잇는 에지를 선택하기 때문에 사이클이 형성되지 않는다.</li>
 </ul>
-<h5 id="MST-Example"><a href="#MST-Example" class="headerlink" title="MST Example"></a>MST Example</h5><img src="/images/weighted_union.png" width="500" height="250">
+<h5 id="MST-Example"><a href="#MST-Example" class="headerlink" title="MST Example"></a>MST Example</h5><img src="/images/mst_example.png" width="500" height="250">
 <center>출처 : <a href="https://github.com/ythwork/CS" target="_blank" rel="noopener">https://github.com/ythwork/CS</a></center>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Union Find Algorithm</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DisjointSet</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vnum)</span>:</span></span><br><span class="line">        self.parent = [<span class="number">-1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(vnum)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_find</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        <span class="comment"># i가 속한 트리의 루트를 반환</span></span><br><span class="line">        <span class="keyword">while</span> self.parent[i] &gt;= <span class="number">0</span>:</span><br><span class="line">            i = self.parent[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_union</span><span class="params">(self, i, j)</span>:</span></span><br><span class="line">        <span class="comment"># i, j must be ROOTS</span></span><br><span class="line">        self.parent[i] = j</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 성능 향상</span></span><br><span class="line">    <span class="comment"># 노드의 개수대로 root의 음수 값을 변경(노드가 3개라면 -3)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">collapsing_find</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        root = i</span><br><span class="line">        <span class="keyword">while</span> self.parent[root] &gt;= <span class="number">0</span>:</span><br><span class="line">            root = self.parent[root]</span><br><span class="line">            </span><br><span class="line">        trail = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> trail != root:</span><br><span class="line">            lead = self.parent[trail]</span><br><span class="line">            self.parent[trail] = root</span><br><span class="line">            trail = lead</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">weighted_union</span><span class="params">(self, i, j)</span>:</span></span><br><span class="line">        <span class="comment"># i, j must be ROOTS</span></span><br><span class="line">        temp = self.parent[i] + self.parent[j]</span><br><span class="line">        <span class="keyword">if</span> self.parent[i] &gt; self.parent[j]:</span><br><span class="line">            self.parent[i] = j</span><br><span class="line">            self.parent[j] = temp</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.parent[j] = i</span><br><span class="line">            self.parent[i] = temp</span><br><span class="line"></span><br><span class="line"><span class="comment"># test code</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    ds=DisjointSet(<span class="number">5</span>)</span><br><span class="line">    ds.parent[<span class="number">2</span>]=<span class="number">-5</span></span><br><span class="line">    ds.parent[<span class="number">4</span>]=<span class="number">2</span></span><br><span class="line">    ds.parent[<span class="number">0</span>]=<span class="number">4</span></span><br><span class="line">    ds.parent[<span class="number">1</span>]=<span class="number">0</span></span><br><span class="line">    ds.parent[<span class="number">3</span>]=<span class="number">1</span></span><br><span class="line">    print(ds.parent)</span><br><span class="line">    print(<span class="string">"the root is &#123;&#125;"</span>.format(ds.collapsing_find(<span class="number">3</span>)))</span><br><span class="line">    print(ds.parent)</span><br></pre></td></tr></table></figure>
