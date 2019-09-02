@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/06/18/190618-DEVLOG-STEAMIC/</loc>
+        <lastmod>2019-09-02T11:48:32.265Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/08/08/190808-DSAA-Study/</loc>
         <lastmod>2019-08-14T07:44:54.182Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -640,14 +648,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
-        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -664,7 +664,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-single-linked-list/</loc>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -673,6 +673,14 @@
 
     <url>
         <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-dummy-double-linked-list/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-single-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
