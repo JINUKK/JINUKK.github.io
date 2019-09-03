@@ -6,24 +6,24 @@
     
 
     
-    <title>190624-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Search 글자 수 제한! | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="검색 기능을 테스트해보면서 한 글자로 찾으니까 문제가 있다는 것을 알았다. 예를 들어, ‘a’로 찾으면 원하는 검색 결과가 제대로 나오지 않았다. 두 글자 이상에서만 문제가 없는 것을 발견하여 JQuery를 이용하여 다음과 같이 해결했다. 123456789101112131415161718192021&amp;#123;% block extra_script %&amp;#125">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190624-DEVLOG-STEAMIC">
+<meta property="og:title" content="Search 글자 수 제한!">
 <meta property="og:url" content="http://JINUKK.github.io/2019/06/24/190624-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="검색 기능을 테스트해보면서 한 글자로 찾으니까 문제가 있다는 것을 알았다. 예를 들어, ‘a’로 찾으면 원하는 검색 결과가 제대로 나오지 않았다. 두 글자 이상에서만 문제가 없는 것을 발견하여 JQuery를 이용하여 다음과 같이 해결했다. 123456789101112131415161718192021&amp;#123;% block extra_script %&amp;#125">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:19:20.215Z">
+<meta property="og:updated_time" content="2019-09-03T11:59:48.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190624-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Search 글자 수 제한!">
+<meta name="twitter:description" content="검색 기능을 테스트해보면서 한 글자로 찾으니까 문제가 있다는 것을 알았다. 예를 들어, ‘a’로 찾으면 원하는 검색 결과가 제대로 나오지 않았다. 두 글자 이상에서만 문제가 없는 것을 발견하여 JQuery를 이용하여 다음과 같이 해결했다. 123456789101112131415161718192021&amp;#123;% block extra_script %&amp;#125">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/06/24/190624-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190624-DEVLOG-STEAMIC
+        Search 글자 수 제한!
         </h1>
     
 
@@ -168,7 +168,11 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>검색 기능을 테스트해보면서 한 글자로 찾으니까 문제가 있다는 것을 알았다.</p>
+<p>예를 들어, ‘a’로 찾으면 원하는 검색 결과가 제대로 나오지 않았다.</p>
+<p>두 글자 이상에서만 문제가 없는 것을 발견하여 JQuery를 이용하여 다음과 같이 해결했다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block extra_script %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function()&#123;</span></span><br><span class="line"><span class="undefined">    // search 버튼이 클릭되었을 때</span></span><br><span class="line"><span class="undefined">    $('.search_button').click(function(e) &#123;</span></span><br><span class="line"><span class="undefined">        // search_text 값을 받아옴</span></span><br><span class="line"><span class="undefined">        var get_text = $("input[id='search_text']").val();</span></span><br><span class="line"><span class="undefined">        // 입력을 하지 않았다면</span></span><br><span class="line"><span class="undefined">        if(get_text.length == 0)&#123;</span></span><br><span class="line"><span class="undefined">            alert('검색어를 입력해주세요.');</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="undefined">        // 한 글자를 입력했다면</span></span><br><span class="line"><span class="undefined">        &#125; else if(get_text.length == 1)&#123;</span></span><br><span class="line"><span class="undefined">            alert('검색어 글자 수는 2이상이에요.');</span></span><br><span class="line"><span class="undefined">            e.preventDefault();</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
         </div>
         <footer class="article-footer">
             
@@ -245,7 +249,7 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190624-DEVLOG-STEAMIC",
+        "headline": "Search 글자 수 제한!",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
@@ -253,8 +257,11 @@
         "dateCreated": "2019-06-24",
         "dateModified": "2019-09-03",
         "url": "http://JINUKK.github.io/2019/06/24/190624-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "검색 기능을 테스트해보면서 한 글자로 찾으니까 문제가 있다는 것을 알았다.
+예를 들어, ‘a’로 찾으면 원하는 검색 결과가 제대로 나오지 않았다.
+두 글자 이상에서만 문제가 없는 것을 발견하여 JQuery를 이용하여 다음과 같이 해결했다.
+123456789101112131415161718192021&#123;% block extra_script %&#125"
+        "wordCount": 250
     }
 </script>
 
