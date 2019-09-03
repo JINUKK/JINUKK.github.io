@@ -153,17 +153,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/03/190403-Git-lecture/" class="thumbnail">
+        <a href="/2019/05/03/190503-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Git_thumnail.jpg)" alt="Git에 대해 - 1" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 3" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/03/190403-Git-lecture/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/03/190503-Django-Study/">0</span>
     
 </span>
 
@@ -174,32 +174,23 @@
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Git-lecture/">Git lecture</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-02T16:15:29.000Z" itemprop="datePublished">2019-04-03</time></div>
+            <div class="date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/03/190403-Git-lecture/">Git에 대해 - 1</a>
+        <a href="/2019/05/03/190503-Django-Study/">Dstargram project - 3</a>
         </h1>
     
 
         <p class="article-excerpt">
-            git 특강
-git란?
+            [ Dstargram project ]
+저장한 페이지 목록 불러오기
 
-VCS(Version Control System) == SCM(Source Code Management: 형상관리)
-
-빠른 속도, 단순한 구조
-
-수정내용은 commit 단위로 관리
-
-모든 파일이 Blob이라는 단위로 구성
-
-파일에 대한 정보들을 모은 것이 commit
-
-source + history = commit =&gt; blo
+models.py 수정
+12345678class Photo(models.Model):# save라는 변수를 사용하면 안되는 이유# 예약어를 필드명을 사용하면 안된다.# save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.# favorite로 수정# makemigrations 및 m
         </p>
     </div>
 </article>
@@ -212,17 +203,17 @@ source + history = commit =&gt; blo
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/02/190402-PCE-Study/" class="thumbnail">
+        <a href="/2019/05/02/190502-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/PCE_thumnail.png)" alt="리눅스 기초" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 2" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/02/190402-PCE-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/02/190502-Django-Study/">0</span>
     
 </span>
 
@@ -233,33 +224,24 @@ source + history = commit =&gt; blo
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Python-and-CE/">Python and CE</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-01T16:15:25.000Z" itemprop="datePublished">2019-04-02</time></div>
+            <div class="date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/02/190402-PCE-Study/">리눅스 기초</a>
+        <a href="/2019/05/02/190502-Django-Study/">Dstargram project - 2</a>
         </h1>
     
 
         <p class="article-excerpt">
-            linux에 대해
-Basic
+            [ Dstargram project ]
+접근 권한 주기
 
-“-“가 붙으면 옵션 ex) -l, -r, -m, -s, -i…
-
-“..”은 상위 폴더 ex) cd ..
-
-“~”는 user의 최상단 폴더로 진입. user 폴더의 절대 경로
-
-“.”은 현재 폴더, “..”은 상위 폴더
-
-최상단 폴더로 진입 가능한 명령어 : cd, cd ~, cd ../..
-
-폴더 만들기
-1$ mkdir [폴
+해당 글을 올린 글쓴이가 아니라면 수정이나 삭제를 할 수 없도록 처리
+views.py에서 dispatch() 적용
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565
         </p>
     </div>
 </article>
@@ -276,17 +258,17 @@ Basic
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/01/190401-PCE-Study/" class="thumbnail">
+        <a href="/2019/05/01/190501-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/PCE_thumnail.png)" alt="연결 리스트(Linked List)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 1" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/01/190401-PCE-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/01/190501-Django-Study/">0</span>
     
 </span>
 
@@ -297,25 +279,35 @@ Basic
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Python-and-CE/">Python and CE</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-03-31T16:15:22.000Z" itemprop="datePublished">2019-04-01</time></div>
+            <div class="date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/01/190401-PCE-Study/">연결 리스트(Linked List)</a>
+        <a href="/2019/05/01/190501-Django-Study/">Dstargram project - 1</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Single Linked List
-Node = data + link
+            [ Dstargram project ]
+두 가지 앱을 만들어서 진행
+accounts : 로그인, 로그아웃, 회원가입 관련
+photo : 사진 업로드 관련
 
-head(list의 첫번째 노드를 가리킴)
 
-d_size(list의 요소 개수)
-  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616
+
+
+파이썬 프로젝트 생성
+장고 설치
+1$ pip install django
+
+장고 프로젝트 생성
+1$ django-admin startproject config .
+
+DB 초기화
+1$ python ma
         </p>
     </div>
 </article>
@@ -328,17 +320,17 @@ d_size(list의 요소 개수)
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/01/190401-Algorithm-dummy-double-linked-list/" class="thumbnail">
+        <a href="/2019/04/30/190430-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Algorithm_thumnail.png)" alt="dummy double linked list" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Bookmark project - 2" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/01/190401-Algorithm-dummy-double-linked-list/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/30/190430-Django-Study/">0</span>
     
 </span>
 
@@ -349,24 +341,29 @@ d_size(list의 요소 개수)
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-03-31T15:21:20.000Z" itemprop="datePublished">2019-04-01</time></div>
+            <div class="date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/01/190401-Algorithm-dummy-double-linked-list/">dummy double linked list</a>
+        <a href="/2019/04/30/190430-Django-Study/">Bookmark project - 2</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-구현 편의성을 위해서 Dummy(데이터를 가지지 않는 노드) 사용
-즉, head와 Tail은 데이터를 가지지 않음
-head : 리스트 맨 앞에 있는 더미를 가리킴
-tail : 리스트 맨 뒤에 있는 더미를 가리킴
-size : 리스트의 요소 개수  12345678910111213141516171819202122232425262728293031323334353
+            [ Bookmark project ]
+Bootstrap 적용
+github 업로드
+pythonanywhere.com을 이용한 배포
+
+
+bootstrap 적용하기
+
+base.html에 bootstrap 설치
+CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가)
+다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않
         </p>
     </div>
 </article>
@@ -383,17 +380,17 @@ size : 리스트의 요소 개수  123456789101112131415161718192021222324252627
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/01/190401-Algorithm-single-linked-list/" class="thumbnail">
+        <a href="/2019/04/29/190429-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Algorithm_thumnail.png)" alt="single linked list" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Bookmark project - 1" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/01/190401-Algorithm-single-linked-list/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/29/190429-Django-Study/">0</span>
     
 </span>
 
@@ -404,22 +401,34 @@ size : 리스트의 요소 개수  123456789101112131415161718192021222324252627
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-03-31T15:18:11.000Z" itemprop="datePublished">2019-04-01</time></div>
+            <div class="date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/01/190401-Algorithm-single-linked-list/">single linked list</a>
+        <a href="/2019/04/29/190429-Django-Study/">Bookmark project - 1</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-Node = data + link
-head(list의 첫번째 노드를 가리킴)
-d_size(list의 요소 개수)  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172
+            [ Bookmark project ]
+프로젝트 생성
+장고 설치
+1$ pip install django
+
+장고 프로젝트 생성
+1django-admin startproject config .
+
+DB 초기화
+1$ python manage.py migrate
+
+관리자 계정 생성
+1$ python manage.py createsuperuser
+
+기본 앱 생성
+1$ 
         </p>
     </div>
 </article>
@@ -432,17 +441,72 @@ d_size(list의 요소 개수)  1234567891011121314151617181920212223242526272829
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/03/28/190328-Python-generator/" class="thumbnail">
+        <a href="/2019/04/26/190426-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="generator" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="HTTP Server 실습" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/28/190328-Python-generator/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/26/190426-Django-Study/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
+            </div>
+            <div class="date"><time datetime="2019-04-26T08:49:31.000Z" itemprop="datePublished">2019-04-26</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/04/26/190426-Django-Study/">HTTP Server 실습</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+HTTP Server
+
+
+브라우저를 통해 사용자가 HTTP Request Messsage를 보낸다.
+서버는 그 Message를 해석하고 Request Message를 보낸다.2-1. 어느 페이지로 접속했는가?2-2. Query String은 어떤 페이지를 가지고 있는가?2-3. 특정 스크립트 요청이 있는가?2-4. 최종 응답을 어떤 방식으로 할 것인가?(
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/04/26/190426-Python-how-to-save/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="Python에서 Save File을 만드는 3가지 방법" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/26/190426-Python-how-to-save/">0</span>
     
 </span>
 
@@ -455,23 +519,70 @@ d_size(list의 요소 개수)  1234567891011121314151617181920212223242526272829
             <div class="category">
             <a class="article-category-link" href="/categories/Python/">Python</a>
             </div>
-            <div class="date"><time datetime="2019-03-28T14:57:59.000Z" itemprop="datePublished">2019-03-28</time></div>
+            <div class="date"><time datetime="2019-04-26T05:52:14.000Z" itemprop="datePublished">2019-04-26</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/28/190328-Python-generator/">generator</a>
+        <a href="/2019/04/26/190426-Python-how-to-save/">Python에서 Save File을 만드는 3가지 방법</a>
         </h1>
     
 
         <p class="article-excerpt">
             
-body 안에 yield
-파이썬 코루틴의 구현은 generator를 기반으로 한다.
-파이썬 stack frame이 heap에 저장되어 있기 때문에 가능하다.
-return 값은 StopIteration이 발생했을 때 반환된다.
-StopIteration도 객체이다.
-  1234567891011def gen():    print('gen start')    y
+excel file로 저장하기
+12345678910111213141516171819# openpyxl module 등록from openpyxl import Workbook# 내용을 저장하기 위해 메모리 상에 파일 만들기wb = Workbook()# wb.activate를 사용하면 엑셀 처음 시트를 가져온다.# wb.create_sheet()를 통해 시트를
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/04/25/190425-Django-Study/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Crawler 실습 - 2" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/25/190425-Django-Study/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
+            </div>
+            <div class="date"><time datetime="2019-04-25T08:49:18.000Z" itemprop="datePublished">2019-04-25</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/04/25/190425-Django-Study/">Crawler 실습 - 2</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 프로그램-&gt; 웹 브라우저를 흉내내는 프로그램
+
+1) requests : 웹 사이트에 접속, 데이터를 받아오는 역할2) BeautifulSoup : 데이터를 HTML로 해석하는 역할-&gt; 선행지식 : HTML에 대한 이해, CSS Selector를 만드는 방법
+
+요소 검사를 통해 
         </p>
     </div>
 </article>
@@ -488,17 +599,17 @@ StopIteration도 객체이다.
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/03/28/190328-Python-iterator/" class="thumbnail">
+        <a href="/2019/04/24/190424-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="iterator" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Crawler 실습 - 1" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/28/190328-Python-iterator/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/24/190424-Django-Study/">0</span>
     
 </span>
 
@@ -509,24 +620,26 @@ StopIteration도 객체이다.
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-03-28T14:54:52.000Z" itemprop="datePublished">2019-03-28</time></div>
+            <div class="date"><time datetime="2019-04-24T08:49:05.000Z" itemprop="datePublished">2019-04-24</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/28/190328-Python-iterator/">iterator</a>
+        <a href="/2019/04/24/190424-Django-Study/">Crawler 실습 - 1</a>
         </h1>
     
 
         <p class="article-excerpt">
             
-next() 함수에 의해서 값을 하나씩 반환(next 호출 시점)
-StopIteration
-custom iterator
-정의한 클래스가 이터레이터를 지원하려면 iter 메서드를 정의해야함
-iter 메서드에는 자신을 돌려주면 됨1234567891011121314151617181920212223242526272829303132333435363738394041
+Crawler(크롤러) : 웹 페이지에 있는 자료를 자동으로 수집하는 프로그램
+
+
+주소를 입력하면 해당 서버로 접근한다.
+웹 서버 프로그램이 해당 주소에 맞는 내용을 전달한다.-&gt; requests(urllib의 wrapper 클래스)
+
+받은 내용을 해석해서 화면을 보여준다.3-1. 받은 내용을 해석해서 내가 원하는 데이터를 찾는다.-&gt; Beau
         </p>
     </div>
 </article>
@@ -539,17 +652,17 @@ iter 메서드에는 자신을 돌려주면 됨123456789101112131415161718192021
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/03/28/190328-PCE-Study/" class="thumbnail">
+        <a href="/2019/04/23/190423-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/PCE_thumnail.png)" alt="iterator와 generator" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Django 기초 - 2" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/28/190328-PCE-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/23/190423-Django-Study/">0</span>
     
 </span>
 
@@ -560,138 +673,32 @@ iter 메서드에는 자신을 돌려주면 됨123456789101112131415161718192021
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Python-and-CE/">Python and CE</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-03-27T16:01:28.000Z" itemprop="datePublished">2019-03-28</time></div>
+            <div class="date"><time datetime="2019-04-23T08:36:09.000Z" itemprop="datePublished">2019-04-23</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/28/190328-PCE-Study/">iterator와 generator</a>
+        <a href="/2019/04/23/190423-Django-Study/">Django 기초 - 2</a>
         </h1>
     
 
         <p class="article-excerpt">
-            iterator
-next() 함수에 의해서 값을 하나씩 반환(next 호출 시점)
+            
+웹페이지의 기본형식 = CRUD + List
 
-StopIteration
-
-custom iterator
-
-정의한 클래스가 이터레이터를 지원하려면 iter 메서드를 정의해야함
-
-iter 메서드에는 자신을 돌려주면 됨
-123456789101112131415161718192021222324252627282930313233343
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/03/27/190327-Algorithm-Sort-merge-sort/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/Algorithm_thumnail.png)" alt="merge sort" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/">0</span>
-    
-</span>
+C(CREATE)
+R(READ)
+U(UPDATE)
+D(DELETE)
+데이터를 얻을 때…단일 객체 = object. -&gt; R,U,D복수 객체 = object_list. -&gt; List단일 객체로 받을지 복수 객체로 받을지 생각해야 한다.
 
 
-    
-</a>
 
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Algorithm/Sort/">Sort</a>
-            </div>
-            <div class="date"><time datetime="2019-03-27T14:49:11.000Z" itemprop="datePublished">2019-03-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/27/190327-Algorithm-Sort-merge-sort/">merge sort</a>
-        </h1>
-    
+앱 생성 시 목록
 
-        <p class="article-excerpt">
-            Help Link! GeeksforGeeks Youtube(https://www.youtube.com/watch?v=JSceec-wEyw)
-merge sort(합병 정렬)
-Comparison sort의 한 종류
-두 수를 비교해서 정렬하는 방법
-divide and conquer(분할 정복 알고리즘)
-O(nlogn)
-리스트의 길이가 0 또는 1이면 이미 정렬된
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/03/27/190327-Algorithm-Sort-quick-sort/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/Algorithm_thumnail.png)" alt="quick sort" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Algorithm/Sort/">Sort</a>
-            </div>
-            <div class="date"><time datetime="2019-03-27T14:46:04.000Z" itemprop="datePublished">2019-03-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/27/190327-Algorithm-Sort-quick-sort/">quick sort</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Help Link! GeeksforGeeks Youtube(https://www.youtube.com/watch?v=PgBzjlCcFvc)
-quick sort(퀵 정렬)
-Comparison sort의 한 종류
-두 수를 비교해서 정렬하는 방법
-divide and conquer(분할 정복 알고리즘)
-O(nlogn)
-맨 앞의 데이터를 기준으로 선택했을 경우
-모든
+admin.py : 모델을 관리하기 위해
         </p>
     </div>
 </article>
@@ -704,8 +711,8 @@ O(nlogn)
 
 
     <nav id="page-nav">
-        <span class="pages">Page 7 of 12</span>
-        <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
+        <span class="pages">Page 7 of 14</span>
+        <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
     </nav>
 
 
@@ -743,10 +750,10 @@ O(nlogn)
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/08/190808-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="동적 프로그래밍(Dynamic Programming)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190903-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -754,19 +761,19 @@ O(nlogn)
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/08/190808-DSAA-Study/" class="title">동적 프로그래밍(Dynamic Programming)</a></p>
-                            <p class="item-date"><time datetime="2019-08-08T11:49:25.000Z" itemprop="datePublished">2019-08-08</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="title">190903-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-09-03T06:12:11.000Z" itemprop="datePublished">2019-09-03</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/06/190806-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="최단 경로(Shortest path)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190829-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -774,19 +781,19 @@ O(nlogn)
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/06/190806-DSAA-Study/" class="title">최단 경로(Shortest path)</a></p>
-                            <p class="item-date"><time datetime="2019-08-06T11:49:19.000Z" itemprop="datePublished">2019-08-06</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="title">190829-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T06:12:01.000Z" itemprop="datePublished">2019-08-29</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/01/190801-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="최소 비용 신장 트리(Minimum Cost Spanning Tree)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190828-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -794,19 +801,19 @@ O(nlogn)
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/01/190801-DSAA-Study/" class="title">최소 비용 신장 트리(Minimum Cost Spanning Tree)</a></p>
-                            <p class="item-date"><time datetime="2019-08-01T11:49:13.000Z" itemprop="datePublished">2019-08-01</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">190828-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/07/29/190729-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="그래프 순회(Graph traversal)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190827-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -814,19 +821,19 @@ O(nlogn)
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/07/29/190729-DSAA-Study/" class="title">그래프 순회(Graph traversal)</a></p>
-                            <p class="item-date"><time datetime="2019-07-29T11:49:01.000Z" itemprop="datePublished">2019-07-29</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">190827-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/07/25/190725-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="균형 이진 트리(balanced-binary tree)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190822-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -834,9 +841,9 @@ O(nlogn)
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/07/25/190725-DSAA-Study/" class="title">균형 이진 트리(balanced-binary tree)</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T12:23:24.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">190822-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
                         </div>
                     </li>
                 
@@ -849,7 +856,7 @@ O(nlogn)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">23</span></li></ul></li></ul></li></ul>
         </div>
     </div>
 
@@ -859,7 +866,7 @@ O(nlogn)
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 

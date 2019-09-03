@@ -153,17 +153,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/03/05/190305-Python-dictionary/" class="thumbnail">
+        <a href="/2019/03/11/190311-Python-decorator/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="dictionary" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="decorator" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/11/190311-Python-decorator/">0</span>
     
 </span>
 
@@ -176,32 +176,19 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Python/">Python</a>
             </div>
-            <div class="date"><time datetime="2019-03-05T06:29:12.000Z" itemprop="datePublished">2019-03-05</time></div>
+            <div class="date"><time datetime="2019-03-11T07:17:53.000Z" itemprop="datePublished">2019-03-11</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/05/190305-Python-dictionary/">dictionary</a>
+        <a href="/2019/03/11/190311-Python-decorator/">decorator</a>
         </h1>
     
 
         <p class="article-excerpt">
             
-key와 value가 한 쌍
-hash로 구현(대응 관계)
-
-
-Basic
-
-key:value로 입력
-중괄호 사용
-1dic = &#123;'a': 1, 'b': 2, 'c': 3&#125;
-
-새로운 값을 삽입
-123dic['e'] = 4dic&gt;&gt; &#123;'a': 1, 'b': 2, 'c': 3, 'e': 4&#125;
-
-기존 값 변경이 가능
-1
+쉽게 기능을 추가할 수 있다.
+  1234567891011121314151617# 처음 함수를 정의할 때 쓰는 *의 의미는 가변인자를 사용한다는 의미이다.# 함수를 호출할 때 쓰는 *의 의미는 unpacking을 의미한다.(tuple, dictionary)def outer(org_func):    def inner(*args, **kwargs):     
         </p>
     </div>
 </article>
@@ -214,17 +201,17 @@ key:value로 입력
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/03/04/190304-Python-tuple/" class="thumbnail">
+        <a href="/2019/03/11/190311-Python-lambda-function/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="tuple" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="Lambda function" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/04/190304-Python-tuple/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/11/190311-Python-lambda-function/">0</span>
     
 </span>
 
@@ -237,30 +224,29 @@ key:value로 입력
             <div class="category">
             <a class="article-category-link" href="/categories/Python/">Python</a>
             </div>
-            <div class="date"><time datetime="2019-03-04T06:13:39.000Z" itemprop="datePublished">2019-03-04</time></div>
+            <div class="date"><time datetime="2019-03-11T07:15:38.000Z" itemprop="datePublished">2019-03-11</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/04/190304-Python-tuple/">tuple</a>
+        <a href="/2019/03/11/190311-Python-lambda-function/">Lambda function</a>
         </h1>
     
 
         <p class="article-excerpt">
             
-python에서 tuple은 변경 불가능한 객체(immutable)
-인덱싱으로 접근 가능
-요소 값 변경 불가능
-list보다 속도가 빠름
+익명 함수
 
+이름이 없다.
 
-Basic
+함수를 재사용하지 않고 몇번 정도만 쓸때
 
-튜플은 소괄호로 선언한다.
-1234567tu = (1, 2, 3, 4)tu&gt;&gt; (1, 2, 3, 4)tu2 = ()tu2&gt;&gt; ()
+아래와 같이 일반적인 함수는 객체를 만듦
 
-인덱싱으로 접근 가능
-12tu[2]&gt;&gt; 
+재사용을 위해 함수 이름(메모리)를 할당
+12345def func(a, b):    return a + bfunc&gt;&gt; &lt;function __main__.func(a, b)&gt;
+
+아래와 같이 람다 함수를 쓸 경우, 변수에 할
         </p>
     </div>
 </article>
@@ -277,190 +263,17 @@ Basic
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/03/04/190304-Python-set/" class="thumbnail">
+        <a href="/2019/03/11/190311-PCE-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="set" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/04/190304-Python-set/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2019-03-04T06:13:34.000Z" itemprop="datePublished">2019-03-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/04/190304-Python-set/">set</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-집합을 표현하기 위해서 만들어진 자료구조
-중복의 데이터를 허용하지 않음(집합 표현)
-
-
-Basic
-
-list는 중복의 데이터를 허용한다.
-123li = [1, 2, 3, 3, 4, 2, 4]li&gt;&gt; [1, 2, 3, 3, 4, 2, 4]
-
-set은 중복의 데이터를 허용하지 않는다.
-123s = set([1, 2, 3, 3, 4, 2, 4])s&
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/03/04/190304-Python-list/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="list" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/PCE_thumnail.png)" alt="Python 심화 - 1" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/04/190304-Python-list/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2019-03-04T06:13:30.000Z" itemprop="datePublished">2019-03-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/04/190304-Python-list/">list</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-python에서 list는 변경 가능한 객체(mutable)
-자료형에 상관없이 만들 수 있다.
-
-
-Basic
-
-C 언어에서의 정의
-12// 같은 타입을 가진 변수들의 모임int arr[5] = &#123;1, 2, 3, 4, 5&#125;
-
-python에서의 정의
-1234# 다양한 변수들의 모임# 타입이 다른 변수들을 묶을 수 있다.# 리스트는 대괄호로 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/03/04/190304-Python-string/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="string" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/04/190304-Python-string/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
-            </div>
-            <div class="date"><time datetime="2019-03-04T06:04:12.000Z" itemprop="datePublished">2019-03-04</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/04/190304-Python-string/">string</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-python에서 문자열은 변경이 불가능한 객체(immutable)
-
-
-Basic
-
-python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.
-1234567a = 'abcde'print(a)&gt;&gt; abcdea = "abcde"print(a)&gt;&gt; abcde
-
-문자열 안에 ‘와 ‘’를 같이 쓰고 싶은 경우, ‘\‘와 
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/03/04/190304-PCE-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/PCE_thumnail.png)" alt="Python 기초 - 1" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/04/190304-PCE-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/11/190311-PCE-Study/">0</span>
     
 </span>
 
@@ -473,27 +286,438 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Python-and-CE/">Python and CE</a>
             </div>
-            <div class="date"><time datetime="2019-03-03T15:01:32.000Z" itemprop="datePublished">2019-03-04</time></div>
+            <div class="date"><time datetime="2019-03-10T15:07:08.000Z" itemprop="datePublished">2019-03-11</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/03/04/190304-PCE-Study/">Python 기초 - 1</a>
+        <a href="/2019/03/11/190311-PCE-Study/">Python 심화 - 1</a>
         </h1>
     
 
         <p class="article-excerpt">
-            String
-python에서 문자열은 변경이 불가능한 객체(immutable)
+            lambda function
+익명 함수
+
+이름이 없다.
+
+함수를 재사용하지 않고 몇번 정도만 쓸때
+
+아래와 같이 일반적인 함수는 객체를 만듦
+
+재사용을 위해 함수 이름(메모리)를 할당
+12345def func(a, b):    return a + bfunc&gt;&gt; &lt;function __main__.func(a, b)&gt;
+
+아래와 같이 람다 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/08/190308-PCE-Study/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/PCE_thumnail.png)" alt="CPU 기초" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/08/190308-PCE-Study/">0</span>
+    
+</span>
 
 
-Basic
+    
+</a>
 
-python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할 수도 있다.
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Python-and-CE/">Python and CE</a>
+            </div>
+            <div class="date"><time datetime="2019-03-08T14:59:05.000Z" itemprop="datePublished">2019-03-08</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/08/190308-PCE-Study/">CPU 기초</a>
+        </h1>
+    
 
-1234567a = 'abcde'print(a)&gt;&gt; abcdea = "abcde"print(a)&gt;&gt; abcde
+        <p class="article-excerpt">
+            Computer Engineering
+CPU = ALU + CU + Register
 
-문자열 안에 ‘와 ‘’를 같이 쓰고 싶은 경우
+ALU(Arithmetic Logic Unit)
+
+산술논리연산 장치
+
++, -, *, /, &amp;, |, ^의 비교, 판단, 연산 담당
+
+
+
+CU(Control Unit)
+
+제어 장치
+
+명령어 해석과 실행을 담당
+
+
+
+Register(레지스터)
+
+CPU의 메모리
+
+32
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/08/190308-Python-comparison/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="comparison" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/08/190308-Python-comparison/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Python/">Python</a>
+            </div>
+            <div class="date"><time datetime="2019-03-08T07:13:02.000Z" itemprop="datePublished">2019-03-08</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/08/190308-Python-comparison/">comparison</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+아래와 같이 a와 b 모두 0.3으로 참이 나와야 하는데 거짓이 나온다.
+  12345a = 0.3b = 0.1*3a == b&gt;&gt; False
+
+이 문제를 해결하기 위한 비교 방법들이다.
+
+
+
+절대 비교 기법(Absolute comparison)
+
+두 수의 차를 절대값으로 만든다.
+‘1.0e-10’과 같이 기준을 잡아서 비교하는 것이다.
+하지만 
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/07/190307-PCE-Study/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/PCE_thumnail.png)" alt="Python 기초 - 4" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/07/190307-PCE-Study/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Python-and-CE/">Python and CE</a>
+            </div>
+            <div class="date"><time datetime="2019-03-07T14:50:45.000Z" itemprop="datePublished">2019-03-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/07/190307-PCE-Study/">Python 기초 - 4</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Algorithm
+Tower of Hanoi(하노이 탑)
+
+반드시 큰 쟁반이 아래에 있어야 한다.
+
+큰 쟁반이 작은 쟁반보다 위에 있을 수 없다.
+
+기둥1(_from), 기둥2(_by), 기둥3(_to)이 있다.
+
+기둥 1에서 기둥3으로 모두 이동시켜야 한다.
+123456789101112# (num - 1)개를 _from에서 _to를 이용하여 _by로 이동
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/07/190307-Algorithm-binary-search/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Algorithm_thumnail.png)" alt="binary search" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/07/190307-Algorithm-binary-search/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+            </div>
+            <div class="date"><time datetime="2019-03-07T07:02:48.000Z" itemprop="datePublished">2019-03-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/07/190307-Algorithm-binary-search/">binary search</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+Binary search(이진 탐색)
+
+데이터의 집합이 반드시 정렬된 상태어야 함
+시작 인덱스와 끝 인덱스 그리고 중간 인덱스를 정의
+원하는 인덱스가 중간 인덱스보다 작다면 끝 인덱스를 중간 인덱스보다 작게 만든다.
+원하는 인덱스가 중간 인덱스보다 크다면 시작 인덱스를 중간 인덱스보다 크게 만든다.
+시작 인덱스가 끝 인덱스보다 커지면 반복을 멈춘다.
+12
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/07/190307-Algorithm-linear-search/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Algorithm_thumnail.png)" alt="linear search" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/07/190307-Algorithm-linear-search/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+            </div>
+            <div class="date"><time datetime="2019-03-07T07:01:58.000Z" itemprop="datePublished">2019-03-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/07/190307-Algorithm-linear-search/">linear search</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+Linear search(선형 탐색)
+
+데이터가 모인 집합의 처음부터 끝까지 하나씩 순서대로 비교하여 찾음1234567891011121314151617181920def linear_search(li, target):    """    linear_search(li, target) -&gt; idx    반환값은 target이 있다면 target의 인덱스 
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/07/190307-Python-radix/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="radix" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/07/190307-Python-radix/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Python/">Python</a>
+            </div>
+            <div class="date"><time datetime="2019-03-07T07:01:22.000Z" itemprop="datePublished">2019-03-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/07/190307-Python-radix/">radix</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+기수(radix)
+한 자리에 표현할 수 있는 수
+10진수 - 0 , 1, 2, 3, 4, 5, 6, 7, 8, 9
+2진수 - 0, 1
+16진수 - 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+
+‘0b’는 2진수
+1a = 0b1010 # 0b는 2진수
+
+‘0x’는 16진수
+
+hex()를 이용하여 16진수 변환
+1234
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/03/07/190307-Python-first-class-function/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="First class function" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/03/07/190307-Python-first-class-function/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Python/">Python</a>
+            </div>
+            <div class="date"><time datetime="2019-03-07T06:58:04.000Z" itemprop="datePublished">2019-03-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/03/07/190307-Python-first-class-function/">First class function</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+first class function 조건
+
+
+argument(parameter) - 매개 변수
+
+함수 자체를 매개변수로 다른 함수에 전달1234567891011def f(a, b):    return a + bdef g(func, c, d):    return func(c, d)a = 10b = 20g(f, a, b)  # 함수 자체를 매개변수로 전달&
         </p>
     </div>
 </article>
@@ -506,8 +730,8 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
 
 
     <nav id="page-nav">
-        <span class="pages">Page 12 of 12</span>
-        <a class="extend prev" rel="prev" href="/archives/page/11/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span>
+        <span class="pages">Page 12 of 14</span>
+        <a class="extend prev" rel="prev" href="/archives/page/11/">&laquo;</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/13/">&raquo;</a>
     </nav>
 
 
@@ -545,10 +769,10 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/08/190808-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="동적 프로그래밍(Dynamic Programming)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190903-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -556,19 +780,19 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/08/190808-DSAA-Study/" class="title">동적 프로그래밍(Dynamic Programming)</a></p>
-                            <p class="item-date"><time datetime="2019-08-08T11:49:25.000Z" itemprop="datePublished">2019-08-08</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="title">190903-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-09-03T06:12:11.000Z" itemprop="datePublished">2019-09-03</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/06/190806-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="최단 경로(Shortest path)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190829-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -576,19 +800,19 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/06/190806-DSAA-Study/" class="title">최단 경로(Shortest path)</a></p>
-                            <p class="item-date"><time datetime="2019-08-06T11:49:19.000Z" itemprop="datePublished">2019-08-06</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="title">190829-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T06:12:01.000Z" itemprop="datePublished">2019-08-29</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/01/190801-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="최소 비용 신장 트리(Minimum Cost Spanning Tree)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190828-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -596,19 +820,19 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/08/01/190801-DSAA-Study/" class="title">최소 비용 신장 트리(Minimum Cost Spanning Tree)</a></p>
-                            <p class="item-date"><time datetime="2019-08-01T11:49:13.000Z" itemprop="datePublished">2019-08-01</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">190828-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/07/29/190729-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="그래프 순회(Graph traversal)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190827-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -616,19 +840,19 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/07/29/190729-DSAA-Study/" class="title">그래프 순회(Graph traversal)</a></p>
-                            <p class="item-date"><time datetime="2019-07-29T11:49:01.000Z" itemprop="datePublished">2019-07-29</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">190827-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/07/25/190725-DSAA-Study/" class="thumbnail">
+                            <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="균형 이진 트리(balanced-binary tree)" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="190822-DEVLOG-STEAMIC" class="thumbnail-image"></span>
     
     
 </a>
@@ -636,9 +860,9 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a></p>
-                            <p class="item-title"><a href="/2019/07/25/190725-DSAA-Study/" class="title">균형 이진 트리(balanced-binary tree)</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T12:23:24.000Z" itemprop="datePublished">2019-07-25</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">190822-DEVLOG-STEAMIC</a></p>
+                            <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
                         </div>
                     </li>
                 
@@ -651,7 +875,7 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">23</span></li></ul></li></ul></li></ul>
         </div>
     </div>
 
@@ -661,7 +885,7 @@ python의 문자열은 ‘ ‘ 와 “ “ 모두 사용하며, 같이 사용할
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 

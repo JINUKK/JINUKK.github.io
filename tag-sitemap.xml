@@ -353,13 +353,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/single-linked-list/</loc>
-        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/tags/dummy-double-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -367,7 +360,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/merge-sort/</loc>
+        <loc>http://JINUKK.github.io/tags/single-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -389,6 +382,13 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/insertion-sort/</loc>
+        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/merge-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
