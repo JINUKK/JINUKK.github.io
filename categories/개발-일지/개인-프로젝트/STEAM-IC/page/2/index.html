@@ -586,7 +586,7 @@
         <a href="/2019/06/23/190623-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190623-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Search 기능 구현!" class="thumbnail-image"></span>
     
     
         
@@ -611,12 +611,16 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/23/190623-DEVLOG-STEAMIC/">190623-DEVLOG-STEAMIC</a>
+        <a href="/2019/06/23/190623-DEVLOG-STEAMIC/">Search 기능 구현!</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            게시판 검색 구현을 시작한다!
+POST로 검색 값을 받았다.
+그리고 게시판의 제목, 내용, 작성자를 검색 옵션으로 잡았지만,
+일단 통합 검색이므로 django Q를 이용하여 query를 OR 연산했다.
+123456789search_keyword = request.POST.get('search', request.GET.get('search', None))if
         </p>
     </div>
 </article>

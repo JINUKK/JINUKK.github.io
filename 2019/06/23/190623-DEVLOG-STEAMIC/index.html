@@ -6,24 +6,24 @@
     
 
     
-    <title>190623-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Search 기능 구현! | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="게시판 검색 구현을 시작한다! POST로 검색 값을 받았다. 그리고 게시판의 제목, 내용, 작성자를 검색 옵션으로 잡았지만, 일단 통합 검색이므로 django Q를 이용하여 query를 OR 연산했다. 123456789search_keyword = request.POST.get(&apos;search&apos;, request.GET.get(&apos;search&apos;, None))if">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190623-DEVLOG-STEAMIC">
+<meta property="og:title" content="Search 기능 구현!">
 <meta property="og:url" content="http://JINUKK.github.io/2019/06/23/190623-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="게시판 검색 구현을 시작한다! POST로 검색 값을 받았다. 그리고 게시판의 제목, 내용, 작성자를 검색 옵션으로 잡았지만, 일단 통합 검색이므로 django Q를 이용하여 query를 OR 연산했다. 123456789search_keyword = request.POST.get(&apos;search&apos;, request.GET.get(&apos;search&apos;, None))if">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:19:12.895Z">
+<meta property="og:updated_time" content="2019-09-03T11:54:22.396Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190623-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Search 기능 구현!">
+<meta name="twitter:description" content="게시판 검색 구현을 시작한다! POST로 검색 값을 받았다. 그리고 게시판의 제목, 내용, 작성자를 검색 옵션으로 잡았지만, 일단 통합 검색이므로 django Q를 이용하여 query를 OR 연산했다. 123456789search_keyword = request.POST.get(&apos;search&apos;, request.GET.get(&apos;search&apos;, None))if">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/06/23/190623-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190623-DEVLOG-STEAMIC
+        Search 기능 구현!
         </h1>
     
 
@@ -168,7 +168,18 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>게시판 검색 구현을 시작한다!</p>
+<p>POST로 검색 값을 받았다.</p>
+<p>그리고 게시판의 제목, 내용, 작성자를 검색 옵션으로 잡았지만,</p>
+<p>일단 통합 검색이므로 django Q를 이용하여 query를 OR 연산했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">search_keyword = request.POST.get(<span class="string">'search'</span>, request.GET.get(<span class="string">'search'</span>, <span class="literal">None</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> search_keyword:</span><br><span class="line">    q = Q(title__icontains=search_keyword)</span><br><span class="line">    q |= Q(text__icontains=search_keyword)</span><br><span class="line">    q |= Q(author__username__icontains=search_keyword)</span><br><span class="line"></span><br><span class="line">    documents = documents.filter(q)</span><br><span class="line">    context_data.update(&#123;<span class="string">'search_keyword'</span>: search_keyword&#125;)</span><br></pre></td></tr></table></figure>
+<p>그런데 pagination에서 문제가 생겼다(?)</p>
+<p>예를 들어 지금 총 페이지 개수가 5페이지라고 하자.</p>
+<p>그리고 검색을 한 뒤에는 총 2페이지가 될 수 있다.</p>
+<p>그런데 검색을 하기 전에 내가 이미 3페이지에 머물러 있었다면?</p>
+<p>검색을 하고 난 뒤에는 총 2페이지인데 나는 3페이지에 있으니 오류가 난다.</p>
+<p>그래서 다음과 같이 추가해줬다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 총 페이지 수 보다 넘은 상태인 경우, 1페이지로 변경</span></span><br><span class="line"><span class="keyword">if</span> page &gt; paginator.num_pages:</span><br><span class="line">    page = <span class="number">1</span></span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
@@ -245,7 +256,7 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190623-DEVLOG-STEAMIC",
+        "headline": "Search 기능 구현!",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
@@ -253,8 +264,12 @@
         "dateCreated": "2019-06-23",
         "dateModified": "2019-09-03",
         "url": "http://JINUKK.github.io/2019/06/23/190623-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "게시판 검색 구현을 시작한다!
+POST로 검색 값을 받았다.
+그리고 게시판의 제목, 내용, 작성자를 검색 옵션으로 잡았지만,
+일단 통합 검색이므로 django Q를 이용하여 query를 OR 연산했다.
+123456789search_keyword = request.POST.get('search', request.GET.get('search', None))if"
+        "wordCount": 153
     }
 </script>
 
