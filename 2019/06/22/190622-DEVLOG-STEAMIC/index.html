@@ -6,24 +6,24 @@
     
 
     
-    <title>190622-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Access-Control-Allow-Origin? | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="123456789101112131415161718192021222324252627&amp;#123;% block extra_script %&amp;#125;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;$(function()&amp;#123;    $(&apos;#app_searchbox&apos;).keypress(function(e)&amp;#123;        if(e.key">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190622-DEVLOG-STEAMIC">
+<meta property="og:title" content="Access-Control-Allow-Origin?">
 <meta property="og:url" content="http://JINUKK.github.io/2019/06/22/190622-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="123456789101112131415161718192021222324252627&amp;#123;% block extra_script %&amp;#125;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;$(function()&amp;#123;    $(&apos;#app_searchbox&apos;).keypress(function(e)&amp;#123;        if(e.key">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:19:06.587Z">
+<meta property="og:updated_time" content="2019-09-03T11:33:16.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190622-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Access-Control-Allow-Origin?">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627&amp;#123;% block extra_script %&amp;#125;&amp;lt;script type=&quot;text/javascript&quot;&amp;gt;$(function()&amp;#123;    $(&apos;#app_searchbox&apos;).keypress(function(e)&amp;#123;        if(e.key">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/06/22/190622-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190622-DEVLOG-STEAMIC
+        Access-Control-Allow-Origin?
         </h1>
     
 
@@ -168,7 +168,23 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block extra_script %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function()&#123;</span></span><br><span class="line"><span class="undefined">    $('#app_searchbox').keypress(function(e)&#123;</span></span><br><span class="line"><span class="undefined">        if(e.keyCode==13) &#123;</span></span><br><span class="line"><span class="undefined">            //e.preventDefault();</span></span><br><span class="line"><span class="undefined">            alert('과연?');</span></span><br><span class="line"><span class="undefined">                $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                url: "https://store.steampowered.com/api/appdetails?appids=578080",</span></span><br><span class="line"><span class="undefined">                type: "GET",</span></span><br><span class="line"><span class="undefined">                dataType: "json",</span></span><br><span class="line"><span class="undefined">                success: function(data)&#123;</span></span><br><span class="line"><span class="undefined">                    alert(data.length);</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                complete : function(data)&#123;</span></span><br><span class="line"><span class="undefined">                    alert(data.data);</span></span><br><span class="line"><span class="undefined">                    //$('.data_area').html(data);</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                error: function(request,status,error)&#123;</span></span><br><span class="line"><span class="undefined">                    alert("code = "+ request.status + " message = " + request.responseText + " error = " + error);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+<p>ajax 구현을 검색해서 위와 같이 했는데 안된다.</p>
+<p>그래서 개발자 도구(F12)를 눌러서 봤더니…</p>
+<p>“No ‘Access-Control-Allow-Origin’ header is present on the requested resource.”</p>
+<p>그리고 request headers에서 Provisional headers are shown를 띄우고 있었다.</p>
+<p>Access-Control-Allow-Origin? 이게 뭘까?</p>
+<p>찾아보니 서로 다른 도메인에서의 요청을 제한하는 것 같다.</p>
+<p>검색을 통해 구글 웹스토어에서 Allow-Control-Allow-Origin를 설치했다.</p>
+<p>ajax 이벤트 중에 error가 반환되면 표시하게 해놨는데 다음과 같이 떴다.</p>
+<p>code = 200 message = error = SyntaxError: Unexpected end of JSON input</p>
+<p>code는 200번으로 보아 요청은 잘 되는데 json 형식과 연관된 오류인 것 같다.</p>
+<p>그래서 text로 바꿨더니 아무것도 안넘어오는걸 알았다. data.length가 0이다.</p>
+<p>검색 관련 구현은 여기까지만 하고…</p>
+<p>일단 bootstrap을 이용해서 pagination을 구현했다.</p>
+<p>그리고 django의 paginator를 사용했다.</p>
+<p>slug가 이미 view의 인자로 받고 있어서 page 번호를 GET으로 받았다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># GET으로 page 번호를 받음</span></span><br><span class="line">page = int(request.GET.get(<span class="string">'page'</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 10페이지씩 보여줌</span></span><br><span class="line">paginator = Paginator(documents, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">page = paginator.page(page)</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
@@ -245,7 +261,7 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190622-DEVLOG-STEAMIC",
+        "headline": "Access-Control-Allow-Origin?",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
@@ -253,8 +269,8 @@
         "dateCreated": "2019-06-22",
         "dateModified": "2019-09-03",
         "url": "http://JINUKK.github.io/2019/06/22/190622-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "123456789101112131415161718192021222324252627&#123;% block extra_script %&#125;&lt;script type="text/javascript"&gt;$(function()&#123;    $('#app_searchbox').keypress(function(e)&#123;        if(e.key"
+        "wordCount": 557
     }
 </script>
 
@@ -307,7 +323,7 @@
     
         <a href="/2019/06/21/190621-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190621-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">Steam Web API + Ajax?</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
