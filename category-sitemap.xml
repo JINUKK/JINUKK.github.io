@@ -8,15 +8,22 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/categories/Development-Log/STEAM-IC/</loc>
-        <lastmod>2019-09-02T12:22:53.592Z</lastmod>
+        <loc>http://JINUKK.github.io/categories/%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EC%A7%80/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/STEAM-IC/</loc>
+        <lastmod>2019-09-03T05:36:25.001Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/categories/Development-Log/</loc>
-        <lastmod>2019-09-02T12:22:53.592Z</lastmod>
+        <loc>http://JINUKK.github.io/categories/%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EC%A7%80/%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/</loc>
+        <lastmod>2019-09-03T05:36:25.001Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/categories/%EA%B0%9C%EB%B0%9C-%EC%9D%BC%EC%A7%80/</loc>
+        <lastmod>2019-09-03T05:36:25.001Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
