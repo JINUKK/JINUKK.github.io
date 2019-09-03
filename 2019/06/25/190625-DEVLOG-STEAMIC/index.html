@@ -6,24 +6,24 @@
     
 
     
-    <title>190625-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>jsonp? | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="오늘도 게임 검색 기능을 구현해본다. 계속 삽질(?)을 하면서 ‘동일출처정책’이라는 것과 관련되있다는 것을 알았다. Cross Domain 관련 issue인데 이것은 나중에 자세하게 정리하려한다. 일단은! 이것을 우회(?)하려고 여러가지 방법을 쓰다가 jsonp라는 것을 알게 되었다. ajax 호출은 동일한 도메인에서만 호출이 가능하다는 점을 알게 되었다.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190625-DEVLOG-STEAMIC">
+<meta property="og:title" content="jsonp?">
 <meta property="og:url" content="http://JINUKK.github.io/2019/06/25/190625-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="오늘도 게임 검색 기능을 구현해본다. 계속 삽질(?)을 하면서 ‘동일출처정책’이라는 것과 관련되있다는 것을 알았다. Cross Domain 관련 issue인데 이것은 나중에 자세하게 정리하려한다. 일단은! 이것을 우회(?)하려고 여러가지 방법을 쓰다가 jsonp라는 것을 알게 되었다. ajax 호출은 동일한 도메인에서만 호출이 가능하다는 점을 알게 되었다.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:19:33.654Z">
+<meta property="og:updated_time" content="2019-09-03T12:22:35.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190625-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="jsonp?">
+<meta name="twitter:description" content="오늘도 게임 검색 기능을 구현해본다. 계속 삽질(?)을 하면서 ‘동일출처정책’이라는 것과 관련되있다는 것을 알았다. Cross Domain 관련 issue인데 이것은 나중에 자세하게 정리하려한다. 일단은! 이것을 우회(?)하려고 여러가지 방법을 쓰다가 jsonp라는 것을 알게 되었다. ajax 호출은 동일한 도메인에서만 호출이 가능하다는 점을 알게 되었다.">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/06/25/190625-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190625-DEVLOG-STEAMIC
+        jsonp?
         </h1>
     
 
@@ -168,7 +168,16 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>오늘도 게임 검색 기능을 구현해본다.</p>
+<p>계속 삽질(?)을 하면서 ‘동일출처정책’이라는 것과 관련되있다는 것을 알았다.</p>
+<p>Cross Domain 관련 issue인데 이것은 나중에 자세하게 정리하려한다.</p>
+<p>일단은! 이것을 우회(?)하려고 여러가지 방법을 쓰다가 jsonp라는 것을 알게 되었다.</p>
+<p>ajax 호출은 동일한 도메인에서만 호출이 가능하다는 점을 알게 되었다.</p>
+<p>jsonp를 이용하면 보안상 정책이 적용되지 않는다는 사실도 알았다.</p>
+<p>jsonp는 기존 json 방식에서 function 형태로 바꾼 것이라고 한다.</p>
+<p>그래서 callback parameter가 추가되는데 다음과 같이 구현을 해보았다.</p>
+<p>그런데 여전히 같은 에러가 발생했다. 조금 더 공부하고 다시 적용해봐야 겠다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block extra_script %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function()&#123;</span></span><br><span class="line"><span class="undefined">    $('#app_searchbox').keypress(function(e)&#123;</span></span><br><span class="line"><span class="undefined">        if(e.keyCode==13) &#123;</span></span><br><span class="line"><span class="undefined">            //e.preventDefault();</span></span><br><span class="line"><span class="undefined">            alert('과연?');</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            var url = 'https://api.steampowered.com/ISteamApps/GetAppList/v2/?applist=?';</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                type: 'GET',</span></span><br><span class="line"><span class="undefined">                url: url,</span></span><br><span class="line"><span class="undefined">                async: false,</span></span><br><span class="line"><span class="undefined">                jsonp: 'applist',</span></span><br><span class="line"><span class="undefined">                contentType: "application/json",</span></span><br><span class="line"><span class="undefined">                dataType: 'jsonp',</span></span><br><span class="line"><span class="undefined">                success: function(data) &#123;</span></span><br><span class="line"><span class="undefined">                    $.each(data, function(k, v)&#123;</span></span><br><span class="line"><span class="undefined">                        console.log(k + v);</span></span><br><span class="line"><span class="undefined">                    &#125;);</span></span><br><span class="line"><span class="undefined">                &#125;,</span></span><br><span class="line"><span class="undefined">                error: function(request,status,error) &#123;</span></span><br><span class="line"><span class="undefined">                    console.log("code = "+ request.status + " message = " + request.responseText + " error = " + error);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
@@ -245,7 +254,7 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190625-DEVLOG-STEAMIC",
+        "headline": "jsonp?",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
@@ -253,8 +262,12 @@
         "dateCreated": "2019-06-25",
         "dateModified": "2019-09-03",
         "url": "http://JINUKK.github.io/2019/06/25/190625-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "오늘도 게임 검색 기능을 구현해본다.
+계속 삽질(?)을 하면서 ‘동일출처정책’이라는 것과 관련되있다는 것을 알았다.
+Cross Domain 관련 issue인데 이것은 나중에 자세하게 정리하려한다.
+일단은! 이것을 우회(?)하려고 여러가지 방법을 쓰다가 jsonp라는 것을 알게 되었다.
+ajax 호출은 동일한 도메인에서만 호출이 가능하다는 점을 알게 되었다."
+        "wordCount": 538
     }
 </script>
 
