@@ -12,18 +12,18 @@
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="오늘 Django Rest Framwork를 배우다가 문득 Steam도 API가 있지 않을까하고 생각했다.Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다. 1https://steamdb.info 여기서 Steam Web API와 관련된 주소를 찾았다. 1https://steamapi.xpaw.me/#ISteamA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Steam Web API!">
 <meta property="og:url" content="http://JINUKK.github.io/2019/06/18/190618-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="오늘 Django Rest Framwork를 배우다가 문득 Steam도 API가 있지 않을까하고 생각했다.Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다. 1https://steamdb.info 여기서 Steam Web API와 관련된 주소를 찾았다. 1https://steamapi.xpaw.me/#ISteamA">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T05:36:25.001Z">
+<meta property="og:updated_time" content="2019-09-03T05:48:52.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Steam Web API!">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:description" content="오늘 Django Rest Framwork를 배우다가 문득 Steam도 API가 있지 않을까하고 생각했다.Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다. 1https://steamdb.info 여기서 Steam Web API와 관련된 주소를 찾았다. 1https://steamapi.xpaw.me/#ISteamA">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/06/18/190618-devlog-steamic/">
@@ -168,7 +168,14 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>오늘 Django Rest Framwork를 배우다가 문득 Steam도 API가 있지 않을까하고 생각했다.<br><br>Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://steamdb.info</span><br></pre></td></tr></table></figure>
+<p>여기서 Steam Web API와 관련된 주소를 찾았다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://steamapi.xpaw.me/#ISteamApps</span><br></pre></td></tr></table></figure>
+<p>여기에서 Steam App 목록을 불러올 수 있는 주소를 찾아냈다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># GetAppList</span><br><span class="line"></span><br><span class="line">https://api.steampowered.com/ISteamApps/GetAppList/v1/?</span><br></pre></td></tr></table></figure>
+<p>접속하니 앱 항목 들이 JSON 형식으로 되어있었고, appid와 name으로 구분되어 있었다.<br><br>개수가 많은데 어떻게 가져와서 적용할 것인지 고민해봐야겠다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -253,8 +260,11 @@
         "dateCreated": "2019-06-18",
         "dateModified": "2019-09-03",
         "url": "http://JINUKK.github.io/2019/06/18/190618-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "오늘 Django Rest Framwork를 배우다가 문득 Steam도 API가 있지 않을까하고 생각했다.Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다.
+1https://steamdb.info
+여기서 Steam Web API와 관련된 주소를 찾았다.
+1https://steamapi.xpaw.me/#ISteamA"
+        "wordCount": 72
     }
 </script>
 
