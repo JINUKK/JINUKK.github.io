@@ -20,7 +20,7 @@
 <meta property="og:description" content="오늘 Django Rest Framwork와 관련하여 공부하다가 문득 Steam도 API가 있지 않을까하고 생각했다.Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다. https://steamdb.info 여기서 Steam Web API와 관련된 주소를 찾았다. https://steamapi.xpaw.me/#ISt">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T05:54:34.206Z">
+<meta property="og:updated_time" content="2019-09-03T06:05:03.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Steam Web API!">
 <meta name="twitter:description" content="오늘 Django Rest Framwork와 관련하여 공부하다가 문득 Steam도 API가 있지 않을까하고 생각했다.Steam API라고 검색을 시작했고, Steam Database를 가진 웹사이트를 찾아냈다. https://steamdb.info 여기서 Steam Web API와 관련된 주소를 찾았다. https://steamapi.xpaw.me/#ISt">
@@ -173,7 +173,12 @@
 <p>여기서 Steam Web API와 관련된 주소를 찾았다.</p>
 <p><a href="https://steamapi.xpaw.me/#ISteamApps" target="_blank" rel="noopener">https://steamapi.xpaw.me/#ISteamApps</a></p>
 <p>여기에서 Steam App 목록을 불러올 수 있는 ‘GetAppList’ 주소를 찾아냈다.</p>
-<p><a href="https://api.steampowered.com/ISteamApps/GetAppList/v1/" target="_blank" rel="noopener">https://api.steampowered.com/ISteamApps/GetAppList/v1/</a>?</p>
+<p><a href="https://api.steampowered.com/ISteamApps/GetAppList/v1/" target="_blank" rel="noopener">https://api.steampowered.com/ISteamApps/GetAppList/v1/</a></p>
+<p>조금 더 찾아보니 아래 주소도 찾아냈는데 버전 1과 2가 있는 것 같았다.</p>
+<p>다음과 같은 주소에서는 버전 2에 대한 언급을 하고 있었다.</p>
+<img src="/images/steam_web_api_GetAppList.png">
+<center>출처 : <a href="https://partner.steamgames.com/doc/webapi/ISteamApp" target="_blank" rel="noopener">https://partner.steamgames.com/doc/webapi/ISteamApp</a></center>
+
 <p>접속하니 앱 항목 들이 JSON 형식으로 되어있었고, appid와 name으로 구분되어 있었다.<br><br>개수가 8만개…정도되서 어떻게 가져와서 적용할 것인지 고민해봐야겠다.</p>
 
         </div>
@@ -264,7 +269,7 @@
 https://steamdb.info
 여기서 Steam Web API와 관련된 주소를 찾았다.
 https://steamapi.xpaw.me/#ISt"
-        "wordCount": 60
+        "wordCount": 85
     }
 </script>
 
