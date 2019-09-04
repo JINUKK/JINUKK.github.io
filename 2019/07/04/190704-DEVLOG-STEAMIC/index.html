@@ -6,24 +6,24 @@
     
 
     
-    <title>190704-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>공지 카테고리 분류 하기 - 1 | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="공지라는 것은 관리자만 쓸 수 있어야 하고 모든 사람이 잘 볼 수 있게 해야 했다. 일단 게시글의 순서를 정하는 것은 model에서 ordering할 수 있고, view에서도 order_by를 할 수 있다. 일단 게시글 자체는 생성 순서로 해야 했다. 하지만 생성 순서 자체로 하면 공지글도 섞여버리기 때문에 차별해야 했다. 그래서 생각한 것이 trello">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190704-DEVLOG-STEAMIC">
+<meta property="og:title" content="공지 카테고리 분류 하기 - 1">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/04/190704-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="공지라는 것은 관리자만 쓸 수 있어야 하고 모든 사람이 잘 볼 수 있게 해야 했다. 일단 게시글의 순서를 정하는 것은 model에서 ordering할 수 있고, view에서도 order_by를 할 수 있다. 일단 게시글 자체는 생성 순서로 해야 했다. 하지만 생성 순서 자체로 하면 공지글도 섞여버리기 때문에 차별해야 했다. 그래서 생각한 것이 trello">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:20:24.856Z">
+<meta property="og:updated_time" content="2019-09-04T06:38:05.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190704-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="공지 카테고리 분류 하기 - 1">
+<meta name="twitter:description" content="공지라는 것은 관리자만 쓸 수 있어야 하고 모든 사람이 잘 볼 수 있게 해야 했다. 일단 게시글의 순서를 정하는 것은 model에서 ordering할 수 있고, view에서도 order_by를 할 수 있다. 일단 게시글 자체는 생성 순서로 해야 했다. 하지만 생성 순서 자체로 하면 공지글도 섞여버리기 때문에 차별해야 했다. 그래서 생각한 것이 trello">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/04/190704-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190704-DEVLOG-STEAMIC
+        공지 카테고리 분류 하기 - 1
         </h1>
     
 
@@ -168,7 +168,23 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>공지라는 것은 관리자만 쓸 수 있어야 하고 모든 사람이 잘 볼 수 있게 해야 했다.</p>
+<p>일단 게시글의 순서를 정하는 것은 model에서 ordering할 수 있고,</p>
+<p>view에서도 order_by를 할 수 있다.</p>
+<p>일단 게시글 자체는 생성 순서로 해야 했다.</p>
+<p>하지만 생성 순서 자체로 하면 공지글도 섞여버리기 때문에 차별해야 했다.</p>
+<p>그래서 생각한 것이 trello 협업 프로젝트에서 했던 방법이 떠올랐다.</p>
+<p>model에서 게시글을 생성할 때 번호를 부여하는 것이었다.</p>
+<p>Document 모델에 다음과 같은 필드를 만들었다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 문서 순서</span></span><br><span class="line">doc_sort = models.PositiveIntegerField(default=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>아무것도 지정하지 않으면 1을 넣게 만들었다.</p>
+<p>공지글이라면 0을 넣도록 view를 다음과 같이 구현했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> document_form.is_valid():</span><br><span class="line">    <span class="keyword">if</span> document_form.instance.category.name == <span class="string">"공지"</span>:</span><br><span class="line">        document_form.instance.doc_sort = <span class="number">0</span></span><br><span class="line">    document = document_form.save()</span><br><span class="line">    <span class="keyword">return</span> redirect(document)</span><br></pre></td></tr></table></figure>
+<p>그리고 Document 모델에서 ordering을 해줬다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">    <span class="comment"># doc_sort를 우선순위로</span></span><br><span class="line">    <span class="comment"># 생성한 날짜를 내림차순으로</span></span><br><span class="line">    ordering = [<span class="string">'doc_sort'</span>, <span class="string">'-create_date'</span>]</span><br></pre></td></tr></table></figure>
+<p>결과는 0으로는 잘 저장되는데 순서가 제대로 나오지 않았다.</p>
+<p>좀 더 생각해봐야겠다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +261,21 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190704-DEVLOG-STEAMIC",
+        "headline": "공지 카테고리 분류 하기 - 1",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-07-04",
         "dateCreated": "2019-07-04",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/07/04/190704-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "공지라는 것은 관리자만 쓸 수 있어야 하고 모든 사람이 잘 볼 수 있게 해야 했다.
+일단 게시글의 순서를 정하는 것은 model에서 ordering할 수 있고,
+view에서도 order_by를 할 수 있다.
+일단 게시글 자체는 생성 순서로 해야 했다.
+하지만 생성 순서 자체로 하면 공지글도 섞여버리기 때문에 차별해야 했다.
+그래서 생각한 것이 trello "
+        "wordCount": 187
     }
 </script>
 
@@ -307,7 +328,7 @@
     
         <a href="/2019/07/02/190702-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190702-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">추천 기능</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     

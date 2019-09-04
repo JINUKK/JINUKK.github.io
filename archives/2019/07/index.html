@@ -638,7 +638,7 @@ root를 시작으로 다음 레벨 왼쪽부터 방문12345678910111213141516171
         <a href="/2019/07/05/190705-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190705-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="공지 카테고리 분류 하기 - 2" class="thumbnail-image"></span>
     
     
         
@@ -663,12 +663,16 @@ root를 시작으로 다음 레벨 왼쪽부터 방문12345678910111213141516171
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/05/190705-DEVLOG-STEAMIC/">190705-DEVLOG-STEAMIC</a>
+        <a href="/2019/07/05/190705-DEVLOG-STEAMIC/">공지 카테고리 분류 하기 - 2</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            게시글의 목록을 보여주는 view에서 queryset에 대한 filter을 많이 써서
+ordering이 되지 않았던 것 같다.
+그래서 filter을 다 거치고 나서 마지막에 template로 넘겨주기 전에
+order_by를 사용해서 정렬했다.
+1paginator = Paginator(documents.order_by('doc_sort', '-create_d
         </p>
     </div>
 </article>

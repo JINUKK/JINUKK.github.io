@@ -6,24 +6,24 @@
     
 
     
-    <title>190702-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>추천 기능 | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="게시판에서도 빠질 수(?) 없는 것이 바로 추천 기능이다. 인스타그램 클론을 만드는 과정에서 해봤기 때문에 많이 어렵진 않았다. 일단 Document 모델 안에 추천 관련 필드를 만들었다. 게시글은 여러 개가 될 수 있고, 그 게시글을 추천하는 사람도 여러 명이 될 수 있기 때문에 ManyToMany를 사용했다. 12# 추천recommend = models">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190702-DEVLOG-STEAMIC">
+<meta property="og:title" content="추천 기능">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/02/190702-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="게시판에서도 빠질 수(?) 없는 것이 바로 추천 기능이다. 인스타그램 클론을 만드는 과정에서 해봤기 때문에 많이 어렵진 않았다. 일단 Document 모델 안에 추천 관련 필드를 만들었다. 게시글은 여러 개가 될 수 있고, 그 게시글을 추천하는 사람도 여러 명이 될 수 있기 때문에 ManyToMany를 사용했다. 12# 추천recommend = models">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:20:17.664Z">
+<meta property="og:updated_time" content="2019-09-04T06:28:42.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190702-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="추천 기능">
+<meta name="twitter:description" content="게시판에서도 빠질 수(?) 없는 것이 바로 추천 기능이다. 인스타그램 클론을 만드는 과정에서 해봤기 때문에 많이 어렵진 않았다. 일단 Document 모델 안에 추천 관련 필드를 만들었다. 게시글은 여러 개가 될 수 있고, 그 게시글을 추천하는 사람도 여러 명이 될 수 있기 때문에 ManyToMany를 사용했다. 12# 추천recommend = models">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/02/190702-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190702-DEVLOG-STEAMIC
+        추천 기능
         </h1>
     
 
@@ -168,7 +168,20 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>게시판에서도 빠질 수(?) 없는 것이 바로 추천 기능이다.</p>
+<p>인스타그램 클론을 만드는 과정에서 해봤기 때문에 많이 어렵진 않았다.</p>
+<p>일단 Document 모델 안에 추천 관련 필드를 만들었다.</p>
+<p>게시글은 여러 개가 될 수 있고, 그 게시글을 추천하는 사람도 여러 명이</p>
+<p>될 수 있기 때문에 ManyToMany를 사용했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 추천</span></span><br><span class="line">recommend = models.ManyToManyField(get_user_model(), blank=<span class="literal">True</span>, related_name=<span class="string">'recommend_doc'</span>)</span><br></pre></td></tr></table></figure>
+<p>그리고 view를 구현했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">documment_recommend</span><span class="params">(request, document_slug)</span>:</span></span><br><span class="line">    document = get_object_or_404(Document, slug=document_slug)</span><br><span class="line">    user = request.user</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> user <span class="keyword">not</span> <span class="keyword">in</span> document.recommend.all():</span><br><span class="line">        document.recommend.add(user)</span><br><span class="line"></span><br><span class="line">    referer_url = request.META.get(<span class="string">'HTTP_REFERER'</span>)</span><br><span class="line">    path = urlparse(referer_url).path</span><br><span class="line">    <span class="keyword">return</span> HttpResponseRedirect(path)</span><br></pre></td></tr></table></figure>
+<p>유저가 이미 추천을 했다면 다시 add하지 못하도록 했다.</p>
+<p>문제는 추천을 누르면 머무르고 있던 이전 페이지로 돌아가게 했는데</p>
+<p>이렇게 하다보니 게시글의 맨 상단으로 올라간다.</p>
+<p>ajax로 해결해봐야겠다.</p>
+<p>버튼은 itcm 사이트를 보고 디자인 했다.</p>
+<img src="/images/steamic_doc_reco.png">
         </div>
         <footer class="article-footer">
             
@@ -245,16 +258,21 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190702-DEVLOG-STEAMIC",
+        "headline": "추천 기능",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-07-02",
         "dateCreated": "2019-07-02",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/07/02/190702-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "게시판에서도 빠질 수(?) 없는 것이 바로 추천 기능이다.
+인스타그램 클론을 만드는 과정에서 해봤기 때문에 많이 어렵진 않았다.
+일단 Document 모델 안에 추천 관련 필드를 만들었다.
+게시글은 여러 개가 될 수 있고, 그 게시글을 추천하는 사람도 여러 명이
+될 수 있기 때문에 ManyToMany를 사용했다.
+12# 추천recommend = models"
+        "wordCount": 168
     }
 </script>
 
@@ -298,7 +316,7 @@
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            190704-DEVLOG-STEAMIC
+            공지 카테고리 분류 하기 - 1
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -307,7 +325,7 @@
     
         <a href="/2019/07/01/190701-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190701-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">게시판 디자인</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
