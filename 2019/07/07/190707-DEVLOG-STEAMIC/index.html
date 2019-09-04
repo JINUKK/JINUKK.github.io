@@ -6,24 +6,24 @@
     
 
     
-    <title>190707-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Autocomplete | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="지금의 게임 검색 기능은 스팀 앱의 id를 정확하게 알아야만 검색이 된다. 내가 원하는 것은 검색에 한글자씩 칠 때마다 앱 데이터가 바뀌도록 하는 것이었다. 찾아보니 JQuery에 Autocomplete 기능이 있었다. 일단 이 기능을 적용하려고 예제를 가져와서 해보기로 했다. 12345678910111213141516171819202122&amp;lt;link">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190707-DEVLOG-STEAMIC">
+<meta property="og:title" content="Autocomplete">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/07/190707-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="지금의 게임 검색 기능은 스팀 앱의 id를 정확하게 알아야만 검색이 된다. 내가 원하는 것은 검색에 한글자씩 칠 때마다 앱 데이터가 바뀌도록 하는 것이었다. 찾아보니 JQuery에 Autocomplete 기능이 있었다. 일단 이 기능을 적용하려고 예제를 가져와서 해보기로 했다. 12345678910111213141516171819202122&amp;lt;link">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:20:46.855Z">
+<meta property="og:updated_time" content="2019-09-04T07:11:48.214Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190707-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Autocomplete">
+<meta name="twitter:description" content="지금의 게임 검색 기능은 스팀 앱의 id를 정확하게 알아야만 검색이 된다. 내가 원하는 것은 검색에 한글자씩 칠 때마다 앱 데이터가 바뀌도록 하는 것이었다. 찾아보니 JQuery에 Autocomplete 기능이 있었다. 일단 이 기능을 적용하려고 예제를 가져와서 해보기로 했다. 12345678910111213141516171819202122&amp;lt;link">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/07/190707-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190707-DEVLOG-STEAMIC
+        Autocomplete
         </h1>
     
 
@@ -168,7 +168,17 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>지금의 게임 검색 기능은 스팀 앱의 id를 정확하게 알아야만 검색이 된다.</p>
+<p>내가 원하는 것은 검색에 한글자씩 칠 때마다 앱 데이터가 바뀌도록 하는 것이었다.</p>
+<p>찾아보니 JQuery에 Autocomplete 기능이 있었다.</p>
+<p>일단 이 기능을 적용하려고 예제를 가져와서 해보기로 했다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/jquery-1.12.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://code.jquery.com/ui/1.12.1/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ui-widget"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"city"</span>&gt;</span>도시: <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"city"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function() &#123;</span></span><br><span class="line"><span class="undefined">    var availableCity = ["서울","부산","대구","광주","울산"];</span></span><br><span class="line"><span class="undefined">    $("#city").autocomplete(&#123;</span></span><br><span class="line"><span class="undefined">        source: availableCity,</span></span><br><span class="line"><span class="undefined">        select: function(event, ui) &#123;</span></span><br><span class="line"><span class="undefined">            console.log(ui.item);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// 출처 : https://offbyone.tistory.com/260</span><br></pre></td></tr></table></figure>
+<p>jquery 관련 plugin을 등록해야 하는 것 같다.</p>
+<p>그리고 .autocomplete라는 것을 써서 source를 지정하고 select되었을 때</p>
+<p>이벤트를 지정할 수 있는 것 같았다.</p>
+<p>게임 검색에 적용하려면 일단 저 source 부분에서 스팀 앱의 queryset을 받아야 할 것 같다.</p>
+<p>JQuery 만만치 않은 것 같다…</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +255,20 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190707-DEVLOG-STEAMIC",
+        "headline": "Autocomplete",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-07-07",
         "dateCreated": "2019-07-07",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/07/07/190707-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "지금의 게임 검색 기능은 스팀 앱의 id를 정확하게 알아야만 검색이 된다.
+내가 원하는 것은 검색에 한글자씩 칠 때마다 앱 데이터가 바뀌도록 하는 것이었다.
+찾아보니 JQuery에 Autocomplete 기능이 있었다.
+일단 이 기능을 적용하려고 예제를 가져와서 해보기로 했다.
+12345678910111213141516171819202122&lt;link "
+        "wordCount": 241
     }
 </script>
 
@@ -307,7 +321,7 @@
     
         <a href="/2019/07/06/190706-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190706-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">Main Data Crawling</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     

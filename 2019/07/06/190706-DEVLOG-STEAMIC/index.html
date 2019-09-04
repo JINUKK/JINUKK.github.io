@@ -6,24 +6,24 @@
     
 
     
-    <title>190706-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Main Data Crawling | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="STEAM IC.의 메인 화면에는 스팀 사이트에서 인기가 있거나 할인하는 제품을 크롤링해서 뿌리고 싶었다. 스팀비비가 그러기도 했고… 근데 막상 크롤링을 해서 뿌렸더니 페이지가 로딩하는 데에도 시간이 꽤 걸렸다. 처음에는 동적인 데이터에 대해서 크롤링하려다보니 selenium을 사용했다. 그랬더니 로딩하는 데에만 7초가 걸렸다. 그래서 다시 beautifu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190706-DEVLOG-STEAMIC">
+<meta property="og:title" content="Main Data Crawling">
 <meta property="og:url" content="http://JINUKK.github.io/2019/07/06/190706-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="STEAM IC.의 메인 화면에는 스팀 사이트에서 인기가 있거나 할인하는 제품을 크롤링해서 뿌리고 싶었다. 스팀비비가 그러기도 했고… 근데 막상 크롤링을 해서 뿌렸더니 페이지가 로딩하는 데에도 시간이 꽤 걸렸다. 처음에는 동적인 데이터에 대해서 크롤링하려다보니 selenium을 사용했다. 그랬더니 로딩하는 데에만 7초가 걸렸다. 그래서 다시 beautifu">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:20:39.276Z">
+<meta property="og:updated_time" content="2019-09-04T06:57:05.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190706-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Main Data Crawling">
+<meta name="twitter:description" content="STEAM IC.의 메인 화면에는 스팀 사이트에서 인기가 있거나 할인하는 제품을 크롤링해서 뿌리고 싶었다. 스팀비비가 그러기도 했고… 근데 막상 크롤링을 해서 뿌렸더니 페이지가 로딩하는 데에도 시간이 꽤 걸렸다. 처음에는 동적인 데이터에 대해서 크롤링하려다보니 selenium을 사용했다. 그랬더니 로딩하는 데에만 7초가 걸렸다. 그래서 다시 beautifu">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/07/06/190706-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190706-DEVLOG-STEAMIC
+        Main Data Crawling
         </h1>
     
 
@@ -168,7 +168,20 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>STEAM IC.의 메인 화면에는 스팀 사이트에서 인기가 있거나 할인하는 제품을 크롤링해서</p>
+<p>뿌리고 싶었다. 스팀비비가 그러기도 했고…</p>
+<p>근데 막상 크롤링을 해서 뿌렸더니 페이지가 로딩하는 데에도 시간이 꽤 걸렸다.</p>
+<p>처음에는 동적인 데이터에 대해서 크롤링하려다보니 selenium을 사용했다.</p>
+<p>그랬더니 로딩하는 데에만 7초가 걸렸다. 그래서 다시 beautifulsoup4를 이용했다.</p>
+<p>그래도 2~3초가 걸렸다. 만약 사이트를 사용하는 이용자가 여러명이라면 메인 페이지로</p>
+<p>이동할 때마다 요청을 계속하게 되는 것이다.</p>
+<p>이 데이터를 데이터베이스에 저장하고 싶지는 않았다.</p>
+<p>계속 데이터의 정보가 바뀌기도 했고, 저장할 필요를 못 느꼈다.</p>
+<p>그래서 생각한 것이 크롤링할 정적 페이지를 텍스트 파일로 저장해놓았다.</p>
+<p>그런 다음 텍스트 파일에서 불러와서 뿌렸다. 속도는 역시 빨랐다.</p>
+<p>하지만 내가 수동으로 함수를 실행시켜서 텍스트 파일을 업데이트해야 했다.</p>
+<p>테스트 과정에서는 상관없지만, 나중에 배포하면 어떻게 할 지 생각을 좀 더 해봐야겠다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +258,20 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190706-DEVLOG-STEAMIC",
+        "headline": "Main Data Crawling",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-07-06",
         "dateCreated": "2019-07-06",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/07/06/190706-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "STEAM IC.의 메인 화면에는 스팀 사이트에서 인기가 있거나 할인하는 제품을 크롤링해서
+뿌리고 싶었다. 스팀비비가 그러기도 했고…
+근데 막상 크롤링을 해서 뿌렸더니 페이지가 로딩하는 데에도 시간이 꽤 걸렸다.
+처음에는 동적인 데이터에 대해서 크롤링하려다보니 selenium을 사용했다.
+그랬더니 로딩하는 데에만 7초가 걸렸다. 그래서 다시 beautifu"
+        "wordCount": 101
     }
 </script>
 
@@ -298,7 +315,7 @@
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            190707-DEVLOG-STEAMIC
+            Autocomplete
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
