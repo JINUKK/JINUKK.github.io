@@ -6,24 +6,24 @@
     
 
     
-    <title>190628-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>게시글 수정 및 디자인 | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="게시글이 수정될 때는 제목과 내용이 그대로 나오듯이 앱 데이터도 그대로 나와야 한다. 그래서 다음과 같이 JQuery로 구현했다. hidden 옵션이 적용된 input 태그 안에 id_app_name에 value 값으로 조건을 잡았다. 그리고 있다면 게시글을 생성할 때와 마찬가지로 마크업 문법을 쓰려고 append()와 attr()를 찾아서 구현했다. 12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190628-DEVLOG-STEAMIC">
+<meta property="og:title" content="게시글 수정 및 디자인">
 <meta property="og:url" content="http://JINUKK.github.io/2019/06/28/190628-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="게시글이 수정될 때는 제목과 내용이 그대로 나오듯이 앱 데이터도 그대로 나와야 한다. 그래서 다음과 같이 JQuery로 구현했다. hidden 옵션이 적용된 input 태그 안에 id_app_name에 value 값으로 조건을 잡았다. 그리고 있다면 게시글을 생성할 때와 마찬가지로 마크업 문법을 쓰려고 append()와 attr()를 찾아서 구현했다. 12">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:20:01.565Z">
+<meta property="og:updated_time" content="2019-09-04T06:00:06.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190628-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="게시글 수정 및 디자인">
+<meta name="twitter:description" content="게시글이 수정될 때는 제목과 내용이 그대로 나오듯이 앱 데이터도 그대로 나와야 한다. 그래서 다음과 같이 JQuery로 구현했다. hidden 옵션이 적용된 input 태그 안에 id_app_name에 value 값으로 조건을 잡았다. 그리고 있다면 게시글을 생성할 때와 마찬가지로 마크업 문법을 쓰려고 append()와 attr()를 찾아서 구현했다. 12">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/06/28/190628-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190628-DEVLOG-STEAMIC
+        게시글 수정 및 디자인
         </h1>
     
 
@@ -168,7 +168,16 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>게시글이 수정될 때는 제목과 내용이 그대로 나오듯이 앱 데이터도 그대로 나와야 한다.</p>
+<p>그래서 다음과 같이 JQuery로 구현했다.</p>
+<p>hidden 옵션이 적용된 input 태그 안에 id_app_name에 value 값으로 조건을 잡았다.</p>
+<p>그리고 있다면 게시글을 생성할 때와 마찬가지로 마크업 문법을 쓰려고 append()와</p>
+<p>attr()를 찾아서 구현했다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function()&#123;</span></span><br><span class="line"><span class="undefined">    //alert('함수 실행');</span></span><br><span class="line"><span class="undefined">    if($('input#id_app_name').val() != '')&#123;</span></span><br><span class="line"><span class="xml">    $('.data_area').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_image'));</span></span><br><span class="line"><span class="xml">    $('.app_image').append($('<span class="tag">&lt;<span class="name">img</span>/&gt;</span>').attr('class', 'header_image'));</span></span><br><span class="line"><span class="undefined">    $('.header_image').attr('width', '124px');</span></span><br><span class="line"><span class="undefined">    $('.header_image').attr('height', '49px');</span></span><br><span class="line"><span class="undefined">    $('.header_image').attr('style', 'max-width: none; padding: 1px; border: 1px solid rgb(221, 221, 221); vertical-align: top;');</span></span><br><span class="line"><span class="undefined">    $('.header_image').attr('src', $('input#id_app_image').val());</span></span><br><span class="line"><span class="xml">    $('.data_area').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_content'));</span></span><br><span class="line"><span class="xml">    $('.app_content').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_name'));</span></span><br><span class="line"><span class="undefined">    $('.app_name').attr('style', 'font-size: 0.9em; font-weight: bold;');</span></span><br><span class="line"><span class="undefined">    $('.app_name').html("&amp;nbsp;" + $('input#id_app_name').val());</span></span><br><span class="line"><span class="xml">    $('.app_content').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_price'));</span></span><br><span class="line"><span class="undefined">    $('.app_price').attr('style', 'font-size: 0.8em; font-weight: bold; color: #999;');</span></span><br><span class="line"><span class="undefined">    $('.app_price').html("(" + $('input#id_app_price').val() + ")");</span></span><br><span class="line"><span class="xml">    $('.app_content').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_store_link'));</span></span><br><span class="line"><span class="xml">    $('.app_store_link').append($('<span class="tag">&lt;<span class="name">a</span>/&gt;</span>').attr('class', 'app_link'));</span></span><br><span class="line"><span class="undefined">    $('.app_link').attr('style', 'font-size: 0.9em; font-weight: bold; color: #2a4752; display: block;');</span></span><br><span class="line"><span class="undefined">    $('.app_link').attr('href', $('input#id_app_link').val());</span></span><br><span class="line"><span class="undefined">    $('.app_link').html("&amp;nbsp;" + $('input#id_app_link').val());</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>게시글의 디테일한 화면에서도 앱의 정보를 표시해야 했기 때문에 table을 사용해서 다음과 같은 정보를 표현했다.</p>
+<img src="/images/steam_app_data.png">
+<p>나중에 더 좋은 위치와 디자인을…ㅠㅠ!!</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +254,21 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190628-DEVLOG-STEAMIC",
+        "headline": "게시글 수정 및 디자인",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-06-28",
         "dateCreated": "2019-06-28",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/06/28/190628-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "게시글이 수정될 때는 제목과 내용이 그대로 나오듯이 앱 데이터도 그대로 나와야 한다.
+그래서 다음과 같이 JQuery로 구현했다.
+hidden 옵션이 적용된 input 태그 안에 id_app_name에 value 값으로 조건을 잡았다.
+그리고 있다면 게시글을 생성할 때와 마찬가지로 마크업 문법을 쓰려고 append()와
+attr()를 찾아서 구현했다.
+12"
+        "wordCount": 291
     }
 </script>
 
@@ -307,7 +321,7 @@
     
         <a href="/2019/06/27/190627-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190627-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">forms.HiddenInput()</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     

@@ -348,7 +348,7 @@
         <a href="/2019/06/28/190628-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190628-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="게시글 수정 및 디자인" class="thumbnail-image"></span>
     
     
         
@@ -373,12 +373,17 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/28/190628-DEVLOG-STEAMIC/">190628-DEVLOG-STEAMIC</a>
+        <a href="/2019/06/28/190628-DEVLOG-STEAMIC/">게시글 수정 및 디자인</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            게시글이 수정될 때는 제목과 내용이 그대로 나오듯이 앱 데이터도 그대로 나와야 한다.
+그래서 다음과 같이 JQuery로 구현했다.
+hidden 옵션이 적용된 input 태그 안에 id_app_name에 value 값으로 조건을 잡았다.
+그리고 있다면 게시글을 생성할 때와 마찬가지로 마크업 문법을 쓰려고 append()와
+attr()를 찾아서 구현했다.
+12
         </p>
     </div>
 </article>
@@ -394,7 +399,7 @@
         <a href="/2019/06/27/190627-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190627-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="forms.HiddenInput()" class="thumbnail-image"></span>
     
     
         
@@ -419,12 +424,14 @@
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/06/27/190627-DEVLOG-STEAMIC/">190627-DEVLOG-STEAMIC</a>
+        <a href="/2019/06/27/190627-DEVLOG-STEAMIC/">forms.HiddenInput()</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
+            view에 다음과 같이 해당 스팀 앱의 id를 적으면 json 형식으로
+해당 앱의 정보를 받을 수 있게 구현했다.
+123456789101112131415161718192021222324252627282930313233343536373839404142def steam_app(request):    app_id = request.GET.get('search',
         </p>
     </div>
 </article>
