@@ -8,8 +8,8 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/06/28/190628-DEVLOG-STEAMIC/</loc>
-        <lastmod>2019-09-04T06:00:06.318Z</lastmod>
+        <loc>http://JINUKK.github.io/2019/07/01/190701-DEVLOG-STEAMIC/</loc>
+        <lastmod>2019-09-04T06:11:20.663Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,15 @@
 
     <url>
         <loc>http://JINUKK.github.io/2019/06/27/190627-DEVLOG-STEAMIC/</loc>
-        <lastmod>2019-09-04T05:51:03.812Z</lastmod>
+        <lastmod>2019-09-04T06:03:02.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/06/28/190628-DEVLOG-STEAMIC/</loc>
+        <lastmod>2019-09-04T06:00:06.318Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -170,14 +178,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/07/02/190702-DEVLOG-STEAMIC/</loc>
         <lastmod>2019-09-03T06:20:17.664Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/07/01/190701-DEVLOG-STEAMIC/</loc>
-        <lastmod>2019-09-03T06:20:08.513Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
