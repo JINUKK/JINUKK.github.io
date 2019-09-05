@@ -6,24 +6,24 @@
     
 
     
-    <title>190819-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Main Data Crontab 적용! | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="메인 페이지에서 크롤링한 데이터를 텍스트 파일에 저장했고 직접 수동 업데이트하는 방식으로 테스트를 진행했다. 그리고 static이라는 폴더를 만들어서 텍스트 파일로 모아 관리했다. django에서는 정적인 파일을 static 폴더에 넣어서 관리하는데 collectstatic을 하지않으면 업데이트가 되지 않는다. 배포할 때는 AWS S3를 연동할텐데 coll">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190819-DEVLOG-STEAMIC">
+<meta property="og:title" content="Main Data Crontab 적용!">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/19/190819-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="메인 페이지에서 크롤링한 데이터를 텍스트 파일에 저장했고 직접 수동 업데이트하는 방식으로 테스트를 진행했다. 그리고 static이라는 폴더를 만들어서 텍스트 파일로 모아 관리했다. django에서는 정적인 파일을 static 폴더에 넣어서 관리하는데 collectstatic을 하지않으면 업데이트가 되지 않는다. 배포할 때는 AWS S3를 연동할텐데 coll">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:21:02.011Z">
+<meta property="og:updated_time" content="2019-09-04T07:23:40.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190819-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Main Data Crontab 적용!">
+<meta name="twitter:description" content="메인 페이지에서 크롤링한 데이터를 텍스트 파일에 저장했고 직접 수동 업데이트하는 방식으로 테스트를 진행했다. 그리고 static이라는 폴더를 만들어서 텍스트 파일로 모아 관리했다. django에서는 정적인 파일을 static 폴더에 넣어서 관리하는데 collectstatic을 하지않으면 업데이트가 되지 않는다. 배포할 때는 AWS S3를 연동할텐데 coll">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/08/19/190819-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190819-DEVLOG-STEAMIC
+        Main Data Crontab 적용!
         </h1>
     
 
@@ -168,7 +168,24 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>메인 페이지에서 크롤링한 데이터를 텍스트 파일에 저장했고</p>
+<p>직접 수동 업데이트하는 방식으로 테스트를 진행했다.</p>
+<p>그리고 static이라는 폴더를 만들어서 텍스트 파일로 모아 관리했다.</p>
+<p>django에서는 정적인 파일을 static 폴더에 넣어서 관리하는데</p>
+<p>collectstatic을 하지않으면 업데이트가 되지 않는다.</p>
+<p>배포할 때는 AWS S3를 연동할텐데 collectstatic을 하지 않으면</p>
+<p>업데이트를 할 수 없게 된다.</p>
+<p>그래서 생각한 것이 CrawlingData라는 모델을 만들었다.</p>
+<p>그리고 크롤링할 정적 페이지를 저장할 필드를 만들었다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CrawlingData</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    title = models.CharField(max_length=<span class="number">50</span>, blank=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># 정적 페이지 저장</span></span><br><span class="line">    html_data = models.TextField()</span><br><span class="line">    update_date = models.DateTimeField(auto_now=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>그리고 django-crontab을 이용해서 내가 지정한 시간에 CrawlingData에</p>
+<p>다시 정적 페이지를 저장할 수 있도록 작업을 등록했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># settings.py</span></span><br><span class="line">CRONJOBS = [</span><br><span class="line">    <span class="comment"># 3시간 마다 동작</span></span><br><span class="line">    (<span class="string">'0 */3 * * *'</span>, <span class="string">'main.cron.upcoming_data'</span>),</span><br><span class="line">    (<span class="string">'0 */3 * * *'</span>, <span class="string">'main.cron.special_new_data'</span>),</span><br><span class="line">    (<span class="string">'0 */3 * * *'</span>, <span class="string">'main.cron.special_top_data'</span>),</span><br><span class="line">    (<span class="string">'0 */3 * * *'</span>, <span class="string">'main.cron.new_releases_data'</span>),</span><br><span class="line">    (<span class="string">'0 */3 * * *'</span>, <span class="string">'main.cron.top_sellers_data'</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>로컬에서는 1분으로 해서 테스트를 진행했다.</p>
+<p>이제 AWS EC2 서버에서 3시간마다 잘 되는지 확인해봐야겠다.</p>
+<p>이 방법으로 하긴 했지만 정적 페이지에 내가 크롤링하고자 하는 부분을</p>
+<p>포함해서 모든 소스가 들어있기 때문에 좀 더 효율적인 방법을 생각해봐야겠다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +262,21 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190819-DEVLOG-STEAMIC",
+        "headline": "Main Data Crontab 적용!",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-08-19",
         "dateCreated": "2019-08-19",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/08/19/190819-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "메인 페이지에서 크롤링한 데이터를 텍스트 파일에 저장했고
+직접 수동 업데이트하는 방식으로 테스트를 진행했다.
+그리고 static이라는 폴더를 만들어서 텍스트 파일로 모아 관리했다.
+django에서는 정적인 파일을 static 폴더에 넣어서 관리하는데
+collectstatic을 하지않으면 업데이트가 되지 않는다.
+배포할 때는 AWS S3를 연동할텐데 coll"
+        "wordCount": 231
     }
 </script>
 
@@ -298,7 +320,7 @@
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            190820-DEVLOG-STEAMIC
+            Steam App List Crawling - 1
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -372,7 +394,7 @@
                             <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190828-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="JQuery Autocomplete 구현!" class="thumbnail-image"></span>
     
     
 </a>
@@ -381,7 +403,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">190828-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">JQuery Autocomplete 구현!</a></p>
                             <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
                         </div>
                     </li>
@@ -392,7 +414,7 @@
                             <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190827-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Steam App List Crawling - 2" class="thumbnail-image"></span>
     
     
 </a>
@@ -401,7 +423,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">190827-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">Steam App List Crawling - 2</a></p>
                             <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
@@ -412,7 +434,7 @@
                             <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190822-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="STEAM TREND에 링크 걸기" class="thumbnail-image"></span>
     
     
 </a>
@@ -421,7 +443,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">190822-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">STEAM TREND에 링크 걸기</a></p>
                             <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
                         </div>
                     </li>

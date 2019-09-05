@@ -6,24 +6,24 @@
     
 
     
-    <title>190827-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Steam App List Crawling - 2 | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="저번에 8만개나 되는 스팀 데이터를 크롤링하면서 알아낸 사실은 8만개가 모두 게임 앱이 아니었다. https://api.steampowered.com/ISteamApps/GetAppList/v2 위 앱 리스트에서는 앱 고유 ID와 이름 밖에 나와있지 않다. https://store.steampowered.com/api/appdetails?appids= [앱">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190827-DEVLOG-STEAMIC">
+<meta property="og:title" content="Steam App List Crawling - 2">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/27/190827-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="저번에 8만개나 되는 스팀 데이터를 크롤링하면서 알아낸 사실은 8만개가 모두 게임 앱이 아니었다. https://api.steampowered.com/ISteamApps/GetAppList/v2 위 앱 리스트에서는 앱 고유 ID와 이름 밖에 나와있지 않다. https://store.steampowered.com/api/appdetails?appids= [앱">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:21:30.822Z">
+<meta property="og:updated_time" content="2019-09-05T07:48:31.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190827-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Steam App List Crawling - 2">
+<meta name="twitter:description" content="저번에 8만개나 되는 스팀 데이터를 크롤링하면서 알아낸 사실은 8만개가 모두 게임 앱이 아니었다. https://api.steampowered.com/ISteamApps/GetAppList/v2 위 앱 리스트에서는 앱 고유 ID와 이름 밖에 나와있지 않다. https://store.steampowered.com/api/appdetails?appids= [앱">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/08/27/190827-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190827-DEVLOG-STEAMIC
+        Steam App List Crawling - 2
         </h1>
     
 
@@ -168,7 +168,21 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>저번에 8만개나 되는 스팀 데이터를 크롤링하면서 알아낸 사실은</p>
+<p>8만개가 모두 게임 앱이 아니었다.</p>
+<p><a href="https://api.steampowered.com/ISteamApps/GetAppList/v2" target="_blank" rel="noopener">https://api.steampowered.com/ISteamApps/GetAppList/v2</a></p>
+<p>위 앱 리스트에서는 앱 고유 ID와 이름 밖에 나와있지 않다.</p>
+<p><a href="https://store.steampowered.com/api/appdetails?appids=" target="_blank" rel="noopener">https://store.steampowered.com/api/appdetails?appids=</a> [앱 고유 ID]</p>
+<p>위 Web API 주소로 앱 고유 ID의 디테일한 정보를 보면…</p>
+<p>type가 game이 아니고 movie인 것도 있고 정보가 존재하지 않는 것도 있었다.</p>
+<p>그래서 두 가지로 조건을 걸었다.</p>
+<p>json data에서 success가 true일때만 데이터가 존재하기 때문에</p>
+<ol>
+<li>success가 false일 경우 해당 앱 고유 ID 제외</li>
+<li>type가 game이 아닐 경우 해당 앱 고유 ID 제외</li>
+</ol>
+<p>이렇게 해서 8만개 중에 데이터베이스에 저장할 것을 골라내야겠다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +259,20 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190827-DEVLOG-STEAMIC",
+        "headline": "Steam App List Crawling - 2",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-08-27",
         "dateCreated": "2019-08-27",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-05",
         "url": "http://JINUKK.github.io/2019/08/27/190827-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "저번에 8만개나 되는 스팀 데이터를 크롤링하면서 알아낸 사실은
+8만개가 모두 게임 앱이 아니었다.
+https://api.steampowered.com/ISteamApps/GetAppList/v2
+위 앱 리스트에서는 앱 고유 ID와 이름 밖에 나와있지 않다.
+https://store.steampowered.com/api/appdetails?appids= [앱"
+        "wordCount": 81
     }
 </script>
 
@@ -298,7 +316,7 @@
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            190828-DEVLOG-STEAMIC
+            JQuery Autocomplete 구현!
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -307,7 +325,7 @@
     
         <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190822-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">STEAM TREND에 링크 걸기</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -372,7 +390,7 @@
                             <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190828-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="JQuery Autocomplete 구현!" class="thumbnail-image"></span>
     
     
 </a>
@@ -381,7 +399,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">190828-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">JQuery Autocomplete 구현!</a></p>
                             <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
                         </div>
                     </li>
@@ -392,7 +410,7 @@
                             <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190827-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Steam App List Crawling - 2" class="thumbnail-image"></span>
     
     
 </a>
@@ -401,7 +419,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">190827-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">Steam App List Crawling - 2</a></p>
                             <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
@@ -412,7 +430,7 @@
                             <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190822-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="STEAM TREND에 링크 걸기" class="thumbnail-image"></span>
     
     
 </a>
@@ -421,7 +439,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">190822-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">STEAM TREND에 링크 걸기</a></p>
                             <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
                         </div>
                     </li>

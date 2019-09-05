@@ -6,24 +6,24 @@
     
 
     
-    <title>190820-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Steam App List Crawling - 1 | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="게임 검색을 위해 Steam App List API를 이용해서 스팀 관련 앱을 데이터베이스에 저장하려고 크롤링을 시작했다. 여전히 개수는 8만개 정도여서 일단은 1000개 정도만 가져오려했다. 그런데… 막혔다(?) 스팀에서 내 IP를 차단했다. 찾아보니 계속 차단하는 것은 아니고 스팀쪽에서도 트래픽이 걸리는 IP를 잠시 차단하는 것 같았다. 시간이 지나면">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190820-DEVLOG-STEAMIC">
+<meta property="og:title" content="Steam App List Crawling - 1">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/20/190820-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="게임 검색을 위해 Steam App List API를 이용해서 스팀 관련 앱을 데이터베이스에 저장하려고 크롤링을 시작했다. 여전히 개수는 8만개 정도여서 일단은 1000개 정도만 가져오려했다. 그런데… 막혔다(?) 스팀에서 내 IP를 차단했다. 찾아보니 계속 차단하는 것은 아니고 스팀쪽에서도 트래픽이 걸리는 IP를 잠시 차단하는 것 같았다. 시간이 지나면">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:21:09.746Z">
+<meta property="og:updated_time" content="2019-09-04T07:51:15.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190820-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Steam App List Crawling - 1">
+<meta name="twitter:description" content="게임 검색을 위해 Steam App List API를 이용해서 스팀 관련 앱을 데이터베이스에 저장하려고 크롤링을 시작했다. 여전히 개수는 8만개 정도여서 일단은 1000개 정도만 가져오려했다. 그런데… 막혔다(?) 스팀에서 내 IP를 차단했다. 찾아보니 계속 차단하는 것은 아니고 스팀쪽에서도 트래픽이 걸리는 IP를 잠시 차단하는 것 같았다. 시간이 지나면">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/08/20/190820-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190820-DEVLOG-STEAMIC
+        Steam App List Crawling - 1
         </h1>
     
 
@@ -168,7 +168,21 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>게임 검색을 위해 Steam App List API를 이용해서 스팀 관련 앱을 데이터베이스에</p>
+<p>저장하려고 크롤링을 시작했다.</p>
+<p>여전히 개수는 8만개 정도여서 일단은 1000개 정도만 가져오려했다.</p>
+<p>그런데… 막혔다(?) 스팀에서 내 IP를 차단했다.</p>
+<p>찾아보니 계속 차단하는 것은 아니고 스팀쪽에서도 트래픽이 걸리는 IP를</p>
+<p>잠시 차단하는 것 같았다.</p>
+<p>시간이 지나면 다시 풀리긴 해서 조금 더 검색을 해보니 stackoverflow 다음과 같은 내용을 찾았다.</p>
+<p><strong>As you can see in the Steam Web API Terms of Use:</strong></p>
+<p>You are limited to one hundred thousand (100,000) calls to the Steam Web API per day. Valve may approve higher daily call limits if you adhere to these API Terms of Use.</p>
+<p>You are not using an API which you need a Web API Key for. Therefore, your requests are not limited to 100,000 a day, but to about 10 requests every 10 seconds. You can send a request once every second, or 10 requests at once and wait 10 seconds.</p>
+<p>그리고 문서에도 내용이 있었다.</p>
+<p><a href="https://steamcommunity.com/dev/apiterms" target="_blank" rel="noopener">https://steamcommunity.com/dev/apiterms</a></p>
+<p>한 번 요청할 때마다 1초 이상의 딜레이를 걸어야 했다.</p>
+<p>그래서 time 모듈을 써서 1.5초를 주고 크롤링을 시작했다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +259,22 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190820-DEVLOG-STEAMIC",
+        "headline": "Steam App List Crawling - 1",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-08-20",
         "dateCreated": "2019-08-20",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-04",
         "url": "http://JINUKK.github.io/2019/08/20/190820-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "게임 검색을 위해 Steam App List API를 이용해서 스팀 관련 앱을 데이터베이스에
+저장하려고 크롤링을 시작했다.
+여전히 개수는 8만개 정도여서 일단은 1000개 정도만 가져오려했다.
+그런데… 막혔다(?) 스팀에서 내 IP를 차단했다.
+찾아보니 계속 차단하는 것은 아니고 스팀쪽에서도 트래픽이 걸리는 IP를
+잠시 차단하는 것 같았다.
+시간이 지나면 "
+        "wordCount": 161
     }
 </script>
 
@@ -298,7 +318,7 @@
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            190821-DEVLOG-STEAMIC
+            Search Select Option 추가
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -307,7 +327,7 @@
     
         <a href="/2019/08/19/190819-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190819-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">Main Data Crontab 적용!</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -372,7 +392,7 @@
                             <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190828-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="JQuery Autocomplete 구현!" class="thumbnail-image"></span>
     
     
 </a>
@@ -381,7 +401,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">190828-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">JQuery Autocomplete 구현!</a></p>
                             <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
                         </div>
                     </li>
@@ -392,7 +412,7 @@
                             <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190827-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Steam App List Crawling - 2" class="thumbnail-image"></span>
     
     
 </a>
@@ -401,7 +421,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">190827-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">Steam App List Crawling - 2</a></p>
                             <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
@@ -412,7 +432,7 @@
                             <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190822-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="STEAM TREND에 링크 걸기" class="thumbnail-image"></span>
     
     
 </a>
@@ -421,7 +441,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">190822-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">STEAM TREND에 링크 걸기</a></p>
                             <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
                         </div>
                     </li>

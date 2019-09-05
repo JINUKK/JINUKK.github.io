@@ -6,24 +6,24 @@
     
 
     
-    <title>190828-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>JQuery Autocomplete 구현! | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="저번 조건대로 스팀 데이터를 필터링했더니 8만개에서 3만 6천개 정도로 반 이상이 줄었다! 그래서 앱 ID, 이름, 개발사, 배급사, 지원 언어, 가격 등이 들어가도록 크롤링을 시작해서 데이터베이스에 넣었다. 그리고 JQuery Autocomplete를 검색하고 적용하고 고치면서 구현에 성공했다! 123456789101112131415161718192021">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190828-DEVLOG-STEAMIC">
+<meta property="og:title" content="JQuery Autocomplete 구현!">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/28/190828-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="저번 조건대로 스팀 데이터를 필터링했더니 8만개에서 3만 6천개 정도로 반 이상이 줄었다! 그래서 앱 ID, 이름, 개발사, 배급사, 지원 언어, 가격 등이 들어가도록 크롤링을 시작해서 데이터베이스에 넣었다. 그리고 JQuery Autocomplete를 검색하고 적용하고 고치면서 구현에 성공했다! 123456789101112131415161718192021">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:21:37.069Z">
+<meta property="og:updated_time" content="2019-09-05T08:13:06.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190828-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="JQuery Autocomplete 구현!">
+<meta name="twitter:description" content="저번 조건대로 스팀 데이터를 필터링했더니 8만개에서 3만 6천개 정도로 반 이상이 줄었다! 그래서 앱 ID, 이름, 개발사, 배급사, 지원 언어, 가격 등이 들어가도록 크롤링을 시작해서 데이터베이스에 넣었다. 그리고 JQuery Autocomplete를 검색하고 적용하고 고치면서 구현에 성공했다! 123456789101112131415161718192021">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/08/28/190828-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190828-DEVLOG-STEAMIC
+        JQuery Autocomplete 구현!
         </h1>
     
 
@@ -168,7 +168,19 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>저번 조건대로 스팀 데이터를 필터링했더니 8만개에서 3만 6천개 정도로</p>
+<p>반 이상이 줄었다!</p>
+<p>그래서 앱 ID, 이름, 개발사, 배급사, 지원 언어, 가격 등이 들어가도록</p>
+<p>크롤링을 시작해서 데이터베이스에 넣었다.</p>
+<p>그리고 JQuery Autocomplete를 검색하고 적용하고 고치면서 구현에 성공했다!</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">$(function()&#123;</span></span><br><span class="line"><span class="undefined">    // 선택된 게임 삭제</span></span><br><span class="line"><span class="undefined">    $('.app_delete').click(function(e)&#123;</span></span><br><span class="line"><span class="undefined">        e.preventDefault();</span></span><br><span class="line"><span class="undefined">        $('.select_app_text').empty();</span></span><br><span class="line"><span class="undefined">        $('.data_area').empty();</span></span><br><span class="line"><span class="undefined">        $('input#id_app_name').val("");</span></span><br><span class="line"><span class="undefined">        $('input#id_app_image').val("");</span></span><br><span class="line"><span class="undefined">        $('input#id_app_price').val("");</span></span><br><span class="line"><span class="undefined">        $('input#id_app_link').val("");</span></span><br><span class="line"><span class="undefined">        $('input#id_app_release_date').val("");</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    $("#app_searchbox").autocomplete(&#123;</span></span><br><span class="line"><span class="undefined">        source: function(request, response) &#123;</span></span><br><span class="line"><span class="undefined">            $.ajax(&#123;</span></span><br><span class="line"><span class="undefined">                url: '/board/ajax/get_steam_app/',</span></span><br><span class="line"><span class="undefined">                type: "GET",</span></span><br><span class="line"><span class="undefined">                dataType: 'json',</span></span><br><span class="line"><span class="undefined">                data: &#123; term: request.term&#125;,</span></span><br><span class="line"><span class="undefined">                success: function(data)&#123;</span></span><br><span class="line"><span class="undefined">                    response(</span></span><br><span class="line"><span class="undefined">                        $.map(data, function(item) &#123;</span></span><br><span class="line"><span class="undefined">                            return &#123;</span></span><br><span class="line"><span class="undefined">                                name: item.name,</span></span><br><span class="line"><span class="undefined">                                image: item.image,</span></span><br><span class="line"><span class="undefined">                                price: item.price,</span></span><br><span class="line"><span class="undefined">                                link: item.link,</span></span><br><span class="line"><span class="undefined">                                release_date: item.release_date</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                            &#125;</span></span><br><span class="line"><span class="undefined">                        &#125;)</span></span><br><span class="line"><span class="undefined">                    );</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;);</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        select: function(event, ui) &#123;</span></span><br><span class="line"><span class="undefined">            //console.log(ui.item);</span></span><br><span class="line"><span class="undefined">            $('input#id_app_name').val(ui.item.name);</span></span><br><span class="line"><span class="undefined">            $('input#id_app_image').val(ui.item.image);</span></span><br><span class="line"><span class="undefined">            $('input#id_app_price').val(ui.item.price);</span></span><br><span class="line"><span class="undefined">            $('input#id_app_link').val(ui.item.link);</span></span><br><span class="line"><span class="undefined">            $('input#id_app_release_date').val(ui.item.release_date);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            $('.data_area').empty();</span></span><br><span class="line"><span class="undefined">            $('.select_app_text').html('선택된 게임');</span></span><br><span class="line"><span class="xml">            $('.data_area').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_image'));</span></span><br><span class="line"><span class="xml">            $('.app_image').append($('<span class="tag">&lt;<span class="name">img</span>/&gt;</span>').attr('class', 'header_image'));</span></span><br><span class="line"><span class="undefined">            $('.header_image').attr('width', '124px');</span></span><br><span class="line"><span class="undefined">            $('.header_image').attr('height', '49px');</span></span><br><span class="line"><span class="undefined">            $('.header_image').attr('src', ui.item.image);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">            $('.data_area').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_content'));</span></span><br><span class="line"><span class="xml">            $('.app_content').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_name'));</span></span><br><span class="line"><span class="undefined">            $('.app_name').html(ui.item.name);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">            $('.app_content').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'app_store_link'));</span></span><br><span class="line"><span class="xml">            $('.app_store_link').append($('<span class="tag">&lt;<span class="name">a</span>/&gt;</span>').attr('class', 'app_link'));</span></span><br><span class="line"><span class="undefined">            $('.app_link').attr('href', ui.item.link);</span></span><br><span class="line"><span class="undefined">            $('.app_link').html(ui.item.link);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">            $('.app_content').append($('<span class="tag">&lt;<span class="name">span</span>/&gt;</span>').attr('class', 'select_delete'));</span></span><br><span class="line"><span class="xml">            $('.select_delete').append($('<span class="tag">&lt;<span class="name">a</span>/&gt;</span>').attr('class', 'app_delete'));</span></span><br><span class="line"><span class="undefined">            $('.app_delete').attr('href', '');</span></span><br><span class="line"><span class="undefined">            $('.app_delete').html('삭제');</span></span><br><span class="line"><span class="undefined">            //alert(image);</span></span><br><span class="line"><span class="undefined">            //console.log(data);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            $(this).autocomplete( "close" );</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        focus: function(event, ui) &#123;</span></span><br><span class="line"><span class="undefined">            return false;</span></span><br><span class="line"><span class="undefined">            event.preventDefault();</span></span><br><span class="line"><span class="undefined">        &#125;,</span></span><br><span class="line"><span class="undefined">        close : function (event, ui) &#123;</span></span><br><span class="line"><span class="undefined">            //alert("닫힌다!");</span></span><br><span class="line"><span class="undefined">            return false;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;).data("ui-autocomplete")._renderItem = function(ul, item)&#123;</span></span><br><span class="line"><span class="xml">        return $( "<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>" )</span></span><br><span class="line"><span class="undefined">                    .data( "ui-autocomplete-item", item )</span></span><br><span class="line"><span class="xml">                    .append( '<span class="tag">&lt;<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item_image"</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">width</span>=<span class="string">"120px"</span> <span class="attr">height</span>=<span class="string">"45px"</span> <span class="attr">src</span>=<span class="string">' + item.image + '</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>' +</span></span><br><span class="line"><span class="xml">                                '<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"item_content"</span>&gt;</span>' +</span></span><br><span class="line"><span class="xml">                                '<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"name"</span>&gt;</span>' + item.name + '<span class="tag">&lt;/<span class="name">span</span>&gt;</span>' +</span></span><br><span class="line"><span class="xml">                                '<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"price"</span>&gt;</span>' + item.price + '<span class="tag">&lt;/<span class="name">span</span>&gt;</span>' +</span></span><br><span class="line"><span class="xml">                                '<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"store_link"</span>&gt;</span>' + item.link + '<span class="tag">&lt;/<span class="name">span</span>&gt;</span>' +</span></span><br><span class="line"><span class="xml">                                 '<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>' )</span></span><br><span class="line"><span class="undefined">                    .appendTo( ul );</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">&#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>선택했던 게임을 다시 삭제할 수 있도록 클릭 이벤트도 걸었다.</p>
+<p>그리고 view에서는 검색 글자에 대한 Query를 랜덤으로 10개를 보여주도록 했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">steam_app</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.is_ajax():</span><br><span class="line">        q = request.GET.get(<span class="string">'term'</span>, <span class="string">''</span>)</span><br><span class="line">        search_qs = SteamApp.objects.filter(Q(name__icontains=q) | Q(appid__icontains=q)).order_by(<span class="string">'?'</span>)</span><br><span class="line">        results = []</span><br><span class="line">        <span class="keyword">for</span> qs <span class="keyword">in</span> search_qs[:<span class="number">10</span>]:</span><br><span class="line">            app_json = &#123;&#125;</span><br><span class="line">            app_json[<span class="string">'name'</span>] = qs.name</span><br><span class="line">            app_json[<span class="string">'image'</span>] = qs.image</span><br><span class="line">            app_json[<span class="string">'price'</span>] = qs.final_price</span><br><span class="line">            app_json[<span class="string">'link'</span>] = <span class="string">"https://store.steampowered.com/app/"</span>+str(qs.appid)</span><br><span class="line">            app_json[<span class="string">'release_date'</span>] = qs.release_date</span><br><span class="line">            results.append(app_json)</span><br><span class="line">        app_data = json.dumps(results)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        app_data = <span class="string">"fail"</span></span><br><span class="line"></span><br><span class="line">    mimetype = <span class="string">'application/json'</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(app_data, mimetype)</span><br></pre></td></tr></table></figure>
+<p>검색한 결과는 10개를 보여주지만 style을 적용하여 5개만 보여주고 스크롤이 나오도록 했다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.ui-autocomplete&#123;</span><br><span class="line">    max-width: 737px;</span><br><span class="line">    max-height: 270px;</span><br><span class="line">    overflow-y: auto;</span><br><span class="line">    /* prevent horizontal scrollbar */</span><br><span class="line">    overflow-x: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>아 드디어 조금이라도 뭔가 한 것 같다!</p>
+<img src="/images/steamic_app_search.png" width="600" height="500">
         </div>
         <footer class="article-footer">
             
@@ -245,16 +257,21 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190828-DEVLOG-STEAMIC",
+        "headline": "JQuery Autocomplete 구현!",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-08-28",
         "dateCreated": "2019-08-28",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-05",
         "url": "http://JINUKK.github.io/2019/08/28/190828-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "저번 조건대로 스팀 데이터를 필터링했더니 8만개에서 3만 6천개 정도로
+반 이상이 줄었다!
+그래서 앱 ID, 이름, 개발사, 배급사, 지원 언어, 가격 등이 들어가도록
+크롤링을 시작해서 데이터베이스에 넣었다.
+그리고 JQuery Autocomplete를 검색하고 적용하고 고치면서 구현에 성공했다!
+123456789101112131415161718192021"
+        "wordCount": 1981
     }
 </script>
 
@@ -307,7 +324,7 @@
     
         <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">190827-DEVLOG-STEAMIC</p>
+        <p class="article-nav-title">Steam App List Crawling - 2</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -372,7 +389,7 @@
                             <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190828-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="JQuery Autocomplete 구현!" class="thumbnail-image"></span>
     
     
 </a>
@@ -381,7 +398,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">190828-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">JQuery Autocomplete 구현!</a></p>
                             <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
                         </div>
                     </li>
@@ -392,7 +409,7 @@
                             <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190827-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Steam App List Crawling - 2" class="thumbnail-image"></span>
     
     
 </a>
@@ -401,7 +418,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">190827-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">Steam App List Crawling - 2</a></p>
                             <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
                         </div>
                     </li>
@@ -412,7 +429,7 @@
                             <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190822-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="STEAM TREND에 링크 걸기" class="thumbnail-image"></span>
     
     
 </a>
@@ -421,7 +438,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">190822-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">STEAM TREND에 링크 걸기</a></p>
                             <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
                         </div>
                     </li>
