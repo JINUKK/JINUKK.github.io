@@ -1,118 +1,174 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
+    <meta charset="utf-8">
 
-  
-  <title>최소 비용 신장 트리(Minimum Cost Spanning Tree) | KOO|개발자</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
+    
+
+    
+    <title>최소 비용 신장 트리(Minimum Cost Spanning Tree) | KOO|개발자</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content>
+    
+    <meta name="description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
 <meta property="og:type" content="article">
 <meta property="og:title" content="최소 비용 신장 트리(Minimum Cost Spanning Tree)">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/index.html">
 <meta property="og:site_name" content="KOO|개발자">
 <meta property="og:description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://jinukk.github.io/images/greedy_algorithm.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_cut.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm1.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm2.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm3.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm4.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm5.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm6.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm7.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm8.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_algorithm9.png">
-<meta property="og:image" content="http://jinukk.github.io/images/disjoint_set.png">
-<meta property="og:image" content="http://jinukk.github.io/images/disjoint_set_union.png">
-<meta property="og:image" content="http://jinukk.github.io/images/disjoint_set.png">
-<meta property="og:image" content="http://jinukk.github.io/images/collapsing_find.png">
-<meta property="og:image" content="http://jinukk.github.io/images/weighted_union.png">
-<meta property="og:image" content="http://jinukk.github.io/images/mst_example.png">
+<meta property="og:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
 <meta property="og:updated_time" content="2019-08-14T06:10:03.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="최소 비용 신장 트리(Minimum Cost Spanning Tree)">
 <meta name="twitter:description" content="신장 트리 Spanning Tree 연결되어 있다(Connected) 최소 에지 수 = |E| = |V| - 1 트리의 조건 E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.    최소 비용 신장 트리 MST(Minimum Cost Spanning Tree) 무방향 그래프 가중치 그래프 비용이 최소가 된다. 에지들의 비용이 가장 작은 트리를 구한다">
-<meta name="twitter:image" content="http://jinukk.github.io/images/greedy_algorithm.png">
-  
-    <link rel="alternate" href="/atom.xml" title="KOO|개발자" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="http://jinukk.github.io/images/DSAA_thumnail.png">
+    
+    <link rel="canonical" href="http://JINUKK.github.io/2019/08/01/190801-dsaa-study/">
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
 </head>
 </html>
 <body>
-  <div id="container">
     <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">KOO|개발자</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">지눅쿠의 개발 블로그</a>
-        </h2>
-      
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">지눅쿠의 개발 블로그</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://JINUKK.github.io"></form>
-      </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-190801-DSAA-Study" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/01/190801-DSAA-Study/" class="article-date">
-  <time datetime="2019-08-01T11:49:13.000Z" itemprop="datePublished">2019-08-01</time>
-</a>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Study/">Study</a>►<a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      최소 비용 신장 트리(Minimum Cost Spanning Tree)
+    <a class="page-title-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Study/Data-Structure/">Data Structure</a>
     </h1>
-  
+</div>
 
-      </header>
+                        <div class="main-body-content">
+                            <article id="post-190801-DSAA-Study" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="신장-트리"><a href="#신장-트리" class="headerlink" title="신장 트리"></a>신장 트리</h4><ul>
+        <h1 class="article-title" itemprop="name">
+        최소 비용 신장 트리(Minimum Cost Spanning Tree)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/08/01/190801-DSAA-Study/" class="article-date">
+            <time datetime="2019-08-01T11:49:13.000Z" itemprop="datePublished">2019-08-01</time>
+        </a>
+    </div>
+
+		
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="신장-트리"><a href="#신장-트리" class="headerlink" title="신장 트리"></a>신장 트리</h4><ul>
 <li>Spanning Tree</li>
 <li>연결되어 있다(Connected)</li>
 <li>최소 에지 수 = |E| = |V| - 1<ul>
@@ -377,145 +433,397 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Union Find Algorithm</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DisjointSet</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vnum)</span>:</span></span><br><span class="line">        self.parent = [<span class="number">-1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(vnum)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_find</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        <span class="comment"># i가 속한 트리의 루트를 반환</span></span><br><span class="line">        <span class="keyword">while</span> self.parent[i] &gt;= <span class="number">0</span>:</span><br><span class="line">            i = self.parent[i]</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">simple_union</span><span class="params">(self, i, j)</span>:</span></span><br><span class="line">        <span class="comment"># i, j must be ROOTS</span></span><br><span class="line">        self.parent[i] = j</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 성능 향상</span></span><br><span class="line">    <span class="comment"># 노드의 개수대로 root의 음수 값을 변경(노드가 3개라면 -3)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">collapsing_find</span><span class="params">(self, i)</span>:</span></span><br><span class="line">        root = i</span><br><span class="line">        <span class="keyword">while</span> self.parent[root] &gt;= <span class="number">0</span>:</span><br><span class="line">            root = self.parent[root]</span><br><span class="line">            </span><br><span class="line">        trail = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> trail != root:</span><br><span class="line">            lead = self.parent[trail]</span><br><span class="line">            self.parent[trail] = root</span><br><span class="line">            trail = lead</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">weighted_union</span><span class="params">(self, i, j)</span>:</span></span><br><span class="line">        <span class="comment"># i, j must be ROOTS</span></span><br><span class="line">        temp = self.parent[i] + self.parent[j]</span><br><span class="line">        <span class="keyword">if</span> self.parent[i] &gt; self.parent[j]:</span><br><span class="line">            self.parent[i] = j</span><br><span class="line">            self.parent[j] = temp</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.parent[j] = i</span><br><span class="line">            self.parent[i] = temp</span><br><span class="line"></span><br><span class="line"><span class="comment"># test code</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    ds=DisjointSet(<span class="number">5</span>)</span><br><span class="line">    ds.parent[<span class="number">2</span>]=<span class="number">-5</span></span><br><span class="line">    ds.parent[<span class="number">4</span>]=<span class="number">2</span></span><br><span class="line">    ds.parent[<span class="number">0</span>]=<span class="number">4</span></span><br><span class="line">    ds.parent[<span class="number">1</span>]=<span class="number">0</span></span><br><span class="line">    ds.parent[<span class="number">3</span>]=<span class="number">1</span></span><br><span class="line">    print(ds.parent)</span><br><span class="line">    print(<span class="string">"the root is &#123;&#125;"</span>.format(ds.collapsing_find(<span class="number">3</span>)))</span><br><span class="line">    print(ds.parent)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">from</span> disjoint_set <span class="keyword">import</span> DisjointSet</span><br><span class="line"></span><br><span class="line"><span class="comment"># Graph representation : adjacency list</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">MST</span></span><br><span class="line"><span class="string">1. 무방향</span></span><br><span class="line"><span class="string">2. 가중치</span></span><br><span class="line"><span class="string">3. 인접 리스트</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vertex, weight)</span>:</span></span><br><span class="line">        self.vertex = vertex</span><br><span class="line">        self.weight = weight</span><br><span class="line">        self.link = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Edge</span>:</span></span><br><span class="line">    <span class="comment"># ex) (2,3): 7 -&gt; (u,v): w</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, u, v, w)</span>:</span></span><br><span class="line">        self.u = u</span><br><span class="line">        self.v = v</span><br><span class="line">        self.w = w</span><br><span class="line"></span><br><span class="line"><span class="comment"># 그래프는 객체와 객체 사이의 "관계"</span></span><br><span class="line"><span class="comment"># 새로운 노드(정점)을 추가하는 경우가 거의 없다!</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Graph</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, vnum)</span>:</span></span><br><span class="line">        self.adjacency_list = [<span class="literal">None</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(vnum)]</span><br><span class="line">        self.edge_list = []</span><br><span class="line">        self.vertex_num = vnum</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add_node</span><span class="params">(self, n, nNode)</span>:</span></span><br><span class="line">        cur = self.adjacency_list[n]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            self.adjacency_list[n] = nNode</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> cur.link:</span><br><span class="line">            cur = cur.link</span><br><span class="line"></span><br><span class="line">        cur.link = nNode</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">insert_edge</span><span class="params">(self, u, v, w)</span>:</span></span><br><span class="line">        unode = GNode(u, w)</span><br><span class="line">        vnode = GNode(v, w)</span><br><span class="line"></span><br><span class="line">        self.__add_node(u, vnode)</span><br><span class="line">        self.__add_node(v, unode)</span><br><span class="line">        self.edge_list.append(Edge(u, v, w))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># kruskal</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MST_kruskal</span><span class="params">(self)</span>:</span></span><br><span class="line">        mst = Graph(self.vertex_num)</span><br><span class="line">        ds = DisjointSet(self.vertex_num)</span><br><span class="line">        self.edge_list.sort(key=<span class="keyword">lambda</span> e: e.w)</span><br><span class="line"></span><br><span class="line">        mst_edge_num = <span class="number">0</span></span><br><span class="line">        edge_idx = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> mst_edge_num &lt; self.vertex_num - <span class="number">1</span>:</span><br><span class="line">            edge = self.edge_list[edge_idx]</span><br><span class="line">            <span class="comment"># 사이클이 있는지 체크</span></span><br><span class="line">            <span class="comment"># 사이클이 없다면 이 에지를 선택한다.</span></span><br><span class="line">            <span class="keyword">if</span> ds.collapsing_find(edge.u) != ds.collapsing_find(edge.v):</span><br><span class="line">                <span class="comment"># 에지를 선택</span></span><br><span class="line">                mst.insert_edge(edge.u, edge.v, edge.w)</span><br><span class="line">                ds.weighted_union(ds.collapsing_find(edge.u), ds.collapsing_find(edge.v))</span><br><span class="line">                mst_edge_num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            edge_idx += <span class="number">1</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> mst</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_min_v</span><span class="params">(self, w)</span>:</span></span><br><span class="line">        _min = math.inf</span><br><span class="line">        min_v = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(w)):</span><br><span class="line">            <span class="keyword">if</span> _min &gt; w[i]:</span><br><span class="line">                _min = w[i]</span><br><span class="line">                min_v = i</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> min_v</span><br><span class="line"></span><br><span class="line">    <span class="comment"># prim</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">MST_prim</span><span class="params">(self)</span>:</span></span><br><span class="line">        mst = Graph(self.vertex_num)</span><br><span class="line">        TV = set()</span><br><span class="line">        w = [math.inf <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.vertex_num)]</span><br><span class="line">        _from = [<span class="literal">None</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.vertex_num)]</span><br><span class="line">        w[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> len(TV) &lt; self.vertex_num:</span><br><span class="line">            v = self.get_min_v(w)</span><br><span class="line">            <span class="comment"># TV = TV U &#123;v&#125;</span></span><br><span class="line">            <span class="comment"># TE = TE U &#123;(v, from[v])&#125;</span></span><br><span class="line">            <span class="comment"># each u in adj[v]</span></span><br><span class="line">            TV.add(v)</span><br><span class="line">            <span class="keyword">if</span> _from[v] != <span class="literal">None</span>:</span><br><span class="line">                mst.insert_edge(v, _from[v], w[v])</span><br><span class="line">            </span><br><span class="line">            w[v] = math.inf</span><br><span class="line">            <span class="comment"># adj[v]</span></span><br><span class="line">            u = self.adjacency_list[v]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> u:</span><br><span class="line">                <span class="keyword">if</span> u.vertex  <span class="keyword">not</span> <span class="keyword">in</span> TV <span class="keyword">and</span> u.weight &lt; w[u.vertex]:</span><br><span class="line">                    w[u.vertex] = u.weight</span><br><span class="line">                    _from[u.vertex] = v</span><br><span class="line"></span><br><span class="line">                u = u.link</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mst</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 테스트를 위한 함수 코드</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_edges</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> edge <span class="keyword">in</span> self.edge_list:</span><br><span class="line">            print(<span class="string">f"(<span class="subst">&#123;edge.u&#125;</span>, <span class="subst">&#123;edge.v&#125;</span>) : <span class="subst">&#123;edge.w&#125;</span>"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># test code</span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    g=Graph(<span class="number">6</span>)</span><br><span class="line"></span><br><span class="line">    g.insert_edge(<span class="number">0</span>, <span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">    g.insert_edge(<span class="number">0</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">    g.insert_edge(<span class="number">0</span>, <span class="number">3</span>, <span class="number">8</span>)</span><br><span class="line">    g.insert_edge(<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line">    g.insert_edge(<span class="number">1</span>, <span class="number">4</span>, <span class="number">12</span>)</span><br><span class="line">    g.insert_edge(<span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>)</span><br><span class="line">    g.insert_edge(<span class="number">2</span>, <span class="number">4</span>, <span class="number">17</span>)</span><br><span class="line">    g.insert_edge(<span class="number">3</span>, <span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">    g.insert_edge(<span class="number">3</span>, <span class="number">5</span>, <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"kruskal : "</span>)</span><br><span class="line">    mst=g.MST_kruskal()</span><br><span class="line">    mst.print_edges()</span><br><span class="line"></span><br><span class="line">    print()</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"prim : "</span>)</span><br><span class="line">    mst=g.MST_prim()</span><br><span class="line">    mst.print_edges()</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/" data-id="ck03g702t00dg0owuy7eckwxd" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/08/06/190806-DSAA-Study/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          최단 경로(Shortest path)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/07/29/190729-DSAA-Study/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">그래프 순회(Graph traversal)</div>
-    </a>
-  
-</nav>
+        </div>
+        <footer class="article-footer">
+            
 
-  
+
+
+    <a data-url="http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/" data-id="ck03g702t00dg0owuy7eckwxd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "JINWOOK KOO"
+        },
+        "headline": "최소 비용 신장 트리(Minimum Cost Spanning Tree)",
+        "image": "http://JINUKK.github.io/images/DSAA_thumnail.png",
+        "keywords": "",
+        "genre": "Study Data Structure",
+        "datePublished": "2019-08-01",
+        "dateCreated": "2019-08-01",
+        "dateModified": "2019-08-14",
+        "url": "http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/",
+        "description": "신장 트리
+Spanning Tree
+연결되어 있다(Connected)
+최소 에지 수 = |E| = |V| - 1
+트리의 조건
+E와 V가 같으면 사이클을 돌게 되므로 |V| - 1이다.
+
+
+
+최소 비용 신장 트리
+MST(Minimum Cost Spanning Tree)
+무방향 그래프
+가중치 그래프
+비용이 최소가 된다.
+에지들의 비용이 가장 작은 트리를 구한다"
+        "wordCount": 2778
+    }
+</script>
+
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
+    <section id="comments">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a></li></ul></li></ul></li></ul>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-  </div>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/args/">args</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/binary-search/">binary search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/boolean/">boolean</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bubble-sort/">bubble sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caculator/">caculator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call-by-object-reference/">call by object reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/class/">class</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/comparison/">comparison</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/comprehension/">comprehension</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continue/">continue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/copy/">copy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/csv/">csv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/decorator/">decorator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dummy-double-linked-list/">dummy double linked list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/epsilon/">epsilon</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/excel/">excel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/filter/">filter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/first-class-function/">first class function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/for/">for</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/generator/">generator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/if/">if</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/insertion-sort/">insertion sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iterator/">iterator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kwargs/">kwargs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lambda-function/">lambda function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linear-search/">linear search</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linked-list/">linked list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/list/">list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/merge-sort/">merge sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/namespace/">namespace</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next/">next</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/packing/">packing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pass/">pass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/queue/">queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/quick-sort/">quick sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/radix/">radix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recursive-function/">recursive function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reduce/">reduce</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selection-sort/">selection sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/single-linked-list/">single linked list</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stack/">stack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stopiteration/">stopiteration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/text/">text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tower-of-hanoi/">tower of hanoi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tuple/">tuple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unpacking/">unpacking</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/while/">while</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrap/">wrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yield/">yield</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yield-from/">yield from</a></li></ul>
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/JINUKK/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dummy-double-linked-list/" style="font-size: 10px;">dummy double linked list</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/linked-list/" style="font-size: 13.33px;">linked list</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 13.33px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/single-linked-list/" style="font-size: 10px;">single linked list</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/stopiteration/" style="font-size: 13.33px;">stopiteration</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/yield-from/" style="font-size: 10px;">yield from</a>
-    </div>
-  </div>
-
-  
+        
+<nav id="article-nav">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
+        <a href="/2019/08/06/190806-DSAA-Study/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            최단 경로(Shortest path)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/09/03/190903-DEVLOG-STEAMIC/">ckeditor upload 권한!</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/29/190829-DEVLOG-STEAMIC/">Pagination Error?</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/28/190828-DEVLOG-STEAMIC/">JQuery Autocomplete 구현!</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/27/190827-DEVLOG-STEAMIC/">Steam App List Crawling - 2</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/22/190822-DEVLOG-STEAMIC/">STEAM TREND에 링크 걸기</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 JINWOOK KOO<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+    
+        <a href="/2019/07/29/190729-DSAA-Study/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">그래프 순회(Graph traversal)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
 </nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/STEAMIC.png)" alt="ckeditor upload 권한!" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="title">ckeditor upload 권한!</a></p>
+                            <p class="item-date"><time datetime="2019-09-03T06:12:11.000Z" itemprop="datePublished">2019-09-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Pagination Error?" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="title">Pagination Error?</a></p>
+                            <p class="item-date"><time datetime="2019-08-29T06:12:01.000Z" itemprop="datePublished">2019-08-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/STEAMIC.png)" alt="JQuery Autocomplete 구현!" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/28/190828-DEVLOG-STEAMIC/" class="title">JQuery Autocomplete 구현!</a></p>
+                            <p class="item-date"><time datetime="2019-08-28T06:11:56.000Z" itemprop="datePublished">2019-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Steam App List Crawling - 2" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/27/190827-DEVLOG-STEAMIC/" class="title">Steam App List Crawling - 2</a></p>
+                            <p class="item-date"><time datetime="2019-08-27T06:11:51.000Z" itemprop="datePublished">2019-08-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/STEAMIC.png)" alt="STEAM TREND에 링크 걸기" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
+                            <p class="item-title"><a href="/2019/08/22/190822-DEVLOG-STEAMIC/" class="title">STEAM TREND에 링크 걸기</a></p>
+                            <p class="item-date"><time datetime="2019-08-22T06:11:46.000Z" itemprop="datePublished">2019-08-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">23</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">23</span></li></ul></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/algorithm/" style="font-size: 16.67px;">algorithm</a> <a href="/tags/args/" style="font-size: 10px;">args</a> <a href="/tags/binary-search/" style="font-size: 10px;">binary search</a> <a href="/tags/boolean/" style="font-size: 10px;">boolean</a> <a href="/tags/bubble-sort/" style="font-size: 10px;">bubble sort</a> <a href="/tags/caculator/" style="font-size: 10px;">caculator</a> <a href="/tags/call-by-object-reference/" style="font-size: 10px;">call by object reference</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/comparison/" style="font-size: 10px;">comparison</a> <a href="/tags/comprehension/" style="font-size: 10px;">comprehension</a> <a href="/tags/continue/" style="font-size: 10px;">continue</a> <a href="/tags/copy/" style="font-size: 10px;">copy</a> <a href="/tags/csv/" style="font-size: 10px;">csv</a> <a href="/tags/decorator/" style="font-size: 10px;">decorator</a> <a href="/tags/dictionary/" style="font-size: 10px;">dictionary</a> <a href="/tags/dummy-double-linked-list/" style="font-size: 10px;">dummy double linked list</a> <a href="/tags/epsilon/" style="font-size: 10px;">epsilon</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/filter/" style="font-size: 10px;">filter</a> <a href="/tags/first-class-function/" style="font-size: 10px;">first class function</a> <a href="/tags/for/" style="font-size: 10px;">for</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/generator/" style="font-size: 10px;">generator</a> <a href="/tags/if/" style="font-size: 10px;">if</a> <a href="/tags/insertion-sort/" style="font-size: 10px;">insertion sort</a> <a href="/tags/iterator/" style="font-size: 10px;">iterator</a> <a href="/tags/kwargs/" style="font-size: 10px;">kwargs</a> <a href="/tags/lambda-function/" style="font-size: 10px;">lambda function</a> <a href="/tags/linear-search/" style="font-size: 10px;">linear search</a> <a href="/tags/linked-list/" style="font-size: 13.33px;">linked list</a> <a href="/tags/list/" style="font-size: 10px;">list</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/merge-sort/" style="font-size: 10px;">merge sort</a> <a href="/tags/namespace/" style="font-size: 10px;">namespace</a> <a href="/tags/next/" style="font-size: 10px;">next</a> <a href="/tags/operator/" style="font-size: 13.33px;">operator</a> <a href="/tags/packing/" style="font-size: 10px;">packing</a> <a href="/tags/pass/" style="font-size: 10px;">pass</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 13.33px;">queue</a> <a href="/tags/quick-sort/" style="font-size: 10px;">quick sort</a> <a href="/tags/radix/" style="font-size: 10px;">radix</a> <a href="/tags/recursive-function/" style="font-size: 10px;">recursive function</a> <a href="/tags/reduce/" style="font-size: 10px;">reduce</a> <a href="/tags/selection-sort/" style="font-size: 10px;">selection sort</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/single-linked-list/" style="font-size: 10px;">single linked list</a> <a href="/tags/sort/" style="font-size: 10px;">sort</a> <a href="/tags/stack/" style="font-size: 10px;">stack</a> <a href="/tags/stopiteration/" style="font-size: 13.33px;">stopiteration</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/text/" style="font-size: 10px;">text</a> <a href="/tags/tower-of-hanoi/" style="font-size: 10px;">tower of hanoi</a> <a href="/tags/tuple/" style="font-size: 10px;">tuple</a> <a href="/tags/unpacking/" style="font-size: 10px;">unpacking</a> <a href="/tags/while/" style="font-size: 10px;">while</a> <a href="/tags/wrap/" style="font-size: 10px;">wrap</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/yield-from/" style="font-size: 10px;">yield from</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+<!--//                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1> //-->
+                <p>&copy; 2019 JINWOOK KOO</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'jinukk';
+    
+    
+    var disqus_url = 'http://JINUKK.github.io/2019/08/01/190801-DSAA-Study/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
 
 
 
-  </div>
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
 </body>
 </html>
