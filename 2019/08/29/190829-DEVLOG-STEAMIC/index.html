@@ -6,24 +6,24 @@
     
 
     
-    <title>190829-DEVLOG-STEAMIC | KOO|개발자</title>
+    <title>Pagination Error? | KOO|개발자</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content>
     
-    <meta name="description" content="What I learned">
+    <meta name="description" content="Search Option을 선택할 수 있게 Select Box를 만들었는데 검색한 후에 다른 페이지로 넘어가게 되면 오류가 발생했다. 파이참 디버깅으로 확인해보니 search option에서 none 값이 들어와서 Template 부분을 확인해봤더니 반환한 search option 값을 pagination의 Querystring에 추가해주지 않아서 조건을">
 <meta property="og:type" content="article">
-<meta property="og:title" content="190829-DEVLOG-STEAMIC">
+<meta property="og:title" content="Pagination Error?">
 <meta property="og:url" content="http://JINUKK.github.io/2019/08/29/190829-DEVLOG-STEAMIC/index.html">
 <meta property="og:site_name" content="KOO|개발자">
-<meta property="og:description" content="What I learned">
+<meta property="og:description" content="Search Option을 선택할 수 있게 Select Box를 만들었는데 검색한 후에 다른 페이지로 넘어가게 되면 오류가 발생했다. 파이참 디버깅으로 확인해보니 search option에서 none 값이 들어와서 Template 부분을 확인해봤더니 반환한 search option 값을 pagination의 Querystring에 추가해주지 않아서 조건을">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-03T06:21:43.869Z">
+<meta property="og:updated_time" content="2019-09-05T08:37:11.173Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="190829-DEVLOG-STEAMIC">
-<meta name="twitter:description" content="What I learned">
+<meta name="twitter:title" content="Pagination Error?">
+<meta name="twitter:description" content="Search Option을 선택할 수 있게 Select Box를 만들었는데 검색한 후에 다른 페이지로 넘어가게 되면 오류가 발생했다. 파이참 디버깅으로 확인해보니 search option에서 none 값이 들어와서 Template 부분을 확인해봤더니 반환한 search option 값을 pagination의 Querystring에 추가해주지 않아서 조건을">
 <meta name="twitter:image" content="http://jinukk.github.io/images/STEAMIC.png">
     
     <link rel="canonical" href="http://JINUKK.github.io/2019/08/29/190829-devlog-steamic/">
@@ -146,7 +146,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        190829-DEVLOG-STEAMIC
+        Pagination Error?
         </h1>
     
 
@@ -168,7 +168,20 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <p>Search Option을 선택할 수 있게 Select Box를 만들었는데</p>
+<p>검색한 후에 다른 페이지로 넘어가게 되면 오류가 발생했다.</p>
+<p>파이참 디버깅으로 확인해보니 search option에서 none 값이 들어와서</p>
+<p>Template 부분을 확인해봤더니 반환한 search option 값을 pagination의</p>
+<p>Querystring에 추가해주지 않아서 조건을 추가했다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?&#123;% if search_option %&#125;&amp;search_option=&#123;&#123;search_option&#125;&#125;&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>그리고 한글화 정보에 지원 언어가 한국어인 앱을 추가하려고 해서</p>
+<p>데이터베이스에 저장된 앱 리스트에서 filtering했더니 2000개 정도가 나왔다.</p>
+<p>이것을 그대로 게시글에 등록했더니 Pagination에서 숫자가 모두 나오는 문제가 생겼다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% for page_num in paginator.page_range %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"page-item &#123;% if page_obj.number == page_num %&#125;disabled&#123;% endif %&#125;"</span>&gt;</span></span><br><span class="line">        /* 생략 */</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>for문으로 모든 페이지 숫자가 나오도록 구현을 했고, 많은 게시글들을</p>
+<p>올릴 생각을 하지 못했던 것 같다.</p>
+<p>중간 숫자는 “…”이 표시되도록 하고 싶은데 조금 더 검색을 해봐야겠다.</p>
+
         </div>
         <footer class="article-footer">
             
@@ -245,16 +258,20 @@
             "@type": "Person",
             "name": "JINWOOK KOO"
         },
-        "headline": "190829-DEVLOG-STEAMIC",
+        "headline": "Pagination Error?",
         "image": "http://JINUKK.github.io/images/STEAMIC.png",
         "keywords": "",
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-08-29",
         "dateCreated": "2019-08-29",
-        "dateModified": "2019-09-03",
+        "dateModified": "2019-09-05",
         "url": "http://JINUKK.github.io/2019/08/29/190829-DEVLOG-STEAMIC/",
-        "description": ""
-        "wordCount": 1
+        "description": "Search Option을 선택할 수 있게 Select Box를 만들었는데
+검색한 후에 다른 페이지로 넘어가게 되면 오류가 발생했다.
+파이참 디버깅으로 확인해보니 search option에서 none 값이 들어와서
+Template 부분을 확인해봤더니 반환한 search option 값을 pagination의
+Querystring에 추가해주지 않아서 조건을 "
+        "wordCount": 140
     }
 </script>
 
@@ -298,7 +315,7 @@
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            190903-DEVLOG-STEAMIC
+            ckeditor upload 권한!
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
@@ -332,7 +349,7 @@
                             <a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190903-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="ckeditor upload 권한!" class="thumbnail-image"></span>
     
     
 </a>
@@ -341,7 +358,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="title">190903-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/09/03/190903-DEVLOG-STEAMIC/" class="title">ckeditor upload 권한!</a></p>
                             <p class="item-date"><time datetime="2019-09-03T06:12:11.000Z" itemprop="datePublished">2019-09-03</time></p>
                         </div>
                     </li>
@@ -352,7 +369,7 @@
                             <a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/STEAMIC.png)" alt="190829-DEVLOG-STEAMIC" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/STEAMIC.png)" alt="Pagination Error?" class="thumbnail-image"></span>
     
     
 </a>
@@ -361,7 +378,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a></p>
-                            <p class="item-title"><a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="title">190829-DEVLOG-STEAMIC</a></p>
+                            <p class="item-title"><a href="/2019/08/29/190829-DEVLOG-STEAMIC/" class="title">Pagination Error?</a></p>
                             <p class="item-date"><time datetime="2019-08-29T06:12:01.000Z" itemprop="datePublished">2019-08-29</time></p>
                         </div>
                     </li>
