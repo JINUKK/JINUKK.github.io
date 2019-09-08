@@ -20,7 +20,7 @@
 <meta property="og:description" content="사이트를 배포하고 친구들에게 사용하면서 버그가 있으면 제보(?)해달라고 했다. http://steamic.co.kr 그런데 바로 제보를… 그중에 게시글 이미지 업로드에 관련해서 적어본다. 게시글의 내용을 적는 부분은 ckeditor를 사용하고 있는데 테스트를 할 때는 관리자 권한을 가지고 있는 계정으로 진행했다. 해당 사이트는 스팀의 소셜 로그인을 할 수">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://jinukk.github.io/images/STEAMIC.png">
-<meta property="og:updated_time" content="2019-09-05T09:07:31.896Z">
+<meta property="og:updated_time" content="2019-09-08T12:07:18.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ckeditor upload 권한!">
 <meta name="twitter:description" content="사이트를 배포하고 친구들에게 사용하면서 버그가 있으면 제보(?)해달라고 했다. http://steamic.co.kr 그런데 바로 제보를… 그중에 게시글 이미지 업로드에 관련해서 적어본다. 게시글의 내용을 적는 부분은 ckeditor를 사용하고 있는데 테스트를 할 때는 관리자 권한을 가지고 있는 계정으로 진행했다. 해당 사이트는 스팀의 소셜 로그인을 할 수">
@@ -180,7 +180,7 @@
 <p>이미지를 업로드했는데도 오류가 났다.</p>
 <p>뭔가 ckeditor와 관련된 문제인 것 같아서 검색을 시작했고, 업로드와 관련해서</p>
 <p>스태프의 권한을 가진 계정만 업로드할 수 있다는 정보를 찾았다.</p>
-<p>설치된 ckeditor의 라이브러리를 찾아서 urls.py를 봤더니 다음과 같았다.</p>
+<p>설치된 ckeditor-uploader의 라이브러리를 찾아서 urls.py를 봤더니 다음과 같았다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> django.contrib.admin.views.decorators <span class="keyword">import</span> staff_member_required</span><br><span class="line"><span class="keyword">from</span> django.views.decorators.cache <span class="keyword">import</span> never_cache</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^upload/'</span>, staff_member_required(views.upload), name=<span class="string">'ckeditor_upload'</span>),</span><br><span class="line">    url(<span class="string">r'^browse/'</span>, never_cache(staff_member_required(views.browse)), name=<span class="string">'ckeditor_browse'</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>staff_member_required를 볼 수 있다.</p>
 <p>라이브러리 자체를 바꾸는 것은 문제가 되기 때문에 내 config/urls.py에</p>
@@ -271,7 +271,7 @@
         "genre": "개발 일지 개인 프로젝트 STEAM IC.",
         "datePublished": "2019-09-03",
         "dateCreated": "2019-09-03",
-        "dateModified": "2019-09-05",
+        "dateModified": "2019-09-08",
         "url": "http://JINUKK.github.io/2019/09/03/190903-DEVLOG-STEAMIC/",
         "description": "사이트를 배포하고 친구들에게 사용하면서 버그가 있으면 제보(?)해달라고 했다.
 http://steamic.co.kr
