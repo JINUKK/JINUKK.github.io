@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/09/08/190908-DEVLOG-STEAMIC/</loc>
+        <lastmod>2019-09-08T11:46:55.821Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/09/03/190903-DEVLOG-STEAMIC/</loc>
         <lastmod>2019-09-05T09:07:31.896Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -824,7 +832,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -832,7 +840,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-merge-sort/</loc>
+        <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-quick-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -864,7 +872,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-stack-linked-list/</loc>
+        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-queue-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -872,7 +880,7 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-queue-linked-list/</loc>
+        <loc>http://JINUKK.github.io/2019/04/11/190411-Algorithm-stack-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
