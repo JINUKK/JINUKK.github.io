@@ -153,17 +153,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/05/07/190507-Django-Study/" class="thumbnail">
+        <a href="/2019/05/22/190522-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 4" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="AWS EC2 서버 설정하기" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/07/190507-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/22/190522-Django-Study/">0</span>
     
 </span>
 
@@ -176,21 +176,29 @@
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-05-07T07:59:41.000Z" itemprop="datePublished">2019-05-07</time></div>
+            <div class="date"><time datetime="2019-05-22T14:40:10.000Z" itemprop="datePublished">2019-05-22</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/07/190507-Django-Study/">Dstargram project - 4</a>
+        <a href="/2019/05/22/190522-Django-Study/">AWS EC2 서버 설정하기</a>
         </h1>
     
 
         <p class="article-excerpt">
-            [ Dstargram project ]
-회원가입(Sign Up) 만들기
+            
+EC2에 웹 서버 설정하기
 
-accounts/views.py 추가 작성
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657# accounts/views.py# 기존에 입력받는 
+EC2에 SSH로 접속한다.
+1$ ssh -i ~/.ssh/[키페어 파일 이름] ubuntu@[EC2의 퍼블릭 DNS]
+
+접속이 성공했다면 패키지를 최신으로 업데이트한다.
+1$ sudo apt-get update
+
+Nginx를 설치한다.
+12# apt-get 사용$ sudo apt-get install nginx
+
+nginx가
         </p>
     </div>
 </article>
@@ -203,17 +211,17 @@ accounts/views.py 추가 작성
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/05/03/190503-Django-Study/" class="thumbnail">
+        <a href="/2019/05/21/190521-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 3" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="AWS EC2 인스턴스 만들기" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/03/190503-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/21/190521-Django-Study/">0</span>
     
 </span>
 
@@ -226,21 +234,24 @@ accounts/views.py 추가 작성
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-05-03T12:40:20.000Z" itemprop="datePublished">2019-05-03</time></div>
+            <div class="date"><time datetime="2019-05-21T14:40:04.000Z" itemprop="datePublished">2019-05-21</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/03/190503-Django-Study/">Dstargram project - 3</a>
+        <a href="/2019/05/21/190521-Django-Study/">AWS EC2 인스턴스 만들기</a>
         </h1>
     
 
         <p class="article-excerpt">
-            [ Dstargram project ]
-저장한 페이지 목록 불러오기
+            
+debug tool bar 설치하기
 
-models.py 수정
-12345678class Photo(models.Model):# save라는 변수를 사용하면 안되는 이유# 예약어를 필드명을 사용하면 안된다.# save라는 변수를 사용해서 예약어와 충돌이나 오류가 났다.# favorite로 수정# makemigrations 및 m
+debug tool bar를 설치한다.
+1$ pip install django-debug-toolbar
+
+settings.py에 해당 관련 항목을 추가한다.
+1234567891011# INSTALLED_APPS에 항목 추가INSTALLED_APPS = [    #...    'debug_toolbar',]# MIDDL
         </p>
     </div>
 </article>
@@ -257,17 +268,17 @@ models.py 수정
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/05/02/190502-Django-Study/" class="thumbnail">
+        <a href="/2019/05/20/190520-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 2" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Django project 설정 복습" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/02/190502-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/20/190520-Django-Study/">0</span>
     
 </span>
 
@@ -280,84 +291,89 @@ models.py 수정
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-05-02T11:38:23.000Z" itemprop="datePublished">2019-05-02</time></div>
+            <div class="date"><time datetime="2019-05-20T10:54:33.000Z" itemprop="datePublished">2019-05-20</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/02/190502-Django-Study/">Dstargram project - 2</a>
+        <a href="/2019/05/20/190520-Django-Study/">Django project 설정 복습</a>
         </h1>
     
 
         <p class="article-excerpt">
-            [ Dstargram project ]
-접근 권한 주기
-
-해당 글을 올린 글쓴이가 아니라면 수정이나 삭제를 할 수 없도록 처리
-views.py에서 dispatch() 적용
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/05/01/190501-Django-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 1" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/01/190501-Django-Study/">0</span>
-    
-</span>
+            
+프로젝트 만들기
+가상 환경 만들기
+데이터베이스 설정하기
+S3 파일서버 설정하기
+S3에 도메인 연결하기
 
 
-    
-</a>
+PyCharm을 실행하여 새로운 프로젝트를 생성한다.
 
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
-            </div>
-            <div class="date"><time datetime="2019-05-01T07:48:49.000Z" itemprop="datePublished">2019-05-01</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/05/01/190501-Django-Study/">Dstargram project - 1</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            [ Dstargram project ]
-두 가지 앱을 만들어서 진행
-accounts : 로그인, 로그아웃, 회원가입 관련
-photo : 사진 업로드 관련
-
-
-
-
-파이썬 프로젝트 생성
-장고 설치
+“sample_project”로 생성
+django 설치
 1$ pip install django
 
-장고 프로젝트 생성
+django 프로젝트 생성
 1$ django-admin startproject config .
 
-DB 초기화
-1$ python ma
+의
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/05/17/190517-Django-Study/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Board project - 5" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/17/190517-Django-Study/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
+            </div>
+            <div class="date"><time datetime="2019-05-17T11:26:06.000Z" itemprop="datePublished">2019-05-17</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/05/17/190517-Django-Study/">Board project - 5</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            [ Board project ]
+AJAX
+
+비동기식 JavaScript와 XML(Asynchronos Javascript And XML)
+JavaScript를 통해서 서버에 데이터를 요청
+서버에 로딩된 데이터를 페이지에 보여주기 위해 새로운 HTML 페이지로 가지 않음
+ajax를 통해 주로 주고 받는 형태가 XML이나 JSON
+
+
+댓글 기능에 AJAX 적용
         </p>
     </div>
 </article>
@@ -374,17 +390,17 @@ DB 초기화
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/30/190430-Django-Study/" class="thumbnail">
+        <a href="/2019/05/16/190516-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Bookmark project - 2" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Board project - 4" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/30/190430-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/16/190516-Django-Study/">0</span>
     
 </span>
 
@@ -397,27 +413,21 @@ DB 초기화
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-30T10:48:19.000Z" itemprop="datePublished">2019-04-30</time></div>
+            <div class="date"><time datetime="2019-05-16T12:45:36.000Z" itemprop="datePublished">2019-05-16</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/30/190430-Django-Study/">Bookmark project - 2</a>
+        <a href="/2019/05/16/190516-Django-Study/">Board project - 4</a>
         </h1>
     
 
         <p class="article-excerpt">
-            [ Bookmark project ]
-Bootstrap 적용
-github 업로드
-pythonanywhere.com을 이용한 배포
+            [ Board project ]
+댓글 기능 적용
 
-
-bootstrap 적용하기
-
-base.html에 bootstrap 설치
-CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, CDN을 사용하면 접속 속도 증가)
-다운로드 설치(커스터마이징 가능, 도메인을 넘나들지 않
+models.py에 comment 모델 작성
+123456789101112131415161718class Comment(models.Model):    # Todo : 댓글 남기기를 위해서 Form    # Todo : 뷰 처리는 Documents의 뷰    # 해당 게시글의 댓글이기 때문에 document라
         </p>
     </div>
 </article>
@@ -430,17 +440,17 @@ CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, 
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/29/190429-Django-Study/" class="thumbnail">
+        <a href="/2019/05/15/190515-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Bookmark project - 1" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Board project - 3" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/29/190429-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/15/190515-Django-Study/">0</span>
     
 </span>
 
@@ -453,32 +463,20 @@ CDN 스크립트로 설치(리소스 절감 효과, 최신버전 자동 유지, 
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-29T09:08:44.000Z" itemprop="datePublished">2019-04-29</time></div>
+            <div class="date"><time datetime="2019-05-15T07:56:18.000Z" itemprop="datePublished">2019-05-15</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/29/190429-Django-Study/">Bookmark project - 1</a>
+        <a href="/2019/05/15/190515-Django-Study/">Board project - 3</a>
         </h1>
     
 
         <p class="article-excerpt">
-            [ Bookmark project ]
-프로젝트 생성
-장고 설치
-1$ pip install django
+            [ Board project ]
+F() 객체
 
-장고 프로젝트 생성
-1django-admin startproject config .
-
-DB 초기화
-1$ python manage.py migrate
-
-관리자 계정 생성
-1$ python manage.py createsuperuser
-
-기본 앱 생성
-1$ 
+모델의 필드 값을 참조하여 데이터베이스 작업을 수행할 수 있다.12345678from django.db.models import Q, Ffrom board.models import * # Board, Category, Document# 'title'이라는 문자열을 검색Document.objects.filter(
         </p>
     </div>
 </article>
@@ -495,17 +493,17 @@ DB 초기화
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/26/190426-Django-Study/" class="thumbnail">
+        <a href="/2019/05/14/190514-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="HTTP Server 실습" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Board project - 2" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/26/190426-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/14/190514-Django-Study/">0</span>
     
 </span>
 
@@ -518,22 +516,21 @@ DB 초기화
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-26T08:49:31.000Z" itemprop="datePublished">2019-04-26</time></div>
+            <div class="date"><time datetime="2019-05-14T10:38:43.000Z" itemprop="datePublished">2019-05-14</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/26/190426-Django-Study/">HTTP Server 실습</a>
+        <a href="/2019/05/14/190514-Django-Study/">Board project - 2</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-HTTP Server
+            [ Board project ]
+get_object_or_404, get_list_or_404
 
-
-브라우저를 통해 사용자가 HTTP Request Messsage를 보낸다.
-서버는 그 Message를 해석하고 Request Message를 보낸다.2-1. 어느 페이지로 접속했는가?2-2. Query String은 어떤 페이지를 가지고 있는가?2-3. 특정 스크립트 요청이 있는가?2-4. 최종 응답을 어떤 방식으로 할 것인가?(
+데이터가 하나도 없다면 에러 발생
+views.py 수정123456789101112131415161718192021222324252627282930313233343536# 해당 모듈 추가from django.shortcuts import render, get_ob
         </p>
     </div>
 </article>
@@ -546,17 +543,17 @@ HTTP Server
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/26/190426-Python-how-to-save/" class="thumbnail">
+        <a href="/2019/05/13/190513-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/Python_thumnail.jpg)" alt="Python에서 Save File을 만드는 3가지 방법" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Board project - 1" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/26/190426-Python-how-to-save/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/13/190513-Django-Study/">0</span>
     
 </span>
 
@@ -567,21 +564,26 @@ HTTP Server
         
         <div class="article-meta">
             <div class="category">
-            <a class="article-category-link" href="/categories/Python/">Python</a>
+            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-26T05:52:14.000Z" itemprop="datePublished">2019-04-26</time></div>
+            <div class="date"><time datetime="2019-05-13T12:00:22.000Z" itemprop="datePublished">2019-05-13</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/26/190426-Python-how-to-save/">Python에서 Save File을 만드는 3가지 방법</a>
+        <a href="/2019/05/13/190513-Django-Study/">Board project - 1</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-excel file로 저장하기
-12345678910111213141516171819# openpyxl module 등록from openpyxl import Workbook# 내용을 저장하기 위해 메모리 상에 파일 만들기wb = Workbook()# wb.activate를 사용하면 엑셀 처음 시트를 가져온다.# wb.create_sheet()를 통해 시트를
+            [ Board project ]
+url이 있는 형태로 S3 버킷 만들기(media 파일용)
+
+board.[도메인 주소]로 버킷 이름을 설정한다.
+퍼블릭 ACL 관리 체크 항목을 모두 해제한다.
+버킷이 생성되면 속성 탭에서 정적 웹 사이트 호스팅을 활성화한다.
+AWS ROUTE53에서 레코드를 생성한다.
+pycharm project의 settings.py에 
         </p>
     </div>
 </article>
@@ -598,17 +600,17 @@ excel file로 저장하기
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/25/190425-Django-Study/" class="thumbnail">
+        <a href="/2019/05/10/190510-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Crawler 실습 - 2" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Dstargram project - 5" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/25/190425-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/10/190510-Django-Study/">0</span>
     
 </span>
 
@@ -621,22 +623,23 @@ excel file로 저장하기
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-25T08:49:18.000Z" itemprop="datePublished">2019-04-25</time></div>
+            <div class="date"><time datetime="2019-05-10T12:00:09.000Z" itemprop="datePublished">2019-05-10</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/25/190425-Django-Study/">Crawler 실습 - 2</a>
+        <a href="/2019/05/10/190510-Django-Study/">Dstargram project - 5</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 프로그램-&gt; 웹 브라우저를 흉내내는 프로그램
-
-1) requests : 웹 사이트에 접속, 데이터를 받아오는 역할2) BeautifulSoup : 데이터를 HTML로 해석하는 역할-&gt; 선행지식 : HTML에 대한 이해, CSS Selector를 만드는 방법
-
-요소 검사를 통해 
+            [ Dstargram project ]aws S3를 이용하여 이미지 파일을 저장하고해당 글을 삭제했으나, S3에는 이미지가 삭제되지 않음signal을 사용하여 S3에도 이미지가 삭제되도록 변경
+signal
+~하기 전에, ~한 후에 발생하는 일들을 말함
+후속 조치를 하는 것
+대표적인 signal 종류
+pre_save : 저장하기 전
+post_save : 저장
         </p>
     </div>
 </article>
@@ -649,17 +652,17 @@ Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/04/24/190424-Django-Study/" class="thumbnail">
+        <a href="/2019/05/09/190509-Django-Study/" class="thumbnail">
     
     
-        <span style="background-image:url(/images/DWS_thumnail.png)" alt="Crawler 실습 - 1" class="thumbnail-image"></span>
+        <span style="background-image:url(/images/DWS_thumnail.png)" alt="AWS S3 and RDS" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/04/24/190424-Django-Study/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/05/09/190509-Django-Study/">0</span>
     
 </span>
 
@@ -672,24 +675,27 @@ Crawler(크롤러) : 인터넷에 있는 데이터를 자동으로 수집하는 
             <div class="category">
             <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a>
             </div>
-            <div class="date"><time datetime="2019-04-24T08:49:05.000Z" itemprop="datePublished">2019-04-24</time></div>
+            <div class="date"><time datetime="2019-05-09T11:53:26.000Z" itemprop="datePublished">2019-05-09</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/04/24/190424-Django-Study/">Crawler 실습 - 1</a>
+        <a href="/2019/05/09/190509-Django-Study/">AWS S3 and RDS</a>
         </h1>
     
 
         <p class="article-excerpt">
-            
-Crawler(크롤러) : 웹 페이지에 있는 자료를 자동으로 수집하는 프로그램
+            Amazon S3 사용하기
+도메인을 이용한 버킷 사용하기
+media 파일 적용하기
 
-
-주소를 입력하면 해당 서버로 접근한다.
-웹 서버 프로그램이 해당 주소에 맞는 내용을 전달한다.-&gt; requests(urllib의 wrapper 클래스)
-
-받은 내용을 해석해서 화면을 보여준다.3-1. 받은 내용을 해석해서 내가 원하는 데이터를 찾는다.-&gt; Beau
+도메인을 구입한다.
+Amazon - S3에서 버킷을 생성한다.
+버킷 이름은 media.[도메인 주소]로 한다.
+권한 설정에서 다음과 같이 설정한다.
+퍼블릭 ACL 관리 체크 항목을 모두 해제한다.
+퍼블릭 버킷 정책 관리 체크 항목을 모두 해제한다.
+시스템 권한 관리에서 ‘엑
         </p>
     </div>
 </article>
@@ -702,8 +708,8 @@ Crawler(크롤러) : 웹 페이지에 있는 자료를 자동으로 수집하는
 
 
     <nav id="page-nav">
-        <span class="pages">Page 7 of 14</span>
-        <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
+        <span class="pages">Page 7 of 15</span>
+        <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
     </nav>
 
 
@@ -847,7 +853,7 @@ Crawler(크롤러) : 웹 페이지에 있는 자료를 자동으로 수집하는
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">24</span></li></ul></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">35</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">24</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/팀-프로젝트/오늘의집/">오늘의집</a><span class="category-list-count">11</span></li></ul></li></ul></li></ul>
         </div>
     </div>
 
@@ -857,7 +863,7 @@ Crawler(크롤러) : 웹 페이지에 있는 자료를 자동으로 수집하는
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 

@@ -209,6 +209,166 @@ Bellman-Ford Alg
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2019/08/05/190805-DEVLOG-OHOME/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/OHOME.png)" alt="Crontab 문제 해결!" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/08/05/190805-DEVLOG-OHOME/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a>
+            </div>
+            <div class="date"><time datetime="2019-08-05T09:20:01.000Z" itemprop="datePublished">2019-08-05</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/08/05/190805-DEVLOG-OHOME/">Crontab 문제 해결!</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            12시간마다 동작하라고 한 작업이 동작하긴 했는데, 정해진 시간에 동작하지 않는 문제가 발생했다.
+시간을 확인해보니까 오전 9시에 실행이 되었다. 흠…
+앗! 하고 순간 떠오른게 로컬에서의 시간과 서버에서의 시간이었다.
+그래서 터미널을 통해서 date를 입력해봤더니 KST로 현재 시간이 잘 나왔다.
+그리고 AWS EC2에 접속해서 date를 쳤더니… UTC가
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/08/04/190804-DEVLOG-OHOME/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/OHOME.png)" alt="Crontab 적용!" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/08/04/190804-DEVLOG-OHOME/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a>
+            </div>
+            <div class="date"><time datetime="2019-08-04T09:19:56.000Z" itemprop="datePublished">2019-08-04</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/08/04/190804-DEVLOG-OHOME/">Crontab 적용!</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            오늘의 딜이라는 시간에 따라 상품의 정보가 변동되는 데이터를 위해 crontab을 적용했다.
+적용하기 전에 방법은 다음과 같았다.
+
+상품 중에 4개를 랜덤으로 뽑기 위해 랜덤 숫자를 저장하는 모델을 만들었다.
+모델이 업데이트가 되면 날짜도 업데이트되도록 DateField를 만들었다(auto_now = True).
+date 모듈을 이용해서 오늘 날짜를 받는다
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/08/02/190802-DEVLOG-OHOME/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/OHOME.png)" alt="request POST? data?" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/08/02/190802-DEVLOG-OHOME/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a>
+            </div>
+            <div class="date"><time datetime="2019-08-02T09:19:52.000Z" itemprop="datePublished">2019-08-02</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/08/02/190802-DEVLOG-OHOME/">request POST? data?</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            장바구니 로직에 문제가 생겼다!
+Front 분들이 요청에 있어서 에러가 있다고 문의를 주셨다.
+그래서 나는 Postman으로는 잘 된다고 얘기했더니 500 에러가 뜬다고 이야기를 해주셨다.
+이건 서버의 잘못이기에 로직을 다시 한번 살펴보고 있었다.
+그런데 Front분들이 form-data로는 잘 되는데 raw의 JSON으로 보내면 안된다고 알려주셨다.
+그래
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2019/08/01/190801-DSAA-Study/" class="thumbnail">
     
     
@@ -257,6 +417,157 @@ MST(Minimum Cost Spanning Tree)
 가중치 그래프
 비용이 최소가 된다.
 에지들의 비용이 가장 작은 트리를 구한다
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/08/01/190801-DEVLOG-OHOME/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/OHOME.png)" alt="장바구니 및 주문 구현 수정 - 2" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/08/01/190801-DEVLOG-OHOME/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a>
+            </div>
+            <div class="date"><time datetime="2019-08-01T09:19:49.000Z" itemprop="datePublished">2019-08-01</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/08/01/190801-DEVLOG-OHOME/">장바구니 및 주문 구현 수정 - 2</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            
+모델을 다시 만들었고 상품의 수량도 변경할 수 있도록 필드도 추가했다.
+1234567891011121314151617181920212223242526272829class OrderItem(models.Model):    # 아이템을 선택한 유저    user = models.ForeignKey(User, on_delete=models.CASCADE, re
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/07/31/190731-DEVLOG-OHOME/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/OHOME.png)" alt="장바구니 및 주문 구현 수정 - 1" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/31/190731-DEVLOG-OHOME/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a>
+            </div>
+            <div class="date"><time datetime="2019-07-31T09:19:42.000Z" itemprop="datePublished">2019-07-31</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/07/31/190731-DEVLOG-OHOME/">장바구니 및 주문 구현 수정 - 1</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            강사님께 질문을 하면서 내가 구현한 장바구니 부분보다 더 간단한 방법을 제안해주셨다.
+일단 signal 함수라는 것은 유지보수 자체가 힘들다는 것을 알았다.
+그래서 리뷰 평점을 계산하는 것도 모델 단에서 save를 재정의하는 방법을 검색해서 재구현했다.
+123456def save(self, *args, **kwargs):    super(Review, se
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/07/30/190730-DEVLOG-OHOME/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/OHOME.png)" alt="serializer.save()" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/30/190730-DEVLOG-OHOME/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a>
+            </div>
+            <div class="date"><time datetime="2019-07-30T09:19:38.000Z" itemprop="datePublished">2019-07-30</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/07/30/190730-DEVLOG-OHOME/">serializer.save()</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            장바구니에 상품들이 담기면 총 상품에 대한 가격이 계산되어야 했다.
+상품을 실제로 파는 것은 아니었으므로 회의를 통해 배송 가격은 무료로 정했다.
+따라서 상품의 가격의 가격들만 더하면 총 가격이 되었다.
+그래서 REST Framework의 generic view에 있는 serializers.save()를 사용하기로 했다.
+기존에 이미 해당 유저의 정보를 저
         </p>
     </div>
 </article>
@@ -382,335 +693,13 @@ self-balancing(balanced-binary tree)
         </div>
     
 
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/07/22/190722-DSAA-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="분할 정복(Divide and Conquer)" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/22/190722-DSAA-Study/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a>
-            </div>
-            <div class="date"><time datetime="2019-07-22T11:47:12.000Z" itemprop="datePublished">2019-07-22</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/22/190722-DSAA-Study/">분할 정복(Divide and Conquer)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            분할 정복(Divide and Conquer) 알고리즘 문제분할 정복(Divide and Conquer)
-먼저 분할하고 정렬하는 경우 - merge sort
-
-먼저 정렬하고 분할하는 경우 - quick sort
-
-recursion(재귀)에서 중요한 것
-
-base case(기저 조건)
-재귀할 때 문제의 사이즈(부분 문제, sub problem)를 줄여야 한다
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/07/18/190718-DSAA-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="완전 탐색(Brute-force Search)" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/18/190718-DSAA-Study/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a>
-            </div>
-            <div class="date"><time datetime="2019-07-18T07:41:57.000Z" itemprop="datePublished">2019-07-18</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/18/190718-DSAA-Study/">완전 탐색(Brute-force Search)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            완전 탐색(Brute-force Search) 알고리즘 문제알고리즘 해결 전략 1권 p.157
-소풍을 간 학생들을 두 명씩 짝 지어 행동하게 하려 한다.
-서로 친구인 경우에만 짝을 지어야 한다.
-서로 친구인 경우의 쌍이 주어질 때,
-학생들을 짝 지을 수 있는 방법의 수를 구현해보자.
-데이터 개수 n은 항상 짝수이다.12345678910111213141516
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/07/15/190715-DSAA-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="MAX HEAP" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/15/190715-DSAA-Study/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a>
-            </div>
-            <div class="date"><time datetime="2019-07-15T07:39:19.000Z" itemprop="datePublished">2019-07-15</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/15/190715-DSAA-Study/">MAX HEAP</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            MAX HEAP
-완전이진트리
-배열, heapsize(배열의 개수가 아닌 데이터의 개수)
-Priority Queue 때문에 구현한다.
-ADT 1) is_empty() -&gt; bool 2) is_full() -&gt; bool 3) push(data) -&gt; 반환없음 4) pop() -&gt; 삭제된 원소 반환 5) top() -&gt; 다음 번에 반환
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/07/11/190711-DSAA-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="동적 배열 vs 연결 리스트" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a>
-            </div>
-            <div class="date"><time datetime="2019-07-11T07:22:26.000Z" itemprop="datePublished">2019-07-11</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/11/190711-DSAA-Study/">동적 배열 vs 연결 리스트</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            동적 배열(Dynamic array) vs 연결 리스트(Linked list)
-동적 배열(Dynamic array)
-
-
-장점 : search - O(1) = Indexing
-단점 : insert, delete - O(n)
-python의 동적배열은 list이다.
-
-append, pop - O(1)123456789다음과 같이 이미 할당된 배열의 공간이 있을 경
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/07/08/190708-DSAA-Study/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/DSAA_thumnail.png)" alt="트리 순회(Tree traversal)" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/08/190708-DSAA-Study/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Study/">Study</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Study/Data-Structure/">Data Structure</a>
-            </div>
-            <div class="date"><time datetime="2019-07-08T06:37:17.000Z" itemprop="datePublished">2019-07-08</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/08/190708-DSAA-Study/">트리 순회(Tree traversal)</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            순회
-재방문을 허용하지 않고 트리를 구성하는 모든 노드에 다해서 반드시 한번씩 방문하는 것
-Queue 계열의 알고리즘
-BFS(Breadth First Search) : 너비 우선 탐색
-레벨 순서 순회(levelorder traversal)
-root를 시작으로 다음 레벨 왼쪽부터 방문123456789101112131415161718192021222324252
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2019/07/07/190707-DEVLOG-STEAMIC/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/STEAMIC.png)" alt="JQuery의 Autocomplete" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="http://JINUKK.github.io/2019/07/07/190707-DEVLOG-STEAMIC/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/개발-일지/">개발 일지</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a>
-            </div>
-            <div class="date"><time datetime="2019-07-07T06:11:16.000Z" itemprop="datePublished">2019-07-07</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/07/190707-DEVLOG-STEAMIC/">JQuery의 Autocomplete</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            지금의 게임 검색 기능은 스팀 앱의 id를 정확하게 알아야만 검색이 된다.
-내가 원하는 것은 검색에 한글자씩 칠 때마다 앱 데이터가 바뀌도록 하는 것이었다.
-찾아보니 JQuery에 Autocomplete 기능이 있었다.
-일단 이 기능을 적용하려고 예제를 가져와서 해보기로 했다.
-12345678910111213141516171819202122&lt;link 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
 
     </div></section>
 
 
     <nav id="page-nav">
-        <span class="pages">Page 2 of 14</span>
-        <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
+        <span class="pages">Page 2 of 15</span>
+        <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
     </nav>
 
 
@@ -854,7 +843,7 @@ root를 시작으로 다음 레벨 왼쪽부터 방문12345678910111213141516171
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">24</span></li></ul></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/Sort/">Sort</a><span class="category-list-count">5</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">25</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a><span class="category-list-count">76</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Data-Structure/">Data Structure</a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Django-and-Web-server/">Django and Web server</a><span class="category-list-count">35</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Git-lecture/">Git lecture</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Study/Python-and-CE/">Python and CE</a><span class="category-list-count">27</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/">개발 일지</a><span class="category-list-count">35</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/">개인 프로젝트</a><span class="category-list-count">24</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/개인-프로젝트/STEAM-IC/">STEAM IC.</a><span class="category-list-count">24</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/팀-프로젝트/">팀 프로젝트</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/개발-일지/팀-프로젝트/오늘의집/">오늘의집</a><span class="category-list-count">11</span></li></ul></li></ul></li></ul>
         </div>
     </div>
 
@@ -864,7 +853,7 @@ root를 시작으로 다음 레벨 왼쪽부터 방문12345678910111213141516171
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a><span class="archive-list-count">51</span></li></ul>
         </div>
     </div>
 
