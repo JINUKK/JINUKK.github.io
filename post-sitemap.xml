@@ -8,6 +8,38 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-PCE-Study/</loc>
+        <lastmod>2019-09-18T06:11:24.143Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/</loc>
+        <lastmod>2019-09-18T06:11:22.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-set/</loc>
+        <lastmod>2019-09-18T06:09:17.754Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/03/04/190304-PCE-Study/</loc>
+        <lastmod>2019-09-18T06:09:03.121Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/07/30/190730-DEVLOG-OHOME/</loc>
         <lastmod>2019-09-11T13:48:36.877Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -552,14 +584,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-Python-dictionary/</loc>
-        <lastmod>2019-08-13T08:07:22.523Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/2019/03/05/190305-Python-boolean/</loc>
         <lastmod>2019-08-13T08:07:21.300Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -578,14 +602,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/03/04/190304-Python-string/</loc>
         <lastmod>2019-08-13T08:07:13.113Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/04/190304-Python-set/</loc>
-        <lastmod>2019-08-13T08:07:11.157Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -1178,22 +1194,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/03/06/190306-PCE-Study/</loc>
         <lastmod>2019-08-13T06:10:32.129Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/05/190305-PCE-Study/</loc>
-        <lastmod>2019-08-13T06:09:41.965Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/03/04/190304-PCE-Study/</loc>
-        <lastmod>2019-08-13T06:09:38.525Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
