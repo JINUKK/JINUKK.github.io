@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>http://JINUKK.github.io/2019/04/01/190401-PCE-Study/</loc>
+        <lastmod>2019-09-25T08:09:27.730Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-dummy-double-linked-list/</loc>
+        <lastmod>2019-09-25T08:08:38.525Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/</loc>
+        <lastmod>2019-09-25T08:06:45.978Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://JINUKK.github.io/2019/03/05/190305-PCE-Study/</loc>
         <lastmod>2019-09-18T06:11:24.143Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -322,14 +346,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/08/08/190808-DSAA-Study/</loc>
         <lastmod>2019-08-14T07:44:54.182Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/07/11/190711-DSAA-Study/</loc>
-        <lastmod>2019-08-14T07:22:05.242Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -960,14 +976,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/2019/04/01/190401-Algorithm-dummy-double-linked-list/</loc>
-        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/2019/03/27/190327-Algorithm-Sort-selection-sort/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -1066,14 +1074,6 @@
     <url>
         <loc>http://JINUKK.github.io/2019/04/02/190402-PCE-Study/</loc>
         <lastmod>2019-08-13T06:38:30.517Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/2019/04/01/190401-PCE-Study/</loc>
-        <lastmod>2019-08-13T06:38:09.294Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

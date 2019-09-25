@@ -3,14 +3,28 @@
 
 
     <url>
-        <loc>http://JINUKK.github.io/tags/dictionary/</loc>
-        <lastmod>2019-09-18T06:11:22.727Z</lastmod>
+        <loc>http://JINUKK.github.io/tags/dummy-double-linked-list/</loc>
+        <lastmod>2019-09-25T08:08:38.525Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/algorithm/</loc>
+        <lastmod>2019-09-25T08:08:38.525Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://JINUKK.github.io/tags/python/</loc>
+        <lastmod>2019-09-25T08:08:38.525Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://JINUKK.github.io/tags/dictionary/</loc>
         <lastmod>2019-09-18T06:11:22.727Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -325,13 +339,6 @@
     </url>
 
     <url>
-        <loc>http://JINUKK.github.io/tags/algorithm/</loc>
-        <lastmod>2019-08-13T07:25:49.256Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://JINUKK.github.io/tags/tower-of-hanoi/</loc>
         <lastmod>2019-08-13T07:25:49.184Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -354,13 +361,6 @@
 
     <url>
         <loc>http://JINUKK.github.io/tags/selection-sort/</loc>
-        <lastmod>2019-08-13T07:25:48.928Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://JINUKK.github.io/tags/dummy-double-linked-list/</loc>
         <lastmod>2019-08-13T07:25:48.928Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
